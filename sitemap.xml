@@ -1285,6 +1285,13 @@
   </url>
   
   <url>
+    <loc>https://hejueyun.github.io/tags/Notes/</loc>
+    <lastmod>2021-06-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hejueyun.github.io/tags/Cookbook/</loc>
     <lastmod>2021-06-22</lastmod>
     <changefreq>daily</changefreq>
@@ -1307,13 +1314,6 @@
   
   <url>
     <loc>https://hejueyun.github.io/tags/Note/</loc>
-    <lastmod>2021-06-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hejueyun.github.io/tags/Notes/</loc>
     <lastmod>2021-06-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1483,14 +1483,14 @@
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/categories/Program-Language/php/</loc>
+    <loc>https://hejueyun.github.io/categories/Program-Language/Java/Basic/</loc>
     <lastmod>2021-06-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/categories/Program-Language/Java/Basic/</loc>
+    <loc>https://hejueyun.github.io/categories/Program-Language/php/</loc>
     <lastmod>2021-06-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1539,14 +1539,14 @@
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/categories/essay/aes/</loc>
+    <loc>https://hejueyun.github.io/categories/Operating-System/Linux/Linux-Inside/</loc>
     <lastmod>2021-06-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/categories/Operating-System/Linux/Linux-Inside/</loc>
+    <loc>https://hejueyun.github.io/categories/essay/aes/</loc>
     <lastmod>2021-06-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
