@@ -6,7 +6,7 @@
   <link href="https://hejueyun.github.io/atom.xml" rel="self"/>
   
   <link href="https://hejueyun.github.io/"/>
-  <updated>2021-06-17T15:55:16.460Z</updated>
+  <updated>2021-07-08T08:27:46.622Z</updated>
   <id>https://hejueyun.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[主机]NR200装机杂谈</title>
+    <link href="https://hejueyun.github.io/posts/45f6f037/"/>
+    <id>https://hejueyun.github.io/posts/45f6f037/</id>
+    <published>2021-07-07T04:26:54.000Z</published>
+    <updated>2021-07-08T08:27:46.622Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前组好的主机长时间没用，导致内存出了点问题，然后就体会到了拆装机的痛苦了，就算把电源外置也没法解决理线和散热的痛苦，于是一气之下直接换了2020年大火的NR200。原因如下：</p><ul><li>现货秒发，不想再受定制机箱耍猴的痛苦了</li><li>安装简便，虽然之前没有特别了解过具体装机流程但应该没问题</li><li>散热优秀</li><li>比想象中小，之前一直以为是20多，后来发现是18L，感觉还能接受</li></ul><center><img src="/posts/45f6f037/1.PNG" width="350px"></center><h2 id="Price"><a href="#Price" class="headerlink" title="Price"></a>Price</h2><table><thead><tr><th>Item</th><th>Price</th></tr></thead><tbody><tr><td>NR200</td><td>399</td></tr><tr><td>SEAGATE ST3000VX010 3T</td><td>519</td></tr></tbody></table><h2 id="装机"><a href="#装机" class="headerlink" title="装机"></a>装机</h2><p>具体的装机可参考B站教程，这里说几个比较有意思的点</p><ul><li>底面风扇安装很自由，原本以为换了机箱我的两个6cm猫扇就浪费了，没想到可以通过胶钉装(虽然有点点容易卡出来)</li></ul><center><img src="/posts/45f6f037/2.JPG" width="350px"></center><ul><li>机械硬盘的安装非常舒适</li></ul><center><img src="/posts/45f6f037/3.JPG" width="350px"></center><ul><li>值得注意的点是：应当把主板所有线接好再装，不然电源和散热器会卡手</li><li>侧面风扇没必要装</li><li>（？）看评测说用玻璃侧板散热更好</li><li>装顶/底/侧板时，注意用手压住机箱的两个卡口，直接压进去容易被弹出来</li></ul><h3 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h3><center><img src="/posts/45f6f037/4.JPG" width="450px"></center><ul><li>装完8.3kg，感觉还行</li></ul><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><ul><li>硬件gpu加速</li></ul><p>win10这个更新后出现的选项早有耳闻，这里测试了一下。环境如下：</p><table><thead><tr><th>win10</th><th>21H1</th></tr></thead><tbody><tr><td>3500X</td><td>4.4GHZ</td></tr><tr><td>Mem</td><td>3400HZ 8gx2</td></tr><tr><td>SSD</td><td>-</td></tr><tr><td>Display</td><td>1080p 120hz</td></tr></tbody></table><ul><li>cs:go</li></ul><center><img src="/posts/45f6f037/5.JPEG" width="300px"></center><ul><li>极限竞速：地平线4</li></ul><center><img src="/posts/45f6f037/6.PNG" width="300px"></center><p>可以看到平均帧数和最低帧数还时有可喜的提升的，总之推荐打开该选项。</p><ul><li>4k</li></ul><p>因为家中购入一台OLED 4k电视，特地选了两个1660s<strong>大概</strong>能带的动的游戏测试一下。</p><center><img src="/posts/45f6f037/7.PNG" width="400px"></center><p>之前完全没预料到1660s能玩4k，画质还能开到超高，oled还能开HDR。但视觉感受是没太大差别？也许还是需要玩一阵子后再回到1080p下才会有感受吧。</p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>NR200是个好机箱，板材厚度和喷漆的质量相当好，设计也很不错，和比他贵1000的定制机箱差不多。总之以后要是有人要装ITX我就推荐这个了。</p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;之前组好的主机长时间没用，导致内存出了点问题，然后就体会到了拆装机的痛苦了，就算把电源外置也没法解决理线和散热的痛苦，于是一气之下直接换了2020年大火的NR200。原因如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;现货秒发，不想再受定制机箱耍猴的痛苦了&lt;/li&gt;
+&lt;li&gt;安装简便，虽然之前没有特别了解过具体装机流程但应该没问题&lt;/li&gt;
+&lt;li&gt;散热优秀&lt;/li&gt;
+&lt;li&gt;比想象中小，之前一直以为是20多，后来发现是18L，感觉还能接受&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img src=&quot;/posts/45f6f037/1.PNG&quot; width=&quot;350px&quot;&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;Price&quot;&gt;&lt;a href=&quot;#Price&quot; class=&quot;headerlink&quot; title=&quot;Price&quot;&gt;&lt;/a&gt;Price&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Item&lt;/th&gt;
+&lt;th&gt;Price&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;NR200&lt;/td&gt;
+&lt;td&gt;399&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SEAGATE ST3000VX010 3T&lt;/td&gt;
+&lt;td&gt;519&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&quot;装机&quot;&gt;&lt;a href=&quot;#装机&quot; class=&quot;headerlink&quot; title=&quot;装机&quot;&gt;&lt;/a&gt;装机&lt;/h2&gt;&lt;p&gt;具体的装机可参考B站教程，这里说几个比较有意思的点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;底面风扇安装很自由，原本以为换了机箱我的两个6cm猫扇就浪费了，没想到可以通过胶钉装(虽然有点点容易卡出来)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img src=&quot;/posts/45f6f037/2.JPG&quot; width=&quot;350px&quot;&gt;&lt;/center&gt;</summary>
+    
+    
+    
+    <category term="雜玩" scheme="https://hejueyun.github.io/categories/funfair/"/>
+    
+    
+    <category term="essay" scheme="https://hejueyun.github.io/tags/essay/"/>
+    
+  </entry>
   
   <entry>
     <title>外设-hifi小烧闲谈</title>
@@ -53,9 +103,9 @@
     <link href="https://hejueyun.github.io/posts/638d4d8a/"/>
     <id>https://hejueyun.github.io/posts/638d4d8a/</id>
     <published>2021-06-11T11:49:10.000Z</published>
-    <updated>2021-06-17T15:55:16.450Z</updated>
+    <updated>2021-07-07T04:32:33.750Z</updated>
     
-    <content type="html"><![CDATA[<p><em>鸟哥的Linux私房菜笔记</em></p><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><h3 id="字符编码系统"><a href="#字符编码系统" class="headerlink" title="字符编码系统"></a>字符编码系统</h3><ul><li>ASCII：1字节，只用于英文</li><li>Unicode：UTF-8</li></ul><h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><p><strong>操作系统=内核+系统调用</strong></p><p>内核层(kernel)</p><ul><li><strong>管理硬件的程序</strong><ul><li>如果你的内核不支持网络协议，那么就算你的电脑有网卡也无济于事</li></ul></li><li>内核程序放置于内存中的<strong>受保护区域</strong>(?)</li><li>内核程序是守护程序</li></ul><p>系统调用层(system call)</p><ul><li>提供API调用内核</li><li>应用程序的开发都是参考操作系统提供的API，所以该应用程序只能在该系统上运行</li></ul><p>封装：<strong>硬件→（内核→系统调用）→应用程序(壳程序)</strong></p><h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><h3 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h3><p>磁盘设备文件名格式：<code>/dev/sd[a-p]</code></p><ul><li>按Linux内核检测顺序</li><li>e.g. <code>USB磁盘：/dev/sdc</code></li></ul><p>磁盘分区</p><blockquote><p>磁盘分区是使用分区编辑器（partition editor）在磁盘上划分几个逻辑部分，盘片一旦划分成数个分区（Partition），不同类的目录与文件可以存储进不同的分区。</p></blockquote><table><thead><tr><th>MBR</th><th>GPT</th></tr></thead><tbody><tr><td>Master Boot Record</td><td>Globally Unique Identifier Partition Table</td></tr><tr><td>主引导记录</td><td>全局唯一标识分区表</td></tr><tr><td>可以安装启动程序的地方</td><td>B3</td></tr><tr><td>MBR仅有一个区块，容错低</td><td>-</td></tr><tr><td>MBR内存放启动引导程序的区块只有446bytes,可能会不够用</td><td>-</td></tr></tbody></table><blockquote><p>GPT和MBR对普通用户而言最主要的两个区别</p><ul><li>GPT支持单分区容量超过2T</li><li>GPT支持快速启动</li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<p><em>鸟哥的Linux私房菜笔记</em></p><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><h3 id="字符编码系统"><a href="#字符编码系统" class="headerlink" title="字符编码系统"></a>字符编码系统</h3><ul><li>ASCII：1字节，只用于英文</li><li>Unicode：UTF-8</li></ul><h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><p><strong>操作系统=内核+系统调用</strong></p><p>内核层(kernel)</p><ul><li><strong>管理硬件的程序</strong><ul><li>如果你的内核不支持网络协议，那么就算你的电脑有网卡也无济于事</li></ul></li><li>内核程序放置于内存中的<strong>受保护区域</strong>(?)</li><li>内核程序是守护程序</li></ul><p>系统调用层(system call)</p><ul><li>提供API调用内核</li><li>应用程序的开发都是参考操作系统提供的API，所以该应用程序只能在该系统上运行</li></ul><p>封装：<strong>硬件→（内核→系统调用）→应用程序(壳程序)</strong></p><h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><h3 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h3><p>磁盘设备文件名格式：<code>/dev/sd[a-p]</code></p><ul><li>按Linux内核检测顺序</li><li>e.g. <code>USB磁盘：/dev/sdc</code></li></ul><p>磁盘分区</p><blockquote><ul><li>磁盘分区是使用分区编辑器（partition editor）在磁盘上划分几个<strong>逻辑</strong>部分，盘片一旦划分成数个分区（Partition），不同类的目录与文件可以存储进不同的分区。</li><li>linux中有两种分区方式：MBR和GPT</li></ul></blockquote><table><thead><tr><th>MBR</th><th>GPT</th></tr></thead><tbody><tr><td>Master Boot Record</td><td>Globally Unique Identifier Partition Table</td></tr><tr><td>主引导记录</td><td>全局唯一标识分区表</td></tr><tr><td>可以安装启动程序的地方</td><td>B3</td></tr><tr><td>MBR引导扇区仅有一个区块，容错低</td><td>-</td></tr><tr><td>MBR内存放启动引导程序的区块只有446bytes,可能会不够用</td><td>-</td></tr><tr><td>不支持2TB以上的大硬盘</td><td>-</td></tr></tbody></table><blockquote><p>GPT和MBR对普通用户而言最主要的两个区别</p><ul><li>GPT支持单分区容量超过2T</li><li>GPT支持快速启动</li></ul></blockquote>]]></content>
     
     
     <summary type="html">&lt;p&gt;&lt;em&gt;鸟哥的Linux私房菜笔记&lt;/em&gt;&lt;/p&gt;
@@ -950,46 +1000,6 @@
     
     
     <category term="sec" scheme="https://hejueyun.github.io/tags/sec/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux文件系统笔记</title>
-    <link href="https://hejueyun.github.io/posts/2617683d/"/>
-    <id>https://hejueyun.github.io/posts/2617683d/</id>
-    <published>2020-09-11T15:17:52.000Z</published>
-    <updated>2021-04-25T07:09:09.216Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>例如，read 函数调用可以从指定的文件描述符读取一定数量的字节。read 函数不了解文件系统的类型，比如 ext3 或 NFS。它也不了解文件系统所在的存储媒体，比如 AT Attachment Packet Interface（ATAPI）磁盘、Serial-Attached SCSI（SAS）磁盘或 Serial Advanced Technology Attachment（SATA）磁盘。但是，当通过调用 read 函数读取一个文件时，数据会正常返回</p></blockquote><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><blockquote><p>一个存储设备上的数据和元数据进行组织的机制</p><hr><p>元数据（Metadata），又称中介数据、中继数据，为描述数据的数据（data about data），主要是描述数据属性（property）的信息，用来支持如指示存储位置、历史数据、资源查找、文件记录等功能</p></blockquote><h3 id="挂装"><a href="#挂装" class="headerlink" title="挂装"></a>挂装</h3><blockquote><p>在 Linux 中将一个文件系统与一个存储设备关联起来的过程称为挂装（mount）。使用 mount 命令将一个文件系统附着到当前文件系统层次结构中（根）</p></blockquote><h3 id="用户态（用户空间）与内核态"><a href="#用户态（用户空间）与内核态" class="headerlink" title="用户态（用户空间）与内核态"></a>用户态（用户空间）与内核态</h3><img src="/posts/2617683d/2020-09-11-23-41-28.png" width height="250"><blockquote><p><strong>VFS 是底层文件系统的主要接口。这个组件导出一组接口，然后将它们抽象到各个文件系统</strong>，各个文件系统的行为可能差异很大。有两个针对文件系统对象的缓存（inode 和 dentry）</p><p>每个文件系统实现（比如 ext2、JFS 等等）导出一组通用接口，供 VFS 使用</p></blockquote><h3 id="虚拟文件系统层"><a href="#虚拟文件系统层" class="headerlink" title="虚拟文件系统层"></a>虚拟文件系统层</h3><blockquote><p>内核保存当前支持的文件系统的列表，可以通过 /proc 文件系统在用户空间中查看这个列表</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/filesystems</span><br><span class="line">nodev   sysfs</span><br><span class="line">nodev   rootfs</span><br><span class="line">nodev   bdev</span><br><span class="line">nodev   proc</span><br><span class="line">nodev   tmpfs</span><br><span class="line">...</span><br></pre></td></tr></table></figure><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>分类原则</p><ul><li>可分享的/不可分享的</li><li>可变动的/不变的</li></ul><p>根目录</p><blockquote><p>根目录是整个系统最重要的一个目录，因为不但所有的目录都是由根目录衍生出来的， 同时根目录也与开机/还原/系统修复等动作有关。 由于系统开机时需要特定的开机软件、核心文件、开机所需程序、 函式库等等文件数据，若系统出现错误时，根目录也必须要包含有能够修复文件系统的程序才行。 因为根目录是这么的重要，所以在FHS的要求方面，他希望根目录不要放在非常大的分区， 因为越大的分区内你会放入越多的数据，如此一来根目录所在分区就可能会有较多发生错误的机会。</p></blockquote><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://www.ibm.com/developerworks/cn/linux/l-linux-filesystem/index.html">Linux 文件系统剖析</a></li><li><a href="https://www.cnblogs.com/fengdejiyixx/p/10822012.html">Linux中的文件和目录结构详解 - 记忆流年 - 博客园</a></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;例如，read 函数调用可以从指定的文件描述符读取一定数量的字节。read 函数不了解文件系统的类型，比如 ext3 或 NFS。它也不了解文件系统所在的存储媒体，比如 AT Attachment Packet Interface（ATAPI）磁盘、Serial-Attached SCSI（SAS）磁盘或 Serial Advanced Technology Attachment（SATA）磁盘。但是，当通过调用 read 函数读取一个文件时，数据会正常返回&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;h3 id=&quot;文件系统&quot;&gt;&lt;a href=&quot;#文件系统&quot; class=&quot;headerlink&quot; title=&quot;文件系统&quot;&gt;&lt;/a&gt;文件系统&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;一个存储设备上的数据和元数据进行组织的机制&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;元数据（Metadata），又称中介数据、中继数据，为描述数据的数据（data about data），主要是描述数据属性（property）的信息，用来支持如指示存储位置、历史数据、资源查找、文件记录等功能&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;挂装&quot;&gt;&lt;a href=&quot;#挂装&quot; class=&quot;headerlink&quot; title=&quot;挂装&quot;&gt;&lt;/a&gt;挂装&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;在 Linux 中将一个文件系统与一个存储设备关联起来的过程称为挂装（mount）。使用 mount 命令将一个文件系统附着到当前文件系统层次结构中（根）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;用户态（用户空间）与内核态&quot;&gt;&lt;a href=&quot;#用户态（用户空间）与内核态&quot; class=&quot;headerlink&quot; title=&quot;用户态（用户空间）与内核态&quot;&gt;&lt;/a&gt;用户态（用户空间）与内核态&lt;/h3&gt;&lt;img src=&quot;/posts/2617683d/2020-09-11-23-41-28.png&quot; width height=&quot;250&quot;&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;VFS 是底层文件系统的主要接口。这个组件导出一组接口，然后将它们抽象到各个文件系统&lt;/strong&gt;，各个文件系统的行为可能差异很大。有两个针对文件系统对象的缓存（inode 和 dentry）&lt;/p&gt;
-&lt;p&gt;每个文件系统实现（比如 ext2、JFS 等等）导出一组通用接口，供 VFS 使用&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;虚拟文件系统层&quot;&gt;&lt;a href=&quot;#虚拟文件系统层&quot; class=&quot;headerlink&quot; title=&quot;虚拟文件系统层&quot;&gt;&lt;/a&gt;虚拟文件系统层&lt;/h3&gt;</summary>
-    
-    
-    
-    <category term="Operating System" scheme="https://hejueyun.github.io/categories/Operating-System/"/>
-    
-    <category term="Linux" scheme="https://hejueyun.github.io/categories/Operating-System/Linux/"/>
-    
-    <category term="Notes" scheme="https://hejueyun.github.io/categories/Operating-System/Linux/Notes/"/>
-    
     
   </entry>
   
