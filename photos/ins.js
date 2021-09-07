@@ -125,7 +125,7 @@
 
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope>\
                 <a href="' + src + '" data-size="' + sizes + '" data-type="' + type + '" data-target="' + target + '">\
-                  <img class="reward-img" data-type="' + type + '" src="/photos/ins.j/' + minSrc +'" itemprop="thumbnail" onload="lzld(this)">\
+                  <img class="reward-img" data-type="' + type + '" src="./img/preloader.gif" data-original="/photos/ins.j/' + minSrc +'" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
             </figure>';
