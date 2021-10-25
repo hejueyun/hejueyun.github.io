@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hejueyun.github.io/photos/index.html</loc>
+    
+    <lastmod>2021-10-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hejueyun.github.io/posts/a3c08fa8/</loc>
     
     <lastmod>2021-10-25</lastmod>
@@ -11,7 +18,7 @@
   <url>
     <loc>https://hejueyun.github.io/posts/b0ab0f7f/</loc>
     
-    <lastmod>2021-10-22</lastmod>
+    <lastmod>2021-10-25</lastmod>
     
   </url>
   
@@ -1080,14 +1087,14 @@
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/posts/ad192219/</loc>
+    <loc>https://hejueyun.github.io/posts/a593fcba/</loc>
     
     <lastmod>2021-04-25</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/posts/a593fcba/</loc>
+    <loc>https://hejueyun.github.io/posts/ad192219/</loc>
     
     <lastmod>2021-04-25</lastmod>
     
@@ -1333,13 +1340,6 @@
   
   <url>
     <loc>https://hejueyun.github.io/categories/index.html</loc>
-    
-    <lastmod>2021-04-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hejueyun.github.io/photos/index.html</loc>
     
     <lastmod>2021-04-25</lastmod>
     
@@ -1707,14 +1707,14 @@
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/categories/Algorithm/Leetcode/</loc>
+    <loc>https://hejueyun.github.io/categories/Operating-System/Linux/Notes/</loc>
     <lastmod>2021-10-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/categories/Operating-System/Linux/Notes/</loc>
+    <loc>https://hejueyun.github.io/categories/Algorithm/Leetcode/</loc>
     <lastmod>2021-10-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
