@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css">/******/
+/******/
 (function (modules) { // webpackBootstrap
   /******/ // The module cache
   /******/
@@ -117,7 +117,7 @@
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
             var minSrc = './minins/' + data.link[i] + '.min.jpg';
-            var src = './ins/' + data.link[i];
+            var src = './ins.j/' + data.link[i];
             var type = 'images';
             var sizes = data.sizes[i];
             src += '.jpg';
