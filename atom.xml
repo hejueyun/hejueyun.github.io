@@ -6,7 +6,7 @@
   <link href="https://hejueyun.github.io/atom.xml" rel="self"/>
   
   <link href="https://hejueyun.github.io/"/>
-  <updated>2021-12-16T21:50:35.404Z</updated>
+  <updated>2021-12-20T23:14:18.711Z</updated>
   <id>https://hejueyun.github.io/</id>
   
   <author>
@@ -21,8 +21,51 @@
     <link href="https://hejueyun.github.io/posts/6eddbcac/"/>
     <id>https://hejueyun.github.io/posts/6eddbcac/</id>
     <published>2021-12-13T22:45:25.000Z</published>
-    <updated>2021-12-16T21:50:35.404Z</updated>
+    <updated>2021-12-20T23:14:18.711Z</updated>
     
+    <content type="html"><![CDATA[<h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><h3 id="Categories-of-wireless-networks"><a href="#Categories-of-wireless-networks" class="headerlink" title="Categories of wireless networks"></a>Categories of wireless networks</h3><ul><li>Wireless Personal Area Network (WPAN)<ul><li>Bluetooth</li></ul></li><li>Wireless Local Area Network (WLAN)（Wi-Fi）<ul><li>IEEE 802.11a/b/g/n</li></ul></li><li>Wireless Wide Area Network (WWAN)<ul><li>Mobile phone networks (5G/4G/3G/GPRS/CDMA)</li></ul></li></ul><h3 id="IEEE802-11-WLAN"><a href="#IEEE802-11-WLAN" class="headerlink" title="IEEE802.11 (WLAN)"></a>IEEE802.11 (WLAN)</h3><h4 id="Infrastructure-mode"><a href="#Infrastructure-mode" class="headerlink" title="Infrastructure mode"></a>Infrastructure mode</h4><ul><li>服务集（Service set）<blockquote><p>是无线局域网中的一个术语，用以描述802.11无线网络的构成单位（一组互相有联系的无线设备），使用服务集标识符（SSID）作为识别。可以分为独立基本服务集（IBSS）、基本服务集（BSS）和扩展服务集（ESS）三类</p></blockquote></li><li>BSS (Basic Service Set or cell)<ul><li>an AP (Access Point（接入点）, or base station（基站）) + wireless stations.</li></ul></li><li>ESS (Extended Service Set)<ul><li>two or more BSSes interconnected by a Distributed System (a cable, a wired network, or another WLAN).</li></ul></li><li><strong>All communications are via APs</strong></li><li>SSID：Service Set Identifier<ul><li>基本服务集标识符（BSSID），表示的是AP的数据链路层的<strong>MAC地址</strong></li><li>扩展服务集定标识符（ESSID），一个最长32字节区分大小写的字符串,表示<strong>无线网络的名称</strong></li></ul></li></ul><img loading="lazy" src="/posts/6eddbcac/SSID_ESS.svg" width="600px"><h4 id="Ad-hoc-mode-对等拓扑模式"><a href="#Ad-hoc-mode-对等拓扑模式" class="headerlink" title="Ad hoc mode(对等拓扑模式)"></a>Ad hoc mode(对等拓扑模式)</h4><p>也就是独立基本服务集（IBSS）</p><ul><li>Used when no pre-defined infrastructure – stations/clients <strong>communicate directly without any AP</strong></li></ul><img loading="lazy" src="/posts/6eddbcac/1.png" width="500px"><h3 id="Security-threats"><a href="#Security-threats" class="headerlink" title="Security threats"></a>Security threats</h3><blockquote><p>WLANs use radio signal, making them more vulnerable to both passive and active attacks than their wired counterparts</p></blockquote><ul><li>Monitor or eavesdrop channels</li><li>Impersonate a legitimate AP</li><li>Man-in-the-middle</li><li>Denial of Service (DoS) attack</li></ul><h2 id="Original-802-11-Security"><a href="#Original-802-11-Security" class="headerlink" title="Original 802.11 Security"></a>Original 802.11 Security</h2><h3 id="Wired-Equivalent-Privacy-WEP"><a href="#Wired-Equivalent-Privacy-WEP" class="headerlink" title="Wired Equivalent Privacy (WEP)"></a>Wired Equivalent Privacy (WEP)</h3><p>有线等效加密</p><ul><li>The first WLAN security specification</li><li>又称无线加密协议（Wireless Encryption Protocol）</li><li>标准的64比特WEP使用40比特的钥匙接上24位的初向量（initialization vector，IV）成为RC4用的钥匙</li><li>2003年被淘汰<blockquote><p>因为RC4是流加密的一种，同一个钥匙绝不能使用二次，所以使用（虽然是用明文发送的）IV的目的就是要避免重复；然而24位的IV并没有长到足以担保在忙碌的网络上不会重复，而且IV的使用方式也使其可能遭受到关连式钥匙攻击。</p></blockquote></li></ul><h3 id="Station-to-AP-Authentication"><a href="#Station-to-AP-Authentication" class="headerlink" title="Station-to-AP Authentication"></a>Station-to-AP Authentication</h3><p>Open System Authentication (Using Service Set Identifier (SSID))</p><ul><li>Each client can connect to AP by just supplying the correct SSID</li></ul><img loading="lazy" src="/posts/6eddbcac/2.png" width="500px"><p>PSK (pre-shared/WEP key) Authentication（预分享密钥认证）</p><ol><li>Client requests association with AP (Association Request【**关联请求(帧)**】)</li><li>AP returns a Challenge, n, a random number, also called <strong>nonce</strong>.</li><li>Client encrypts n using the <strong>pre-set WEP key (WKey)</strong> and sends it back</li><li>AP compares decrypted challenge with transmitted one to accept/reject<blockquote><p>Client is accepted if <code>&#123;n xor RC4(WKey)&#125; xor RC4(WKey’)=n’</code>; where <code>WKey’</code> is <code>AP’</code>s copy of the WEP key; <code>n’</code> is <code>AP’</code>s copy of the challenge</p></blockquote></li><li>The authN is vulnerable to interception and replay attacks, provided <strong>WKey</strong> is reused<ol><li>lack of key management</li></ol></li></ol><p>MAC Address Filtering</p><ul><li>Each AP maintains a list of MAC addresses that are allowed to connect to it</li><li>MAC address authentication was not part of the 802.11 standard, but many vendors, e.g. Cisco, used it to augment the shared key authN.</li></ul><img loading="lazy" src="/posts/6eddbcac/3.png" width="500px"><h3 id="Confidentiality-and-integrity"><a href="#Confidentiality-and-integrity" class="headerlink" title="Confidentiality and integrity"></a>Confidentiality and integrity</h3><ul><li>WEP also provides confidentiality and integrity protections of data<br>streams sent between a wireless station/client and AP.<ul><li>Confidentiality is provided by using RC4 based stream cipher (plaintext XORed with keystream from RC4)</li><li>Integrity is provided by using Integrity Check Value (ICV) (CRC-32, which is a 32-bit Cyclic Redundancy Check value).</li></ul></li><li>WEP Encryption<ul><li><code>C=M xor RC4(IV||WKey)</code>，<code>M=Plaintext||ICV</code></li></ul></li><li>Decryption<ul><li><code>C xor RC4(IV||WKey) = M</code></li><li>Verifying ICV<ul><li>Compute fresh ICV’ based on M received and compare</li></ul></li></ul></li></ul><p><strong>Weaknesses</strong></p><ul><li>No key establishment/distribution mechanism</li><li>Use WKey (master and static key) directly<blockquote><p>From security point of view, the use of master keys should be minimised, <strong>i.e. they should only be used to generate other temporary keys</strong></p></blockquote></li><li>Small key size<ul><li>WKey is a 40-bit or 104-bit value; easier to crack(破解) by brute force</li></ul></li><li>Short IV<ul><li>Security of stream ciphers relies on <strong>never repeating keystream</strong></li><li>Input for generating keystream is (IV||WKey), where WKey is static and shared among stations and IV space is small</li></ul></li><li>Vulnerable to passive attacks<ul><li>Attacker collects traffic on the channel, say C1 and C2.</li><li>If these two messages are generated <strong>using the same key and same IV</strong>, then as <code>C1=(M1xor RC4(IV||WKey))</code> and <code>C2=(M2 xor RC4(IV|| WKey))</code>, <code>C1 xor C2 = (M1 xor M2)</code>.</li><li>Whenever a byte in (M1xor M2) is zero, M1 and M2 have the same content/value.(i.e. white space)</li></ul></li><li>Vulnerable to active attacks<ul><li>If attacker knows a plaintext and ciphertext pair, {C, M}<ul><li><strong>Keystream</strong> for IV values are known</li><li>Attacker can create correctly encrypted messages.</li></ul></li></ul></li><li>Weak ICV algorithm<ul><li>CRC-32 is linear in xor</li><li>Integrity protection for <strong>source/destination addresses</strong> is not provided</li></ul></li><li>No anti-replay protection</li><li>One-way authentication only</li></ul><blockquote><p><strong>WEP has failed in three security goals – station authentication, data confidentiality and integrity</strong></p></blockquote><h2 id="其他参考"><a href="#其他参考" class="headerlink" title="其他参考"></a>其他参考</h2><ul><li>实验:无线网络嗅探基础</li><li>Scapy扫描及隐藏SSID扫描</li><li>实验：WPA/WPA2 PSK破解</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;background&quot;&gt;&lt;a href=&quot;#background&quot; class=&quot;headerlink&quot; title=&quot;background&quot;&gt;&lt;/a&gt;background&lt;/h2&gt;&lt;h3 id=&quot;Categories-of-wireless-networks&quot;&gt;&lt;a href=&quot;#Categories-of-wireless-networks&quot; class=&quot;headerlink&quot; title=&quot;Categories of wireless networks&quot;&gt;&lt;/a&gt;Categories of wireless networks&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Wireless Personal Area Network (WPAN)&lt;ul&gt;
+&lt;li&gt;Bluetooth&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Wireless Local Area Network (WLAN)（Wi-Fi）&lt;ul&gt;
+&lt;li&gt;IEEE 802.11a/b/g/n&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Wireless Wide Area Network (WWAN)&lt;ul&gt;
+&lt;li&gt;Mobile phone networks (5G/4G/3G/GPRS/CDMA)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;IEEE802-11-WLAN&quot;&gt;&lt;a href=&quot;#IEEE802-11-WLAN&quot; class=&quot;headerlink&quot; title=&quot;IEEE802.11 (WLAN)&quot;&gt;&lt;/a&gt;IEEE802.11 (WLAN)&lt;/h3&gt;&lt;h4 id=&quot;Infrastructure-mode&quot;&gt;&lt;a href=&quot;#Infrastructure-mode&quot; class=&quot;headerlink&quot; title=&quot;Infrastructure mode&quot;&gt;&lt;/a&gt;Infrastructure mode&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;服务集（Service set）&lt;blockquote&gt;
+&lt;p&gt;是无线局域网中的一个术语，用以描述802.11无线网络的构成单位（一组互相有联系的无线设备），使用服务集标识符（SSID）作为识别。可以分为独立基本服务集（IBSS）、基本服务集（BSS）和扩展服务集（ESS）三类&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;BSS (Basic Service Set or cell)&lt;ul&gt;
+&lt;li&gt;an AP (Access Point（接入点）, or base station（基站）) + wireless stations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ESS (Extended Service Set)&lt;ul&gt;
+&lt;li&gt;two or more BSSes interconnected by a Distributed System (a cable, a wired network, or another WLAN).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;All communications are via APs&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;SSID：Service Set Identifier&lt;ul&gt;
+&lt;li&gt;基本服务集标识符（BSSID），表示的是AP的数据链路层的&lt;strong&gt;MAC地址&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;扩展服务集定标识符（ESSID），一个最长32字节区分大小写的字符串,表示&lt;strong&gt;无线网络的名称&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img loading=&quot;lazy&quot; src=&quot;/posts/6eddbcac/SSID_ESS.svg&quot; width=&quot;600px&quot;&gt;
+
+&lt;h4 id=&quot;Ad-hoc-mode-对等拓扑模式&quot;&gt;&lt;a href=&quot;#Ad-hoc-mode-对等拓扑模式&quot; class=&quot;headerlink&quot; title=&quot;Ad hoc mode(对等拓扑模式)&quot;&gt;&lt;/a&gt;Ad hoc mode(对等拓扑模式)&lt;/h4&gt;&lt;p&gt;也就是独立基本服务集（IBSS）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Used when no pre-defined infrastructure – stations/clients &lt;strong&gt;communicate directly without any AP&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
