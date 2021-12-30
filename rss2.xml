@@ -97,7 +97,7 @@
       <description>
 
 	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;./Secure_Data&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
+    &lt;embed src=&quot;./1.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
 	&lt;/div&gt;
 
 
@@ -105,7 +105,7 @@
       
       
       
-      <content:encoded><![CDATA[<div class="row">    <embed src="./Secure_Data" width="100%" height="550" type="application/pdf"></div>]]></content:encoded>
+      <content:encoded><![CDATA[<div class="row">    <embed src="./1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content:encoded>
       
       
       <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
