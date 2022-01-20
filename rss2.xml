@@ -15,7 +15,7 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 20 Jan 2022 00:03:18 GMT</pubDate>
+    <pubDate>Thu, 20 Jan 2022 14:52:34 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -255,12 +255,78 @@
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
-&lt;h3 id=&quot;symmetric-algorithm&quot;&gt;&lt;a href=&quot;#symmetric-algorithm&quot; class=&quot;headerlink&quot; title=&quot;symmetric algorithm&quot;&gt;&lt;/a&gt;symmetric algorithm&lt;/h3&gt;&lt;p&gt;des 3des aes rc4&lt;/p&gt;
+&lt;h3 id=&quot;symmetric-algorithm&quot;&gt;&lt;a href=&quot;#symmetric-algorithm&quot; class=&quot;headerlink&quot; title=&quot;symmetric algorithm&quot;&gt;&lt;/a&gt;symmetric algorithm&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;DES&lt;/th&gt;
+&lt;th&gt;AES&lt;/th&gt;
+&lt;th&gt;3DES&lt;/th&gt;
+&lt;th&gt;RC4&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;Basic&lt;/td&gt;
+&lt;td&gt;In DES the data block is divided into &lt;strong&gt;two halves&lt;/strong&gt;.&lt;/td&gt;
+&lt;td&gt;In AES the entire data block is processed &lt;strong&gt;as a single matrix&lt;/strong&gt;.&lt;/td&gt;
+&lt;td&gt;EEE/EDE&lt;/td&gt;
+&lt;td&gt;RC4生成一个伪随机的比特流（一个密钥流）。这些比特流可以通过与明文比特&lt;strong&gt;异或&lt;/strong&gt;来进行加密&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Principle&lt;/td&gt;
+&lt;td&gt;DES work on &lt;strong&gt;Feistel&lt;/strong&gt; Cipher structure.&lt;/td&gt;
+&lt;td&gt;AES works on &lt;strong&gt;Substitution and Permutation&lt;/strong&gt; Principle.&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;PRNG&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Plaintext&lt;/td&gt;
+&lt;td&gt;明文按64位进行分组&lt;/td&gt;
+&lt;td&gt;Plaintext can be of 128,192, or 256 bits&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;以每一个字节为单位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Key size&lt;/td&gt;
+&lt;td&gt;密钥长64位，有效密钥长度56（第8、16、24、32、40、48、56、64位是校验位， 使得每个密钥都有奇数个1&lt;/td&gt;
+&lt;td&gt;密钥长度则可以是128，192或256比特&lt;/td&gt;
+&lt;td&gt;3个独立密钥的3DES（密钥选项1）的有效密钥长度为&lt;strong&gt;168&lt;/strong&gt;位（56x3），但由于中途相遇攻击，它的有效安全性仅为112位&lt;/td&gt;
+&lt;td&gt;40–2048 bits&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Rounds&lt;/td&gt;
+&lt;td&gt;16 rounds&lt;/td&gt;
+&lt;td&gt;10 rounds for 128-bit algo&lt;br&gt;&lt;br&gt;12 rounds for 192-bit algo&lt;br&gt;&lt;br&gt;14 rounds for 256-bit algo&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Rounds Names&lt;/td&gt;
+&lt;td&gt;Expansion Permutation, Xor, S-box, P-box, Xor and Swap.&lt;/td&gt;
+&lt;td&gt;Subbytes, Shiftrows, Mix columns, Addroundkeys.&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Security&lt;/td&gt;
+&lt;td&gt;DES has a smaller key which is less secure.&lt;/td&gt;
+&lt;td&gt;AES has large secret key comparatively hence, more secure.&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Speed&lt;/td&gt;
+&lt;td&gt;DES is comparatively slower.&lt;/td&gt;
+&lt;td&gt;AES is faster.&lt;/td&gt;
+&lt;td&gt;慢中慢&lt;/td&gt;
+&lt;td&gt;7 cycles per byte on original Pentium&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
 &lt;h3 id=&quot;assymetric-algorithm&quot;&gt;&lt;a href=&quot;#assymetric-algorithm&quot; class=&quot;headerlink&quot; title=&quot;assymetric algorithm&quot;&gt;&lt;/a&gt;assymetric algorithm&lt;/h3&gt;&lt;h3 id=&quot;hash-funtion&quot;&gt;&lt;a href=&quot;#hash-funtion&quot; class=&quot;headerlink&quot; title=&quot;hash funtion&quot;&gt;&lt;/a&gt;hash funtion&lt;/h3&gt;&lt;h3 id=&quot;digital-signature&quot;&gt;&lt;a href=&quot;#digital-signature&quot; class=&quot;headerlink&quot; title=&quot;digital signature&quot;&gt;&lt;/a&gt;digital signature&lt;/h3&gt;&lt;h3 id=&quot;key-distribution&quot;&gt;&lt;a href=&quot;#key-distribution&quot; class=&quot;headerlink&quot; title=&quot;key distribution&quot;&gt;&lt;/a&gt;key distribution&lt;/h3&gt;&lt;h3 id=&quot;math&quot;&gt;&lt;a href=&quot;#math&quot; class=&quot;headerlink&quot; title=&quot;math&quot;&gt;&lt;/a&gt;math&lt;/h3&gt;</description>
       
       
       
-      <content:encoded><![CDATA[<h3 id="mode-of-operation"><a href="#mode-of-operation" class="headerlink" title="mode of operation"></a>mode of operation</h3><table><thead><tr><th></th><th></th><th></th><th>Workflow</th><th>Advantages</th><th>Limitations</th></tr></thead><tbody><tr><td>ECB</td><td>Electronic Codebook</td><td>电码本</td><td>$C_i=E_k(M_i)$</td><td>简单、主要用于少量分组的传输。<strong>没有明密文错误传播</strong></td><td>当明文分组重复时，密文也重复，易实现<strong>统计分析</strong>攻击</td></tr><tr><td>CBC</td><td>Cipher block chaining</td><td>密文分组链接</td><td>$C_i=E_k(M_i \bigoplus{C_{i-1}})$ $C_0=IV$</td><td>CBC没有明文错误传播，密文错误传播小</td><td>需要初始化和保护IV（原因），前面的分组会对后面的产生影响</td></tr><tr><td>CFB</td><td>Ciphertex feedback</td><td>密文反馈</td><td>$C_i=M_i \bigoplus{E_k(C_{i-1}})$ $C_0=IV$</td><td>可作为随机数生成器</td><td>在错误发生后，错误会在几个区块内传播（但不是无限期地传播）。</td></tr><tr><td>OFB</td><td>Output feedback</td><td>输出反馈</td><td>$O_i=E_k(O_{i-1})$ $C_i=M_i\bigoplus O_{i-1}$ $O_0=IV$</td><td>可作为随机数生成器，密文1bit错误只会导致对应的1bit出错</td><td>接收者和发送者必须保持同步</td></tr><tr><td>CTR</td><td>Galois/Counter</td><td>计数器</td><td>$O_i=E_k(i)$ $C_i=M_i\bigoplus O_{i-1}$</td><td>速度快</td><td>对每一分组必须用不同的$K$和计数$i$</td></tr><tr><td>AES-XTS</td><td>-</td><td>-</td><td>$T$ is tweak, $H$ is a hash function $C=H(T)\bigoplus{E(K,H(T)\bigoplus{M})}$</td><td>高效</td><td></td></tr></tbody></table><h3 id="symmetric-algorithm"><a href="#symmetric-algorithm" class="headerlink" title="symmetric algorithm"></a>symmetric algorithm</h3><p>des 3des aes rc4</p><h3 id="assymetric-algorithm"><a href="#assymetric-algorithm" class="headerlink" title="assymetric algorithm"></a>assymetric algorithm</h3><h3 id="hash-funtion"><a href="#hash-funtion" class="headerlink" title="hash funtion"></a>hash funtion</h3><h3 id="digital-signature"><a href="#digital-signature" class="headerlink" title="digital signature"></a>digital signature</h3><h3 id="key-distribution"><a href="#key-distribution" class="headerlink" title="key distribution"></a>key distribution</h3><h3 id="math"><a href="#math" class="headerlink" title="math"></a>math</h3>]]></content:encoded>
+      <content:encoded><![CDATA[<h3 id="mode-of-operation"><a href="#mode-of-operation" class="headerlink" title="mode of operation"></a>mode of operation</h3><table><thead><tr><th></th><th></th><th></th><th>Workflow</th><th>Advantages</th><th>Limitations</th></tr></thead><tbody><tr><td>ECB</td><td>Electronic Codebook</td><td>电码本</td><td>$C_i=E_k(M_i)$</td><td>简单、主要用于少量分组的传输。<strong>没有明密文错误传播</strong></td><td>当明文分组重复时，密文也重复，易实现<strong>统计分析</strong>攻击</td></tr><tr><td>CBC</td><td>Cipher block chaining</td><td>密文分组链接</td><td>$C_i=E_k(M_i \bigoplus{C_{i-1}})$ $C_0=IV$</td><td>CBC没有明文错误传播，密文错误传播小</td><td>需要初始化和保护IV（原因），前面的分组会对后面的产生影响</td></tr><tr><td>CFB</td><td>Ciphertex feedback</td><td>密文反馈</td><td>$C_i=M_i \bigoplus{E_k(C_{i-1}})$ $C_0=IV$</td><td>可作为随机数生成器</td><td>在错误发生后，错误会在几个区块内传播（但不是无限期地传播）。</td></tr><tr><td>OFB</td><td>Output feedback</td><td>输出反馈</td><td>$O_i=E_k(O_{i-1})$ $C_i=M_i\bigoplus O_{i-1}$ $O_0=IV$</td><td>可作为随机数生成器，密文1bit错误只会导致对应的1bit出错</td><td>接收者和发送者必须保持同步</td></tr><tr><td>CTR</td><td>Galois/Counter</td><td>计数器</td><td>$O_i=E_k(i)$ $C_i=M_i\bigoplus O_{i-1}$</td><td>速度快</td><td>对每一分组必须用不同的$K$和计数$i$</td></tr><tr><td>AES-XTS</td><td>-</td><td>-</td><td>$T$ is tweak, $H$ is a hash function $C=H(T)\bigoplus{E(K,H(T)\bigoplus{M})}$</td><td>高效</td><td></td></tr></tbody></table><h3 id="symmetric-algorithm"><a href="#symmetric-algorithm" class="headerlink" title="symmetric algorithm"></a>symmetric algorithm</h3><table><thead><tr><th></th><th>DES</th><th>AES</th><th>3DES</th><th>RC4</th></tr></thead><tbody><tr><td>Basic</td><td>In DES the data block is divided into <strong>two halves</strong>.</td><td>In AES the entire data block is processed <strong>as a single matrix</strong>.</td><td>EEE/EDE</td><td>RC4生成一个伪随机的比特流（一个密钥流）。这些比特流可以通过与明文比特<strong>异或</strong>来进行加密</td></tr><tr><td>Principle</td><td>DES work on <strong>Feistel</strong> Cipher structure.</td><td>AES works on <strong>Substitution and Permutation</strong> Principle.</td><td>-</td><td>PRNG</td></tr><tr><td>Plaintext</td><td>明文按64位进行分组</td><td>Plaintext can be of 128,192, or 256 bits</td><td>-</td><td>以每一个字节为单位</td></tr><tr><td>Key size</td><td>密钥长64位，有效密钥长度56（第8、16、24、32、40、48、56、64位是校验位， 使得每个密钥都有奇数个1</td><td>密钥长度则可以是128，192或256比特</td><td>3个独立密钥的3DES（密钥选项1）的有效密钥长度为<strong>168</strong>位（56x3），但由于中途相遇攻击，它的有效安全性仅为112位</td><td>40–2048 bits</td></tr><tr><td>Rounds</td><td>16 rounds</td><td>10 rounds for 128-bit algo<br><br>12 rounds for 192-bit algo<br><br>14 rounds for 256-bit algo</td><td>-</td><td>1</td></tr><tr><td>Rounds Names</td><td>Expansion Permutation, Xor, S-box, P-box, Xor and Swap.</td><td>Subbytes, Shiftrows, Mix columns, Addroundkeys.</td><td>-</td><td>-</td></tr><tr><td>Security</td><td>DES has a smaller key which is less secure.</td><td>AES has large secret key comparatively hence, more secure.</td><td>-</td><td>-</td></tr><tr><td>Speed</td><td>DES is comparatively slower.</td><td>AES is faster.</td><td>慢中慢</td><td>7 cycles per byte on original Pentium</td></tr></tbody></table><h3 id="assymetric-algorithm"><a href="#assymetric-algorithm" class="headerlink" title="assymetric algorithm"></a>assymetric algorithm</h3><h3 id="hash-funtion"><a href="#hash-funtion" class="headerlink" title="hash funtion"></a>hash funtion</h3><h3 id="digital-signature"><a href="#digital-signature" class="headerlink" title="digital signature"></a>digital signature</h3><h3 id="key-distribution"><a href="#key-distribution" class="headerlink" title="key distribution"></a>key distribution</h3><h3 id="math"><a href="#math" class="headerlink" title="math"></a>math</h3>]]></content:encoded>
       
       
       <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
