@@ -132,9 +132,9 @@
     <link href="https://hejueyun.github.io/posts/af185d1f/"/>
     <id>https://hejueyun.github.io/posts/af185d1f/</id>
     <published>2022-01-19T23:05:49.000Z</published>
-    <updated>2022-01-20T14:51:59.755Z</updated>
+    <updated>2022-01-21T00:01:05.365Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="sec-cyber-vs-infovcs-net"><a href="#sec-cyber-vs-infovcs-net" class="headerlink" title="sec: cyber vs infovcs net"></a>sec: cyber vs infovcs net</h2><p>cyber &gt;= info + net</p><ul><li>info: info c.i.a<ul><li>confidentiality</li><li>Integrity<ul><li>Auth</li></ul></li><li>Availablity</li></ul></li></ul><h3 id="approach-crypto"><a href="#approach-crypto" class="headerlink" title="approach: crypto"></a>approach: crypto</h3><ul><li>keyless<ul><li>hash</li><li>pseudorandom number generator<ul><li>? xor ?</li></ul></li></ul></li><li>single-key</li><li>two-key</li></ul><h3 id="net-sec"><a href="#net-sec" class="headerlink" title="net sec"></a>net sec</h3><ul><li>communication security<ul><li>protocol</li></ul></li><li>device security<ul><li>fw</li><li>ip</li><li>ip</li></ul></li></ul><h2 id="攻击的主要形式"><a href="#攻击的主要形式" class="headerlink" title="攻击的主要形式"></a>攻击的主要形式</h2><ul><li>拦截Interception<ul><li>中断(Interruption)</li></ul></li><li>传递大量”废纸”<ul><li>拒绝服务攻击Dos</li></ul></li><li>偷看<ul><li>窃听 Eavesdropping</li></ul></li><li>篡改/删节Tampering</li><li>伪装/冒充身份 Masquerade</li><li>复印后再次传递<ul><li>重放 Replay<ul><li>攻击信息实时性/真实性</li></ul></li></ul></li><li>否认发送/接收 deny</li><li>阻断访问式攻击denial-of-access attack<ul><li>勒索软件 ransomware (e.g. <strong>WannaCry</strong>)</li></ul></li></ul><hr><h3 id="Active-and-passive-attacks"><a href="#Active-and-passive-attacks" class="headerlink" title="Active and passive attacks"></a>Active and passive attacks</h3><table><thead><tr><th>Sr. No.</th><th>Key</th><th>Active Attack</th><th>Passive Attack</th></tr></thead><tbody><tr><td>1</td><td>Modification</td><td><strong>In Active Attack, information is modified.</strong></td><td><strong>In Passive Attack, information remain unchanged.</strong></td></tr><tr><td>2</td><td>Dangerous For</td><td>Active Attack is dangerous for Integrity as well as Availability.</td><td>Passive Attack is dangerous for Confidentiality.</td></tr><tr><td>3</td><td>Attention</td><td>Attention is to be paid on detection.</td><td>Attention is to be paid on prevention.</td></tr><tr><td>4</td><td>Impact on System</td><td>In Active Attack, system is damaged.</td><td>In Passive Attack, system has no impact.</td></tr><tr><td>5</td><td>Victim</td><td>Victim gets informed in active attack.</td><td>Victim does not get informed in passive attack.</td></tr><tr><td>6</td><td>System Resources</td><td>System Resources can be changed in active attack.</td><td>System Resources are not changed in passive attack.</td></tr><tr><td>7</td><td>Property</td><td>integrity &amp;&amp; availability</td><td>confidentiality</td></tr></tbody></table><ul><li>被动攻击<blockquote><p>在未经用户同意和认可的情况下，将信息或数据文件泄露给系统攻击者，<strong>但不对数据信息做任何修改</strong>。威胁信息<strong>机密性</strong>。</p></blockquote></li><li>主动攻击<blockquote><p>旨在篡改系统信息、改变系统状态等，威胁信息的<strong>可用性和真实性</strong>。</p></blockquote></li></ul><h3 id="Security-Services"><a href="#Security-Services" class="headerlink" title="Security Services"></a>Security Services</h3><ol><li>Authentication</li><li>Access Control</li><li>Data Confidentiality</li><li>Data Integrity</li><li>Nonrepudiation</li><li>Available Service</li></ol><h2 id="信安基本属性"><a href="#信安基本属性" class="headerlink" title="信安基本属性"></a>信安基本属性</h2><img loading="lazy" src="/posts/af185d1f/2020-08-06-15-54-55.png" width height="250"><ul><li>机密性(<strong>Confidentiality</strong>)<ul><li>通过<strong>访问控制</strong>阻止非授权用户获得机密信息</li><li>通过<strong>加密变换</strong>阻止非授权用户获知信息内容</li></ul></li><li>完整性(<strong>Integrity</strong>)<ul><li>完整性是指信息未经授权不能进行篡改的特征，维护信息的一致性</li><li>通过<strong>访问控制</strong>阻止篡改行为</li><li>通过<strong>消息摘要算法</strong>检验信息是否被篡改</li></ul></li><li>可用性(<strong>Availablity</strong>)</li><li>认证性(<strong>Authentication</strong>)<ul><li>确保一个消息的来源或消息本身被正确地标识，同时确保该标识没有被伪造</li><li>认证分为<strong>消息认证</strong>和<strong>实体认证</strong></li></ul></li><li>不可否认性(Non-Repudiation)<ul><li>不可否认性是指能保障用户无法在事后否认曾经对信息进行的生成、签发、接收等行为</li><li>通过<strong>数字签名</strong>提供抗否认服务</li></ul></li></ul><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">• plaintext - oriigiinall message</span><br><span class="line">• ciphertext - coded message</span><br><span class="line">• cipher 密码算法- allgoritthm for transfformiing pllaiinttextt tto ciipherttextt</span><br><span class="line">• key - inffo used in ciipher known onlly to sender//receiiver</span><br><span class="line">• encipher (encrypt) - converttiing pllaiinttextt tto ciipherttextt</span><br><span class="line">• decipher (decrypt) - recoveriing ciipherttextt ffrom pllaiinttextt</span><br><span class="line">• cryptography - study off encryption principles//methods</span><br><span class="line">• cryptanalysis (codebreaking) 密码分析(破译)- sttudy off priinciiplles//</span><br><span class="line">metthods off deciipheriing ciipherttextt wiithout knowiing key</span><br><span class="line">• cryptology - ffiielld off botth crypttography and crypttanallysiis</span><br></pre></td></tr></table></figure><h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><img loading="lazy" src="/posts/af185d1f/2020-08-06-16-38-17.png" width height="250"><ul><li>图片有误</li></ul><h3 id="绝对安全-vs-相对安全"><a href="#绝对安全-vs-相对安全" class="headerlink" title="绝对安全 vs 相对安全"></a>绝对安全 vs 相对安全</h3><ul><li>unconditional security<ul><li>管有多少计算能力或时间可以使用都无法破解密码</li></ul></li><li>computational security<ul><li>考虑到有限的计算资源，一定时间内无法被破译</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="sec-cyber-vs-infovcs-net"><a href="#sec-cyber-vs-infovcs-net" class="headerlink" title="sec: cyber vs infovcs net"></a>sec: cyber vs infovcs net</h2><p>cyber &gt;= info + net</p><ul><li>info: info c.i.a<ul><li>confidentiality</li><li>Integrity<ul><li>Auth</li></ul></li><li>Availablity</li></ul></li></ul><h2 id="攻击的主要形式"><a href="#攻击的主要形式" class="headerlink" title="攻击的主要形式"></a>攻击的主要形式</h2><ul><li>拦截Interception<ul><li>中断(Interruption)</li></ul></li><li>传递大量”废纸”<ul><li>拒绝服务攻击Dos</li></ul></li><li>偷看<ul><li>窃听 Eavesdropping</li></ul></li><li>篡改/删节Tampering</li><li>伪装/冒充身份 Masquerade</li><li>复印后再次传递<ul><li>重放 Replay<ul><li>攻击信息实时性/真实性</li></ul></li></ul></li><li>否认发送/接收 deny</li><li>阻断访问式攻击denial-of-access attack<ul><li>勒索软件 ransomware (e.g. <strong>WannaCry</strong>)</li></ul></li></ul><hr><h3 id="Active-and-passive-attacks"><a href="#Active-and-passive-attacks" class="headerlink" title="Active and passive attacks"></a>Active and passive attacks</h3><table><thead><tr><th>Sr. No.</th><th>Key</th><th>Active Attack</th><th>Passive Attack</th></tr></thead><tbody><tr><td>1</td><td>Modification</td><td><strong>In Active Attack, information is modified.</strong></td><td><strong>In Passive Attack, information remain unchanged.</strong></td></tr><tr><td>2</td><td>Dangerous For</td><td>Active Attack is dangerous for Integrity as well as Availability.</td><td>Passive Attack is dangerous for Confidentiality.</td></tr><tr><td>3</td><td>Attention</td><td>Attention is to be paid on detection.</td><td>Attention is to be paid on prevention.</td></tr><tr><td>4</td><td>Impact on System</td><td>In Active Attack, system is damaged.</td><td>In Passive Attack, system has no impact.</td></tr><tr><td>5</td><td>Victim</td><td>Victim gets informed in active attack.</td><td>Victim does not get informed in passive attack.</td></tr><tr><td>6</td><td>System Resources</td><td>System Resources can be changed in active attack.</td><td>System Resources are not changed in passive attack.</td></tr><tr><td>7</td><td>Property</td><td>integrity &amp;&amp; availability</td><td>confidentiality</td></tr></tbody></table><ul><li>被动攻击<blockquote><p>在未经用户同意和认可的情况下，将信息或数据文件泄露给系统攻击者，<strong>但不对数据信息做任何修改</strong>。威胁信息<strong>机密性</strong>。</p></blockquote></li><li>主动攻击<blockquote><p>旨在篡改系统信息、改变系统状态等，威胁信息的<strong>可用性和真实性</strong>。</p></blockquote></li></ul><h3 id="Security-Services"><a href="#Security-Services" class="headerlink" title="Security Services"></a>Security Services</h3><ol><li>Authentication</li><li>Access Control</li><li>Data Confidentiality</li><li>Data Integrity</li><li>Nonrepudiation</li><li>Available Service</li></ol><h2 id="信安基本属性"><a href="#信安基本属性" class="headerlink" title="信安基本属性"></a>信安基本属性</h2><img loading="lazy" src="/posts/af185d1f/2020-08-06-15-54-55.png" width height="250"><ul><li>机密性(<strong>Confidentiality</strong>)<ul><li>通过<strong>访问控制</strong>阻止非授权用户获得机密信息</li><li>通过<strong>加密变换</strong>阻止非授权用户获知信息内容</li></ul></li><li>完整性(<strong>Integrity</strong>)<ul><li>完整性是指信息未经授权不能进行篡改的特征，维护信息的一致性</li><li>通过<strong>访问控制</strong>阻止篡改行为</li><li>通过<strong>消息摘要算法</strong>检验信息是否被篡改</li></ul></li><li>可用性(<strong>Availablity</strong>)</li><li>认证性(<strong>Authentication</strong>)<ul><li>确保一个消息的来源或消息本身被正确地标识，同时确保该标识没有被伪造</li><li>认证分为<strong>消息认证</strong>和<strong>实体认证</strong></li></ul></li><li>不可否认性(Non-Repudiation)<ul><li>不可否认性是指能保障用户无法在事后否认曾经对信息进行的生成、签发、接收等行为</li><li>通过<strong>数字签名</strong>提供抗否认服务</li></ul></li></ul><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">• plaintext - oriigiinall message</span><br><span class="line">• ciphertext - coded message</span><br><span class="line">• cipher 密码算法- allgoritthm for transfformiing pllaiinttextt tto ciipherttextt</span><br><span class="line">• key - inffo used in ciipher known onlly to sender//receiiver</span><br><span class="line">• encipher (encrypt) - converttiing pllaiinttextt tto ciipherttextt</span><br><span class="line">• decipher (decrypt) - recoveriing ciipherttextt ffrom pllaiinttextt</span><br><span class="line">• cryptography - study off encryption principles//methods</span><br><span class="line">• cryptanalysis (codebreaking) 密码分析(破译)- sttudy off priinciiplles//</span><br><span class="line">metthods off deciipheriing ciipherttextt wiithout knowiing key</span><br><span class="line">• cryptology - ffiielld off botth crypttography and crypttanallysiis</span><br></pre></td></tr></table></figure><h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><img loading="lazy" src="/posts/af185d1f/2020-08-06-16-38-17.png" width height="250"><ul><li>图片有误</li></ul><h3 id="绝对安全-vs-相对安全"><a href="#绝对安全-vs-相对安全" class="headerlink" title="绝对安全 vs 相对安全"></a>绝对安全 vs 相对安全</h3><ul><li>unconditional security<ul><li>管有多少计算能力或时间可以使用都无法破解密码</li></ul></li><li>computational security<ul><li>考虑到有限的计算资源，一定时间内无法被破译</li></ul></li></ul>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;sec-cyber-vs-infovcs-net&quot;&gt;&lt;a href=&quot;#sec-cyber-vs-infovcs-net&quot; class=&quot;headerlink&quot; title=&quot;sec: cyber vs infovcs net&quot;&gt;&lt;/a&gt;sec: cyber vs infovcs net&lt;/h2&gt;&lt;p&gt;cyber &amp;gt;= info + net&lt;/p&gt;
@@ -146,30 +146,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Availablity&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;approach-crypto&quot;&gt;&lt;a href=&quot;#approach-crypto&quot; class=&quot;headerlink&quot; title=&quot;approach: crypto&quot;&gt;&lt;/a&gt;approach: crypto&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;keyless&lt;ul&gt;
-&lt;li&gt;hash&lt;/li&gt;
-&lt;li&gt;pseudorandom number generator&lt;ul&gt;
-&lt;li&gt;? xor ?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;single-key&lt;/li&gt;
-&lt;li&gt;two-key&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;net-sec&quot;&gt;&lt;a href=&quot;#net-sec&quot; class=&quot;headerlink&quot; title=&quot;net sec&quot;&gt;&lt;/a&gt;net sec&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;communication security&lt;ul&gt;
-&lt;li&gt;protocol&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;device security&lt;ul&gt;
-&lt;li&gt;fw&lt;/li&gt;
-&lt;li&gt;ip&lt;/li&gt;
-&lt;li&gt;ip&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -201,7 +177,70 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr&gt;</summary>
+&lt;hr&gt;
+&lt;h3 id=&quot;Active-and-passive-attacks&quot;&gt;&lt;a href=&quot;#Active-and-passive-attacks&quot; class=&quot;headerlink&quot; title=&quot;Active and passive attacks&quot;&gt;&lt;/a&gt;Active and passive attacks&lt;/h3&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Sr. No.&lt;/th&gt;
+&lt;th&gt;Key&lt;/th&gt;
+&lt;th&gt;Active Attack&lt;/th&gt;
+&lt;th&gt;Passive Attack&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Modification&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;In Active Attack, information is modified.&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;In Passive Attack, information remain unchanged.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Dangerous For&lt;/td&gt;
+&lt;td&gt;Active Attack is dangerous for Integrity as well as Availability.&lt;/td&gt;
+&lt;td&gt;Passive Attack is dangerous for Confidentiality.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Attention&lt;/td&gt;
+&lt;td&gt;Attention is to be paid on detection.&lt;/td&gt;
+&lt;td&gt;Attention is to be paid on prevention.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Impact on System&lt;/td&gt;
+&lt;td&gt;In Active Attack, system is damaged.&lt;/td&gt;
+&lt;td&gt;In Passive Attack, system has no impact.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Victim&lt;/td&gt;
+&lt;td&gt;Victim gets informed in active attack.&lt;/td&gt;
+&lt;td&gt;Victim does not get informed in passive attack.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;System Resources&lt;/td&gt;
+&lt;td&gt;System Resources can be changed in active attack.&lt;/td&gt;
+&lt;td&gt;System Resources are not changed in passive attack.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;Property&lt;/td&gt;
+&lt;td&gt;integrity &amp;amp;&amp;amp; availability&lt;/td&gt;
+&lt;td&gt;confidentiality&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;被动攻击&lt;blockquote&gt;
+&lt;p&gt;在未经用户同意和认可的情况下，将信息或数据文件泄露给系统攻击者，&lt;strong&gt;但不对数据信息做任何修改&lt;/strong&gt;。威胁信息&lt;strong&gt;机密性&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;主动攻击&lt;blockquote&gt;
+&lt;p&gt;旨在篡改系统信息、改变系统状态等，威胁信息的&lt;strong&gt;可用性和真实性&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Security-Services&quot;&gt;&lt;a href=&quot;#Security-Services&quot; class=&quot;headerlink&quot; title=&quot;Security Services&quot;&gt;&lt;/a&gt;Security Services&lt;/h3&gt;</summary>
     
     
     
@@ -219,9 +258,9 @@
     <link href="https://hejueyun.github.io/posts/f6b1e424/"/>
     <id>https://hejueyun.github.io/posts/f6b1e424/</id>
     <published>2022-01-19T19:13:56.000Z</published>
-    <updated>2022-01-20T18:21:57.525Z</updated>
+    <updated>2022-01-21T00:09:01.825Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="pseudorandom-number-generation"><a href="#pseudorandom-number-generation" class="headerlink" title="pseudorandom number generation"></a>pseudorandom number generation</h2><h3 id="随机数的作用"><a href="#随机数的作用" class="headerlink" title="随机数的作用"></a>随机数的作用</h3><ul><li>防止重放攻击</li><li>keystream for a one-time pad（一次性密码的密钥流）</li><li>public key generation 生成公钥</li></ul><h3 id="伪随机数和随机数区别"><a href="#伪随机数和随机数区别" class="headerlink" title="伪随机数和随机数区别"></a>伪随机数和随机数区别</h3><ul><li>deterministic algorithm</li><li>seed</li></ul><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><h4 id="1-Linear-Congruential-Generator-线性同余生成器"><a href="#1-Linear-Congruential-Generator-线性同余生成器" class="headerlink" title="1. Linear Congruential Generator 线性同余生成器"></a>1. Linear Congruential Generator 线性同余生成器</h4><ul><li>$x_{n+1}=(aX_n+c)\bmod{m}$</li></ul><p>特点</p><ul><li>存在周期</li><li>32bit计算</li></ul><h4 id="2-Blum-Blum-Shub-B-B-S-算法"><a href="#2-Blum-Blum-Shub-B-B-S-算法" class="headerlink" title="2. Blum Blum Shub (B.B.S.) 算法"></a>2. Blum Blum Shub (B.B.S.) 算法</h4><ul><li>$x_0=seed^2\bmod{n}$</li><li>$LOOP x_i == x_{i-i}^2\bmod{n}$</li><li>$b_i=x_i\bmod{2}$<ul><li>p,q is prime</li><li>p,q mod 3 == 4</li></ul></li></ul><p>特点</p><ul><li>based on public key algorithms</li><li>安全性基于分解n的困难性(同rsa)</li></ul><h4 id="3-Using-Block-Ciphers-as-PRNG-运用分组（对称）加密算法作为生成器"><a href="#3-Using-Block-Ciphers-as-PRNG-运用分组（对称）加密算法作为生成器" class="headerlink" title="3. Using Block Ciphers as PRNG 运用分组（对称）加密算法作为生成器"></a>3. Using Block Ciphers as PRNG 运用分组（对称）加密算法作为生成器</h4><ul><li>CRT</li><li>OFB</li><li>CBC-MAC</li></ul><p><strong>e.g. ANSI X9.17 PRGN</strong></p><ul><li>date and time(DTi)</li><li>uses 2-key (K1,K2) triple DES</li><li>feeds back between rounds (Vi)</li></ul><img loading="lazy" src="/posts/f6b1e424/1.png" width="500"><h4 id="4-运用非对称加密算法作为生成器"><a href="#4-运用非对称加密算法作为生成器" class="headerlink" title="4. 运用非对称加密算法作为生成器"></a>4. 运用非对称加密算法作为生成器</h4><ul><li>总体上慢，因此只应用于生成短伪随机数</li><li>PRNG based on RSA</li></ul><img loading="lazy" src="/posts/f6b1e424/5.png" width="500"><ul><li>PRNG based on ECC</li></ul><h4 id="5-运用哈希和MAC"><a href="#5-运用哈希和MAC" class="headerlink" title="5. 运用哈希和MAC"></a>5. 运用哈希和MAC</h4><ul><li>PRNG using a Hash Function</li></ul><img loading="lazy" src="/posts/f6b1e424/6.png" width="500"><ul><li>PRNG using a MAC</li></ul><img loading="lazy" src="/posts/f6b1e424/7.png" width="500"><h2 id="Stream-Ciphers"><a href="#Stream-Ciphers" class="headerlink" title="Stream Ciphers"></a>Stream Ciphers</h2><ul><li>是一种对称加密算法<ul><li>加密和解密双方使用相同伪随机加密数据流（pseudo-random stream）作为密钥</li></ul></li><li>该算法解决了对称加密完善保密性（<strong>perfect secrecy</strong>）的实际操作困难<ul><li>具有该性质的密文不应该透露任何明文的信息</li><li><strong>完善保密性要求密钥长度不短于明文长度</strong>，故而实际操作存在困难，改由较短数据流通过特定算法得到密钥流</li></ul></li></ul><h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><p>一种严重的错误即反复使用同一密码本对不同明文进行加密。攻击者可利用这种方式对密文进行解密。用p表示明文，C表示密文，k表示种子，PRG表示密钥流生成算法，则：</p><ul><li>C1 = p1 xor PRG (k)</li><li>C2 = p2 xor PRG (k)<br>攻击者监听到此段消息（包含两段相同密钥流加密的密文）后，即可利用：</li><li>C1 xor C2得到p1 xor p2<br>足量的冗余（此处表示p1，p2）则可破解明文。 </li></ul><h3 id="RC4"><a href="#RC4" class="headerlink" title="RC4"></a>RC4</h3><img loading="lazy" src="/posts/f6b1e424/2.jpg" width="550"><ul><li>Key-scheduling algorithm (KSA)<ul><li>临时向量 T</li><li>状态向量 S</li><li>密钥 K</li></ul></li></ul><img loading="lazy" src="/posts/f6b1e424/3.png" width="450"><ul><li>RC4 Encryption </li></ul><img loading="lazy" src="/posts/f6b1e424/4.png" width="450"><ul><li>注意直到最后一步$C_i$都只是在生成伪随机序列(<strong>密钥流</strong>)<ul><li>S的每个元素每256次迭代至少与另一个元素互换一次</li><li>PRGA(Pseudo-random generation algorithm)</li></ul></li><li>最后一步异或才算是C=M+K</li></ul><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul><li>result is very non-linear</li></ul><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul><li>these days, RC4 is known to be biased (unequal numbers of 0s and 1s in the keystream)</li><li>永远不应该重复使用密码本</li></ul><h2 id="true-random-numbers"><a href="#true-random-numbers" class="headerlink" title="true random numbers"></a>true random numbers</h2><ul><li>best source is natural randomness in real world 最好的来源是现实世界中的自然随机性</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="pseudorandom-number-generation"><a href="#pseudorandom-number-generation" class="headerlink" title="pseudorandom number generation"></a>pseudorandom number generation</h2><h3 id="随机数的作用"><a href="#随机数的作用" class="headerlink" title="随机数的作用"></a>随机数的作用</h3><ul><li>防止重放攻击</li><li>keystream for a one-time pad（一次性密码的密钥流）</li><li>public key generation 生成公钥</li></ul><h3 id="伪随机数和随机数区别"><a href="#伪随机数和随机数区别" class="headerlink" title="伪随机数和随机数区别"></a>伪随机数和随机数区别</h3><ul><li>deterministic algorithm</li><li>seed</li></ul><h3 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h3><h4 id="1-Linear-Congruential-Generator-线性同余生成器"><a href="#1-Linear-Congruential-Generator-线性同余生成器" class="headerlink" title="1. Linear Congruential Generator 线性同余生成器"></a>1. Linear Congruential Generator 线性同余生成器</h4><ul><li>$x_{n+1}=(aX_n+c)\bmod{m}$</li></ul><p>特点</p><ul><li>存在周期</li><li>32bit计算</li></ul><h4 id="2-Blum-Blum-Shub-B-B-S-算法"><a href="#2-Blum-Blum-Shub-B-B-S-算法" class="headerlink" title="2. Blum Blum Shub (B.B.S.) 算法"></a>2. Blum Blum Shub (B.B.S.) 算法</h4><ul><li>$x_0=seed^2\bmod{n}$</li><li>$LOOP x_i == x_{i-i}^2\bmod{n}$</li><li>$b_i=x_i\bmod{2}$<ul><li>p,q is prime</li><li>p,q mod 3 == 4</li></ul></li></ul><p>特点</p><ul><li>based on public key algorithms</li><li>安全性基于分解n的困难性(同rsa)</li></ul><h4 id="3-Using-Block-Ciphers-as-PRNG-运用分组（对称）加密算法作为生成器"><a href="#3-Using-Block-Ciphers-as-PRNG-运用分组（对称）加密算法作为生成器" class="headerlink" title="3. Using Block Ciphers as PRNG 运用分组（对称）加密算法作为生成器"></a>3. Using Block Ciphers as PRNG 运用分组（对称）加密算法作为生成器</h4><ul><li>CRT</li><li>OFB</li><li>CBC-MAC</li></ul><p><strong>e.g. ANSI X9.17 PRGN</strong></p><ul><li>date and time(DTi)</li><li>uses 2-key (K1,K2) triple DES</li><li>feeds back between rounds (Vi)</li></ul><img loading="lazy" src="/posts/f6b1e424/1.png" width="500"><h4 id="4-运用非对称加密算法作为生成器"><a href="#4-运用非对称加密算法作为生成器" class="headerlink" title="4. 运用非对称加密算法作为生成器"></a>4. 运用非对称加密算法作为生成器</h4><ul><li>总体上慢，因此只应用于生成短伪随机数</li><li>PRNG based on RSA</li></ul><img loading="lazy" src="/posts/f6b1e424/5.png" width="500"><ul><li>PRNG based on ECC</li></ul><h4 id="5-运用哈希和MAC"><a href="#5-运用哈希和MAC" class="headerlink" title="5. 运用哈希和MAC"></a>5. 运用哈希和MAC</h4><ul><li>PRNG using a Hash Function</li></ul><img loading="lazy" src="/posts/f6b1e424/6.png" width="500"><ul><li>PRNG using a MAC</li></ul><img loading="lazy" src="/posts/f6b1e424/7.png" width="500"><h2 id="Stream-Ciphers"><a href="#Stream-Ciphers" class="headerlink" title="Stream Ciphers"></a>Stream Ciphers</h2><ul><li>是一种对称加密算法<ul><li>加密和解密双方使用相同伪随机加密数据流（pseudo-random stream）作为密钥</li></ul></li><li>该算法解决了对称加密完善保密性（<strong>perfect secrecy</strong>）的实际操作困难<ul><li>具有该性质的密文不应该透露任何明文的信息</li><li><strong>完善保密性要求密钥长度不短于明文长度</strong>，故而实际操作存在困难，改由较短数据流通过特定算法得到密钥流</li></ul></li></ul><h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><p>一种严重的错误即反复使用同一密码本对不同明文进行加密。攻击者可利用这种方式对密文进行解密。用p表示明文，C表示密文，k表示种子，PRG表示密钥流生成算法，则：</p><ul><li>C1 = p1 xor PRG (k)</li><li>C2 = p2 xor PRG (k)<br>攻击者监听到此段消息（包含两段相同密钥流加密的密文）后，即可利用：</li><li>C1 xor C2得到p1 xor p2<br>足量的冗余（此处表示p1，p2）则可破解明文。 </li></ul><h3 id="RC4"><a href="#RC4" class="headerlink" title="RC4"></a>RC4</h3><img loading="lazy" src="/posts/f6b1e424/2.jpg" width="550"><ul><li>Key-scheduling algorithm (KSA)<ul><li>临时向量 T</li><li>状态向量 S</li><li>密钥 K</li></ul></li></ul><img loading="lazy" src="/posts/f6b1e424/3.png" width="450"><ul><li>RC4 Encryption </li></ul><img loading="lazy" src="/posts/f6b1e424/4.png" width="450"><ul><li>注意直到最后一步$C_i$之前，都只是在生成伪随机序列(<strong>密钥流</strong>)<ul><li>S的每个元素每256次迭代至少与另一个元素互换一次</li><li>PRGA(Pseudo-random generation algorithm)</li></ul></li><li>最后一步异或才算是C=M+K</li></ul><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul><li>result is very non-linear</li></ul><h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul><li>these days, RC4 is known to be biased (unequal numbers of 0s and 1s in the keystream)</li><li>永远不应该重复使用密码本</li></ul><h2 id="true-random-numbers"><a href="#true-random-numbers" class="headerlink" title="true random numbers"></a>true random numbers</h2><ul><li>best source is natural randomness in real world 最好的来源是现实世界中的自然随机性</li></ul>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;pseudorandom-number-generation&quot;&gt;&lt;a href=&quot;#pseudorandom-number-generation&quot; class=&quot;headerlink&quot; title=&quot;pseudorandom number generation&quot;&gt;&lt;/a&gt;pseudorandom number generation&lt;/h2&gt;&lt;h3 id=&quot;随机数的作用&quot;&gt;&lt;a href=&quot;#随机数的作用&quot; class=&quot;headerlink&quot; title=&quot;随机数的作用&quot;&gt;&lt;/a&gt;随机数的作用&lt;/h3&gt;&lt;ul&gt;
