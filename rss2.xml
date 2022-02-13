@@ -15,8 +15,64 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 09 Feb 2022 23:09:30 GMT</pubDate>
+    <pubDate>Sun, 13 Feb 2022 20:06:11 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>计算机数理逻辑-集合论</title>
+      <link>https://hejueyun.github.io/posts/301925f/</link>
+      <guid>https://hejueyun.github.io/posts/301925f/</guid>
+      <pubDate>Thu, 10 Feb 2022 23:11:11 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;Sets-集合&quot;&gt;&lt;a href=&quot;#Sets-集合&quot; class=&quot;headerlink&quot; title=&quot;Sets 集合&quot;&gt;&lt;/a&gt;Sets 集合&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;A set is composed of elements . a ∈ S denotes that a is an element of set S&lt;/li&gt;
+&lt;li&gt;The set with no elements is the empty set , denoted ∅.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Set-Operators-集合操作符&quot;&gt;&lt;a href=&quot;#Set-Operators-集合操作符&quot; class=&quot;headerlink&quot; title=&quot;Set Operators 集合操作符&quot;&gt;&lt;/a&gt;Set Operators 集合操作符&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Let S and T be sets. S is a subset of T , denoted S ⊆ T , iff every element of S is an element of T , that is, x ∈ S → x ∈ T . S is a proper subset of T , denoted S ⊂ T , iff S ⊆ T and S ≠ T&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Union&lt;/strong&gt;联合&lt;ul&gt;
+&lt;li&gt;S &lt;code&gt;∪&lt;/code&gt; T , the union of S and T , is the set consisting of those elements which are elements of either S or T (or both).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Intersection&lt;/strong&gt;交集&lt;ul&gt;
+&lt;li&gt;S &lt;code&gt;∩&lt;/code&gt; T , the intersection of S and T , is the set consisting of those elements which are elements of both S and T . If S ∩ T &amp;#x3D;∅ then S and T are disjoint .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Difference&lt;/strong&gt;差集&lt;ul&gt;
+&lt;li&gt;S &lt;code&gt;−&lt;/code&gt; T , the difference of S and T , is the set of elements of S that are not elements of&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cartesian product&lt;/strong&gt;笛卡尔积&lt;ul&gt;
+&lt;li&gt;Let S and T be sets. S &lt;code&gt;×&lt;/code&gt; T , their Cartesian product , is the set of all pairs ( s , t ) such that s ∈ S and t ∈ T&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Sequences-序列&quot;&gt;&lt;a href=&quot;#Sequences-序列&quot; class=&quot;headerlink&quot; title=&quot;Sequences 序列&quot;&gt;&lt;/a&gt;Sequences 序列&lt;/h2&gt;&lt;p&gt;Let $S$ be a set.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A finite sequence $f$ on $S$ is a function from {0,…, n −1} to $$ . The length of the sequence is n .&lt;/li&gt;
+&lt;li&gt;An infinite sequence $f$ on $S$ is a mapping from $N$ to $S$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;tuple-元组&quot;&gt;&lt;a href=&quot;#tuple-元组&quot; class=&quot;headerlink&quot; title=&quot;tuple 元组&quot;&gt;&lt;/a&gt;tuple 元组&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;A finite sequence of length n is an n-tuple&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Relations-and-Functions-关系与函数&quot;&gt;&lt;a href=&quot;#Relations-and-Functions-关系与函数&quot; class=&quot;headerlink&quot; title=&quot;Relations and Functions 关系与函数&quot;&gt;&lt;/a&gt;Relations and Functions 关系与函数&lt;/h2&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Sets-集合"><a href="#Sets-集合" class="headerlink" title="Sets 集合"></a>Sets 集合</h2><ul><li>A set is composed of elements . a ∈ S denotes that a is an element of set S</li><li>The set with no elements is the empty set , denoted ∅.</li></ul><h2 id="Set-Operators-集合操作符"><a href="#Set-Operators-集合操作符" class="headerlink" title="Set Operators 集合操作符"></a>Set Operators 集合操作符</h2><ul><li>Let S and T be sets. S is a subset of T , denoted S ⊆ T , iff every element of S is an element of T , that is, x ∈ S → x ∈ T . S is a proper subset of T , denoted S ⊂ T , iff S ⊆ T and S ≠ T</li><li><strong>Union</strong>联合<ul><li>S <code>∪</code> T , the union of S and T , is the set consisting of those elements which are elements of either S or T (or both).</li></ul></li><li><strong>Intersection</strong>交集<ul><li>S <code>∩</code> T , the intersection of S and T , is the set consisting of those elements which are elements of both S and T . If S ∩ T &#x3D;∅ then S and T are disjoint .</li></ul></li><li><strong>Difference</strong>差集<ul><li>S <code>−</code> T , the difference of S and T , is the set of elements of S that are not elements of</li></ul></li><li><strong>Cartesian product</strong>笛卡尔积<ul><li>Let S and T be sets. S <code>×</code> T , their Cartesian product , is the set of all pairs ( s , t ) such that s ∈ S and t ∈ T</li></ul></li></ul><h2 id="Sequences-序列"><a href="#Sequences-序列" class="headerlink" title="Sequences 序列"></a>Sequences 序列</h2><p>Let $S$ be a set.</p><ul><li>A finite sequence $f$ on $S$ is a function from {0,…, n −1} to $$ . The length of the sequence is n .</li><li>An infinite sequence $f$ on $S$ is a mapping from $N$ to $S$</li></ul><h3 id="tuple-元组"><a href="#tuple-元组" class="headerlink" title="tuple 元组"></a>tuple 元组</h3><ul><li>A finite sequence of length n is an n-tuple</li></ul><h2 id="Relations-and-Functions-关系与函数"><a href="#Relations-and-Functions-关系与函数" class="headerlink" title="Relations and Functions 关系与函数"></a>Relations and Functions 关系与函数</h2><blockquote><p>a relation is a subset of a Cartesian product of sets and a function is a relation with a special property</p><p>关系是集合的笛卡尔积的一个子集，函数是具有特殊属性的关系。</p></blockquote><h3 id="Properties-of-Relations-关系的属性"><a href="#Properties-of-Relations-关系的属性" class="headerlink" title="Properties of Relations 关系的属性"></a>Properties of Relations 关系的属性</h3><p>Let R be a binary relation on $S^2$ .</p><ul><li>R is reflexive自反 iff R ( x , x ) for all x ∈ S .</li><li>R is symmetric对称 iff R ( $x_1 , x_2$ ) implies R ( $x_1 , x_2$ ).</li><li>R is transitive传递 iff R ($x_1 , x_2$ ) and R ( $x_2 , x_3$ ) imply R ( $x_1 , x_3$ ).</li></ul><p>$R^{∗}$ , the <strong>reflexive transitive closure</strong>自反传递闭包 of $R$ , is defined as follows:</p><ul><li>If R ( $x_1 , x_2$ ) then $R^{∗}$ ( $x_1 , x_2$ ).<ul><li>$R\subseteq{R^{*}}$</li></ul></li><li>$R^{∗}$ ( x i , x i ) for all $x_i$ ∈ S .<ul><li>$R^{*}$ is symmetric</li></ul></li><li>$R^{∗}$ ( $x_1 , x_2$ ) and $R^{∗}$ ( $x_2 , x_3$ ) imply $R^{∗}$ ( $x_1 , x_3$ )<ul><li>$R^{*}$ is transitive</li></ul></li></ul><h3 id="Functions-函数"><a href="#Functions-函数" class="headerlink" title="Functions 函数"></a>Functions 函数</h3><center><img loading="lazy" src="/posts/301925f/1.jpg" width="550px"></center><ul><li>domain：陪域 range: 值域</li><li>total: 全函数 partial: 部分函数</li><li>injective单射：指将不同的变量映射到不同的值的函数。</li><li>surjective满射：指陪域等于值域的函数。即：对陪域中任意元素，都存在至少一个定义域中的元素与之对应。</li><li>bijective双射（也称一一对应或一一映射 one-to-one and onto）：既是单射又是满射的函数</li></ul><h2 id="Cardinality-势"><a href="#Cardinality-势" class="headerlink" title="Cardinality 势"></a>Cardinality 势</h2><ul><li>The cardinality<code>/ˈkɑː.dɪnˈæl.ə.ti/</code> of a set is the <strong>number</strong> of elements in the set</li><li>如果存在着从集合A到集合B的双射，那么集合A与集合B等势，记为A~B</li></ul><h3 id="powerset-幂集"><a href="#powerset-幂集" class="headerlink" title="powerset 幂集"></a>powerset 幂集</h3><ul><li>The powerset of a set S , denoted $2^S$ , is the set of all subsets of S <ul><li>由该集合全部子集为元素构成的集合</li></ul></li><li>Let S be a finite set of cardinality n ; then the cardinality of its powerset is $2^n$</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/301925f/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>计算机数理逻辑-命题逻辑(3)</title>
@@ -1172,50 +1228,6 @@
       
       
       <comments>https://hejueyun.github.io/posts/7f474ad7/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>防火墙</title>
-      <link>https://hejueyun.github.io/posts/9c75190f/</link>
-      <guid>https://hejueyun.github.io/posts/9c75190f/</guid>
-      <pubDate>Sun, 05 Dec 2021 22:58:57 GMT</pubDate>
-      
-      <description>&lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;network access policy&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;default-deny principle&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Data Formats&lt;/p&gt;
-&lt;img loading=&quot;lazy&quot; src=&quot;/posts/9c75190f/1.png&quot; width=&quot;500px&quot;&gt;
-
-&lt;p&gt;Network attacks&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Port scanning&lt;/li&gt;
-&lt;li&gt;IP spoofing &lt;/li&gt;
-&lt;li&gt;Packet sniffing&lt;blockquote&gt;
-&lt;p&gt;Normally, NIC only picks up packets destined to this MAC address. But, if the NIC card is set to promiscuous mode(混杂模式), then all the packets on the channel will be picked up&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;DoS (Denial of Service) attacks&lt;ul&gt;
-&lt;li&gt;smurf attack (大量icmp echo Request, ping)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Stateless-Firewall-无状态防火墙&quot;&gt;&lt;a href=&quot;#Stateless-Firewall-无状态防火墙&quot; class=&quot;headerlink&quot; title=&quot;Stateless Firewall(无状态防火墙)&quot;&gt;&lt;/a&gt;Stateless Firewall(无状态防火墙)&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;Filtering rules (network access policy) are defined based on source/dest addresses, source/dest ports, and &lt;strong&gt;TCP flags&lt;/strong&gt; (SYN/ACK).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;img loading=&quot;lazy&quot; src=&quot;/posts/9c75190f/2.png&quot; width=&quot;500px&quot;&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>network access policy</p><ul><li>default-deny principle</li></ul><p>Data Formats</p><img loading="lazy" src="/posts/9c75190f/1.png" width="500px"><p>Network attacks</p><ul><li>Port scanning</li><li>IP spoofing </li><li>Packet sniffing<blockquote><p>Normally, NIC only picks up packets destined to this MAC address. But, if the NIC card is set to promiscuous mode(混杂模式), then all the packets on the channel will be picked up</p></blockquote></li><li>DoS (Denial of Service) attacks<ul><li>smurf attack (大量icmp echo Request, ping)</li></ul></li></ul><h2 id="Stateless-Firewall-无状态防火墙"><a href="#Stateless-Firewall-无状态防火墙" class="headerlink" title="Stateless Firewall(无状态防火墙)"></a>Stateless Firewall(无状态防火墙)</h2><blockquote><p>Filtering rules (network access policy) are defined based on source/dest addresses, source/dest ports, and <strong>TCP flags</strong> (SYN/ACK).</p></blockquote><img loading="lazy" src="/posts/9c75190f/2.png" width="500px"><h2 id="Stateful-Dynamic-Packet-Filtering-Firewalls-状态防火墙"><a href="#Stateful-Dynamic-Packet-Filtering-Firewalls-状态防火墙" class="headerlink" title="Stateful (Dynamic Packet Filtering) Firewalls (状态防火墙)"></a>Stateful (Dynamic Packet Filtering) Firewalls (状态防火墙)</h2><blockquote><p>Stateful firewalls filter packets based on the full context of a session</p></blockquote><img loading="lazy" src="/posts/9c75190f/3.png" width="500px"><h3 id="Stateless-vs-Stateful"><a href="#Stateless-vs-Stateful" class="headerlink" title="Stateless vs Stateful"></a>Stateless vs Stateful</h3><blockquote><ul><li>stateful firewalls are more vulnerable to DDoS (Distributed Denial of Service) attacks due to the intense computational and storage resources they require</li><li> Stateless firewalls offer higher throughput and lower cost, but a lower level of security</li></ul></blockquote><h2 id="NAT-Network-Address-Translation"><a href="#NAT-Network-Address-Translation" class="headerlink" title="NAT (Network Address Translation)"></a>NAT (Network Address Translation)</h2><blockquote><ul><li>Network Address Translation (NAT) simply rewrites Source and/or Dest addresses.</li><li>Port Address Translation (PAT) allows multiple hosts to share a single IP address via port mapping</li><li>PAT can be considered as a subset of NAT, and NAT is often used generically to mean all forms of NAT/PAT.</li><li>By using NAT, multiple hosts can share a single (or limited) IP address space </li></ul></blockquote><p><img loading="lazy" src="/posts/9c75190f/4.gif"></p><h2 id="Firewall-Complications-Problems"><a href="#Firewall-Complications-Problems" class="headerlink" title="Firewall Complications/ Problems"></a>Firewall Complications/ Problems</h2><ul><li>IP Fragmentation DoS attack<blockquote><p><strong>Reassembly (defragmentation)</strong> can only take place when all fragments are in. UDP/ICMP-based fragmentation attacks usually submit fake fragments that cannot be defragmented. <strong>Temporary storage</strong> of the fragments takes up memory and, in the worst-case scenario, may exhaust the available memory resources.</p><hr><ul><li>In other words, the 110 ICMP packet is broken into 5 fragments, with total lengths of 40, 40, 40, 40 and 30 bytes respectively (the ICMP data is broken into lengths of 12, 20, 20, 20, and 10 bytes each).</li><li>From 2nd Fragment onwards, each fragment contains an IP header BUT no ICMP header.This type of fragments can easily sneak through a stateless firewall. For example, for a stateless packet filter that blocks inbound ICMP echo request, upon seeing the first fragment, it will drop it, whereas the rest of the fragments will creep through successfully.</li></ul></blockquote><ul><li>可以通过：Create a list containing the Identifier (SA/DA/PROT/ID) of this fragment (zero-offset packet) + filtering decision， 但会导致<strong>Overlapping Fragment attack</strong></li></ul></li><li>Overlapping Fragment attack<blockquote><p>A TCP-based fragmentation attack (also known as teardrop), however, is usually directed against the defragmentation mechanisms of the target systems or security components. Overlapping packets are sent that, in extreme cases, may lead to the target system freezing up, depending on the operating system.</p><p> Overlapping fragments may also be used in an attempt to bypass Intrusion Detection Systems. In this exploit, part of an attack is sent in fragments along with additional random data; future fragments may overwrite the random data with the remainder of the attack. If the completed packet is not properly reassembled at the IDS, the attack will go undetected</p></blockquote></li></ul><img loading="lazy" src="/posts/9c75190f/5.png" width="500px"><ul><li>DF bit is set to 0 (meaning “May Fragment”)</li><li>MF bit is set to 0 (meaning “Last Fragment”)</li></ul><h3 id="Countermeasure-–-Proxy-Firewall"><a href="#Countermeasure-–-Proxy-Firewall" class="headerlink" title="Countermeasure – Proxy Firewall"></a>Countermeasure – Proxy Firewall</h3><blockquote><p>A proxy firewall, also called “application-level gateway”, filter traffic at the application layer; it performs deeper packet inspections than the network layer firewalls.</p><ul><li>With a proxy-aware router, client’s request is intercepted(拦截) and directed to a proxy server</li><li>在接收到HTTP请求后，代理服务器代表用户打开一个到目标Web服务器的新的HTTP连接(只有当请求与服务器上配置的安全策略匹配时才完成此步骤);代理还将响应转发回用户</li></ul></blockquote><h4 id="Pros-and-Cons"><a href="#Pros-and-Cons" class="headerlink" title="Pros and Cons"></a>Pros and Cons</h4><p>Pros</p><ul><li>可以执行更严格的安全策略。</li><li>可以更有效地执行数据记录。</li><li>允许网络缓存来提高连接性能。</li></ul><p>Cons</p><ul><li>如果没有缓存和适当的缓存管理，会对用户感知的性能产生重大影响。</li><li>当添加新的应用程序时，需要为应用网关开发新的代理服务器。</li><li>因为所有的请求都是通过代理服务器传输的，所以它可能是一个<strong>单点故障</strong>。</li></ul><h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><strong>Screening router</strong>(筛选路由器)</p><ul><li>router和filter一体化</li><li>low cost</li></ul><p><strong>Dual-homed Host</strong>(双宿主)</p><blockquote><p>To use a dual-homed host as a firewall, the routing function is disabled – this is the fundamental difference between this architecture and the screening router.</p><p>Hosts on internal net can not talk directly to the hosts on the Internet, and vice versa; they must do so via proxy.</p><p>Two ways to communicate with the Internet: proxying, or direct log into the Dual-homed host.</p></blockquote><ul><li>耗费更大、单点故障</li></ul><p><strong>Screened/Bastion Host</strong>(堡垒主机)</p><img loading="lazy" src="/posts/9c75190f/6.png" width="500px"><ul><li>筛选路由器的配置使得堡垒主机是内部网络上唯一在互联网上可见的系统（堡垒机的意义就在于托管需要被外网可见的服务）</li><li>two levels of protection<ul><li>primary security: provided by screening router</li><li>secondary security: provided by proxying via Bastion Host</li></ul></li></ul><p><strong>Screened Subnet</strong></p><blockquote><p>It adds an extra layer of security to the screened host architecture by adding a perimeter network that further isolates the internal network from the Internet</p></blockquote><img loading="lazy" src="/posts/9c75190f/7.png" width="500px"><ul><li>Perimeter network(边缘网络)<ul><li>如果有人闯入周界网络上的堡垒主机，他们将只能窥探周界网络上的流量，内部网络上的流量受到保护</li></ul></li><li>An exterior filtering router is to protect both perimeter/internal nets from<br>the Interne<ul><li>Intrusion detection and auditing should be incorporated at network perimeter points</li></ul></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>strengths</p><ul><li>控制访问</li><li>保护隐私</li><li>审计流量与数据<br>drawbacks</li><li>无法保护内部恶意人士or内部主机跳板</li><li>不正确or不全面的配置将导致不安全</li></ul><h2 id="更多参考"><a href="#更多参考" class="headerlink" title="更多参考"></a>更多参考</h2><ul><li>信安小知识-8</li><li>iptables实验</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
-      
-      
-      
-      <comments>https://hejueyun.github.io/posts/9c75190f/#disqus_thread</comments>
       
     </item>
     
