@@ -15,8 +15,69 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 15 Feb 2022 23:09:38 GMT</pubDate>
+    <pubDate>Wed, 16 Feb 2022 00:09:39 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>计算机数理逻辑-一阶逻辑(2)</title>
+      <link>https://hejueyun.github.io/posts/ed4b45dd/</link>
+      <guid>https://hejueyun.github.io/posts/ed4b45dd/</guid>
+      <pubDate>Tue, 15 Feb 2022 23:57:35 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;命题逻辑vs一阶逻辑&quot;&gt;&lt;a href=&quot;#命题逻辑vs一阶逻辑&quot; class=&quot;headerlink&quot; title=&quot;命题逻辑vs一阶逻辑&quot;&gt;&lt;/a&gt;命题逻辑vs一阶逻辑&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;命题逻辑（Propositional Logic） &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;形如 ¬P，P∧Q，P∨Q，P → Q ，P↔Q的语句，值为True或者False&lt;/li&gt;
+&lt;li&gt;推理规则较简单，往往通过（1.真值表  2.为数不多的推理规则，例如Modus ponesn等几个）&lt;/li&gt;
+&lt;li&gt;缺点：不能或者很难表示复杂的语句，不能记录推理过程中的变化&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一阶逻辑（First Order Logic），简称FOL&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;包含的东西有常量（Constant symbol），谓词符号（Predicate symbol），函数符号（Function symbol），变量（Variable），连词（ ∧∨→↔），量词（Quantifiers, ∃∀）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;命题逻辑(很少部分人叫它作零阶逻辑). 在命题逻辑里, 每一个字母就代表一个命题, 所以命题逻辑只能表达句子之间的关系, 比如“p&amp;amp;q”, “if p then q”等等的真值如何从p和q的真值中计算出来.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一阶逻辑则引入了两个量词, 即universal quantifier(倒A)和existential quantifier(倒E), 并且加入了一阶谓词和individual variables和individual constants. 这些导致一阶逻辑可以量化individuals in the domain.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;比如经典的三段论就可以被一阶逻辑表达 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;For all x, Hx-&amp;gt;Mx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hs&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;----&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Ms&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;集合论vs一阶逻辑&quot;&gt;&lt;a href=&quot;#集合论vs一阶逻辑&quot; class=&quot;headerlink&quot; title=&quot;集合论vs一阶逻辑&quot;&gt;&lt;/a&gt;集合论vs一阶逻辑&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;集合论作为公理系统，一阶逻辑作为&lt;strong&gt;推理系统&lt;/strong&gt;，共同为数学打下基石&lt;/li&gt;
+&lt;li&gt;谈论某一理论时，都需要有&lt;strong&gt;上层语言&lt;/strong&gt;（meta-language）作为基础。对于最上层的语言研究一般归于哲学的范畴&lt;ul&gt;
+&lt;li&gt;基于上层语言，我们可以定义&lt;strong&gt;一阶语言&lt;/strong&gt;（一阶逻辑的语言），语言中字母表、项、公式的不同可以产生不同的“子语言”。如：初等算术语言，群论语言，&lt;strong&gt;集合论语言&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;定义一阶语言的模型，模型对语言做出解释（可以看成是&lt;strong&gt;语义&lt;/strong&gt;部分）。譬如对于初等算术语言，有初等算术的标准模型&lt;/li&gt;
+&lt;li&gt;一阶语言的推理系统给出了一阶逻辑的语法。不同的推理系统如自然推理系统和 PK 推理系统可以证明是等价的。同时注意到，推理系统可以独立于模型（&lt;strong&gt;语义&lt;/strong&gt;）而存在。而推理系统的 soundness 和 completeness 保证了语义与语法的一致性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;同阶下，一阶语言的集合论是一阶逻辑的一部分（一阶语言+公式集），但一阶逻辑又不能表达所有的集合论（高阶）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/40419871/answer/127792613&quot;&gt;命题逻辑和一阶逻辑分别是什么？ - 嘉嘉杨的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/22915503/answer/151477106&quot;&gt;一阶逻辑和高阶逻辑的区别，能不能具象一点说明？ - ZS Chen的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/28776730/answer/702538400&quot;&gt;集合论和一阶逻辑的关系是什么？ - Zangwei Zheng的回答 - 知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="命题逻辑vs一阶逻辑"><a href="#命题逻辑vs一阶逻辑" class="headerlink" title="命题逻辑vs一阶逻辑"></a>命题逻辑vs一阶逻辑</h2><ol><li><p>命题逻辑（Propositional Logic） </p><ol><li>形如 ¬P，P∧Q，P∨Q，P → Q ，P↔Q的语句，值为True或者False</li><li>推理规则较简单，往往通过（1.真值表  2.为数不多的推理规则，例如Modus ponesn等几个）</li><li>缺点：不能或者很难表示复杂的语句，不能记录推理过程中的变化</li></ol></li><li><p>一阶逻辑（First Order Logic），简称FOL</p><ol><li>包含的东西有常量（Constant symbol），谓词符号（Predicate symbol），函数符号（Function symbol），变量（Variable），连词（ ∧∨→↔），量词（Quantifiers, ∃∀）</li></ol></li><li><p>命题逻辑(很少部分人叫它作零阶逻辑). 在命题逻辑里, 每一个字母就代表一个命题, 所以命题逻辑只能表达句子之间的关系, 比如“p&amp;q”, “if p then q”等等的真值如何从p和q的真值中计算出来.</p></li><li><p>一阶逻辑则引入了两个量词, 即universal quantifier(倒A)和existential quantifier(倒E), 并且加入了一阶谓词和individual variables和individual constants. 这些导致一阶逻辑可以量化individuals in the domain.</p><ol><li>比如经典的三段论就可以被一阶逻辑表达 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">For all x, Hx-&gt;Mx</span><br><span class="line"></span><br><span class="line">Hs</span><br><span class="line"></span><br><span class="line">----</span><br><span class="line"></span><br><span class="line">Ms</span><br></pre></td></tr></table></figure></li></ol></li></ol><h2 id="集合论vs一阶逻辑"><a href="#集合论vs一阶逻辑" class="headerlink" title="集合论vs一阶逻辑"></a>集合论vs一阶逻辑</h2><ul><li>集合论作为公理系统，一阶逻辑作为<strong>推理系统</strong>，共同为数学打下基石</li><li>谈论某一理论时，都需要有<strong>上层语言</strong>（meta-language）作为基础。对于最上层的语言研究一般归于哲学的范畴<ul><li>基于上层语言，我们可以定义<strong>一阶语言</strong>（一阶逻辑的语言），语言中字母表、项、公式的不同可以产生不同的“子语言”。如：初等算术语言，群论语言，<strong>集合论语言</strong></li><li>定义一阶语言的模型，模型对语言做出解释（可以看成是<strong>语义</strong>部分）。譬如对于初等算术语言，有初等算术的标准模型</li><li>一阶语言的推理系统给出了一阶逻辑的语法。不同的推理系统如自然推理系统和 PK 推理系统可以证明是等价的。同时注意到，推理系统可以独立于模型（<strong>语义</strong>）而存在。而推理系统的 soundness 和 completeness 保证了语义与语法的一致性</li></ul></li><li>同阶下，一阶语言的集合论是一阶逻辑的一部分（一阶语言+公式集），但一阶逻辑又不能表达所有的集合论（高阶）</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://www.zhihu.com/question/40419871/answer/127792613">命题逻辑和一阶逻辑分别是什么？ - 嘉嘉杨的回答 - 知乎</a></li><li><a href="https://www.zhihu.com/question/22915503/answer/151477106">一阶逻辑和高阶逻辑的区别，能不能具象一点说明？ - ZS Chen的回答 - 知乎</a></li><li><a href="https://www.zhihu.com/question/28776730/answer/702538400">集合论和一阶逻辑的关系是什么？ - Zangwei Zheng的回答 - 知乎</a></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/ed4b45dd/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>计算机数理逻辑-命题逻辑-SAT</title>
@@ -1207,66 +1268,6 @@
       
       
       <comments>https://hejueyun.github.io/posts/a1f1fb0f/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>Wireless Network Security</title>
-      <link>https://hejueyun.github.io/posts/6eddbcac/</link>
-      <guid>https://hejueyun.github.io/posts/6eddbcac/</guid>
-      <pubDate>Mon, 13 Dec 2021 22:45:25 GMT</pubDate>
-      
-      <description>&lt;h2 id=&quot;background&quot;&gt;&lt;a href=&quot;#background&quot; class=&quot;headerlink&quot; title=&quot;background&quot;&gt;&lt;/a&gt;background&lt;/h2&gt;&lt;h3 id=&quot;Categories-of-wireless-networks&quot;&gt;&lt;a href=&quot;#Categories-of-wireless-networks&quot; class=&quot;headerlink&quot; title=&quot;Categories of wireless networks&quot;&gt;&lt;/a&gt;Categories of wireless networks&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Wireless Personal Area Network (WPAN)&lt;ul&gt;
-&lt;li&gt;Bluetooth&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Wireless Local Area Network (WLAN)（Wi-Fi）&lt;ul&gt;
-&lt;li&gt;IEEE 802.11a/b/g/n&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Wireless Wide Area Network (WWAN)&lt;ul&gt;
-&lt;li&gt;Mobile phone networks (5G/4G/3G/GPRS/CDMA)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;IEEE802-11-WLAN&quot;&gt;&lt;a href=&quot;#IEEE802-11-WLAN&quot; class=&quot;headerlink&quot; title=&quot;IEEE802.11 (WLAN)&quot;&gt;&lt;/a&gt;IEEE802.11 (WLAN)&lt;/h3&gt;&lt;h4 id=&quot;Infrastructure-mode&quot;&gt;&lt;a href=&quot;#Infrastructure-mode&quot; class=&quot;headerlink&quot; title=&quot;Infrastructure mode&quot;&gt;&lt;/a&gt;Infrastructure mode&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;服务集（Service set）&lt;blockquote&gt;
-&lt;p&gt;是无线局域网中的一个术语，用以描述802.11无线网络的构成单位（一组互相有联系的无线设备），使用服务集标识符（SSID）作为识别。可以分为独立基本服务集（IBSS）、基本服务集（BSS）和扩展服务集（ESS）三类&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;BSS (Basic Service Set or cell)&lt;ul&gt;
-&lt;li&gt;an AP (Access Point（接入点）, or base station（基站）) + wireless stations.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;ESS (Extended Service Set)&lt;ul&gt;
-&lt;li&gt;two or more BSSes interconnected by a Distributed System (a cable, a wired network, or another WLAN).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;All communications are via APs&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;SSID：Service Set Identifier&lt;ul&gt;
-&lt;li&gt;基本服务集标识符（BSSID），表示的是AP的数据链路层的&lt;strong&gt;MAC地址&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;扩展服务集定标识符（ESSID），一个最长32字节区分大小写的字符串,表示&lt;strong&gt;无线网络的名称&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img loading=&quot;lazy&quot; src=&quot;/posts/6eddbcac/SSID_ESS.svg&quot; width=&quot;600px&quot;&gt;
-
-&lt;h4 id=&quot;Ad-hoc-mode-对等拓扑模式&quot;&gt;&lt;a href=&quot;#Ad-hoc-mode-对等拓扑模式&quot; class=&quot;headerlink&quot; title=&quot;Ad hoc mode(对等拓扑模式)&quot;&gt;&lt;/a&gt;Ad hoc mode(对等拓扑模式)&lt;/h4&gt;&lt;p&gt;也就是独立基本服务集（IBSS）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Used when no pre-defined infrastructure – stations/clients &lt;strong&gt;communicate directly without any AP&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="background"><a href="#background" class="headerlink" title="background"></a>background</h2><h3 id="Categories-of-wireless-networks"><a href="#Categories-of-wireless-networks" class="headerlink" title="Categories of wireless networks"></a>Categories of wireless networks</h3><ul><li>Wireless Personal Area Network (WPAN)<ul><li>Bluetooth</li></ul></li><li>Wireless Local Area Network (WLAN)（Wi-Fi）<ul><li>IEEE 802.11a/b/g/n</li></ul></li><li>Wireless Wide Area Network (WWAN)<ul><li>Mobile phone networks (5G/4G/3G/GPRS/CDMA)</li></ul></li></ul><h3 id="IEEE802-11-WLAN"><a href="#IEEE802-11-WLAN" class="headerlink" title="IEEE802.11 (WLAN)"></a>IEEE802.11 (WLAN)</h3><h4 id="Infrastructure-mode"><a href="#Infrastructure-mode" class="headerlink" title="Infrastructure mode"></a>Infrastructure mode</h4><ul><li>服务集（Service set）<blockquote><p>是无线局域网中的一个术语，用以描述802.11无线网络的构成单位（一组互相有联系的无线设备），使用服务集标识符（SSID）作为识别。可以分为独立基本服务集（IBSS）、基本服务集（BSS）和扩展服务集（ESS）三类</p></blockquote></li><li>BSS (Basic Service Set or cell)<ul><li>an AP (Access Point（接入点）, or base station（基站）) + wireless stations.</li></ul></li><li>ESS (Extended Service Set)<ul><li>two or more BSSes interconnected by a Distributed System (a cable, a wired network, or another WLAN).</li></ul></li><li><strong>All communications are via APs</strong></li><li>SSID：Service Set Identifier<ul><li>基本服务集标识符（BSSID），表示的是AP的数据链路层的<strong>MAC地址</strong></li><li>扩展服务集定标识符（ESSID），一个最长32字节区分大小写的字符串,表示<strong>无线网络的名称</strong></li></ul></li></ul><img loading="lazy" src="/posts/6eddbcac/SSID_ESS.svg" width="600px"><h4 id="Ad-hoc-mode-对等拓扑模式"><a href="#Ad-hoc-mode-对等拓扑模式" class="headerlink" title="Ad hoc mode(对等拓扑模式)"></a>Ad hoc mode(对等拓扑模式)</h4><p>也就是独立基本服务集（IBSS）</p><ul><li>Used when no pre-defined infrastructure – stations/clients <strong>communicate directly without any AP</strong></li></ul><img loading="lazy" src="/posts/6eddbcac/1.png" width="500px"><h3 id="Security-threats"><a href="#Security-threats" class="headerlink" title="Security threats"></a>Security threats</h3><blockquote><p>WLANs use radio signal, making them more vulnerable to both passive and active attacks than their wired counterparts</p></blockquote><ul><li>Monitor or eavesdrop channels</li><li>Impersonate a legitimate AP</li><li>Man-in-the-middle</li><li>Denial of Service (DoS) attack</li></ul><h2 id="Original-802-11-Security"><a href="#Original-802-11-Security" class="headerlink" title="Original 802.11 Security"></a>Original 802.11 Security</h2><h3 id="Wired-Equivalent-Privacy-WEP"><a href="#Wired-Equivalent-Privacy-WEP" class="headerlink" title="Wired Equivalent Privacy (WEP)"></a>Wired Equivalent Privacy (WEP)</h3><p>有线等效加密</p><ul><li>The first WLAN security specification</li><li>又称无线加密协议（Wireless Encryption Protocol）</li><li>标准的64比特WEP使用40比特的钥匙接上24位的初向量（initialization vector，IV）成为RC4用的钥匙</li><li>2003年被淘汰<blockquote><p>因为RC4是流加密的一种，同一个钥匙绝不能使用二次，所以使用（虽然是用明文发送的）IV的目的就是要避免重复；然而24位的IV并没有长到足以担保在忙碌的网络上不会重复，而且IV的使用方式也使其可能遭受到关连式钥匙攻击。</p></blockquote></li></ul><h3 id="Station-to-AP-Authentication"><a href="#Station-to-AP-Authentication" class="headerlink" title="Station-to-AP Authentication"></a>Station-to-AP Authentication</h3><p>Open System Authentication (Using Service Set Identifier (SSID))</p><ul><li>Each client can connect to AP by just supplying the correct SSID</li></ul><img loading="lazy" src="/posts/6eddbcac/2.png" width="500px"><p>PSK (pre-shared/WEP key) Authentication（预分享密钥认证）</p><ol><li>Client requests association with AP (Association Request【**关联请求(帧)**】)</li><li>AP returns a Challenge, n, a random number, also called <strong>nonce</strong>.</li><li>Client encrypts n using the <strong>pre-set WEP key (WKey)</strong> and sends it back</li><li>AP compares decrypted challenge with transmitted one to accept/reject<blockquote><p>Client is accepted if <code>&#123;n xor RC4(WKey)&#125; xor RC4(WKey’)=n’</code>; where <code>WKey’</code> is <code>AP’</code>s copy of the WEP key; <code>n’</code> is <code>AP’</code>s copy of the challenge</p></blockquote></li><li>The authN is vulnerable to interception and replay attacks, provided <strong>WKey</strong> is reused<ol><li>lack of key management</li></ol></li></ol><p>MAC Address Filtering</p><ul><li>Each AP maintains a list of MAC addresses that are allowed to connect to it</li><li>MAC address authentication was not part of the 802.11 standard, but many vendors, e.g. Cisco, used it to augment the shared key authN.</li></ul><img loading="lazy" src="/posts/6eddbcac/3.png" width="500px"><h3 id="Confidentiality-and-integrity"><a href="#Confidentiality-and-integrity" class="headerlink" title="Confidentiality and integrity"></a>Confidentiality and integrity</h3><ul><li>WEP also provides confidentiality and integrity protections of data<br>streams sent between a wireless station/client and AP.<ul><li>Confidentiality is provided by using RC4 based stream cipher (plaintext XORed with keystream from RC4)</li><li>Integrity is provided by using Integrity Check Value (ICV) (CRC-32, which is a 32-bit Cyclic Redundancy Check value).</li></ul></li><li>WEP Encryption<ul><li><code>C=M xor RC4(IV||WKey)</code>，<code>M=Plaintext||ICV</code></li></ul></li><li>Decryption<ul><li><code>C xor RC4(IV||WKey) = M</code></li><li>Verifying ICV<ul><li>Compute fresh ICV’ based on M received and compare</li></ul></li></ul></li></ul><p><strong>Weaknesses</strong></p><ul><li>No key establishment/distribution mechanism</li><li>Use WKey (master and static key) directly<blockquote><p>From security point of view, the use of master keys should be minimised, <strong>i.e. they should only be used to generate other temporary keys</strong></p></blockquote></li><li>Small key size<ul><li>WKey is a 40-bit or 104-bit value; easier to crack(破解) by brute force</li></ul></li><li>Short IV<ul><li>Security of stream ciphers relies on <strong>never repeating keystream</strong></li><li>Input for generating keystream is (IV||WKey), where WKey is static and shared among stations and IV space is small</li></ul></li><li>Vulnerable to passive attacks<ul><li>Attacker collects traffic on the channel, say C1 and C2.</li><li>If these two messages are generated <strong>using the same key and same IV</strong>, then as <code>C1=(M1xor RC4(IV||WKey))</code> and <code>C2=(M2 xor RC4(IV|| WKey))</code>, <code>C1 xor C2 = (M1 xor M2)</code>.</li><li>Whenever a byte in (M1xor M2) is zero, M1 and M2 have the same content/value.(i.e. white space)</li></ul></li><li>Vulnerable to active attacks<ul><li>If attacker knows a plaintext and ciphertext pair, {C, M}<ul><li><strong>Keystream</strong> for IV values are known</li><li>Attacker can create correctly encrypted messages.</li></ul></li></ul></li><li>Weak ICV algorithm<ul><li>CRC-32 is linear in xor</li><li>Integrity protection for <strong>source/destination addresses</strong> is not provided</li></ul></li><li>No anti-replay protection</li><li>One-way authentication only</li></ul><blockquote><p><strong>WEP has failed in three security goals – station authentication, data confidentiality and integrity</strong></p></blockquote><h2 id="IEEE-802-11i-standard-2004"><a href="#IEEE-802-11i-standard-2004" class="headerlink" title="IEEE 802.11i standard (2004)"></a>IEEE 802.11i standard (2004)</h2><p>Authentication service</p><ul><li>IEEE 802.11<strong>i</strong> utilizes IEEE 802.1<strong>X</strong> standard for its authentication and key establishment services<br>Confidentiality and integrity services</li><li>WPA<ul><li><strong>TKIP</strong></li><li>Implemented a <strong>subset</strong> of IEEE 802.11i.</li><li>Targeted on legacy (then) equipment, i.e. only requiring firmware/software update (no hardware update required).</li></ul></li><li>WPA2 <ul><li><strong>Full</strong> implementation of IEEE 802.11i using <strong>CCMP</strong>.</li></ul></li></ul><h3 id="WPA-WiFi-Protected-Access"><a href="#WPA-WiFi-Protected-Access" class="headerlink" title="WPA (WiFi Protected Access)"></a>WPA (WiFi Protected Access)</h3><p>TKIP</p><ul><li>临时密钥完整性协议（Temporal Key Integrity Protocol） </li><li>用以在<strong>不需要升级硬件</strong>（Only require software and firmware upgrade.）的基础上替代有线等效加密（WEP）协议。由于WEP协议的薄弱造成了数据链路层安全被完全跳过，且由于已经应用的大量按照WEP要求制造的网络硬件急需更新更可靠的安全协议，在此背景下临时密钥完整性协议应运而生</li><li>2012年起已不再视为安全，且即将废弃</li></ul><p>WPA</p><ul><li>机密性：<ul><li>it still uses RC4, but with a base key size of 128-bits and IV of 48-bits (<strong>doubled</strong> the IV size used in WEP)</li><li>it uses the <strong>base key</strong>, sender’s <strong>MAC address</strong> and <strong>IV</strong> (sequence number) to compute the per-packet key</li></ul></li><li>完整性：<ul><li>it uses a more secure (non-linear) algorithm and a separate key (Michael key) for MIC (Message Integrity Code)</li></ul></li><li>实现<ul><li>TKIP使用<strong>密钥混合</strong>功能。该功能混合了根密钥（Root Secret key）和初始化向量，而后再通过RC4初始化。在WEP中初始化向量基本上被直接连在根密钥上而后直接通过RC4，从而造成了RC4为基础的WEP可以被轻而易举的使用相关密钥攻击而破解</li></ul></li></ul><img loading="lazy" src="/posts/6eddbcac/4.png" width="500px"><ul><li>TKIP is a front-end wrapping up（包装） the WEP encryption function.</li></ul><h3 id="WPA2"><a href="#WPA2" class="headerlink" title="WPA2"></a>WPA2</h3><p>CCMP</p><ul><li>计数器模式密码块链消息完整码协议（Counter Cipher Mode with Block Chaining Message Authentication Code Protocol）</li><li>Use a single key to provide confidentiality and integrity.(用同一个密钥K)</li><li>Encryption<ul><li>Uses Advanced Encryption System (AES) with 128-bit key and 128-bit block size.</li><li>Integrity check value is not encrypted</li></ul></li><li>Confidentiality<ul><li>AES in Counter-Mode </li></ul></li><li>Authentication/Integrity<ul><li>AES in CBC-Mode, i.e. CBC-MAC</li></ul></li><li>Use 48-bits IV as a sequence number for anti-replay detection</li></ul><p>WPA2</p><ul><li>WAP2 does not have the restraint（限制） of having to support the already-deployed WEP hardware</li></ul><img loading="lazy" src="/posts/6eddbcac/5.png" width="600px"><h2 id="IEEE-802-1X-Authentication-Standard"><a href="#IEEE-802-1X-Authentication-Standard" class="headerlink" title="IEEE 802.1X Authentication Standard"></a>IEEE 802.1X Authentication Standard</h2><p><em>X要大写</em></p><ul><li>defines port-based access control (“port” meaning a single point of attachment to the LAN infrastructure</li><li>Extensible Authentication Protocol (EAP) over LAN (EAPoL Protocol)</li><li>It makes use of a separate authentication server, e.g. RADIUS, to perform authentication</li></ul><img loading="lazy" src="/posts/6eddbcac/6.png" width="600px"><ul><li>申请者STA（Supplicant）\验证者（Authenticator）(<strong>aka the wireless access point, router or switch</strong>)\证服务器（Authentication server）<ul><li>等于说连ap要经过认证，然后IEEE 802.1X就是要额外考虑与认证服务器的传输安全</li></ul></li></ul><h3 id="EAP"><a href="#EAP" class="headerlink" title="EAP"></a>EAP</h3><p>可扩展身份验证协议(Extensible Authentication Protocol)</p><ul><li>interoperability(互通性)<ul><li>EAP means choices – supports the use of many authN methods.</li><li>No guarantee that STA and AP will always support the same authenN method</li></ul></li><li>types<ul><li>Lightweight EAP (LEAP)</li><li>EAP-TLS<blockquote><p>Creates a TLS session within EAP, between the Supplicant and the Authentication Server, both entities need valid (x509) certificates, and support mutual authentication </p><p>Drawbacks:</p><ul><li>User’s identity is passed in cleartext and in the certificate</li><li>Needs client certificate in order to authenticate client</li></ul></blockquote></li><li>EAP-TTLS<ul><li>TTLS与TLS最大的区别是TTLS不需要客户端认证的协议</li></ul></li><li>Protected EAP (PEAP)<blockquote><p>(EAP-TTLS and PEAP) With this method, the main idea is to first establish an encrypted SSL/TLS tunnel using server-side PK certificates, and then user delivers the user’s identity to, and performs authentication with, the server inside the tunnel thus protecting against eavesdropping</p></blockquote></li><li><em>总的说来就是在AP（也就是验证者）和认证服务器之间的信道是TSL加密的，而AP与用户之间的加密是WPA/WPA2负责的，不要搞混淆了</em></li></ul></li></ul><img loading="lazy" src="/posts/6eddbcac/7.png" width="600px"><h2 id="WAP-Key-Hierarchy"><a href="#WAP-Key-Hierarchy" class="headerlink" title="WAP Key Hierarchy"></a>WAP Key Hierarchy</h2><ul><li>无线应用协议(Wireless Application Protocol)</li></ul><img loading="lazy" src="/posts/6eddbcac/8.png" width="600px"><ul><li>MK (Master Key) </li><li>PMK (Pairwise Master Key) 成对主密钥</li><li>PTK (Pairwise Transient Key)  成对传输密码<ul><li><strong>TKIP/CCMP</strong></li><li>EAPOL-Key Confirmation Key (EAP Over Lan-KCK)</li><li>EAPOL-Key Encryption Key (KEK).</li></ul></li><li>Group Temporal Key (GTK)<ul><li>to secure multicast/broadcast data traffic</li></ul></li></ul><h2 id="其他参考"><a href="#其他参考" class="headerlink" title="其他参考"></a>其他参考</h2><ul><li>实验:无线网络嗅探基础</li><li>Scapy扫描及隐藏SSID扫描</li><li>实验：WPA/WPA2 PSK破解</li><li>密码学备忘录-分组密码</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
-      
-      
-      
-      <comments>https://hejueyun.github.io/posts/6eddbcac/#disqus_thread</comments>
       
     </item>
     
