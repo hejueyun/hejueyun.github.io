@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hejueyun.github.io/posts/cf619a86/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hejueyun.github.io/posts/71e8b914/</loc>
+    
+    <lastmod>2022-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hejueyun.github.io/posts/ab706956/</loc>
     
     <lastmod>2022-02-23</lastmod>
@@ -11,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://hejueyun.github.io/posts/cf619a86/</loc>
+    <loc>https://hejueyun.github.io/posts/ed4b45dd/</loc>
     
     <lastmod>2022-02-23</lastmod>
     
@@ -59,15 +77,6 @@
     <loc>https://hejueyun.github.io/posts/f59d8546/</loc>
     
     <lastmod>2022-02-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hejueyun.github.io/posts/ed4b45dd/</loc>
-    
-    <lastmod>2022-02-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
