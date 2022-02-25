@@ -15,8 +15,29 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 24 Feb 2022 12:43:06 GMT</pubDate>
+    <pubDate>Thu, 24 Feb 2022 13:58:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>计算机数理逻辑-时序逻辑-语法与语义</title>
+      <link>https://hejueyun.github.io/posts/150c47ae/</link>
+      <guid>https://hejueyun.github.io/posts/150c47ae/</guid>
+      <pubDate>Thu, 24 Feb 2022 13:30:06 GMT</pubDate>
+      
+      
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/150c47ae/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>ESBMC Master Project</title>
@@ -236,16 +257,18 @@
 &lt;blockquote&gt;
 &lt;p&gt;如果一个公示可以被写为量词在前，随后是被称为母体的无量词部分，则称其为前束范式的，所有经典逻辑公式都逻辑等价于某个前束范式公式&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Formulas-in-number-theory-informal-meaning-in-N&quot;&gt;&lt;a href=&quot;#Formulas-in-number-theory-informal-meaning-in-N&quot; class=&quot;headerlink&quot; title=&quot;Formulas in number theory, informal meaning in $N$&quot;&gt;&lt;/a&gt;Formulas in number theory, informal meaning in $N$&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/bb11e25b/1.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+&lt;p&gt;&lt;strong&gt;example&lt;/strong&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/bb11e25b/7.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Even：偶数&lt;/li&gt;
+&lt;li&gt;Let A be a closed formula in PCNF whose prefix consists only of universal quantifiers. The clausal form of A consists of the matrix of A written as a set of clauses&lt;/li&gt;
+&lt;li&gt;所以上个例子可以写为：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;Translating-English-into-first-order-logic-formulas&quot;&gt;&lt;a href=&quot;#Translating-English-into-first-order-logic-formulas&quot; class=&quot;headerlink&quot; title=&quot;Translating English into first-order logic formulas&quot;&gt;&lt;/a&gt;Translating English into first-order logic formulas&lt;/h2&gt;</description>
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/bb11e25b/7.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;</description>
       
       
       
-      <content:encoded><![CDATA[<h2 id="Terms-项"><a href="#Terms-项" class="headerlink" title="Terms 项"></a>Terms 项</h2><ul><li>Variables. <ul><li>Any <strong>variable</strong>, <strong>constant</strong> or <strong>0-ary function symbol</strong> is a term.</li></ul></li><li>Functions. <ul><li>Any <strong>expression</strong> $f(t_1,…,t_n)$ of n arguments (where each argument $t_i$ is a term and $f$ is a function symbol of valence n) is a term. In particular, symbols denoting individual constants are nullary function symbols, and thus are terms.</li></ul></li></ul><p>Only expressions which can be obtained by finitely many applications of rules 1 and 2 are terms</p><h2 id="prenex-conjunctive-normal-form-PCNF-前束范式"><a href="#prenex-conjunctive-normal-form-PCNF-前束范式" class="headerlink" title="prenex conjunctive normal form(PCNF) 前束范式"></a>prenex conjunctive normal form(PCNF) 前束范式</h2><ul><li>A formula is in prenex conjunctive normal form (PCNF) iff it is of the form:<ul><li>$Q_1x_1…Q_nx_nM$</li></ul></li><li>where the $Q_i$ are quantifiers and $M$ is a quantifier-free formula in CNF. The sequence $Q_1x_1⋯Q_nx_n$ is the prefix and $M$ is the matrix</li></ul><blockquote><p>如果一个公示可以被写为量词在前，随后是被称为母体的无量词部分，则称其为前束范式的，所有经典逻辑公式都逻辑等价于某个前束范式公式</p></blockquote><h2 id="Formulas-in-number-theory-informal-meaning-in-N"><a href="#Formulas-in-number-theory-informal-meaning-in-N" class="headerlink" title="Formulas in number theory, informal meaning in $N$"></a>Formulas in number theory, informal meaning in $N$</h2><center><img loading="lazy" src="/posts/bb11e25b/1.png" width="550"></center><ul><li>Even：偶数</li></ul><h2 id="Translating-English-into-first-order-logic-formulas"><a href="#Translating-English-into-first-order-logic-formulas" class="headerlink" title="Translating English into first-order logic formulas"></a>Translating English into first-order logic formulas</h2><center><img loading="lazy" src="/posts/bb11e25b/2.png" width="550"></center><h2 id="Substitution-替换"><a href="#Substitution-替换" class="headerlink" title="Substitution 替换"></a>Substitution 替换</h2><ul><li><strong>一个function</strong></li><li>$σ : X → TΣ(X)$</li><li>such that the set $Dom(σ) &#x3D;^{def}{x ∈ X | σ(x) \neq{x}}$ is <strong>finite</strong><ul><li>Dom(σ) is the <strong>domain</strong> of σ</li><li>$Cod(σ) &#x3D;^{def} {σ(x) | x ∈ Dom(σ)}$ is the <strong>codomain</strong> of σ</li></ul></li></ul><p>Example</p><ul><li>F &#x3D; P(g(x), y, x)</li><li>F{x&#x2F;a, y&#x2F;f (z)} &#x3D; P(g(a), f (z), a)</li></ul><center><img loading="lazy" src="/posts/bb11e25b/3.png" width="550"></center><p><strong>一般式</strong></p><center><img loading="lazy" src="/posts/bb11e25b/4.png" width="550"></center><h3 id="Modification-of-a-substitution"><a href="#Modification-of-a-substitution" class="headerlink" title="Modification of a substitution"></a>Modification of a substitution</h3><center><img loading="lazy" src="/posts/bb11e25b/5.png" width="550"></center><h3 id="Restriction"><a href="#Restriction" class="headerlink" title="Restriction"></a>Restriction</h3><ol><li>only for a free variable</li><li>The captured variable must be renamed into a “fresh” variable, say x’, F{y&#x2F;x} &#x3D; ∃x’(x’ &gt; x)<ol><li>也就是不能用x换y，导致歧义</li></ol></li></ol><h3 id="substitution-instance"><a href="#substitution-instance" class="headerlink" title="substitution instance"></a>substitution instance</h3><ul><li>We say Eσ is formed by applying σ to E, where E is an expression (a term or formula)</li><li>Example σ &#x3D; {x&#x2F;a, y&#x2F;b}<ul><li>P(g(x), y, x)σ &#x3D; P(g(x)σ, yσ, xσ) &#x3D; P(g(xσ), yσ, xσ) &#x3D; P(g(a), b, a)</li></ul></li></ul><h3 id="identity-substitution-一致性替换"><a href="#identity-substitution-一致性替换" class="headerlink" title="identity substitution 一致性替换"></a>identity substitution 一致性替换</h3><blockquote><p>The identity substitution, which maps every variable to itself, is the neutral element of substitution composition</p><p>一致性替换，将每个变量都映射到自身，是替换组合的中性元素。</p></blockquote><h3 id="Codomain-到达域"><a href="#Codomain-到达域" class="headerlink" title="Codomain 到达域"></a>Codomain 到达域</h3><ul><li>到达域（英语：Codomain），或称为陪域、余定义域、上域、终域、共变域、目标集</li><li>一个函数的到达域指的是<strong>至少包含所有</strong>此函数的输出值的一个集合。在函数符号 ${\displaystyle f\colon X\rightarrow Y}$ 中， ${\displaystyle Y}$ 是函数 ${\displaystyle f}$ 的到达域</li><li><strong>不是值域</strong><ul><li>${\displaystyle f}$ 的值域是 ${\displaystyle Y}$ 的一个子集，若 ${\displaystyle f}$ 是一个满射函数，则 ${\displaystyle f}$ 的到达域和值域相等</li></ul></li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<h2 id="Terms-项"><a href="#Terms-项" class="headerlink" title="Terms 项"></a>Terms 项</h2><ul><li>Variables. <ul><li>Any <strong>variable</strong>, <strong>constant</strong> or <strong>0-ary function symbol</strong> is a term.</li></ul></li><li>Functions. <ul><li>Any <strong>expression</strong> $f(t_1,…,t_n)$ of n arguments (where each argument $t_i$ is a term and $f$ is a function symbol of valence n) is a term. In particular, symbols denoting individual constants are nullary function symbols, and thus are terms.</li></ul></li></ul><p>Only expressions which can be obtained by finitely many applications of rules 1 and 2 are terms</p><h2 id="prenex-conjunctive-normal-form-PCNF-前束范式"><a href="#prenex-conjunctive-normal-form-PCNF-前束范式" class="headerlink" title="prenex conjunctive normal form(PCNF) 前束范式"></a>prenex conjunctive normal form(PCNF) 前束范式</h2><ul><li>A formula is in prenex conjunctive normal form (PCNF) iff it is of the form:<ul><li>$Q_1x_1…Q_nx_nM$</li></ul></li><li>where the $Q_i$ are quantifiers and $M$ is a quantifier-free formula in CNF. The sequence $Q_1x_1⋯Q_nx_n$ is the prefix and $M$ is the matrix</li></ul><blockquote><p>如果一个公示可以被写为量词在前，随后是被称为母体的无量词部分，则称其为前束范式的，所有经典逻辑公式都逻辑等价于某个前束范式公式</p></blockquote><p><strong>example</strong></p><center><img loading="lazy" src="/posts/bb11e25b/7.gif" width="550"></center><ul><li>Let A be a closed formula in PCNF whose prefix consists only of universal quantifiers. The clausal form of A consists of the matrix of A written as a set of clauses</li><li>所以上个例子可以写为：</li></ul><center><img loading="lazy" src="/posts/bb11e25b/7.gif" width="550"></center><h3 id="Skolem’s-Theorem-斯科伦定理"><a href="#Skolem’s-Theorem-斯科伦定理" class="headerlink" title="Skolem’s Theorem 斯科伦定理"></a>Skolem’s Theorem 斯科伦定理</h3><ul><li>In propositional logic, every formula is equivalent to one in CNF, but this is not true in first-order logic. However, a formula in first-order logic can be transformed into <strong>one in clausal form</strong> without modifying its satisfiability.</li><li><strong>Skolem</strong>: Let $A$ be a closed formula. Then there exists a formula $A^′$ in clausal form such that $A≈A^′$</li></ul><h4 id="≈-vs-≡"><a href="#≈-vs-≡" class="headerlink" title="≈ vs ≡"></a><code>≈</code> vs <code>≡</code></h4><blockquote><p>A≈A′ means that A is satisfiable if and only if A′ is satisfiable; that is, there exists a model for A if and only if there exists a model for A′. (not the same?)</p><p>This is not the same as logically equivalence A≡A′, which means that for all models $I$, $I$  is a model for A if and only if it is a model for A′.</p></blockquote><hr><ul><li>In A&#x3D;∀x∃yp(x,y), the quantifiers can be read: **for all x, produce a value y associated with that x such that the predicate p is true. **</li><li>But our intuitive concept of a function is the same: y&#x3D;f(x) means that given x, f produces a value y associated with x. The existential quantifier can be removed giving A′&#x3D;∀xp(x,f(x)).<ul><li>y&#x3D;f(x)意味着给定x，f产生一个与x相关的值y。可以删除存在量词，给出 $A^′&#x3D;∀xp(x,f(x))$</li></ul></li></ul><h2 id="Formulas-in-number-theory-informal-meaning-in-N"><a href="#Formulas-in-number-theory-informal-meaning-in-N" class="headerlink" title="Formulas in number theory, informal meaning in $N$"></a>Formulas in number theory, informal meaning in $N$</h2><center><img loading="lazy" src="/posts/bb11e25b/1.png" width="550"></center><ul><li>Even：偶数</li></ul><h2 id="Translating-English-into-first-order-logic-formulas"><a href="#Translating-English-into-first-order-logic-formulas" class="headerlink" title="Translating English into first-order logic formulas"></a>Translating English into first-order logic formulas</h2><center><img loading="lazy" src="/posts/bb11e25b/2.png" width="550"></center><h2 id="Substitution-替换"><a href="#Substitution-替换" class="headerlink" title="Substitution 替换"></a>Substitution 替换</h2><ul><li><strong>一个function</strong></li><li>$σ : X → TΣ(X)$</li><li>such that the set $Dom(σ) &#x3D;^{def}{x ∈ X | σ(x) \neq{x}}$ is <strong>finite</strong><ul><li>Dom(σ) is the <strong>domain</strong> of σ</li><li>$Cod(σ) &#x3D;^{def} {σ(x) | x ∈ Dom(σ)}$ is the <strong>codomain</strong> of σ</li></ul></li></ul><p>Example</p><ul><li>F &#x3D; P(g(x), y, x)</li><li>F{x&#x2F;a, y&#x2F;f (z)} &#x3D; P(g(a), f (z), a)</li></ul><center><img loading="lazy" src="/posts/bb11e25b/3.png" width="550"></center><p><strong>一般式</strong></p><center><img loading="lazy" src="/posts/bb11e25b/4.png" width="550"></center><h3 id="Modification-of-a-substitution"><a href="#Modification-of-a-substitution" class="headerlink" title="Modification of a substitution"></a>Modification of a substitution</h3><center><img loading="lazy" src="/posts/bb11e25b/5.png" width="550"></center><h3 id="Restriction"><a href="#Restriction" class="headerlink" title="Restriction"></a>Restriction</h3><ol><li>only for a free variable</li><li>The captured variable must be renamed into a “fresh” variable, say x’, F{y&#x2F;x} &#x3D; ∃x’(x’ &gt; x)<ol><li>也就是不能用x换y，导致歧义</li></ol></li></ol><h3 id="substitution-instance"><a href="#substitution-instance" class="headerlink" title="substitution instance"></a>substitution instance</h3><ul><li>We say Eσ is formed by applying σ to E, where E is an expression (a term or formula)</li><li>Example σ &#x3D; {x&#x2F;a, y&#x2F;b}<ul><li>P(g(x), y, x)σ &#x3D; P(g(x)σ, yσ, xσ) &#x3D; P(g(xσ), yσ, xσ) &#x3D; P(g(a), b, a)</li></ul></li></ul><h3 id="identity-substitution-一致性替换"><a href="#identity-substitution-一致性替换" class="headerlink" title="identity substitution 一致性替换"></a>identity substitution 一致性替换</h3><blockquote><p>The identity substitution, which maps every variable to itself, is the neutral element of substitution composition</p><p>一致性替换，将每个变量都映射到自身，是替换组合的中性元素。</p></blockquote><h3 id="Codomain-到达域"><a href="#Codomain-到达域" class="headerlink" title="Codomain 到达域"></a>Codomain 到达域</h3><ul><li>到达域（英语：Codomain），或称为陪域、余定义域、上域、终域、共变域、目标集</li><li>一个函数的到达域指的是<strong>至少包含所有</strong>此函数的输出值的一个集合。在函数符号 ${\displaystyle f\colon X\rightarrow Y}$ 中， ${\displaystyle Y}$ 是函数 ${\displaystyle f}$ 的到达域</li><li><strong>不是值域</strong><ul><li>${\displaystyle f}$ 的值域是 ${\displaystyle Y}$ 的一个子集，若 ${\displaystyle f}$ 是一个满射函数，则 ${\displaystyle f}$ 的到达域和值域相等</li></ul></li></ul>]]></content:encoded>
       
       
       <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
@@ -1036,134 +1059,6 @@
       
       
       <comments>https://hejueyun.github.io/posts/d83c07b3/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>密码学备忘录-前置知识</title>
-      <link>https://hejueyun.github.io/posts/af185d1f/</link>
-      <guid>https://hejueyun.github.io/posts/af185d1f/</guid>
-      <pubDate>Wed, 19 Jan 2022 23:05:49 GMT</pubDate>
-      
-      <description>&lt;h2 id=&quot;sec-cyber-vs-infovcs-net&quot;&gt;&lt;a href=&quot;#sec-cyber-vs-infovcs-net&quot; class=&quot;headerlink&quot; title=&quot;sec: cyber vs infovcs net&quot;&gt;&lt;/a&gt;sec: cyber vs infovcs net&lt;/h2&gt;&lt;p&gt;cyber &amp;gt;= info + net&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;info: info c.i.a&lt;ul&gt;
-&lt;li&gt;confidentiality&lt;/li&gt;
-&lt;li&gt;Integrity&lt;ul&gt;
-&lt;li&gt;Auth&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Availablity&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;攻击的主要形式&quot;&gt;&lt;a href=&quot;#攻击的主要形式&quot; class=&quot;headerlink&quot; title=&quot;攻击的主要形式&quot;&gt;&lt;/a&gt;攻击的主要形式&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;拦截Interception&lt;ul&gt;
-&lt;li&gt;中断(Interruption)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;传递大量”废纸”&lt;ul&gt;
-&lt;li&gt;拒绝服务攻击Dos&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;偷看&lt;ul&gt;
-&lt;li&gt;窃听 Eavesdropping&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;篡改/删节Tampering&lt;/li&gt;
-&lt;li&gt;伪装/冒充身份 Masquerade&lt;/li&gt;
-&lt;li&gt;复印后再次传递&lt;ul&gt;
-&lt;li&gt;重放 Replay&lt;ul&gt;
-&lt;li&gt;攻击信息实时性/真实性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;否认发送/接收 deny&lt;/li&gt;
-&lt;li&gt;阻断访问式攻击denial-of-access attack&lt;ul&gt;
-&lt;li&gt;勒索软件 ransomware (e.g. &lt;strong&gt;WannaCry&lt;/strong&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;Active-and-passive-attacks&quot;&gt;&lt;a href=&quot;#Active-and-passive-attacks&quot; class=&quot;headerlink&quot; title=&quot;Active and passive attacks&quot;&gt;&lt;/a&gt;Active and passive attacks&lt;/h3&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Sr. No.&lt;/th&gt;
-&lt;th&gt;Key&lt;/th&gt;
-&lt;th&gt;Active Attack&lt;/th&gt;
-&lt;th&gt;Passive Attack&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;Modification&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;In Active Attack, information is modified.&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;In Passive Attack, information remain unchanged.&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Dangerous For&lt;/td&gt;
-&lt;td&gt;Active Attack is dangerous for Integrity as well as Availability.&lt;/td&gt;
-&lt;td&gt;Passive Attack is dangerous for Confidentiality.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;Attention&lt;/td&gt;
-&lt;td&gt;Attention is to be paid on detection.&lt;/td&gt;
-&lt;td&gt;Attention is to be paid on prevention.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;4&lt;/td&gt;
-&lt;td&gt;Impact on System&lt;/td&gt;
-&lt;td&gt;In Active Attack, system is damaged.&lt;/td&gt;
-&lt;td&gt;In Passive Attack, system has no impact.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;5&lt;/td&gt;
-&lt;td&gt;Victim&lt;/td&gt;
-&lt;td&gt;Victim gets informed in active attack.&lt;/td&gt;
-&lt;td&gt;Victim does not get informed in passive attack.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;6&lt;/td&gt;
-&lt;td&gt;System Resources&lt;/td&gt;
-&lt;td&gt;System Resources can be changed in active attack.&lt;/td&gt;
-&lt;td&gt;System Resources are not changed in passive attack.&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;7&lt;/td&gt;
-&lt;td&gt;Property&lt;/td&gt;
-&lt;td&gt;integrity &amp;amp;&amp;amp; availability&lt;/td&gt;
-&lt;td&gt;confidentiality&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;被动攻击&lt;blockquote&gt;
-&lt;p&gt;在未经用户同意和认可的情况下，将信息或数据文件泄露给系统攻击者，&lt;strong&gt;但不对数据信息做任何修改&lt;/strong&gt;。威胁信息&lt;strong&gt;机密性&lt;/strong&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;主动攻击&lt;blockquote&gt;
-&lt;p&gt;旨在篡改系统信息、改变系统状态等，威胁信息的&lt;strong&gt;可用性和真实性&lt;/strong&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Security-Services&quot;&gt;&lt;a href=&quot;#Security-Services&quot; class=&quot;headerlink&quot; title=&quot;Security Services&quot;&gt;&lt;/a&gt;Security Services&lt;/h3&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="sec-cyber-vs-infovcs-net"><a href="#sec-cyber-vs-infovcs-net" class="headerlink" title="sec: cyber vs infovcs net"></a>sec: cyber vs infovcs net</h2><p>cyber &gt;= info + net</p><ul><li>info: info c.i.a<ul><li>confidentiality</li><li>Integrity<ul><li>Auth</li></ul></li><li>Availablity</li></ul></li></ul><h2 id="攻击的主要形式"><a href="#攻击的主要形式" class="headerlink" title="攻击的主要形式"></a>攻击的主要形式</h2><ul><li>拦截Interception<ul><li>中断(Interruption)</li></ul></li><li>传递大量”废纸”<ul><li>拒绝服务攻击Dos</li></ul></li><li>偷看<ul><li>窃听 Eavesdropping</li></ul></li><li>篡改/删节Tampering</li><li>伪装/冒充身份 Masquerade</li><li>复印后再次传递<ul><li>重放 Replay<ul><li>攻击信息实时性/真实性</li></ul></li></ul></li><li>否认发送/接收 deny</li><li>阻断访问式攻击denial-of-access attack<ul><li>勒索软件 ransomware (e.g. <strong>WannaCry</strong>)</li></ul></li></ul><hr><h3 id="Active-and-passive-attacks"><a href="#Active-and-passive-attacks" class="headerlink" title="Active and passive attacks"></a>Active and passive attacks</h3><table><thead><tr><th>Sr. No.</th><th>Key</th><th>Active Attack</th><th>Passive Attack</th></tr></thead><tbody><tr><td>1</td><td>Modification</td><td><strong>In Active Attack, information is modified.</strong></td><td><strong>In Passive Attack, information remain unchanged.</strong></td></tr><tr><td>2</td><td>Dangerous For</td><td>Active Attack is dangerous for Integrity as well as Availability.</td><td>Passive Attack is dangerous for Confidentiality.</td></tr><tr><td>3</td><td>Attention</td><td>Attention is to be paid on detection.</td><td>Attention is to be paid on prevention.</td></tr><tr><td>4</td><td>Impact on System</td><td>In Active Attack, system is damaged.</td><td>In Passive Attack, system has no impact.</td></tr><tr><td>5</td><td>Victim</td><td>Victim gets informed in active attack.</td><td>Victim does not get informed in passive attack.</td></tr><tr><td>6</td><td>System Resources</td><td>System Resources can be changed in active attack.</td><td>System Resources are not changed in passive attack.</td></tr><tr><td>7</td><td>Property</td><td>integrity &amp;&amp; availability</td><td>confidentiality</td></tr></tbody></table><ul><li>被动攻击<blockquote><p>在未经用户同意和认可的情况下，将信息或数据文件泄露给系统攻击者，<strong>但不对数据信息做任何修改</strong>。威胁信息<strong>机密性</strong>。</p></blockquote></li><li>主动攻击<blockquote><p>旨在篡改系统信息、改变系统状态等，威胁信息的<strong>可用性和真实性</strong>。</p></blockquote></li></ul><h3 id="Security-Services"><a href="#Security-Services" class="headerlink" title="Security Services"></a>Security Services</h3><ol><li>Authentication</li><li>Access Control</li><li>Data Confidentiality</li><li>Data Integrity</li><li>Nonrepudiation</li><li>Available Service</li></ol><h2 id="信安基本属性"><a href="#信安基本属性" class="headerlink" title="信安基本属性"></a>信安基本属性</h2><img loading="lazy" src="/posts/af185d1f/2020-08-06-15-54-55.png" width height="250"><ul><li>机密性(<strong>Confidentiality</strong>)<ul><li>通过<strong>访问控制</strong>阻止非授权用户获得机密信息</li><li>通过<strong>加密变换</strong>阻止非授权用户获知信息内容</li></ul></li><li>完整性(<strong>Integrity</strong>)<ul><li>完整性是指信息未经授权不能进行篡改的特征，维护信息的一致性</li><li>通过<strong>访问控制</strong>阻止篡改行为</li><li>通过<strong>消息摘要算法</strong>检验信息是否被篡改</li></ul></li><li>可用性(<strong>Availablity</strong>)</li><li>认证性(<strong>Authentication</strong>)<ul><li>确保一个消息的来源或消息本身被正确地标识，同时确保该标识没有被伪造</li><li>认证分为<strong>消息认证</strong>和<strong>实体认证</strong></li></ul></li><li>不可否认性(Non-Repudiation)<ul><li>不可否认性是指能保障用户无法在事后否认曾经对信息进行的生成、签发、接收等行为</li><li>通过<strong>数字签名</strong>提供抗否认服务</li></ul></li></ul><h2 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">• plaintext - oriigiinall message</span><br><span class="line">• ciphertext - coded message</span><br><span class="line">• cipher 密码算法- allgoritthm for transfformiing pllaiinttextt tto ciipherttextt</span><br><span class="line">• key - inffo used in ciipher known onlly to sender//receiiver</span><br><span class="line">• encipher (encrypt) - converttiing pllaiinttextt tto ciipherttextt</span><br><span class="line">• decipher (decrypt) - recoveriing ciipherttextt ffrom pllaiinttextt</span><br><span class="line">• cryptography - study off encryption principles//methods</span><br><span class="line">• cryptanalysis (codebreaking) 密码分析(破译)- sttudy off priinciiplles//</span><br><span class="line">metthods off deciipheriing ciipherttextt wiithout knowiing key</span><br><span class="line">• cryptology - ffiielld off botth crypttography and crypttanallysiis</span><br></pre></td></tr></table></figure><h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><img loading="lazy" src="/posts/af185d1f/2020-08-06-16-38-17.png" width height="250"><ul><li>图片有误</li></ul><h3 id="绝对安全-vs-相对安全"><a href="#绝对安全-vs-相对安全" class="headerlink" title="绝对安全 vs 相对安全"></a>绝对安全 vs 相对安全</h3><ul><li>unconditional security<ul><li>管有多少计算能力或时间可以使用都无法破解密码</li></ul></li><li>computational security<ul><li>考虑到有限的计算资源，一定时间内无法被破译</li></ul></li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://hejueyun.github.io/categories/Security/Cryptography/">Cryptography</category>
-      
-      
-      <category domain="https://hejueyun.github.io/tags/Note/">Note</category>
-      
-      
-      <comments>https://hejueyun.github.io/posts/af185d1f/#disqus_thread</comments>
       
     </item>
     
