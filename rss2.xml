@@ -15,8 +15,48 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 27 Feb 2022 00:04:40 GMT</pubDate>
+    <pubDate>Thu, 03 Mar 2022 23:08:22 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>计算机数理逻辑-程序验证-协议安全分析</title>
+      <link>https://hejueyun.github.io/posts/fa02fe64/</link>
+      <guid>https://hejueyun.github.io/posts/fa02fe64/</guid>
+      <pubDate>Thu, 03 Mar 2022 12:53:42 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;The-Neuman-Stubblebine-key-exchange-protocol&quot;&gt;&lt;a href=&quot;#The-Neuman-Stubblebine-key-exchange-protocol&quot; class=&quot;headerlink&quot; title=&quot;The Neuman-Stubblebine key exchange protocol&quot;&gt;&lt;/a&gt;The Neuman-Stubblebine key exchange protocol&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/1.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/2.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;breaking&quot;&gt;&lt;a href=&quot;#breaking&quot; class=&quot;headerlink&quot; title=&quot;breaking&quot;&gt;&lt;/a&gt;breaking&lt;/h3&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/5.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;Verification-of-security-protocols-using-resolution&quot;&gt;&lt;a href=&quot;#Verification-of-security-protocols-using-resolution&quot; class=&quot;headerlink&quot; title=&quot;Verification of security protocols using resolution&quot;&gt;&lt;/a&gt;Verification of security protocols using resolution&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/3.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;Assumptions-in-security-protocol-analysis&quot;&gt;&lt;a href=&quot;#Assumptions-in-security-protocol-analysis&quot; class=&quot;headerlink&quot; title=&quot;Assumptions in security protocol analysis&quot;&gt;&lt;/a&gt;Assumptions in security protocol analysis&lt;/h2&gt;&lt;p&gt;What can an intruder do?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The intruder can capture all messages sent by one participant to another&lt;/li&gt;
+&lt;li&gt;It can send a message it has constructed to any other participant&lt;/li&gt;
+&lt;li&gt;It can generate new keys, new nonces, timestamps . . .&lt;/li&gt;
+&lt;li&gt;It can construct new messages from the ones it has, using legal constructors&lt;/li&gt;
+&lt;li&gt;The intruder can decompose分解 tuples from which messages are formed&lt;/li&gt;
+&lt;li&gt;It can decrypt encrypted parts, but only if it knows the key I.e. we assume perfect cryptography: an intruder cannot break any keys nor does it know any of the initial keys $K_{at}$ at or $K_{bt}$&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="The-Neuman-Stubblebine-key-exchange-protocol"><a href="#The-Neuman-Stubblebine-key-exchange-protocol" class="headerlink" title="The Neuman-Stubblebine key exchange protocol"></a>The Neuman-Stubblebine key exchange protocol</h2><center><img loading="lazy" src="/posts/fa02fe64/1.png" width="550"></center><center><img loading="lazy" src="/posts/fa02fe64/2.png" width="550"></center><h3 id="breaking"><a href="#breaking" class="headerlink" title="breaking"></a>breaking</h3><center><img loading="lazy" src="/posts/fa02fe64/5.png" width="550"></center><h2 id="Verification-of-security-protocols-using-resolution"><a href="#Verification-of-security-protocols-using-resolution" class="headerlink" title="Verification of security protocols using resolution"></a>Verification of security protocols using resolution</h2><center><img loading="lazy" src="/posts/fa02fe64/3.png" width="550"></center><h2 id="Assumptions-in-security-protocol-analysis"><a href="#Assumptions-in-security-protocol-analysis" class="headerlink" title="Assumptions in security protocol analysis"></a>Assumptions in security protocol analysis</h2><p>What can an intruder do?</p><ul><li>The intruder can capture all messages sent by one participant to another</li><li>It can send a message it has constructed to any other participant</li><li>It can generate new keys, new nonces, timestamps . . .</li><li>It can construct new messages from the ones it has, using legal constructors</li><li>The intruder can decompose分解 tuples from which messages are formed</li><li>It can decrypt encrypted parts, but only if it knows the key I.e. we assume perfect cryptography: an intruder cannot break any keys nor does it know any of the initial keys $K_{at}$ at or $K_{bt}$</li></ul><h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><center><img loading="lazy" src="/posts/fa02fe64/4.png" width="550"></center><h3 id="The-capabilities-of-the-intruder入侵者"><a href="#The-capabilities-of-the-intruder入侵者" class="headerlink" title="The capabilities of the intruder入侵者"></a>The capabilities of the intruder入侵者</h3><center><img loading="lazy" src="/posts/fa02fe64/6.png" width="550"></center><center><img loading="lazy" src="/posts/fa02fe64/7.png" width="550"></center>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/fa02fe64/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>西行漫记-其六</title>
@@ -1019,21 +1059,6 @@
       
       
       <comments>https://hejueyun.github.io/posts/3ff63edb/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>论文笔记：使用基于SMT的上下文边界模型来验证多线程软件</title>
-      <link>https://hejueyun.github.io/posts/9277bdf3/</link>
-      <guid>https://hejueyun.github.io/posts/9277bdf3/</guid>
-      <pubDate>Sun, 23 Jan 2022 16:18:14 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://hejueyun.github.io/posts/9277bdf3/#disqus_thread</comments>
       
     </item>
     
