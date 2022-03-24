@@ -130,7 +130,7 @@
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
             </figure>';
           }
-          ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">00: ' + data.year + '' + data.month + '月</h1>\
+          ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">1. ' + data.year + '' + data.month + '月</h1>\
         <ul class="img-box-ul">' + liTmpl + '</ul>\
         </section>';
         }
