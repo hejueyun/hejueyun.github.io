@@ -117,7 +117,7 @@
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
             var minSrc = './minins/' + data.link[i] + '.min.jpg';
-            var src = './ins.j/' + data.link[i];
+            var src = './ins/' + data.link[i];
             var type = 'images';
             var sizes = data.sizes[i];
             src += '.jpg';
