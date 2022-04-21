@@ -15,8 +15,56 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 17 Apr 2022 22:58:45 GMT</pubDate>
+    <pubDate>Thu, 21 Apr 2022 22:43:23 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>ESBMC-An Efficient SMT-based Software Model Checker</title>
+      <link>https://hejueyun.github.io/posts/2f42f06c/</link>
+      <guid>https://hejueyun.github.io/posts/2f42f06c/</guid>
+      <pubDate>Wed, 20 Apr 2022 20:02:42 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;Introduction&quot;&gt;1. Introduction&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;It(ESBMC) does not require any special annotations in the source code to find such bugs, but it allows users to add their assertions and checks if they hold. In addition, ESBMC implements a k-induction proof rule and can be used to prove the absence of property violations (resp. the validity of user-defined assertions)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;它（ESBMC）不需要在源代码中进行任何特殊的注释来发现这种错误，但它允许用户添加他们的断言并检查它们是否成立。此外，ESBMC实现了一个k-归纳证明规则，可以用来证明没有违反属性（即用户定义的断言的有效性）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;ESBMC-Architecture&quot;&gt;2. ESBMC Architecture&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/2f42f06c/1.png&quot; width=&quot;600&quot;&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+&lt;li&gt;One of the significant challenges in software verification is the development and maintenance of an infrastructure that can reliably and efficiently handle real-world programs; it is an issue that only intensifies given the ever-evolving programming language standards.&lt;ul&gt;
+&lt;li&gt;新标准发布需要新的支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Front-end&quot;&gt;2.1. Front-end&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;an important piece of technology that should facilitate the transition between the &lt;strong&gt;program&lt;/strong&gt; under verification and a &lt;strong&gt;format&lt;/strong&gt; the tool can work upon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Clang&quot;&gt;2.1.1. Clang&lt;/h4&gt;&lt;p&gt;Clang是LLVM编译器的c-family前端，Clang可能意指三种不同的实体：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前端（在Clang库中实现）&lt;/li&gt;
+&lt;li&gt;编译器驱动程序（在clang命令和Clang驱动程序库中实现）&lt;/li&gt;
+&lt;li&gt;实际的编译器（在clang -cc1命令中实现）。clang -cc1中的编译器不仅是由Clang库实现，还广泛地使用其他LLVM库来实现编译器的中端、后端以及集成的汇编器。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;clang -emit-llvm -c size.c -o size.bc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Introduction">1. Introduction</h2><blockquote><p>It(ESBMC) does not require any special annotations in the source code to find such bugs, but it allows users to add their assertions and checks if they hold. In addition, ESBMC implements a k-induction proof rule and can be used to prove the absence of property violations (resp. the validity of user-defined assertions)</p><ul><li>它（ESBMC）不需要在源代码中进行任何特殊的注释来发现这种错误，但它允许用户添加他们的断言并检查它们是否成立。此外，ESBMC实现了一个k-归纳证明规则，可以用来证明没有违反属性（即用户定义的断言的有效性）</li></ul></blockquote><h2 id="ESBMC-Architecture">2. ESBMC Architecture</h2><center><img loading="lazy" src="/posts/2f42f06c/1.png" width="600"></center><ul><li>One of the significant challenges in software verification is the development and maintenance of an infrastructure that can reliably and efficiently handle real-world programs; it is an issue that only intensifies given the ever-evolving programming language standards.<ul><li>新标准发布需要新的支持</li></ul></li></ul><h3 id="Front-end">2.1. Front-end</h3><ul><li>an important piece of technology that should facilitate the transition between the <strong>program</strong> under verification and a <strong>format</strong> the tool can work upon</li></ul><h4 id="Clang">2.1.1. Clang</h4><p>Clang是LLVM编译器的c-family前端，Clang可能意指三种不同的实体：</p><ul><li>前端（在Clang库中实现）</li><li>编译器驱动程序（在clang命令和Clang驱动程序库中实现）</li><li>实际的编译器（在clang -cc1命令中实现）。clang -cc1中的编译器不仅是由Clang库实现，还广泛地使用其他LLVM库来实现编译器的中端、后端以及集成的汇编器。</li><li><code>clang -emit-llvm -c size.c -o size.bc</code></li></ul><blockquote><p>Using the LLVM bitcode in the verification process <strong>brings some advantages</strong>; the bitcode is highly optimized by LLVM and will simplify the verification, thus reducing costs. <strong>However</strong>, <strong>there are disadvantages to this process</strong>, including <strong>losing context information</strong> (e.g., variable, class and function names are mangled in C++ ), source location information; <strong>in rare cases, optimizations can generate wrong results</strong> . While the latter can be avoided by disabling optimizations (and thus losing one of <strong>this approach’s</strong> advantages), the other two are not easily avoided by software verifiers.</p></blockquote><ul><li>其他前端的不足还是在于会丢失source location information<ul><li>丢失了会怎么样呢？</li></ul></li></ul><h4 id="ESBMC-Front-end">2.1.2. ESBMC Front-end</h4><ul><li>Instead of working on the LLVM bitcode, <strong>ESBMC accesses the AST that generates the bitcode</strong><ul><li>We developed a new front-end <strong>based on clang</strong>. </li><li>We use <strong>clang</strong> to parse the C program, which generates the clang AST, and we <strong>convert it to the ESBMC AST</strong></li></ul></li></ul><h4 id="versus">2.1.3. versus</h4><ul><li>The clang front-end brings several <strong>advantages</strong> to the verification process. <ul><li>First, clang has a powerful static analyzer. It can provide state-of-the-art compiler diagnostics of the program, thus <strong>issuing the same warnings and errors</strong> that one would expect from a conventional compilation. </li><li>Second, <strong>the support for new language features is simplified</strong>. A newAST node converter needs only to be added to the converter class in ESBMC, rather than layering in the feature from flex lexer to type-checker. </li><li>Finally, by choosing the AST instead of the bitcode, <strong>a complete representation of the original program is available, including the original names of every class, function, and variable</strong>.</li></ul></li><li>The <strong>disadvantage</strong> is that ESBMC is <strong>unable to access the optimizations</strong> that LLVM performs on the bitcode</li></ul><h3 id="GOTO-Converter">2.2. GOTO Converter</h3><ul><li><p>This representation is similar to the control flow graph (CFG) representation used by conventional compilers, but we associate program statements with edges. </p><ul><li>In this process, the GOTOprogram is also simplified, and <strong>new property checks and instructions can be added</strong>.</li></ul></li><li><p>The GOTOprogram is a simplified version ofthe program: a branch and a backward GOTO replace for and while loops. It is very similar to a C program, containing assignments, function calls and returns, and location information.</p></li><li><p>Once the GOTO program is generated, the following transformations can be applied, depending on the set of options given to ESBMC:</p><ul><li><strong>Function inlining</strong><ul><li>replaces function calls with the instructions of the called function.</li></ul></li><li><strong>Interval analysis</strong><ul><li>performs an <strong>interval analysis</strong>区间分析 for integer variables</li><li>The intervals are added back into the GOTO program as assumptions</li></ul></li><li><strong>Code transformations</strong><ul><li>introduce new instructions depending on several factors. </li><li>In particular, concurrency instructions can be inserted if the program is multi-threaded, and k-induction specific instructions are introduced if kinduction verification is enabled</li></ul></li><li><strong>Property checks</strong><ul><li>can insert several property checks into the GOTO program, including division by zero checks, integer, and float overflow checks, NaN checks (i.e., whether the result of an operation can be NaN), data race checks, deadlock checks, and atomicity checks. All these properties are encoded as <strong>assertions</strong> in the GOTO program.</li></ul></li></ul></li></ul><h3 id="Symbolic-Engine-Generating-SSA">2.3. Symbolic Engine: Generating SSA</h3><p>static single assignment (SSA)</p><ul><li>unwinds解开 the GOTO program from the previous step</li><li>add further property checks, including <strong>dynamic memory checks</strong> (bounds, memory alignment, offset pointer-free, and double-free) and unwinding assertions</li></ul><p>…</p><h3 id="SMT-Solver-SMT-Encoding-of-C-Programs">2.4. SMT Solver: SMT Encoding of C Programs</h3><p>After the SSA set is created, the next step is to encode every (not sliced) assignment in SMT and check for satisfiability. </p><ul><li>We use a notation of constraints C and properties P when encoding the set of SSA. <ul><li>A <strong>constraint</strong> is an <strong>assignment</strong> or an <strong>assumption</strong> in the program. It constrains the value of a variable</li><li>while a <strong>property</strong> is an <strong>assertion</strong> in the program. <strong>This property needs to hold given the set of constraints</strong>.</li></ul></li><li>The constraints and properties are encoded in the form $C∧¬P$: given the set of constraints, <strong>the SMT solver will try to find an assignment to variables</strong> that satisfies the constraints and violates at least one property. <ul><li>SMT求解器将试图找到一个满足约束条件并至少违反一个属性的变量赋值</li></ul></li><li>Finally, if the SMT solver finds a model, ESBMC will generate a program <strong>counterexample</strong>: a set of assignments and the program’s violated property.</li></ul><p>…</p><h2 id="ESBMC’s-Verification-Modes">3. ESBMC’s Verification Modes</h2><p>.</p><h2 id="参考">4. 参考</h2><ul><li><a href="https://blog.csdn.net/qq_36287943/article/details/109626082">LLVM - 学习笔记一 - zhugl0</a></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/2f42f06c/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>软件安全备忘录：CERT C Coding Standard笔记</title>
@@ -1031,61 +1079,6 @@
       
       
       <comments>https://hejueyun.github.io/posts/f59d8546/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>计算机数理逻辑-命题逻辑-演绎</title>
-      <link>https://hejueyun.github.io/posts/ec86b407/</link>
-      <guid>https://hejueyun.github.io/posts/ec86b407/</guid>
-      <pubDate>Mon, 07 Feb 2022 16:16:19 GMT</pubDate>
-      
-      <description>&lt;h2 id=&quot;形式语言&quot;&gt;1. 形式语言&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;语言按照语法分类大致可分为自然语言与形式语言两种。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自然语言（Natural Language）就是人类讲的语言，比如汉语、英语等。此类语言不是人为设计的语言，而是自然进化而成的。&lt;/p&gt;
-&lt;p&gt;形式语言（Formal Language）是为了满足特定的应用而人为设计的语言。例如数学使用的数字与运算符号、化学使用的分子式。编程语言同样也是一种形式语言，是专门用来表达计算过程的形式语言。&lt;/p&gt;
-&lt;p&gt;形式语言有严格的语法（Syntax）规则。语法规则是由符号（Token）与结构（Structure）的规则组成。&lt;/p&gt;
-&lt;p&gt;Token 相当于自然语言中的单词与标点、数学式中的数字与运算符。例如 6 &amp;#x3D; 3 + 3$，之所以无法构成一个等式，是因为 $ 符号并不属于合法的 Token 符号。&lt;/p&gt;
-&lt;p&gt;结构则是指 Token 的排列方式， 如 3 &amp;#x3D; + 3 虽然加号与等号均为核发的 Token 运算符，但是存在一定的结构错误。&lt;/p&gt;
-&lt;p&gt;关于 Token 的规则称为词法（Lexical）规则。而关于结构的规则称为语法（Semantic）规则。&lt;/p&gt;
-&lt;p&gt;当阅读一个自然语言句子或是形式语言句子时，首先要明白词法规则（Token），然后需要弄清楚句子的语法结构（如学习阅读外语句子时）。分析句子结构的过程就是解析（Parse）的过程&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;例如&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;正则表达式&lt;/li&gt;
-&lt;li&gt;自动机&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Deductive-Proof&quot;&gt;2. Deductive Proof&lt;/h2&gt;&lt;p&gt;The deductive systems studiedwere developed in an attempt to formalize mathematical reasoning.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;所研究的演绎系统是为了使数学推理正规化而开发的。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;引入演绎证明方法的意义&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The set of axioms may be infinite&lt;/li&gt;
-&lt;li&gt;Very few logics have decision procedures like propositional logic&lt;/li&gt;
-&lt;li&gt;A decision procedure may not give insight into the relationship between the axioms and the theorem&lt;/li&gt;
-&lt;li&gt;A decision procedure produces a ‘yes&amp;#x2F;no’ answer, so it is difficult to recognize intermediate results (lemmas). Clearly, the millions of mathematical theorems in existence could not have been inferred directly from axioms&lt;ul&gt;
-&lt;li&gt;A decision procedure produces a ‘yes&amp;#x2F;no’ answer, so it is difficult to recognize intermediate results (lemmas)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="形式语言">1. 形式语言</h2><blockquote><p>语言按照语法分类大致可分为自然语言与形式语言两种。</p></blockquote><blockquote><p>自然语言（Natural Language）就是人类讲的语言，比如汉语、英语等。此类语言不是人为设计的语言，而是自然进化而成的。</p><p>形式语言（Formal Language）是为了满足特定的应用而人为设计的语言。例如数学使用的数字与运算符号、化学使用的分子式。编程语言同样也是一种形式语言，是专门用来表达计算过程的形式语言。</p><p>形式语言有严格的语法（Syntax）规则。语法规则是由符号（Token）与结构（Structure）的规则组成。</p><p>Token 相当于自然语言中的单词与标点、数学式中的数字与运算符。例如 6 &#x3D; 3 + 3$，之所以无法构成一个等式，是因为 $ 符号并不属于合法的 Token 符号。</p><p>结构则是指 Token 的排列方式， 如 3 &#x3D; + 3 虽然加号与等号均为核发的 Token 运算符，但是存在一定的结构错误。</p><p>关于 Token 的规则称为词法（Lexical）规则。而关于结构的规则称为语法（Semantic）规则。</p><p>当阅读一个自然语言句子或是形式语言句子时，首先要明白词法规则（Token），然后需要弄清楚句子的语法结构（如学习阅读外语句子时）。分析句子结构的过程就是解析（Parse）的过程</p></blockquote><p>例如</p><ul><li>正则表达式</li><li>自动机</li></ul><h2 id="Deductive-Proof">2. Deductive Proof</h2><p>The deductive systems studiedwere developed in an attempt to formalize mathematical reasoning.</p><ul><li>所研究的演绎系统是为了使数学推理正规化而开发的。</li></ul><p>引入演绎证明方法的意义</p><ul><li>The set of axioms may be infinite</li><li>Very few logics have decision procedures like propositional logic</li><li>A decision procedure may not give insight into the relationship between the axioms and the theorem</li><li>A decision procedure produces a ‘yes&#x2F;no’ answer, so it is difficult to recognize intermediate results (lemmas). Clearly, the millions of mathematical theorems in existence could not have been inferred directly from axioms<ul><li>A decision procedure produces a ‘yes&#x2F;no’ answer, so it is difficult to recognize intermediate results (lemmas)</li></ul></li></ul><p>type</p><ul><li>The second one <strong>$H$</strong> will be familiar because it is a formalization of step-by-step proofs in mathematics: It contains a set of <strong>three</strong> axioms and <strong>one</strong> rule of inference; proofs are constructed as a sequence of formulas, each of which is either an axiom (or a formula that has been previously proved) or a derivation of a formula from previous formulas in the sequence using the rule of inference.</li><li>The system <strong>$G$</strong> will be less familiar because it has one axiom and many rules of inference, but we present it first because it is almost trivial to prove the soundness and completeness of $G$ from its relationship with semantic tableaux</li></ul><h3 id="deductive-system-演绎系统">2.1. deductive system 演绎系统</h3><ul><li>A deductive system is <strong>a set of formulas called axioms</strong> and <strong>a set of rules of inference</strong>.<ul><li><strong>公理axioms</strong>是用来推导其他命题的起点。和<strong>定理Theorem</strong>不同，一个公理（除非有冗余的）不能被其他公理推导出来，否则它就不是起点本身</li><li>A proof in a deductive system is a sequence of formulas $S&#x3D;{A_1,…,A_n}$ such that each formula A i is either an axiom or it can be inferred from <strong>previous formulas</strong> of the sequence $A_{j_1},…A_{j_n}$, where $j_1&lt;⋯&lt;j_k &lt;i$, using a rule of inference. For $A_n$ , the last formula in the sequence, we say that $A_n$ is a <strong>theorem</strong>定理, the sequence S is a proof of $A_n$ , and $A_n$ is <strong>provable</strong>, denoted $⊢A_n$ . If ⊢A, then A <strong>may be used like an axiom</strong> in a <strong>subsequent proof</strong>.<blockquote><p>In proof theory, the turnstile is used to denote “provability” or “derivability”. For example, if T is a formal theory and S is a particular sentence in the language of the theory then T⊢S means that S is provable from T</p></blockquote></li></ul></li><li>if T, then S</li></ul><blockquote><p>一个 <strong>矢列</strong> 是一个二元组 (Γ,∆)，记为 Γ ⊢ ∆，这里 Γ,∆ 为命题的 有穷集合（可为空），称 Γ 为前件，∆ 为后件.命题逻辑的自然推理系统 G′ 由以下公理和规则组成，Γ,∆,Λ,Θ 表示任何命题有穷集合，A,B 表示任何命题，<strong>Γ,A,∆为集合 Γ ∪ {A} ∪ ∆ 的简写</strong>.</p><ul><li>规则的上矢列S1,S2 被称为前提，下矢列S 被称为结论.G′ 中规则被称为推<br>理规则，规则中被作用的命题被称为主命题，而不变的命题被称为辅命题.</li><li>每个公理和规则是模式（schema），它们可有无穷多个实例.</li></ul></blockquote><center><img loading="lazy" src="/posts/ec86b407/2.png" width="550px"></center><p>sequent序贯</p><ul><li>If U and V are (possibly empty) sets of formulas, then U⇒V is a sequent</li></ul><h3 id="演绎vs归纳">2.2. 演绎vs归纳</h3><ul><li>参考：<a href="https://zhuanlan.zhihu.com/p/98979189">初等几何笔记：希尔伯特的公理体系—第 1 章 破晓：在欧几里得之前 - 遇见数学的文章 - 知乎</a></li></ul><h2 id="Gentzen-System">3. Gentzen System</h2><p><strong>相继式演算</strong>（<strong>Sequent calculus</strong>，又译矢列演算、矢列式演算、序贯演算）</p><ul><li><strong>An axiom of $G$ is a set of literals U containing a complementary pair</strong>. Rule of inference are used to infer a set of formulas U from one or two other sets of formulas U 1 and U 2; there are two types of rules</li><li>Let ${α_1,α_2}\subseteq{U_1}$ and let $U_1’&#x3D;U_1-{α_1,α_2}$. Then $U&#x3D;U_1’\cup{α}$  can be inferred</li><li>Let ${β_1}⊆U_1$, ${β_2}⊆U_2$ and let $U_1’&#x3D;U_1-{β_1}$, $U_2’&#x3D;U_2-{β_2}$. Then $U&#x3D;U_1’\cup{U_2’}\cup$ can be inferred.</li></ul><center><img loading="lazy" src="/posts/ec86b407/3.gif" width="550px"></center><ul><li><p>The set or sets of formulas $U_1,U_2$ are the premises前提 and set of formulas U that is inferred is the conclusion结论</p></li><li><p>A set of formulas $U$ that is an axiom or a conclusion is said <strong>to be proved</strong>, denoted <code>⊢U</code></p><ul><li>这个符号因为名叫turnstile闸机</li></ul></li><li><p>$⊢A$</p><ul><li>I know A is true</li><li>A is a theorem in the system</li></ul></li><li><p>$P⊢Q$</p><ul><li>From P, I know that Q</li><li>Q is derivable from P in the system 衍生</li><li>P is provable from Q 证明</li></ul></li><li><p>The following notation is used for <strong>rules of inference</strong>:</p></li></ul><center><img loading="lazy" src="/posts/ec86b407/1.gif" width="550px"></center><ul><li>Prove ⊢(p∨q)→(q∨p) in G</li></ul><center><img loading="lazy" src="/posts/ec86b407/4.gif" width="550px"></center><h3 id="vs-Semantic-Tableaux">3.1. vs Semantic Tableaux</h3><ul><li>上下翻转</li></ul><center><img loading="lazy" src="/posts/ec86b407/5.gif" width="550px"></center><ul><li>Let A be a formula in propositional logic. Then ⊢A in $G$  if and only if there is a closed semantic tableau for ¬ A.<ul><li>当且仅当语义树叶子结点全部时互补文字集时，公式才可证</li></ul></li></ul><h3 id="⊨-vs-⊢-（蕴含-vs-可证）">3.2. ⊨ vs ⊢ （蕴含 vs 可证）</h3><p>⊨A if and only if ⊢A in $G$.</p><ul><li>A为真当且仅当A可证<blockquote><p>A is valid iff ¬ A is unsatisfiable iff there is a closed semantic tableau for ¬ A iff there is a proof of A in $G$</p></blockquote></li></ul><center><img loading="lazy" src="/posts/ec86b407/6.jpg" width="550px"></center><p><em>想像文氏图有助于理解，下图为蕴含</em></p><center><img loading="lazy" src="/posts/ec86b407/9.png" width="550px"></center><ul><li>Soundness：若 Γ ⊢ ∆ 在 G′ 中可证，则 Γ ⊢ ∆ 有效</li><li>completeness：若 Γ ⊢ ∆ 有效，则 Γ ⊢ ∆ 在 G′ 中可证.这就是 G′ 的完全性</li></ul><h3 id="⊨-vs-⊢-vs-→">3.3. ⊨ vs ⊢ vs →</h3><ul><li>$a⊢b&#x3D; ⊢a\rightarrow{b}$</li><li>$a⊢b&#x3D; ⊨a\rightarrow{b}$</li></ul><blockquote><p>注意<code>⊧</code>不是<strong>该语言</strong>中的符号，而是在上层语言 (meta-language) 中.在上层语言中，人们也需要用联结词如 iff，not，and，or，imply 等</p><p>上层语言是一种用于描述另一种语言的语言</p></blockquote><h2 id="Hilbert-System">4. Hilbert System</h2><blockquote><p>In Gentzen systems there is one axiom and many rules of inference, while in a Hilbert system there are several axioms but only one rule of inference. </p><p>在Gentzen系统中，有一个公理和许多推理规则，而在Hilbert系统中，有几个公理但只有一个推理规则</p></blockquote><ul><li>axioms：</li></ul><center><img loading="lazy" src="/posts/ec86b407/8.gif" width="550px"></center><ul><li>rule of inference： <strong>modus ponens</strong>辩证法<ul><li>the formula B can be inferred from A and A→B</li></ul></li></ul><center><img loading="lazy" src="/posts/ec86b407/7.gif" width="550px"></center><ul><li>实际上就是**Binary Resolution(BR)**归结的特例</li></ul><center><img loading="lazy" src="/posts/ec86b407/10.jpg" width="450px"></center><h2 id="相继式演绎-vs-希尔伯特演绎">5. 相继式演绎 vs 希尔伯特演绎</h2><blockquote><p>Both the deductive systems  and  are sound and complete. Completeness of  follows directly from the completeness of the method of semantic tableaux as a decision procedure for satisfiability and validity in propositional logic. However, the method of semantic tableaux is not very efficient.</p></blockquote><h2 id="参考">6. 参考</h2><ul><li><a href="https://yaojianqun.com/index.php/2021/04/06/%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80/">形式语言 - 留白</a></li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
-      
-      
-      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
-      
-      
-      <comments>https://hejueyun.github.io/posts/ec86b407/#disqus_thread</comments>
       
     </item>
     
