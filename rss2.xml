@@ -24,31 +24,14 @@
       <guid>https://hejueyun.github.io/posts/536aff33/</guid>
       <pubDate>Thu, 05 May 2022 12:30:25 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;Verification-vs-Validation&quot;&gt;1. Verification vs Validation&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Verification: “Are we building the product right?”  &lt;ul&gt;
-&lt;li&gt;The software should conform to its specification&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Validation: “Are we building the right product?” &lt;ul&gt;
-&lt;li&gt;The software should do what the user requires&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Verification and validation must be applied at each stage in the software process&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Static-and-Dynamic-Verification&quot;&gt;2. Static and Dynamic Verification&lt;/h2&gt;&lt;p&gt;static verification&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;aka Software inspections&lt;/li&gt;
-&lt;li&gt;Code analysis can prove the absence of errors but might subject to incorrect results&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;dynamic verification&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;aka Software testing&lt;/li&gt;
-&lt;li&gt;The system is executed with test data&lt;/li&gt;
-&lt;li&gt;Operational behaviour is observed&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/536aff33/1.png&quot; width=&quot;600&quot;&gt;&lt;/center&gt;
-
-&lt;h3 id=&quot;The-V-model-of-development&quot;&gt;2.1. The V-model of development&lt;/h3&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/536aff33/2.png&quot; width=&quot;600&quot;&gt;&lt;/center&gt;</description>
+&lt;li&gt;Verification: “Are we building the product right?” </description>
+          
+        
       
       
       
@@ -73,15 +56,13 @@
       <guid>https://hejueyun.github.io/posts/a0a87206/</guid>
       <pubDate>Mon, 02 May 2022 15:11:23 GMT</pubDate>
       
-      <description>&lt;h2 id=&quot;Introduction&quot;&gt;1. Introduction&lt;/h2&gt;&lt;p&gt;The complexity of manually and dynamic testing increases with the growth of the project. This results in the increasing usage of static analysis tools, such as bounded model checker, which do not require compilation and act automatically [1]. As an SMT-based model checker for program static analysis and verification, ESBMC has been successfully used in a variety of environments due to its adaptability to multi-language, multi-platform and high efficiency[2]. However, these features have led to the difficulty of fuzzing this software verifier. Firstly, the construction of a generation-based fuzzer for ESBMC is a challenge. The adaptability for multiple source programming languages means that the fuzzer needs to consider certain source language’s grammar, in the worst case, constructing different inputs for corresponding front-ends. Secondly, the construction of a coverage-guided mutation-based fuzzer is a challenge, as directly generated random input cannot be “understood” by ESBMC and will be excluded beyond validating. These deficiencies will result in fuzzy tests that do not detect errors hidden in the deep execution path of the program and insufficient code coverage. Hence, we propose a fuzzer construction on intermediate representation, which refers to Goto programs. Instead of converting from the source file, this generic fuzzer would generate syntactically correct Goto programs directly. The introduction of mutation will further dynamically modify the properties in the Goto programs by tracking and updating the corpus. These Goto programs will finally be used as input to fuzz test the ESBMC.&lt;/p&gt;
-&lt;p&gt;The achievement of this goal can be divided into the following steps: (1) Summarise the syntax grammar for constructing Goto intermediate representation, including the symbol table and Goto instructions, i.e. each statement in the Goto program, as well as the Goto programs itself. (2) Investigate a mutation approach for the generated Goto programs, which will be achieved by introducing libFuzzer[3]. (3) Design and implement the program architecture of the Goto-fuzzer. (4) Debugging and testing, including error detection and performance testing. (5) Fuzz the ESBMC by Goto-fuzzer. Collect the error logs and coverage information.(6) Analyse the data and draw conclusions.&lt;/p&gt;
-&lt;h2 id=&quot;Background&quot;&gt;2. Background&lt;/h2&gt;&lt;h3 id=&quot;ESBMC&quot;&gt;2.1. ESBMC&lt;/h3&gt;&lt;p&gt;ESBMC is a licensed open-source SMT-based contextual boundary model checker that has been widely used to verify multi-language programs, including C&amp;#x2F;C++, Java and Solidity. ESBMC can automatically find memory safety and assertion violations[4]. The basic workflow of this bounded model checker begins with a transition system $M$, a property $φ$, and a bound $k$. ESBMC unwinds the system $k$ times and converts it into a verification condition (VC) $ψ$. ESBMC checks the negation of this VC so that $ψ$ is satisfiable if and only if $φ$ has a counterexample of depth $k$ or less. To cope with increasing software complexity, sorts of SMT (Satisfiability Modulo Theories) solvers have been used as the back-end of ESBMC for solving the generated VCs[5].&lt;/p&gt;
-&lt;p&gt;From an architectural point of view, ESBMC can be divided into three components: front-end, middleware and back-end. A C++ Oriented ESBMC structure can been shown by Figure 1.&lt;/p&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/a0a87206/3.svg&quot;&gt;&lt;/center&gt;
-
-&lt;center&gt;&lt;b&gt;FIGURE 1&lt;/b&gt; C++ oriented ESBMC&#39;s architecture overview. White rectangles represent input and output; grey rectangles represent the steps of the verification&lt;/center&gt;
-
-&lt;h4 id=&quot;Front-end&quot;&gt;2.1.1. Front-end&lt;/h4&gt;</description>
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Introduction&quot;&gt;1. Introduction&lt;/h2&gt;&lt;p&gt;The complexity of manually and dynamic testing increases with the growth of the project. This</description>
+          
+        
       
       
       
@@ -106,16 +87,14 @@
       <guid>https://hejueyun.github.io/posts/1ad13e77/</guid>
       <pubDate>Fri, 22 Apr 2022 20:06:36 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;Namespacet&quot;&gt;1. Namespacet&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;A namespacet is essentially one or two symbol tables bound together, to allow for symbol lookups in them.&lt;/p&gt;
-&lt;p&gt;The basic idea is that you might want to combine a value table and a type table, so that for a variable you can lookup both of these essential properties, in one structure. &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;contextt&quot;&gt;2. contextt&lt;/h2&gt;&lt;figure class=&quot;highlight cpp&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;symbol_base_mapt symbol_base_map;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;symbolst symbols;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ordered_symbolst ordered_symbols;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;symbolt-x2F-symbolst&quot;&gt;3. symbolt&amp;#x2F;symbolst&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;GOTO conversion component constructs a goto-program from a symbol table. Each symbol in the symbol table with function type (that is, the symbol’s type field contains a &lt;code&gt;code_typet&lt;/code&gt;) will be converted to a corresponding GOTO program. Function &lt;code&gt;goto_convertt::convert&lt;/code&gt; turns each &lt;code&gt;codet&lt;/code&gt; in the symbol table into corresponding GOTO instructions.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;p&gt;A namespacet is essentially one or two symbol tables bound together, to allow for</description>
+          
+        
       
       
       
@@ -140,40 +119,14 @@
       <guid>https://hejueyun.github.io/posts/d48bdd8/</guid>
       <pubDate>Fri, 22 Apr 2022 20:05:04 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;Expression&quot;&gt;1. Expression&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;From the aspect of goto program, an expression (&lt;code&gt;expr2t&lt;/code&gt;) is formed by &lt;strong&gt;two&lt;/strong&gt; properties:&lt;ul&gt;
-&lt;li&gt;expr_type (&lt;code&gt;type2t&lt;/code&gt;): represents the type of an expression.&lt;/li&gt;
-&lt;li&gt;expr_ids (&lt;code&gt;expr_ids&lt;/code&gt;): used for distinguishing different classes of expression&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;expr  ::=   expr_type + expr_ids  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      |     expr     &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;expr_type&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;expr_type   ::=&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | bool_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | empty_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | symbol_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | struct_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | union_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | code_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | array_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | pointer_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | unsignedbv_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | signedbv_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | fixedbv_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | floatbv_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | string_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | cpp_name_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            | end_type_id&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;expr_ids&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;expr_ids     ::=&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_int_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_fixedbv_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_floatbv_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_bool_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_string_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_struct_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_union_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_array_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   constant_array_of_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_block_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_assign_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_init_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   end_expr_id&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Goto-Instruction&quot;&gt;2. Goto Instruction&lt;/h2&gt;&lt;p&gt;In ESBMC, a goto instruction (&lt;code&gt;goto_programt::instructiont&lt;/code&gt;) is defined by &lt;strong&gt;three&lt;/strong&gt; properties– The meaning of an instruction depends on the &lt;strong&gt;instruction_type&lt;/strong&gt; (&lt;code&gt;goto_program_instruction_typet&lt;/code&gt;) field, while different kinds of instructions make use of the fields &lt;strong&gt;guard&lt;/strong&gt; (&lt;code&gt;expr2tc&lt;/code&gt;) and &lt;strong&gt;code&lt;/strong&gt; (&lt;code&gt;expr2tc&lt;/code&gt;) for different purposes. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;In other words, these are the properties that need to be considered when initialising a goto-instruction data structure, any other property could be set default or generated afterwards. &lt;/li&gt;
-&lt;li&gt;&lt;code&gt;expr2tc&lt;/code&gt; is basically a reference pointer container for &lt;code&gt;expr2t&lt;/code&gt;. In this situation, there is no need to distinguish these two.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The syntax grammar can be roughly listed as follows.&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Instruction ::= &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   (instruction_type)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   (instruction_type, guard)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   (instruction_type, code)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;instruction_type&lt;/strong&gt;: an enum value describing the action performed by this instruction.&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;instruction_type    ::=&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   NO_INSTRUCTION_TYPE &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   GOTO            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   ASSUME          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   ASSERT          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   OTHER           &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   SKIP            &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   LOCATION        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   END_FUNCTION   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   ATOMIC_BEGIN    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   ATOMIC_END      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   RETURN         &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   ASSIGN         &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   DECL           &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   DEAD           &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   FUNCTION_CALL   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   THROW          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   CATCH          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   THROW_DECL      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    |   THROW_DECL_END&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;code&lt;/strong&gt;: represents the code expression whose &lt;code&gt;id&lt;/code&gt; is a subset of &lt;code&gt;expr_ids&lt;/code&gt;:&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;code.ids     ::=&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_block_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_assign_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_init_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_decl_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_dead_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_printf_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_expression_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_return_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_skip_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_free_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_goto_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_asm_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_function_call_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_comma_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_cpp_del_array_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_cpp_delete_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_cpp_catch_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_cpp_throw_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_cpp_throw_decl_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            |   code_cpp_throw_decl_end_id&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;guard&lt;/strong&gt;: an (arbitrarily complex) expression (usually an exprt) of Boolean type, whose &lt;code&gt;id&lt;/code&gt; is a subset of &lt;code&gt;expr_ids&lt;/code&gt;.&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;guard.id  ::=  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          |     constant_bool_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          |     constant_int_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          |     constant_floatbv_id&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          |     constant_fixedbv_id&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;li&gt;From the aspect of goto program, an expression (&lt;code&gt;expr2t&lt;/code&gt;) is formed by</description>
+          
+        
       
       
       
@@ -198,30 +151,14 @@
       <guid>https://hejueyun.github.io/posts/2f42f06c/</guid>
       <pubDate>Wed, 20 Apr 2022 20:02:42 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;Introduction&quot;&gt;1. Introduction&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;It(ESBMC) does not require any special annotations in the source code to find such bugs, but it allows users to add their assertions and checks if they hold. In addition, ESBMC implements a k-induction proof rule and can be used to prove the absence of property violations (resp. the validity of user-defined assertions)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;它（ESBMC）不需要在源代码中进行任何特殊的注释来发现这种错误，但它允许用户添加他们的断言并检查它们是否成立。此外，ESBMC实现了一个k-归纳证明规则，可以用来证明没有违反属性（即用户定义的断言的有效性）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;ESBMC-Architecture&quot;&gt;2. ESBMC Architecture&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/2f42f06c/1.png&quot; width=&quot;600&quot;&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;One of the significant challenges in software verification is the development and maintenance of an infrastructure that can reliably and efficiently handle real-world programs; it is an issue that only intensifies given the ever-evolving programming language standards.&lt;ul&gt;
-&lt;li&gt;新标准发布需要新的支持&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Front-end&quot;&gt;2.1. Front-end&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;an important piece of technology that should facilitate the transition between the &lt;strong&gt;program&lt;/strong&gt; under verification and a &lt;strong&gt;format&lt;/strong&gt; the tool can work upon&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;Clang&quot;&gt;2.1.1. Clang&lt;/h4&gt;&lt;p&gt;Clang是LLVM编译器的c-family前端，Clang可能意指三种不同的实体：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;前端（在Clang库中实现）&lt;/li&gt;
-&lt;li&gt;编译器驱动程序（在clang命令和Clang驱动程序库中实现）&lt;/li&gt;
-&lt;li&gt;实际的编译器（在clang -cc1命令中实现）。clang -cc1中的编译器不仅是由Clang库实现，还广泛地使用其他LLVM库来实现编译器的中端、后端以及集成的汇编器。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;clang -emit-llvm -c size.c -o size.bc&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;p&gt;It(ESBMC) does not require any special annotations in the source code to find</description>
+          
+        
       
       
       
@@ -246,24 +183,13 @@
       <guid>https://hejueyun.github.io/posts/e8d0ec3/</guid>
       <pubDate>Fri, 08 Apr 2022 20:29:29 GMT</pubDate>
       
-      <description>&lt;h2 id=&quot;Expressions-EXP&quot;&gt;1. Expressions (EXP)&lt;/h2&gt;&lt;h3 id=&quot;EXP30-C-Do-not-depend-on-the-order-of-evaluation-for-side-effects&quot;&gt;1.1. EXP30-C. Do not depend on the order of evaluation for side effects&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;At specific points during execution, known as &lt;strong&gt;sequence points&lt;/strong&gt;, all side effects of previous evaluations are complete, and no side effects of subsequent evaluations have yet taken place. Do not depend on the order of evaluation for side effects unless there is an intervening sequence point&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* i is modified twice between sequence points */&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;i = ++i + &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* i is read other than to determine the value to be stored */&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;a[i++] = i;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Attempting to modify an object multiple times between sequence points may cause that object to take on an unexpected value, which can lead to unexpected program behavior&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&quot;副作用&quot;&gt;1.1.1. 副作用&lt;/h4&gt;&lt;blockquote&gt;
-&lt;p&gt;在产生一个值的过程中，表达式可能会对环境做出其他改变，这样的改变被称为副作用(side effect)，诸如变量的值被修改，或者输入输出流的数据有所变化&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;表达式&lt;code&gt;x + 1;&lt;/code&gt;就产生了一个值，但是它没有产生一个副作用&lt;/li&gt;
-&lt;li&gt;表达式&lt;code&gt;x = x+ 3;&lt;/code&gt;产生了一个值，同时也会产生一个副作用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/e8d0ec3/1.png&quot; width=&quot;600&quot;&gt;&lt;/center&gt;
-
-&lt;h3 id=&quot;EXP32-C-Do-not-access-a-volatile-object-through-a-nonvolatile-reference&quot;&gt;1.2. EXP32-C. Do not access a volatile object through a nonvolatile reference&lt;/h3&gt;</description>
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Expressions-EXP&quot;&gt;1. Expressions (EXP)&lt;/h2&gt;&lt;h3 id=&quot;EXP30-C-Do-not-depend-on-the-order-of-evaluation-for-side-effects&quot;&gt;1.1. EXP30-C.</description>
+          
+        
       
       
       
@@ -288,62 +214,14 @@
       <guid>https://hejueyun.github.io/posts/de2aa2c7/</guid>
       <pubDate>Fri, 01 Apr 2022 11:56:49 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;risk-assessment&quot;&gt;1. risk assessment&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;CERT C Coding Standard contains a &lt;strong&gt;risk assessment&lt;/strong&gt; section&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Severity-严重性&quot;&gt;1.1. Severity 严重性&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;How serious are the consequences of the rule being ignored&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Value&lt;/th&gt;
-&lt;th&gt;Meaning&lt;/th&gt;
-&lt;th&gt;Examples of Vulnerabilities&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;low&lt;/td&gt;
-&lt;td&gt;Denial-of-service attack, abnormal termination&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;medium&lt;/td&gt;
-&lt;td&gt;Data integrity violation, unintentional information disclosure&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;high&lt;/td&gt;
-&lt;td&gt;Run arbitrary code&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h3 id=&quot;Likelihood-可能性&quot;&gt;1.2. Likelihood 可能性&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;How likely is it that a flaw introduced by ignoring the rule can lead to an exploitable vulnerability&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Value&lt;/th&gt;
-&lt;th&gt;Meaning&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;Unlikely&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;Probable&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;3&lt;/td&gt;
-&lt;td&gt;likely&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h3 id=&quot;Detection-and-Correction-检测和纠正&quot;&gt;1.3. Detection and Correction 检测和纠正&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;How will we cope with detection and correction&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;p&gt;CERT C Coding Standard contains a &lt;strong&gt;risk assessment&lt;/strong&gt;</description>
+          
+        
       
       
       
@@ -368,26 +246,13 @@
       <guid>https://hejueyun.github.io/posts/ade5e95e/</guid>
       <pubDate>Wed, 30 Mar 2022 22:02:54 GMT</pubDate>
       
-      <description>&lt;h2 id=&quot;Circuit-Satisfiability&quot;&gt;1. Circuit Satisfiability&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/ade5e95e/7.png&quot; width=&quot;650&quot;&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;problem&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/ade5e95e/8.png&quot; width=&quot;650&quot;&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;由此引入了Formula Satisfiability&lt;ul&gt;
-&lt;li&gt;The &lt;strong&gt;SAT&lt;/strong&gt; problem asks whether a given &lt;strong&gt;Boolean formula&lt;/strong&gt; is satisfiable&lt;/li&gt;
-&lt;li&gt;The &lt;strong&gt;SMT&lt;/strong&gt; decides the satisfiability of &lt;strong&gt;first-order logic formulae&lt;/strong&gt; using the combination of different background theories&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/ade5e95e/9.png&quot; width=&quot;450&quot;&gt;&lt;/center&gt;
-
-&lt;h2 id=&quot;BMC&quot;&gt;2. BMC&lt;/h2&gt;&lt;p&gt;BMC: 有界模型检测&lt;/p&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/ade5e95e/4.png&quot; width=&quot;650&quot;&gt;&lt;/center&gt;
-
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/ade5e95e/10.png&quot; width=&quot;650&quot;&gt;&lt;/center&gt;</description>
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;Circuit-Satisfiability&quot;&gt;1. Circuit Satisfiability&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/ade5e95e/7.png&quot;</description>
+          
+        
       
       
       
@@ -412,29 +277,14 @@
       <guid>https://hejueyun.github.io/posts/39d160ca/</guid>
       <pubDate>Thu, 10 Mar 2022 16:05:21 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;SAT-vs-SMT-布尔可满足性问题-vs-可满足性模理论&quot;&gt;1. SAT vs SMT 布尔可满足性问题 vs  可满足性模理论&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;SMT将SAT推广到涉及 实数 、 整数 和&amp;#x2F;或各种 数据结构 （如 列表 、 数组 、 位向量 和 字符串&lt;/li&gt;
-&lt;li&gt;由于布尔可满足性已经是 NP 完全的，所以 SMT 问题通常是 NP困难的 ，并且对于许多理论来说它是 不可判定(nondeterministic)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/39d160ca/1.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;p&gt;SMT是指另外一类公式的可满足性判定问题。这一类公式具有两个特点：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在命题逻辑公式里面混入了一些一阶逻辑表达式&lt;/li&gt;
-&lt;li&gt;具有任意的布尔结构&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;SAT solvers are automatic and efficient&lt;/p&gt;
-&lt;p&gt;However, systems are usually designed and modeled at a higher level than the Boolean level and the translation to Boolean logic can be expensive. &lt;strong&gt;A primary goal of research in Satisfiability Modulo Theories (SMT) is to create verification engines that can reason natively at a higher level of abstraction, while still retaining the speed and automation of today’s Boolean engines&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;SMT Solver &amp;#x3D; SAT Solver + Theory Solver&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Solver-vs-Checker&quot;&gt;2. Solver vs Checker&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;In model checking, you have a model and a specification (or property), and you check if the model meets the specification.&lt;/li&gt;
-&lt;li&gt;In SAT solving, you have a formula and you try to find a satisfying assignment to it.&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;li&gt;SMT将SAT推广到涉及 实数 、 整数 和&amp;#x2F;或各种 数据结构 （如 列表 、 数组 、</description>
+          
+        
       
       
       
@@ -459,40 +309,18 @@
       <guid>https://hejueyun.github.io/posts/e24b211f/</guid>
       <pubDate>Sun, 06 Mar 2022 21:08:15 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;atom-vs-literal-vs-term&quot;&gt;1. atom vs literal  vs term&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;a: $p$&lt;ul&gt;
 &lt;li&gt;在一阶逻辑下得到扩展&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;l: $p$  $\lnot{p}$  &lt;ul&gt;
-&lt;li&gt;注意扩展到命题逻辑中时，$P$就可以带上函数和谓词&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;In propositional calculus a literal is simply a propositional variable or its negation.&lt;/li&gt;
-&lt;li&gt;In predicate calculus a literal is an atomic formula or its negation, where an atomic formula is a predicate symbol applied to some terms, ${\displaystyle P(t_{1},\ldots ,t_{n})}$ with the terms recursively defined starting from constant symbols, variable symbols, and function symbols. For example,  ${\displaystyle \neg Q(f(g(x),y,2),x)}$ is a negative literal with the &lt;strong&gt;constant symbol&lt;/strong&gt; 2, the &lt;strong&gt;variable symbols&lt;/strong&gt; x, y, the &lt;strong&gt;function symbol&lt;/strong&gt;s f, g, and the &lt;strong&gt;predicate symbol&lt;/strong&gt; Q.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;t: $p$  $f^{n}$  $a$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;合一-Unification&quot;&gt;2. 合一 Unification&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Let s and t be two terms (or atoms), A &lt;strong&gt;unifier&lt;/strong&gt; of s and t is a substitition &lt;strong&gt;σ&lt;/strong&gt; that makes the two identical, formally&lt;ul&gt;
-&lt;li&gt;sσ &amp;#x3D; tσ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/e24b211f/1.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;h3 id=&quot;最一般的合一-Most-general-unifier&quot;&gt;2.1. 最一般的合一 Most general unifier&lt;/h3&gt;&lt;p&gt;σ is a most general unifier of s and t, denoted mgu(s, t),&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;if σ is a unifier of s and t and for any other unifier θ of s and t,&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;there is&lt;/strong&gt; a substitution ρ such that&lt;ul&gt;
-&lt;li&gt;σρ &amp;#x3D; θ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Unifiers-and-most-general-unifiers-in-general&quot;&gt;2.2. Unifiers and most general unifiers, in general&lt;/h3&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/e24b211f/2.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;</description>
+&lt;li&gt;l: $p$  $\lnot{p}$</description>
+          
+        
       
       
       
@@ -517,24 +345,13 @@
       <guid>https://hejueyun.github.io/posts/fa02fe64/</guid>
       <pubDate>Thu, 03 Mar 2022 12:53:42 GMT</pubDate>
       
-      <description>&lt;h2 id=&quot;The-Neuman-Stubblebine-key-exchange-protocol&quot;&gt;1. The Neuman-Stubblebine key exchange protocol&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/1.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/2.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;h3 id=&quot;breaking&quot;&gt;1.1. breaking&lt;/h3&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/5.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The intruder now sends a message to B, and the message will make B believe it’s actually from A. Thus B will start to use the wrong key, i.e. an insecure key. &lt;ul&gt;
-&lt;li&gt;入侵者现在向B发送一个信息，这个信息将使B相信它实际上来自A，因此B将开始使用错误的密钥，即一个不安全的密钥。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Verification-of-security-protocols-using-resolution&quot;&gt;2. Verification of security protocols using resolution&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;The idea is that the security property says an unsafe state is possible&lt;/li&gt;
-&lt;li&gt;Since first-order logic is not &lt;strong&gt;decidable&lt;/strong&gt;, there is however no guarantee that the saturation will terminate when the security property does not hold. Non-termination can therefore indicate the existence of a potential attack on the protocol.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/3.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;h2 id=&quot;Assumptions-in-security-protocol-analysis&quot;&gt;3. Assumptions in security protocol analysis&lt;/h2&gt;</description>
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;The-Neuman-Stubblebine-key-exchange-protocol&quot;&gt;1. The Neuman-Stubblebine key exchange protocol&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot;</description>
+          
+        
       
       
       
@@ -559,18 +376,7 @@
       <guid>https://hejueyun.github.io/posts/2ba8f82c/</guid>
       <pubDate>Sat, 26 Feb 2022 22:26:20 GMT</pubDate>
       
-      <description>&lt;div class=&quot;hbe hbe-container&quot; id=&quot;hexo-blog-encrypt&quot; data-wpm=&quot;Authenticaiton Failed.&quot; data-whm=&quot;Authentication Error.&quot;&gt;
-  &lt;script id=&quot;hbeData&quot; type=&quot;hbeData&quot; data-hmacdigest=&quot;a3bc817c3908ae67f704dabface47ef124dac94f6605c34ea7c8fd49515ab6c8&quot;&gt;63a8672ddbb5b9158eb55097173249fad22b496a8876cf71b079381ad234cb95f094e21606daf1717aa32ac9bb46c3ec99a387f812d0a9e5a45bfd529c7b8ed5f86a0a6f45900b64a15b4130bd6ed52d8ef450f58e114d4fe18874ddcc125aa94adc7a4a8723b962b279a3d4fb7200835168fbe214ea68576e259f43343e2c7a777ab0f877cfb6fb4968bbe09478ebb4c8d82d533ea85f08a5195375f39c020dcf3cc513e539010453d4dc45f2948ba6de705108a00df9f7fc634cf34cf86bc985f7ae3ca2e1587e4469e2a695bfe5527047967d1184b513411930c48dbd3b183dbfe7eee873eff520957b049943bd7990c9027c77c010cf1c251f76064497d73aea9ab2a92c884d7e6a130b44100c9333493c6642eb39253827e8e7ee7be21ffa64373cba57238a83b953034350313408910b4f2679f2f08874a410bd240537e5df887e00d303bf15e0484321af3906101f651a5df62e1da0c56825bc53493bbacbdf596d137e27fd97b6c628bac1d18116316522c0f356832bdd769f420308aa8da425e501748296d0620ffcd2d204a6dc5558914c11fd7a1524e4a74f9b204bbd20c161cc1478f443c050f4ba0a2a920b98de1a54ffce1c44fc2f468058f0bb1e886e03126f45b33810e77bf6f346451c74bd304ed8bab57935484589bc2b1a746cb687de37762f1e3b10d6cfd7444ea4341b5bbaa363926e42f063f44b8f46d6605499ae1f341a8c790ae5bd18455a40510f81640659cedde4b9a1fc6db20b8923908bfcf4ae5c13fc518f33bc48541a2a7d3d6fa89d14d5b18660c04253e8df7a62ce6fc0f4ad77bacf3ed63e1debcc332519106136f1b2641e6b830db62a33b2814ade061b05c363610e54b4c33600d8f2a0b2cf0b5403307e91398cbbbb0ce1f3b35c40cf626f9a795e2c058a9888a016c8c300275a53050c70428dc6d716a592ca1dce1d3197c52f6b275d568a2743e0a76310126832d79fdcfc43732d3899a62320175ad5adfe51baf995eab391023ce63c80e7455f778279bae1b6cfa16a1f3fd6064e80b6edb960c9308f82803b28c9816effd3c9f18b7513a3462ff3283e482b374f639c4d371942db68469fbb882df4fba4cb46057f569b75b81dd528d80365daf13cf487e52bc0d872243dbcfa67e2662311be95169f4e3457537866e44a36183036a169aacb02f0364d0d8cd0e140707d5209b2a1af7333465fb987f7b541f65c6cc0fbd606bfe4f0c894625694563e1066468c3eb3621726bd64d23457ecfd39f2a80d573eaaf792330c5f431e88122d3cfa94437d24ab67b6275def89af510353f2a7489517b3c411db28635f7153403306aad70c5e9df7334a7fd589a6a3f75a51a7d6b6f787483545bfa8792edc7b2e4dcfc0fe43266617f408469c97bec089db0698d88bb025bfbd78f55264612f849e271cccf941010f831a58402c52173aa717e8b37950c2a3b460296672b585a2ae788b6f3b7c8090b5607688c4cafd8127c8e4ee6cd27a674759cae2d3491fa85850f8b7a2a6e4bcafe4b7130eb79a9520098f2fb0b47a58bc5befda2d0dff0985f0a5cc7b772d813bba5ef07576a87164e367fc73f2a0bf6835de598f88ecd078a36b94b34b8a357e603cded2557ec4f70929061db31af874a1464d0e0dd987fc578a673d0a337ae4e741be8864ab69bbc3bdebd6cc40f6ca541d2da832b73a9e0a784ec4a2a9881589cf5f1eca7ced187f2d61810e0605850bb28a2e0ddfd6d5fda5f6daf84446297a9ed808180db8985a74dc9bda783c8404a40816f5aa2e46472bfb0910fcbbf951ef6c00918ad218dd9ab2987f761d0925d0ef773c46fe4b7a161cedfc9b45c3ffdeb1de189b73be8fb6b988d56f7a0995999f0142f5cff66e3f48f8ff9aa4fa5d55cae1b3b28982f24b60eb6b2a013d1dbfe24a8ae7d060303846c826d30750266845c421f1cfb6284aaacfb809aa1f8cb2569943fa79b0a62156ce334515f7c49b2b3d7e15e7119bb61de88efddfcdddef82aa1c03a6a406a5558f5a19366ac18a0592f71ca072505313fb73a1170cdf6a366ab5af2c52234c20f20d5aa161384bc13a4181564db10d98fe6cd0df70f7d0b656d4cf22a4452ac33ed23ab0850e97ec391945ea2d35aa57102d3f7c9a52caa07c69252cc294b2917a61a22745bba81d0ab2cf3ab8fe96f5f8b88743444dea132dbb071087860a659b2f898c983e26249acf4e28b490b33a068809d43ee74895d7151833327cf9292c66c06fc66cc9e95586aba56fae820ff58101e2f3e7ccd5822b040cfc1c056b6ef68f8969d3c99f5a30d315b6a034bc88297af5601d1871e16caf265742b3c6a642b19e9f6f6794db94031bf90772091158922f53eec44078767c2b91d0a3209f32579c1a614ee5ecd41649d5e2914539a1b5099d13ea62045953d898e3c3299aa755f8a7d7f66d786f96a0678ba89744e1c1dd8eaed3853524794b50e94d5e42ec7d0c081151729648645308b00e9c95cc05ec5d649abf41b0a3ee729dc47aaffba089a3a7e228db9872879a8ce2750c66da4ab6c4e7062ab5ba7d323a2a07152a76f579c7cde3de94b9ac3a40049a6657917455fb6aeb02b75a7624e0f9bd302f852f98cc5949dbc91698a64c9cc57ad6a9c381ed372f0c3a390c9fe743e3855f7ee27289155bad0ef53c288fee088346517abc31e122e4897ff8fa5ce878ef35d93a1ba0e1a4ce39959c887525c1c1b8067f157686a8f7ac89d55078ec7230c4f62dfe01f6ae148cf3c62e428bc058a2121b8ea479aee258882493a4d5a91b633c6ec15f907ca53b06a3f0d0e05ec37e3a1db600461ce81b5b93ed5f894aa7f2feb1ed509912cdb3efd473444055d0fb07e0b456c6e1ad1bd4abd6ac38b2d01087f8baeffcb7594332834ea8295fa7d4668f0abb95f0242cfcd5953fd3b11b643a4e25b9c5ec13387e99faf24235dfdb215433217508d107c4393a84ca6bc4bd49bb562b77298220918e52e2d88f2a3c5177795aae347a4177f6d4937cacbd5e5c4ecbcc7081181b4bd65e862d818047d7e16712db3b8ec117d6230e832c8c9f590223188ca37d7f49620c3cf0fd771bb277bb4d1ccbbaa4c604248234fcbe3ed2a3cfb01c6ff72184ebaca088ccdb479e3bc41f475386277fbef50af51554d77d319aee4583a3a914df0fcf1461522c583cc55feac3e639133f196a8dc98a2c3d0fb746fe35ff6c87415712b49f144b33dc595c82daef511a693bf77f20537d7856befc651a7fb168cd3712c1bd8fe7018d8bdb296acfbdbac10427ab9b04b9aff10661fb759f66015099dab02de9ea25d9e6899a4ee5f2521f7e2093571ee1228005f4ca42af51d8cac3d507aecc9683a7105e89f467c7d451255b92fc2fe5822b3c3b31ec1d8caa8efdcd124545938a1751f30e3f7307f946ddf0d57c2cc8b4506663fd1f4b86beb3d82364c1ad1c63f22610b425d698806564308e162117445c0cf4f5fdc901ec86268162e776d60b7625189fdbdf9dc92e5655c8ccf2a7370d6bdbf69292964890d64be44c88f7b630e96bbfcd852eb083fd79ca55c7f12a4d378a54b9bfb074d3e916112d5a58cf8d749b5cd74d4007f1aaf349dfe63a400b06a507852c241b1aa296162365e0ad043a47209ae80845e6e4fced64b7f52dd8a9163d896f4bf443d5b199766366013d062a794181fde28ac9331795bc2cc77a5e0b52de3c3c00c099e9d3cb373ef771c69c20aed9255385280c3e42eec53920469ab690c8c6d49158146388b401b3186fd462ac2abd820b57e5e9325d859030d70616b14d2bb991ba7b20883a93425828fc70ae6f8171160be59150b2491816f49d6e832bb6c66f5f513ddbfb0d59f6a045dc88288ca21bba554a7a134fa3&lt;/script&gt;
-  &lt;div class=&quot;hbe hbe-content&quot;&gt;
-    &lt;div class=&quot;hbe hbe-input hbe-input-default&quot;&gt;
-      &lt;input class=&quot;hbe hbe-input-field hbe-input-field-default&quot; type=&quot;password&quot; id=&quot;hbePass&quot;&gt;
-      &lt;label class=&quot;hbe hbe-input-label hbe-input-label-default&quot; for=&quot;hbePass&quot;&gt;
-        &lt;span class=&quot;hbe hbe-input-label-content hbe-input-label-content-default&quot;&gt;Password Required.&lt;/span&gt;
-      &lt;/label&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;script data-pjax src=&quot;/lib/hbe.js&quot;&gt;&lt;/script&gt;&lt;link href=&quot;/css/hbe.style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</description>
+      <description>有东西被加密了, 请输入密码查看.</description>
       
       
       
@@ -593,38 +399,14 @@
       <guid>https://hejueyun.github.io/posts/faaea58c/</guid>
       <pubDate>Fri, 25 Feb 2022 22:58:44 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;blockquote&gt;
-&lt;p&gt;Resolution was originally developed as a method for automatic theorem proving. Later, it was discovered that a restricted form of resolution can be used for programming a computation. This approach is called logic programming. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A &lt;strong&gt;program&lt;/strong&gt; is expressed as &lt;strong&gt;a set of clauses&lt;/strong&gt; &lt;/li&gt;
-&lt;li&gt;A &lt;strong&gt;query&lt;/strong&gt; is expressed as &lt;strong&gt;an additional clause&lt;/strong&gt; that can &lt;strong&gt;clash&lt;/strong&gt;冲突 with one or more of the program clauses. &lt;strong&gt;The query is assumed to be the negation of result of the program&lt;/strong&gt;. If a refutation succeeds, the &lt;strong&gt;query&lt;/strong&gt; is not a &lt;strong&gt;logical consequence&lt;/strong&gt; of the program, so its &lt;strong&gt;negation&lt;/strong&gt; must be a &lt;strong&gt;logical consequence&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;解析最初是作为一种自动定理证明的方法而开发的。后来，人们发现，一种受限制的决议形式可以用于计算的编程。这种方法被称为逻辑编程。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个程序被表达为一组子句&lt;/li&gt;
-&lt;li&gt;一个查询被表达为一个额外的子句，可以与一个或多个程序子句发生冲突。查询被认为是对程序结果的否定。如果反驳成功，查询不是程序的逻辑结果，所以它的否定必须是一个逻辑结果&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;From-Formulas-in-Logic-to-Logic-Programming&quot;&gt;1. From Formulas in Logic to Logic Programming&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;program clauses&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;按我的理解就是霍恩子句&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;goal clause&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Suppose now that we have a set of program clauses and we want to prove that some formula:&lt;ul&gt;
-&lt;li&gt;$G_1\land{}…\land{}G_n$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;is a &lt;strong&gt;logical consequence&lt;/strong&gt; of the set. This can be done by taking the negation of the formula:&lt;ul&gt;
-&lt;li&gt;$\lnot{}G_1\lor{}…\lor{}\lnot{}G_n$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;and refuting it by resolution with the program clauses&lt;blockquote&gt;
-&lt;p&gt;The formula $¬ G_1∨⋯∨¬ G_n$ , called a &lt;strong&gt;goal clause&lt;/strong&gt;, consists entirely of negative literals, so it can only clash on the single positive literal of a program clause&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+&lt;p&gt;Resolution was originally developed as a method for automatic theorem proving. Later, it was discovered that a restricted</description>
+          
+        
       
       
       
@@ -649,31 +431,14 @@
       <guid>https://hejueyun.github.io/posts/150c47ae/</guid>
       <pubDate>Thu, 24 Feb 2022 13:30:06 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;Introduction&quot;&gt;1. Introduction&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;Temporal logic is a formal system for reasoning about time. Temporal logic has found extensive application in computer science, because the behavior of both hardware and software is a function of time.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Temporal logics are related to formal systems called modal logics. Modal logics express the distinction between what is necessarily true and what is possibly true. For example, the statement ‘7 is a prime number’ is necessarily true because—given the definitions of the concepts in the statement—the statement is true always and everywhere. In contrast, the statement the head of state of this country is a king is possibly true, because its truth changes from place to place and from time to time. Temporal logic and modal logic are related because ‘always’ is similar to ‘necessarily’ and ‘eventually’ to ‘possibly’.&lt;/p&gt;
-&lt;p&gt;时间逻辑与称为模态逻辑的形式系统有关。模态逻辑表达了什么是必然真实和什么是可能真实之间的区别。例如，”7是质数 “这个陈述必然是真实的，因为–考虑到陈述中概念的定义–这个陈述总是真实的，而且无处不在。相比之下，这个国家的国家元首是国王的说法可能是真的，因为它的真理在不同的地方和不同的时间会发生变化。时间逻辑和模态逻辑是相关的，因为 “总是 “类似于 “必然”，”最终 “类似于 “可能”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;时间逻辑与模态逻辑相似，只是&lt;strong&gt;状态&lt;/strong&gt;被认为是指定在某一特定时间点上的真实情况，而&lt;strong&gt;转换&lt;/strong&gt;则定义了时间的流逝&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;PTL&quot;&gt;2. PTL&lt;/h2&gt;&lt;h3 id=&quot;Syntax&quot;&gt;2.1. Syntax&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;The syntax of propositional temporal logic (PTL) is defined like the syntax of propositional logic, &lt;strong&gt;except for the addition of two additional unary operators&lt;/strong&gt;:&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;□&lt;/code&gt; , read always&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;◊&lt;/code&gt; , read eventually&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;$(¬ ◊p)∧(□¬ q)$&lt;ul&gt;
-&lt;li&gt;the temporal operators and negation have higher precedence优先权 than the conjunction operator&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;semantic&quot;&gt;2.2. semantic&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Informally, □ is a universal operator meaning ‘&lt;strong&gt;for any time t in the future&lt;/strong&gt;’, while ◊ is an existential operator meaning ‘&lt;strong&gt;for some time t in the future&lt;/strong&gt;’&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;transition-diagram-状态转换图&quot;&gt;2.3. transition diagram 状态转换图&lt;/h3&gt;</description>
+&lt;p&gt;Temporal logic is a formal system for reasoning about time. Temporal logic has</description>
+          
+        
       
       
       
@@ -698,43 +463,14 @@
       <guid>https://hejueyun.github.io/posts/cf619a86/</guid>
       <pubDate>Wed, 23 Feb 2022 01:15:37 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;blockquote&gt;
-&lt;p&gt;Verification is routinely used when developing computer hardware and concurrent programs. A sequential program can always be tested and retested, but the nondeterministic nature of hardware and concurrent programs limits the effectiveness of testing as a method to demonstrate that the system is correct. Slight variations in timing, perhaps caused by congestion on a network, mean that two executions of the same program might give different results. Even if a bug is found by testing and then fixed, we have no way of knowing if the next test runs correctly because we fixed the bug or because the execution followed a different scenario, one in which the bug cannot occur.&lt;/p&gt;
-&lt;p&gt;在开发计算机硬件和并发程序时，经常会用到验证。一个顺序程序总是可以被测试和重新测试，但硬件和并发程序的非确定性限制了测试作为证明系统正确的方法的有效性。&lt;strong&gt;时间上的微小变化，也许是由网络上的拥堵造成的，意味着同一个程序的两次执行可能会得到不同的结果。即使通过测试发现了一个错误，然后进行了修复，我们也没有办法知道下一次测试的正确运行是因为我们修复了这个错误，还是因为执行了一个不同的场景，在这个场景中，这个错误不会发生&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;顺序程序的验证貌似没有用到时态逻辑&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Concurrent-Program-并发程序&quot;&gt;1. Concurrent Program 并发程序&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;A &lt;strong&gt;concurrent program&lt;/strong&gt; is a set of &lt;strong&gt;sequential programs&lt;/strong&gt; together with a set of &lt;strong&gt;global variables&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;A concurrent program is a set of &lt;code&gt;processes&lt;/code&gt; ${ p_1,p_2,…,p_n }$, where each &lt;strong&gt;process&lt;/strong&gt; is a &lt;strong&gt;sequential program&lt;/strong&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Processes&lt;/strong&gt; are also known as &lt;strong&gt;threads&lt;/strong&gt;; in some contexts, the two terms have different meanings but the difference is not relevant here&lt;ul&gt;
-&lt;li&gt;进程与线程在此处无需区别&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;The variables declared in each process are its &lt;code&gt;local variables&lt;/code&gt;; a local variable can be read and written only by the process where it is declared.&lt;/li&gt;
-&lt;li&gt;There may be &lt;code&gt;global variables&lt;/code&gt; that can be read and written by all of the processes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;state-状态&quot;&gt;1.1. state 状态&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;The state of a concurrent programs consists of &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;the values of its variables&lt;/strong&gt; (both local and global),&lt;/li&gt;
-&lt;li&gt;together with the &lt;strong&gt;location counters&lt;/strong&gt; of its processes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/cf619a86/2.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/cf619a86/3.gif&quot; width=&quot;350&quot;&gt;&lt;/center&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;There are $5×3×3&amp;#x3D;45$ different states, because the variable n can have the values $0, 1, 2, 3, 4$ and there are &lt;strong&gt;three&lt;/strong&gt; labels for &lt;strong&gt;each&lt;/strong&gt; process. &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;These seems like quite a large number of states for such a simple program, but many of the states (for example, (0,end,end)) will never occur in any computation.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;</description>
+&lt;p&gt;Verification is routinely used when developing computer hardware and concurrent programs. A sequential program can always</description>
+          
+        
       
       
       
@@ -759,34 +495,14 @@
       <guid>https://hejueyun.github.io/posts/ab706956/</guid>
       <pubDate>Wed, 23 Feb 2022 01:15:14 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;Program&quot;&gt;1. Program&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;A &lt;strong&gt;computer program&lt;/strong&gt; is not very different from a logical formula. It consists of a sequence of &lt;strong&gt;symbols&lt;/strong&gt; constructed according to &lt;strong&gt;formal syntactical rules&lt;/strong&gt; and it has a meaning which is assigned by an &lt;strong&gt;interpretation&lt;/strong&gt; of the elements of the language. In programming, the symbols are called &lt;strong&gt;statements or commands&lt;/strong&gt; and the intended interpretation is the &lt;strong&gt;execution&lt;/strong&gt; of the program on a computer. The syntax of programming languages is specified using formal systems such as BNF, but the semantics is usually informally specified.&lt;/p&gt;
-&lt;p&gt;一个计算机程序与一个逻辑公式没有什么不同。它由一连串的符号组成，这些符号是根据正式的句法规则构建的，它有一个意义，这个意义是通过对语言元素的解释而赋予的。在编程中，这些符号被称为语句或命令，预期的解释是程序在计算机上的执行。&lt;strong&gt;编程语言的语法是用BNF这样的形式化系统指定的，但语义通常是非正式地指定的&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;考虑一门语言的设计&quot;&gt;1.1. 考虑一门语言的设计&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;A program is a &lt;strong&gt;statement&lt;/strong&gt; S, where statements are defined recursively using the concepts of variables and expressions&lt;ul&gt;
-&lt;li&gt;程序本身就是一个抽象的大statement&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/ab706956/6.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A &lt;strong&gt;statement&lt;/strong&gt; in a programming language can be considered to be a function that transforms the state of a computation&lt;ul&gt;
-&lt;li&gt;编程语言可以被视作状态转换函数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Let $S$ be a &lt;strong&gt;program&lt;/strong&gt; with $n$ &lt;strong&gt;variables&lt;/strong&gt; $(x1,…,xn)$. A &lt;strong&gt;state&lt;/strong&gt; $s$ of $S$ consists of an $n+1$-tuple of values $(lc,x_1,…,x_n )$, where $lc$ is the value of the &lt;strong&gt;location counter&lt;/strong&gt;(sometimes called the &lt;strong&gt;instruction pointer&lt;/strong&gt;，存储下一个指令的地址)  and $x_i$ is the value of the variable $xi$.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;we aim to verify the program by proving: if the input to the program satisfies the precondition, then the output of the program will satisfy the postcondition&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;example&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If the variables (x,y) have the values (8,7) in a state, then the result of executing the statement x &amp;#x3D; 2*y+1 is the state in which (x,y)&amp;#x3D;(15,7) and the location counter is incremented&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;p&gt;A &lt;strong&gt;computer program&lt;/strong&gt; is not very different from a logical formula. It</description>
+          
+        
       
       
       
@@ -811,39 +527,15 @@
       <guid>https://hejueyun.github.io/posts/dd5e4fc6/</guid>
       <pubDate>Tue, 22 Feb 2022 22:23:20 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;What-is-literature&quot;&gt;1. What is literature&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Published written works (publications)&lt;/li&gt;
-&lt;li&gt;Unpublished written works&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Why-literature-review&quot;&gt;2. Why literature review&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;First step of research&lt;/li&gt;
-&lt;li&gt;Help you obtain background knowledge&lt;/li&gt;
-&lt;li&gt;Identify related work to yours&lt;/li&gt;
-&lt;li&gt;Understand &lt;strong&gt;the state of the art&lt;/strong&gt;尖端技术 in your project area&lt;/li&gt;
-&lt;li&gt;To frame your arguments and research questions based on the state-of-the-art&lt;/li&gt;
-&lt;li&gt;Identify knowledge gaps or limitations in your project area&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Where-to-find-publications&quot;&gt;3. Where to find publications&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;ACM Digital Library (&lt;a href=&quot;https://dl.acm.org/&quot;&gt;https://dl.acm.org/&lt;/a&gt;) hosts ACM Journals and ACM Conference Proceedings&lt;/li&gt;
-&lt;li&gt;IEEE Xplore (&lt;a href=&quot;https://ieeexplore.ieee.org/&quot;&gt;https://ieeexplore.ieee.org/&lt;/a&gt;) hosts IEEE Journals and IEEE Conference Proceedings&lt;/li&gt;
-&lt;li&gt;SpringerLink (&lt;a href=&quot;https://link.springer.com/&quot;&gt;https://link.springer.com/&lt;/a&gt;) hosts Springer Journals (including Nature) and Springer Conference Proceedings&lt;/li&gt;
-&lt;li&gt;ScienceDirect (&lt;a href=&quot;https://www.sciencedirect.com/&quot;&gt;https://www.sciencedirect.com/&lt;/a&gt;) hosts Elsevier Journals and e-books&lt;/li&gt;
-&lt;li&gt;Wiley Online Library (&lt;a href=&quot;https://onlinelibrary.wiley.com/&quot;&gt;https://onlinelibrary.wiley.com/&lt;/a&gt;) hosts Wiley Journals and e-books&lt;/li&gt;
-&lt;li&gt;Google Scholar (&lt;a href=&quot;https://scholar.google.com/&quot;&gt;https://scholar.google.com/&lt;/a&gt;) – Web search engine for scholarly literature&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;How-to-do-literature-review&quot;&gt;4. How to do literature review&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Systematic literature review (SLR) methods&lt;ul&gt;
-&lt;li&gt;Traditional SLR&lt;/li&gt;
-&lt;li&gt;Snowballing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;Traditional-SLR&quot;&gt;4.1. Traditional SLR&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;使用由一组关键词组成的搜索字符串&lt;/li&gt;
-&lt;li&gt;对每一个已知的数字图书馆进行详尽的搜索&lt;/li&gt;
-&lt;li&gt;旨在选择所有相关的论文&lt;/li&gt;
-&lt;li&gt;耗费时间，而且作为个人很难做到这一点&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;li&gt;Unpublished written</description>
+          
+        
       
       
       
@@ -864,35 +556,15 @@
       <guid>https://hejueyun.github.io/posts/bb11e25b/</guid>
       <pubDate>Fri, 18 Feb 2022 15:27:40 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;Terms-项&quot;&gt;1. Terms 项&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Variables. &lt;ul&gt;
-&lt;li&gt;Any &lt;strong&gt;variable&lt;/strong&gt;, &lt;strong&gt;constant&lt;/strong&gt; or &lt;strong&gt;0-ary function symbol&lt;/strong&gt; is a term.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Functions. &lt;ul&gt;
-&lt;li&gt;Any &lt;strong&gt;expression&lt;/strong&gt; $f(t_1,…,t_n)$ of n arguments (where each argument $t_i$ is a term and $f$ is a function symbol of valence n) is a term. In particular, symbols denoting individual constants are nullary function symbols, and thus are terms.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Only expressions which can be obtained by finitely many applications of rules 1 and 2 are terms&lt;/p&gt;
-&lt;h2 id=&quot;prenex-conjunctive-normal-form-PCNF-前束范式&quot;&gt;2. prenex conjunctive normal form(PCNF) 前束范式&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;A formula is in prenex conjunctive normal form (PCNF) iff it is of the form:&lt;ul&gt;
-&lt;li&gt;$Q_1x_1…Q_nx_nM$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;where the $Q_i$ are quantifiers and $M$ is a quantifier-free formula in CNF. The sequence $Q_1x_1⋯Q_nx_n$ is the prefix and $M$ is the matrix&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如果一个公示可以被写为量词在前，随后是被称为母体的无量词部分，则称其为前束范式的，所有经典逻辑公式都逻辑等价于某个前束范式公式&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;example&lt;/strong&gt;&lt;/p&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/bb11e25b/7.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Let A be a closed formula in PCNF whose prefix consists only of universal quantifiers. The clausal form of A consists of the matrix of A written as a set of clauses&lt;/li&gt;
-&lt;li&gt;所以上个例子可以写为：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/bb11e25b/7.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;</description>
+&lt;li&gt;Any &lt;strong&gt;variable&lt;/strong&gt;, &lt;strong&gt;constant&lt;/strong&gt; or &lt;strong&gt;0-ary</description>
+          
+        
       
       
       
@@ -917,20 +589,14 @@
       <guid>https://hejueyun.github.io/posts/f450749c/</guid>
       <pubDate>Fri, 18 Feb 2022 15:11:01 GMT</pubDate>
       
+        
+        
+          
+          
       <description>&lt;h2 id=&quot;Deductive-system&quot;&gt;1. Deductive system&lt;/h2&gt;&lt;h3 id=&quot;G&quot;&gt;1.1. G&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;We extend the deductive systems $G$ and $H$ from propositional logic to first-order logic by adding axioms and rules of inference &lt;strong&gt;for the universal quantifier&lt;/strong&gt;全称量词.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/f450749c/1.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;h3 id=&quot;H&quot;&gt;1.2. H&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;The rules of inference are modus ponens and generalization&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/f450749c/2.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The Deduction Rule：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/f450749c/3.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;</description>
+&lt;li&gt;We extend the deductive systems $G$ and $H$ from</description>
+          
+        
       
       
       
@@ -955,47 +621,13 @@
       <guid>https://hejueyun.github.io/posts/ed4b45dd/</guid>
       <pubDate>Tue, 15 Feb 2022 23:57:35 GMT</pubDate>
       
-      <description>&lt;h2 id=&quot;引入&quot;&gt;1. 引入&lt;/h2&gt;&lt;p&gt;命题逻辑对于算术等数学理论的形式化来说，表现力并不充分。一个算术表达式，如$x+2&amp;gt;y-1$，既不是真的，也不是假的。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;它的真假取决于变量x和y的值&lt;/li&gt;
-&lt;li&gt;我们需要将运算符+和-的含义形式化，作为将一对数字映射为一个数字的函数&lt;/li&gt;
-&lt;li&gt;像&amp;gt;这样的关系运算符必须被形式化为将一对数字映射为真值&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;命题逻辑vs一阶逻辑&quot;&gt;2. 命题逻辑vs一阶逻辑&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;命题逻辑（Propositional Logic） &lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;形如 ¬P，P∧Q，P∨Q，P → Q ，P↔Q的语句，值为True或者False&lt;/li&gt;
-&lt;li&gt;推理规则较简单，往往通过（1.真值表  2.为数不多的推理规则，例如Modus ponesn等几个）&lt;/li&gt;
-&lt;li&gt;缺点：不能或者很难表示复杂的语句，不能记录推理过程中的变化&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;一阶逻辑（First Order Logic），简称FOL&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;包含的东西有常量（Constant symbol），谓词符号（Predicate symbol），函数符号（Function symbol），变量（Variable），连词（ ∧∨→↔），量词（Quantifiers, ∃∀）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;命题逻辑(很少部分人叫它作零阶逻辑). 在命题逻辑里, 每一个字母就代表一个命题, 所以命题逻辑只能表达句子之间的关系, 比如“p&amp;amp;q”, “if p then q”等等的真值如何从p和q的真值中计算出来.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;一阶逻辑则引入了两个量词, 即universal quantifier(倒A)和existential quantifier(倒E), 并且加入了一阶谓词和individual variables和individual constants. 这些导致一阶逻辑可以量化individuals in the domain.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;比如经典的三段论就可以被一阶逻辑表达 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;For all x, Hx-&amp;gt;Mx&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Hs&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;----&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Ms&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;vs-Propositional-Logic-vs-Set-Theory-vs-Elementary-Number-Theory&quot;&gt;2.1. vs Propositional Logic vs Set Theory vs Elementary Number Theory&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Propositional Logic&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Equality: no&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Predicate symbols: A1, A2, . . .&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Constant symbols: none&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Function symbols: none&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Set Theory&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Equality: yes&lt;/li&gt;
-&lt;li&gt;Predicate symbols: ∈&lt;/li&gt;
-&lt;li&gt;Constant symbols: ∅&lt;/li&gt;
-&lt;li&gt;Function symbols: none&lt;/li&gt;
-&lt;/ul&gt;</description>
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;引入&quot;&gt;1.</description>
+          
+        
       
       
       
