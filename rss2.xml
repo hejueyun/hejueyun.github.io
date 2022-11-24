@@ -15,8 +15,41 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Mon, 14 Nov 2022 21:50:17 GMT</pubDate>
+    <pubDate>Thu, 24 Nov 2022 00:14:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【相机】Microcord Type-1</title>
+      <link>https://hejueyun.github.io/posts/6494334c/</link>
+      <guid>https://hejueyun.github.io/posts/6494334c/</guid>
+      <pubDate>Wed, 23 Nov 2022 21:25:49 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;拆解&quot;&gt;1. 拆解&lt;/h2&gt;&lt;p&gt;之前打包买相机的时候包括了一台英国MPP公司出产的双反Microcord。经检查，镜头镀膜脱落，自动停片失效，光圈调节旋钮卡死，慢门速度不准。虽然外观成色不错，但这机器的好成色也是随便买，所以干脆当作练手的尸体机拆开看看到底问题是啥，并看看有什么值得拿下来的东西。&lt;/p&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/6494334c/1.JPG&quot; width=&quot;400px&quot;&gt;&lt;/center&gt;
+
+&lt;p&gt;撕掉前面板的饰皮，将所有可见螺丝卸下，然而此时前脸和前组都无法完全拆除。这是因为前脸和前组通过交错的方式卡死，而前组和机身通过视差联动杆相连接。&lt;/p&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/6494334c/2.JPG&quot; width=&quot;500px&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/6494334c/3.JPG&quot; width=&quot;500px&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/6494334c/4.JPG&quot; width=&quot;500px&quot;&gt;&lt;/center&gt;
+
+&lt;p&gt;卸下联动杆图中的螺丝即可将整个前组拆除。&lt;/p&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/6494334c/5.JPG&quot; width=&quot;500px&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/6494334c/6.JPG&quot; width=&quot;500px&quot;&gt;&lt;/center&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="拆解">1. 拆解</h2><p>之前打包买相机的时候包括了一台英国MPP公司出产的双反Microcord。经检查，镜头镀膜脱落，自动停片失效，光圈调节旋钮卡死，慢门速度不准。虽然外观成色不错，但这机器的好成色也是随便买，所以干脆当作练手的尸体机拆开看看到底问题是啥，并看看有什么值得拿下来的东西。</p><center><img loading="lazy" src="/posts/6494334c/1.JPG" width="400px"></center><p>撕掉前面板的饰皮，将所有可见螺丝卸下，然而此时前脸和前组都无法完全拆除。这是因为前脸和前组通过交错的方式卡死，而前组和机身通过视差联动杆相连接。</p><center><img loading="lazy" src="/posts/6494334c/2.JPG" width="500px"></center><center><img loading="lazy" src="/posts/6494334c/3.JPG" width="500px"></center><center><img loading="lazy" src="/posts/6494334c/4.JPG" width="500px"></center><p>卸下联动杆图中的螺丝即可将整个前组拆除。</p><center><img loading="lazy" src="/posts/6494334c/5.JPG" width="500px"></center><center><img loading="lazy" src="/posts/6494334c/6.JPG" width="500px"></center><p>拆下前脸可以看到，光圈和快门的调节旋钮通过齿轮联动内部的两个大齿轮，这两个大齿轮则会联动镜头快门。这台相机光圈调节旋钮卡死，是由于内外齿轮联动的轴承卡死而无法旋转，目测可以通过上润滑油来解决。</p><p>相机镜组类似于大画幅&#x2F;皮腔机的结构，由一个前后组和Epsilon快门组成。Epsilon在英国产的皮腔机中极其常见，但素质比较一般。光圈通过光圈拨杆实现无极调节。快门范围为1秒至300分之一秒。这台相机在1秒以及二分之一秒快门偏慢（一般是自拍机所导致的）。在上弦后，快门只能在两个区间内调节：一是25分之一秒至1秒、T门和B门，二是25分之一秒至300分之一秒。</p><p>快门和前脸相固定的方式是通过压圈实现的，和大画幅镜头固定在镜头板的方法相似。</p><center><img loading="lazy" src="/posts/6494334c/7.JPG" width="500px"></center><center><img loading="lazy" src="/posts/6494334c/8.JPG" width="500px"></center><p>这颗77.5毫米Ross Xpres镜头的素质还是可圈可点的，尽管镀膜有些脱落，但无伤大雅。镜头拆除后没有光圈标识，需要自行打印粘贴一个光圈环。</p><blockquote><p>Mr Dell of MPP told of going to Ross to order this lens and insisting that a new design was required rather than a tired old drawing taken from a bottom drawer. The result in contemporary test bettered the German equivalent in the centre and was equal outside it in outer field areas.</p></blockquote><h2 id="点评">2. 点评</h2><p>这台相机的做工比我想像中的要好不少，消除了我使用MPP Mark VII大画幅相机时所留下的对MPP相机的偏见。比较大的槽点就是对焦屏比较暗，以及貌似没有自带的镜头盖。</p><h2 id="视频介绍">3. 视频介绍</h2><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">    <iframe src="//player.bilibili.com/player.html?aid=987879792&bvid=BV1N44y1X7hX&cid=900997899&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position:absolute; height: 100%; width: 100%;"> </iframe></div>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/essay/">essay</category>
+      
+      <category domain="https://hejueyun.github.io/categories/essay/Photography/">Photography</category>
+      
+      
+      
+      <comments>https://hejueyun.github.io/posts/6494334c/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>【相机】Agfa Selecta-M</title>
@@ -921,58 +954,6 @@
       
       
       <comments>https://hejueyun.github.io/posts/cf619a86/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>计算机数理逻辑-程序验证-顺序程序</title>
-      <link>https://hejueyun.github.io/posts/ab706956/</link>
-      <guid>https://hejueyun.github.io/posts/ab706956/</guid>
-      <pubDate>Wed, 23 Feb 2022 01:15:14 GMT</pubDate>
-      
-      <description>&lt;h2 id=&quot;Program&quot;&gt;1. Program&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;A &lt;strong&gt;computer program&lt;/strong&gt; is not very different from a logical formula. It consists of a sequence of &lt;strong&gt;symbols&lt;/strong&gt; constructed according to &lt;strong&gt;formal syntactical rules&lt;/strong&gt; and it has a meaning which is assigned by an &lt;strong&gt;interpretation&lt;/strong&gt; of the elements of the language. In programming, the symbols are called &lt;strong&gt;statements or commands&lt;/strong&gt; and the intended interpretation is the &lt;strong&gt;execution&lt;/strong&gt; of the program on a computer. The syntax of programming languages is specified using formal systems such as BNF, but the semantics is usually informally specified.&lt;/p&gt;
-&lt;p&gt;一个计算机程序与一个逻辑公式没有什么不同。它由一连串的符号组成，这些符号是根据正式的句法规则构建的，它有一个意义，这个意义是通过对语言元素的解释而赋予的。在编程中，这些符号被称为语句或命令，预期的解释是程序在计算机上的执行。&lt;strong&gt;编程语言的语法是用BNF这样的形式化系统指定的，但语义通常是非正式地指定的&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;考虑一门语言的设计&quot;&gt;1.1. 考虑一门语言的设计&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;A program is a &lt;strong&gt;statement&lt;/strong&gt; S, where statements are defined recursively using the concepts of variables and expressions&lt;ul&gt;
-&lt;li&gt;程序本身就是一个抽象的大statement&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/ab706956/6.gif&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;A &lt;strong&gt;statement&lt;/strong&gt; in a programming language can be considered to be a function that transforms the state of a computation&lt;ul&gt;
-&lt;li&gt;编程语言可以被视作状态转换函数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Let $S$ be a &lt;strong&gt;program&lt;/strong&gt; with $n$ &lt;strong&gt;variables&lt;/strong&gt; $(x1,…,xn)$. A &lt;strong&gt;state&lt;/strong&gt; $s$ of $S$ consists of an $n+1$-tuple of values $(lc,x_1,…,x_n )$, where $lc$ is the value of the &lt;strong&gt;location counter&lt;/strong&gt;(sometimes called the &lt;strong&gt;instruction pointer&lt;/strong&gt;，存储下一个指令的地址)  and $x_i$ is the value of the variable $xi$.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;we aim to verify the program by proving: if the input to the program satisfies the precondition, then the output of the program will satisfy the postcondition&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;example&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If the variables (x,y) have the values (8,7) in a state, then the result of executing the statement x &amp;#x3D; 2*y+1 is the state in which (x,y)&amp;#x3D;(15,7) and the location counter is incremented&lt;/li&gt;
-&lt;/ul&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="Program">1. Program</h2><blockquote><p>A <strong>computer program</strong> is not very different from a logical formula. It consists of a sequence of <strong>symbols</strong> constructed according to <strong>formal syntactical rules</strong> and it has a meaning which is assigned by an <strong>interpretation</strong> of the elements of the language. In programming, the symbols are called <strong>statements or commands</strong> and the intended interpretation is the <strong>execution</strong> of the program on a computer. The syntax of programming languages is specified using formal systems such as BNF, but the semantics is usually informally specified.</p><p>一个计算机程序与一个逻辑公式没有什么不同。它由一连串的符号组成，这些符号是根据正式的句法规则构建的，它有一个意义，这个意义是通过对语言元素的解释而赋予的。在编程中，这些符号被称为语句或命令，预期的解释是程序在计算机上的执行。<strong>编程语言的语法是用BNF这样的形式化系统指定的，但语义通常是非正式地指定的</strong></p></blockquote><h3 id="考虑一门语言的设计">1.1. 考虑一门语言的设计</h3><ul><li>A program is a <strong>statement</strong> S, where statements are defined recursively using the concepts of variables and expressions<ul><li>程序本身就是一个抽象的大statement</li></ul></li></ul><center><img loading="lazy" src="/posts/ab706956/6.gif" width="550"></center><ul><li>A <strong>statement</strong> in a programming language can be considered to be a function that transforms the state of a computation<ul><li>编程语言可以被视作状态转换函数</li></ul></li></ul><blockquote><p>Let $S$ be a <strong>program</strong> with $n$ <strong>variables</strong> $(x1,…,xn)$. A <strong>state</strong> $s$ of $S$ consists of an $n+1$-tuple of values $(lc,x_1,…,x_n )$, where $lc$ is the value of the <strong>location counter</strong>(sometimes called the <strong>instruction pointer</strong>，存储下一个指令的地址)  and $x_i$ is the value of the variable $xi$.</p></blockquote><ul><li><strong>we aim to verify the program by proving: if the input to the program satisfies the precondition, then the output of the program will satisfy the postcondition</strong></li></ul><p><strong>example</strong></p><ul><li>If the variables (x,y) have the values (8,7) in a state, then the result of executing the statement x &#x3D; 2*y+1 is the state in which (x,y)&#x3D;(15,7) and the location counter is incremented</li></ul><h2 id="Correctness-Formulas">2. Correctness Formulas</h2><ul><li><p>A <strong>correctness formula</strong> is a triple ${ p } S { q }$ , where $S$ is a program, and $p$ and $q$ are formulas called the precondition and postcondition, respectively. S is <strong>partially correct</strong> with respect to p and q，$⊧ { p } S { q }$,iff</p><ul><li>If $S$ is started in a state where $p$ is true and if the computation of $S$ terminates, then it terminates in a state where $q$ is true</li></ul></li><li><p>correctness formulas also call <strong>inductive expressions</strong></p></li></ul><center><img loading="lazy" src="/posts/ab706956/1.gif" width="550"></center><blockquote><p>只要 P 在 C 执行前的状态下成立，则在执行之后 Q 也成立。注意如果 C 不终止，也就没有”之后”了，所以 Q 在根本上可以是任何语句。实际上，你可以选择 Q 为假来表达 C 不终止。事实上，这种情形叫做 “部分正确（partial correctness）”。如果 C 终止并且在终止时 Q 是真，则表达式被称作 “全部正确性（total correctness）”。终止必须被单独证明。</p></blockquote><p><strong>example</strong></p><center><img loading="lazy" src="/posts/ab706956/7.png" width="550"></center><h3 id="characteristic-predicate">2.1. characteristic predicate</h3><blockquote><p>Let U be the set of all n-tuples of values over some domain(s), and let U′⊆U be a <strong>relation</strong> over U. The n-ary predicat $P_{U′}$ is the <strong>characteristic predicate</strong>特征谓词 of U′ if it is interpreted over the domain U by the relation U′. That is, $v(P_{U′}($x_1$,…,$x_n$))&#x3D;T iff ($x_1$,…,$x_n$)∈U′$.</p></blockquote><ul><li>We can write {(x 1,…,x n )∣(x 1,…,x n )∈U′} as {(x 1,…,x n )∣ $P_{U′}$ }</li><li>即：如果变量都在domain上，则为T</li></ul><h3 id="semantics-of-programming-language">2.2. semantics of programming language</h3><ul><li>编程语言的<strong>语义</strong>是通过指定语言中的每个语句如何将一种状态转化为另一种状态而给出的</li></ul><p><strong>example</strong></p><ul><li>Let S be the statement x &#x3D; 2*y+1. <ul><li>If started in an arbitrary state (x,y), the statement terminates in the state (x′,y′) where x′&#x3D;2y′+1. </li><li>Another way of expressing this is to say that S transforms the set of states {(x,y)∣true} into the set {(x,y)∣x&#x3D;2y+1}.</li><li>The statement S also transforms the set of states {(x,y)∣y≤3} into the set {(x,y)∣(x≤7)∧(y≤3)}, because if y≤3 then 2y+1≤7</li></ul></li></ul><h2 id="Deductive-System-HL-霍尔逻辑">3. Deductive System HL 霍尔逻辑</h2><ul><li>Instead, we will simply take all true formulas in the domain as axioms. For example, (x≥y)→(x+1≥y+1) is true in arithmetic and will be used as an axiom. This is reasonable since we wish to concentrate on the verification that a program S is correct without the complication of verifying arithmetic formulas that are well known.</li></ul><center><img loading="lazy" src="/posts/ab706956/2.png" width="550"></center><p>example</p><center><img loading="lazy" src="/posts/ab706956/3.png" width="550"></center><ul><li>The formula p in the loop rule is called an <strong>invariant</strong>不变量: it describes the behavior of a single execution of the statement S in the body of the while-statement.</li><li>感觉有点类似sed</li></ul><h2 id="Program-Verification">4. Program Verification</h2><center><img loading="lazy" src="/posts/ab706956/8.png" width="650"></center>]]></content:encoded>
-      
-      
-      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
-      
-      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
-      
-      
-      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
-      
-      
-      <comments>https://hejueyun.github.io/posts/ab706956/#disqus_thread</comments>
       
     </item>
     
