@@ -15,8 +15,62 @@
     <atom:link href="https://hejueyun.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 11 Jan 2023 16:27:49 GMT</pubDate>
+    <pubDate>Mon, 06 Feb 2023 20:04:33 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>区块链和智能合约背景知识</title>
+      <link>https://hejueyun.github.io/posts/d95176f7/</link>
+      <guid>https://hejueyun.github.io/posts/d95176f7/</guid>
+      <pubDate>Tue, 31 Jan 2023 09:10:20 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;Web-1-x2F-2-x2F-3-0&quot;&gt;1. Web 1&amp;#x2F;2&amp;#x2F;3.0&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Web 1.0 是单向的。大公司创造了供人们阅读的内容，几乎没有交互，用户只能读取数据，只有内容创造者才能编辑和创作内容。所以，就像在图书馆看书一样，用户没有太多权利，他们只是消费者。&lt;/li&gt;
+&lt;li&gt;Web 2.0允许用户自主上传内容，分享内容；&lt;/li&gt;
+&lt;li&gt;Web 3.0 区块链 DApp 更注重以用户为中心，它将排除中间人，我们不必依赖私人公司控制的巨大数据服务器，我们的个人数据将更加安全和私密。由于没有中心化服务器，所有数据都将在设备之间传播，人们可以自由访问它们。&lt;blockquote&gt;
+&lt;p&gt;区块链技术堆栈提出了称为语义网的主题。语义网意味着理解 Web 内容的方法，就像人类行为，它与机器学习和人工智能相关联，试图教会计算机理解数据及其行为方式。在语义搜索中，搜索结果将更加准确和相关。Web 2.0 依赖于关键字，页面权限和域权限来对内容进行排名，但 Web 3 浏览器试图像人一样理解 Web 内容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;区块链&quot;&gt;2. 区块链&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;区块链是一个全球性的&lt;strong&gt;去中心化分布式&lt;/strong&gt;数据库账本&lt;ul&gt;
+&lt;li&gt;A blockchain is a digitally &lt;strong&gt;distributed&lt;/strong&gt;, &lt;strong&gt;decentralized&lt;/strong&gt;, public ledger that exists across a network.&lt;/li&gt;
+&lt;li&gt;本质上就是个&lt;strong&gt;数据库&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;这个技术平台是开放的、可编程的,它不仅能够记录金融 交易,还可以与智能合约相结合,记录并运行、维护几乎所有 有价值的东西&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;“区块”：指的是数据和状态是按顺序批量或”区块”存储的。 如果你向别人发送 ETH，需要将交易数据添加到一个区块中才算成功。&lt;ul&gt;
+&lt;li&gt;本质上就是数据库中的数据，是一组交易记录（狭义）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;“链”：指的是每个区块加密引用其父块。 换句话说，区块被链接在一起。 在不改变所有后续区块的情况下，区块内数据是无法改变，但改变后续区块需要整个网络的共识&lt;/li&gt;
+&lt;li&gt;“共识机制”：网络中的每台计算机都必须就每个新区块和链达成一致。 这些计算机被称为“节点”。 节点保证所有与区块链交互的人都有相同的数据。 要完成此分布式协议，区块链需要一个&lt;strong&gt;共识机制&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/d95176f7/1.png&quot; width=&quot;500&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/d95176f7/2.png&quot; width=&quot;500&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/d95176f7/3.png&quot; width=&quot;500&quot;&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;注意chain和Linked List都被翻译成了链表，但区块“链”的链是指chain，而他的结构式栈stack&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="Web-1-x2F-2-x2F-3-0">1. Web 1&#x2F;2&#x2F;3.0</h2><ul><li>Web 1.0 是单向的。大公司创造了供人们阅读的内容，几乎没有交互，用户只能读取数据，只有内容创造者才能编辑和创作内容。所以，就像在图书馆看书一样，用户没有太多权利，他们只是消费者。</li><li>Web 2.0允许用户自主上传内容，分享内容；</li><li>Web 3.0 区块链 DApp 更注重以用户为中心，它将排除中间人，我们不必依赖私人公司控制的巨大数据服务器，我们的个人数据将更加安全和私密。由于没有中心化服务器，所有数据都将在设备之间传播，人们可以自由访问它们。<blockquote><p>区块链技术堆栈提出了称为语义网的主题。语义网意味着理解 Web 内容的方法，就像人类行为，它与机器学习和人工智能相关联，试图教会计算机理解数据及其行为方式。在语义搜索中，搜索结果将更加准确和相关。Web 2.0 依赖于关键字，页面权限和域权限来对内容进行排名，但 Web 3 浏览器试图像人一样理解 Web 内容。</p></blockquote></li></ul><h2 id="区块链">2. 区块链</h2><ul><li>区块链是一个全球性的<strong>去中心化分布式</strong>数据库账本<ul><li>A blockchain is a digitally <strong>distributed</strong>, <strong>decentralized</strong>, public ledger that exists across a network.</li><li>本质上就是个<strong>数据库</strong></li></ul></li><li>这个技术平台是开放的、可编程的,它不仅能够记录金融 交易,还可以与智能合约相结合,记录并运行、维护几乎所有 有价值的东西</li></ul><hr><ul><li>“区块”：指的是数据和状态是按顺序批量或”区块”存储的。 如果你向别人发送 ETH，需要将交易数据添加到一个区块中才算成功。<ul><li>本质上就是数据库中的数据，是一组交易记录（狭义）</li></ul></li><li>“链”：指的是每个区块加密引用其父块。 换句话说，区块被链接在一起。 在不改变所有后续区块的情况下，区块内数据是无法改变，但改变后续区块需要整个网络的共识</li><li>“共识机制”：网络中的每台计算机都必须就每个新区块和链达成一致。 这些计算机被称为“节点”。 节点保证所有与区块链交互的人都有相同的数据。 要完成此分布式协议，区块链需要一个<strong>共识机制</strong></li></ul><center><img loading="lazy" src="/posts/d95176f7/1.png" width="500"></center><center><img loading="lazy" src="/posts/d95176f7/2.png" width="500"></center><center><img loading="lazy" src="/posts/d95176f7/3.png" width="500"></center><ul><li><strong>注意chain和Linked List都被翻译成了链表，但区块“链”的链是指chain，而他的结构式栈stack</strong></li></ul><h3 id="区块链系统">2.1. 区块链系统</h3><ol><li>比特币(Bitcoin)</li><li>以太坊 (Ethereum)</li><li>超级账本(Hyperledger)</li></ol><p>…</p><ul><li>区块链的系统进化过程可以归纳为 3 个阶段:</li><li>区块链 1.0———数字货币; </li><li>区块链 2.0———数字资产与智能合约; </li><li>区块链 3.0———从 DAO(区块链自洽组织)、DAC(区块链自洽公司)到区块链社会(科学、医疗、教育等)</li></ul><blockquote><ul><li>其中,比特币、Litecoin、 Zcash 属于<strong>加密货币系统</strong></li><li>以太坊、超级账本、EOS、Parity 等 系统应用扩展到了<strong>数字资产与通用智能合约</strong>的范畴</li></ul></blockquote><h3 id="DAO">2.2. DAO</h3><ul><li>Decentralized autonomous organizations去中心化自治组织 <ul><li>是一种以公开透明的计算机代码来体现的组织，其受控于股东，并不受中央政府影响</li><li>Member-owned communities without centralized leadership. 解决中介问题</li><li>A safe way to collaborate with <strong>internet strangers</strong>. 解决信任问题</li><li>A safe place to commit funds to a specific cause</li></ul></li></ul><h3 id="分布式账本的优势">2.3. 分布式账本的优势</h3><ul><li>分布式账本可以描述为在不同地点和人员之间以分散形式维护的任何交易或合同的账本。</li><li>分布式账本的使用减少了网络攻击和金融欺诈</li><li>分布式账本还可以减少运营效率低下，加快完成交易所需的时间，并且是自动化的，因此可以 24&#x2F;7 全天候运行，所有这些都可以降低使用它们的实体的总体成本</li></ul><h3 id="吐槽">2.4. 吐槽</h3><ul><li><strong>区块链系统的本质——一个公钥系统，私钥签名，公钥加密！</strong></li><li>然后为了防止赖账，以往的做法是引入一个中间人C，然后A to C C to B，现在不过是让所有人当中间人，看似去中心化，实际上所有人都是中心</li><li>鼓励大家保持电脑开机，保持这个中间人一直存在，会给一些奖励</li><li>然后挖矿就是数学难题，为什么要计算这个数学难题呢，本质上就和高考一样，是一种证明：高考证明我智力很高；挖矿证明自己电脑算力（其实就是配置）很好，更有作为中间人的资格</li><li>当然，某种程度上分布式账本还是具有优势的，比如有时候超远距离交易需要太多中间人？以及成本优势？（本质上就是机器便宜但人力成本更贵？）</li></ul><h2 id="比特币">3. 比特币</h2><ul><li>比特币的关键创新开始：它教会了世界如何 在没有可信第三方的情况下远距离转移价值。比特币开启了点对点电子价值转移的可能性</li><li>类似比特币的系统是建立在我开始称之为“复制的、共享的账本”（<strong>“replicated, shared ledgers”</strong>）的东西之上的。 也就是说：网络中的每个完整参与者都拥有交易分类帐的完整副本，而系统的“魔力”在于它如何确保每个人的副本与其他人的副本保持一致（ <strong>makes sure that everybody’s copy stays in step with everybody else’s</strong>）</li></ul><blockquote><p>以太坊的去中心化程度相对比特币就差很多，现在存在以太坊基金会以及V神（以太坊的实际创造者）等中心，ETH与ETC的分叉事件，充分说明了V神的绝对话语权，他说谁是正宗以太坊谁就是。最严重的问题还是以太坊的全节点数量太少。由于过度膨胀的区块数据，运行以太坊节点不再是普通人甚至普通团体能胜任的。成功同步以太坊区块数据需要极高的宽带以及存储资源，目前全球的以太坊全节点可能不足5个，一旦面临强力打压，会直接死掉</p></blockquote><h2 id="以太坊">4. 以太坊</h2><ul><li>以太坊是一个开源的支持智能合约功能的公共区块链平台</li></ul><blockquote><p>以太坊采用权益证明共识机制。 任何想在链上添加新区块的人都需要往存款合约里至少质押 32 个以太币并运行验证者软件。 然后，他们会被随机选择去提议区块，其他验证者检查区块并将其添加入区块链。 在这种模型中，通常只有一条链，但由于网络延迟和不诚实的行为，可能导致多个区块存在于链头部附近的同一位置。 为解决此问题，一种分叉选择算法会选择一组规范区块。 选择的区块是构成权重可能最大的链的区块，“权重”是指认可区块的验证者数量（并以验证者质押的以太币加权）。 还有一种奖罚制度，大力鼓励参与者尽可能诚实并在线</p></blockquote><hr><ul><li>以太坊是<strong>可编程</strong>的区块链。它并不是给用户一系列预先设定好的操作（例如比特币交易），而是允许用户按照自己的意愿创建复杂的操作。 这样一来，它就可以作为多种类型去中心化区块链应用的平台，<strong>包括加密货币在内但并不仅限于此</strong>。</li><li>以太坊狭义上是指一系列定义去中心化应用平台的协议<ul><li><strong>区块链是数据库，以太坊是协议</strong></li></ul></li><li>，以太坊的核心是<strong>以太坊虚拟机</strong>（“EVM”），可以执行任意复杂算法的编码。 <ul><li>以太坊是“图灵完备的”。开发者能够使用现有的JavaScript和Python等语言为模型的其他友好的编程语言，创建出在以太坊模拟机上运行的应用</li></ul></li></ul><blockquote><p>所谓图灵完备,是指能用该编程语言模拟任何图灵机 .图灵完备的规则能够实现任何操作逻辑,例如,一种编程语言中包含条件控制语句 if,goto 等,并且能够维护任意 数量的变量,则可以编写出符合任何逻辑的代码,因此这种编 程语言具备图灵完备性</p><ul><li>比特币脚本是非图灵完备的，编写的智能合约交易模式非常有限,只能用于虚拟货币类应用</li></ul></blockquote><hr><ul><li>以太坊区块链数据库由众多连接到网络的节点来维护和更新。 每个网络节点都运行着以太坊模拟机并执行相同的指令。因此，人们有时形象地称以太坊为“<strong>世界电脑</strong>”</li><li>除金融类应用外，任何对信任、安全和持久性要求较高的应用场景————比如资产注册、投票、管理和物联网————都会大规模地受到以太坊平台影响</li></ul><h3 id="以太坊虚拟机">4.1. 以太坊虚拟机</h3><blockquote><p>While Ethereum has its own native cryptocurrency (Ether) that follows almost exactly the same intuitive rules, it also enables a much more powerful function: smart contracts. For this more complex feature, a more sophisticated analogy is required. <strong>Instead of a distributed ledger, Ethereum is a distributed state machine</strong>. Ethereum’s state is a large data structure which holds not only all accounts and balances, but <strong>a machine state, which can change from block to block according to a pre-defined set of rules, and which can execute arbitrary machine code</strong>. The specific rules of changing state from block to block are defined by the EVM</p><ul><li>以太坊不是分布式账本，而是分布式状态机器。 以太坊的状态是一个大型数据结构，它不仅保存所有帐户和余额，而且还保存一个机器状态，它可以根据预定义的一组规则在不同的区块之间进行更改，并且可以执行任意的机器代码。 在区块中更改状态的具体规则由 EVM 定义</li><li>EVM 的行为就像一个数学函数：在给定输入的情况下，它会产生确定性的输出。 因此，将以太坊更正式地描述为具有 状态转换函数非常有帮助</li></ul></blockquote><center><img loading="lazy" src="/posts/d95176f7/evm.png" width="500"></center><ul><li><em>类似一个操作系统</em></li></ul><hr><ul><li>World state：The world state is a mapping between address and account state</li></ul><center><img loading="lazy" src="/posts/d95176f7/4.png" width="500"></center><ul><li>An account is an object in the world state<ul><li>An account is a mapping between address and account</li><li>An account state could contain EVM code and storage</li></ul></li></ul><center><img loading="lazy" src="/posts/d95176f7/5.png" width="500"></center><p><strong>type</strong></p><ul><li>Externally-owned account (EOA)外部账户 – controlled by anyone with the private keys</li><li>Contract account合约账户 – <strong>a smart contract deployed to the network</strong>, controlled by code.</li></ul><center><img loading="lazy" src="/posts/d95176f7/6.png" width="500"></center><p>address</p><ul><li>相当于index<ul><li>A 160-bit code used for identifying account</li></ul></li></ul><center><img loading="lazy" src="/posts/d95176f7/7.png" width="500"></center><h2 id="智能合约">5. 智能合约</h2><ul><li>The transactions are performed by smart contracts, which are programs automatically executed on blockchain networks <strong>when specific conditions are met</strong><ul><li>智能合约的定义为:一段由事件驱动的、具有状态的、运行在一个复制的且分享的账本之上的、能够保管账本上资产的程序</li></ul></li></ul><blockquote><p>智能合约是以太坊账户的一种类型。这意味着它们有一个<strong>余额</strong>，且可以成为交易的目标。然而，它们不是由用户控制的，相反，它们被部署到网络上并按程序运行。然后，<strong>用户账户可以通过提交执行智能合约上定义的功能的交易来与智能合约互动</strong>。智能合约可以定义规则，就像普通合约一样，并通过代码自动执行这些规则。<strong>智能合约默认不能被删除，与它们的互动是不可逆转的</strong>。</p></blockquote><ul><li>相当于沙盒系统中一直再跑的守护程序，无法被杀掉，可以通过命令行与其交互执行</li></ul><h2 id="智能合约语言">6. 智能合约语言</h2><ul><li>以太坊提供了 2 种编程语言: Serpent和Solidity</li></ul><h3 id="Solidity">6.1. Solidity</h3><ul><li><p>Solidity 是一种“面向合约”(或面向对象)的高级编程语言,它是专门为编写运行在 EVM 上的智能合约而设计的. 其语法接近 JavaScript,并且支持强类型、继承、库以及用户自定义类型</p></li><li><p>solidty vs javascript</p><ul><li>安全上新引入问题？</li></ul></li></ul><h2 id="安全性问题">7. 安全性问题</h2><h3 id="区块链的安全性问题">7.1. 区块链的安全性问题</h3><ul><li>how is the ledger secured? How does the consensus process work? How are bad guys kept at bay?</li></ul><h3 id="智能合约的安全性问题">7.2. 智能合约的安全性问题</h3><blockquote><p>Although smart contract programming in many ways resembles traditional programming, it raises important new security challenges. Contracts are “play-for-keeps”, since virtual currencies have real value. If you load money into a buggy smart contract, you will likely lose it. Further, <strong>smart contract programming requires an “economic thinking” perspective that traditional programmers may not have acquired.</strong> Contract must be written to ensure fairness even when counterparties may attempt to cheat in arbitrary ways that maximize their economic gain</p><ul><li>智能合约编程需要一种 “经济思维 “的观点，而传统的程序员可能没有掌握这种观点。合同的编写必须确保公平，即使对手方可能试图以任意的方式作弊，使其经济利益最大化。</li></ul></blockquote><h2 id="防范漏洞的方式">8. 防范漏洞的方式</h2><h2 id="参考">9. 参考</h2><ul><li>区块链系统中智能合约技术综述</li><li><a href="https://gendal.me/2015/02/10/a-simple-model-for-smart-contracts/">智能合约的简单模型 |  理查德·詹德尔·布朗</a></li><li><a href="https://ethereumdocch.readthedocs.io/zh/latest/index.html">Ethereum Homestead 中文文档 — Ethereum Homestead中文文档 0.1 文档</a></li><li><a href="https://ethereum.org/zh/developers/docs/">以太坊开发文档 | ethereum.org</a></li><li><a href="https://takenobu-hs.github.io/downloads/ethereum_evm_illustrated.pdf">ethereum-evm-illustrated - ethereum_evm_illustrated.pdf</a></li><li><a href="https://www.zhihu.com/question/432920175/answer/2013531587">比特币与以太坊的区别是什么? - 知乎</a></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/d95176f7/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>【外设】Doio Retro83键盘组装记录</title>
@@ -46,81 +100,6 @@
       
       
       <comments>https://hejueyun.github.io/posts/d3be0bfc/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>镜头-takumar85f18</title>
-      <link>https://hejueyun.github.io/posts/cee0c974/</link>
-      <guid>https://hejueyun.github.io/posts/cee0c974/</guid>
-      <pubDate>Mon, 26 Dec 2022 05:31:56 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://hejueyun.github.io/posts/cee0c974/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>镜头-A50f12</title>
-      <link>https://hejueyun.github.io/posts/8a624756/</link>
-      <guid>https://hejueyun.github.io/posts/8a624756/</guid>
-      <pubDate>Mon, 26 Dec 2022 05:31:41 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://hejueyun.github.io/posts/8a624756/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>镜头-K35f2</title>
-      <link>https://hejueyun.github.io/posts/f8fd1e23/</link>
-      <guid>https://hejueyun.github.io/posts/f8fd1e23/</guid>
-      <pubDate>Mon, 26 Dec 2022 05:30:36 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://hejueyun.github.io/posts/f8fd1e23/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>镜头-Da50f14</title>
-      <link>https://hejueyun.github.io/posts/d04b5c00/</link>
-      <guid>https://hejueyun.github.io/posts/d04b5c00/</guid>
-      <pubDate>Mon, 26 Dec 2022 05:30:26 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://hejueyun.github.io/posts/d04b5c00/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>镜头-Da21f32</title>
-      <link>https://hejueyun.github.io/posts/18220c2/</link>
-      <guid>https://hejueyun.github.io/posts/18220c2/</guid>
-      <pubDate>Mon, 26 Dec 2022 05:30:18 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>https://hejueyun.github.io/posts/18220c2/#disqus_thread</comments>
       
     </item>
     
@@ -726,6 +705,189 @@
       
       
       <comments>https://hejueyun.github.io/posts/ade5e95e/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>计算机数理逻辑-一阶逻辑-SMT</title>
+      <link>https://hejueyun.github.io/posts/39d160ca/</link>
+      <guid>https://hejueyun.github.io/posts/39d160ca/</guid>
+      <pubDate>Thu, 10 Mar 2022 16:05:21 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;SAT-vs-SMT-布尔可满足性问题-vs-可满足性模理论&quot;&gt;1. SAT vs SMT 布尔可满足性问题 vs  可满足性模理论&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;SMT将SAT推广到涉及 实数 、 整数 和&amp;#x2F;或各种 数据结构 （如 列表 、 数组 、 位向量 和 字符串&lt;/li&gt;
+&lt;li&gt;由于布尔可满足性已经是 NP 完全的，所以 SMT 问题通常是 NP困难的 ，并且对于许多理论来说它是 不可判定(nondeterministic)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/39d160ca/1.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;p&gt;SMT是指另外一类公式的可满足性判定问题。这一类公式具有两个特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在命题逻辑公式里面混入了一些一阶逻辑表达式&lt;/li&gt;
+&lt;li&gt;具有任意的布尔结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SAT solvers are automatic and efficient&lt;/p&gt;
+&lt;p&gt;However, systems are usually designed and modeled at a higher level than the Boolean level and the translation to Boolean logic can be expensive. &lt;strong&gt;A primary goal of research in Satisfiability Modulo Theories (SMT) is to create verification engines that can reason natively at a higher level of abstraction, while still retaining the speed and automation of today’s Boolean engines&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/39d160ca/22.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SMT Solver &amp;#x3D; SAT Solver + Theory Solver&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Solver-vs-Checker&quot;&gt;2. Solver vs Checker&lt;/h2&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="SAT-vs-SMT-布尔可满足性问题-vs-可满足性模理论">1. SAT vs SMT 布尔可满足性问题 vs  可满足性模理论</h2><ul><li>SMT将SAT推广到涉及 实数 、 整数 和&#x2F;或各种 数据结构 （如 列表 、 数组 、 位向量 和 字符串</li><li>由于布尔可满足性已经是 NP 完全的，所以 SMT 问题通常是 NP困难的 ，并且对于许多理论来说它是 不可判定(nondeterministic)</li></ul><center><img loading="lazy" src="/posts/39d160ca/1.png" width="550"></center><p>SMT是指另外一类公式的可满足性判定问题。这一类公式具有两个特点：</p><ul><li>在命题逻辑公式里面混入了一些一阶逻辑表达式</li><li>具有任意的布尔结构</li></ul><blockquote><p>SAT solvers are automatic and efficient</p><p>However, systems are usually designed and modeled at a higher level than the Boolean level and the translation to Boolean logic can be expensive. <strong>A primary goal of research in Satisfiability Modulo Theories (SMT) is to create verification engines that can reason natively at a higher level of abstraction, while still retaining the speed and automation of today’s Boolean engines</strong></p></blockquote><center><img loading="lazy" src="/posts/39d160ca/22.png" width="550"></center><hr><ul><li><strong>SMT Solver &#x3D; SAT Solver + Theory Solver</strong></li></ul><h2 id="Solver-vs-Checker">2. Solver vs Checker</h2><ul><li>In model checking, you have a model and a specification (or property), and you check if the model meets the specification.</li><li>In SAT solving, you have a formula and you try to find a satisfying assignment to it.</li></ul><hr><ul><li>To perform model checking a reachability analysis is needed and to do this the program transitions are often executed symbolically</li><li>The solution to the resulting satisfaction problem is created by a solver</li></ul><h2 id="overflow-溢出">3. overflow 溢出</h2><h3 id="arithmetic-overflow-算术溢出">3.1. arithmetic overflow 算术溢出</h3><ul><li>当计算产生出来的结果是非常大的，大于寄存器或存储器所能存储或表示的能力限制</li><li>任何数除以零的计算（Divided by zero）“不是”算术溢出的一种。在数学上只能明显算是不明确的定义（Undefined）；它计算出来的结果只能当成是“没有”值，而不是非常大的无限数值</li></ul><h3 id="arithmetic-underflow算术下溢">3.2. arithmetic underflow算术下溢</h3><ul><li>算术下溢也称为浮点数下溢，是指计算机浮点数计算的结果小于可以表示的最小数</li><li>例如，浮点数指数范围为-128至127，一个绝对值小于2−127的浮点数就会造成下溢（假设-128的阶码用于表示负无穷）</li></ul><h2 id="Theory-理论">4. Theory 理论</h2><ul><li>A theory T is a consistent一致的 set of first-order formulas<ul><li><strong>Equality</strong> (also called theory of uninterpreted functions UF</li><li><strong>Linear arithmetic</strong></li><li><strong>Arrays</strong></li><li>…</li></ul></li></ul><h3 id="一致性（consistency">4.1. 一致性（consistency)</h3><ul><li>指一个形式系统中不蕴涵矛盾<ul><li>语义上：当一个命题S是由许多命题组成时，如果所有命题可同时为真，则S是一致的，否则S是不一致的</li><li>语法上：公理系统不能推导出两个相反的结果。亦即不存在命题P，使得P→Q和P→~Q同时成立</li></ul></li></ul><h3 id="Validity-modulo-theories-有效性模式理论">4.2. Validity modulo theories 有效性模式理论</h3><ul><li>$T_1∪T_2∪…∪T_n \models{} ∀\bar{x}F(\bar{x})$</li><li>here each $T_i$ is a first-order theory and $F(\bar{x})$ is a quantifier-free formule</li></ul><center><img loading="lazy" src="/posts/39d160ca/3.png" width="550"></center><ul><li>$\simeq{}$ 大概是指logical equivalence<ul><li>非反常识的，可以用常识来理解</li></ul></li></ul><h3 id="Satisfiability-Modulo-Theories-可满足性模式理论">4.3. Satisfiability Modulo Theories 可满足性模式理论</h3><ul><li>From Validity Modulo Theories to Satisfiability Modulo Theories:</li></ul><center><img loading="lazy" src="/posts/39d160ca/4.png" width="550"></center><h3 id="SMT-solvers">4.4. SMT solvers</h3><center><img loading="lazy" src="/posts/39d160ca/5.png" width="550"></center><h2 id="Theory-of-equality-QF-UF-and-UF">5. Theory of equality (QF_UF and UF)</h2><ul><li>QF是指<code>quantifier-free</code></li></ul><center><img loading="lazy" src="/posts/39d160ca/6.png" width="550"></center><ul><li>Function congruence: 函数同构<ul><li><em>差不多相当于双射？</em></li></ul></li></ul><center><img loading="lazy" src="/posts/39d160ca/7.png" width="550"></center><p><strong>issue</strong></p><ul><li>Equality axioms are very prolific多产的, resolution will quickly generate many irrelevant clauses.</li><li>Resolving with symmetry axiom we can produce all permutations of left and right sides of all equations. Transitivity axiom can resolve with symmetry axioms and itself producing longer clauses.</li></ul><h3 id="Inference-rules">5.1. Inference rules</h3><center><img loading="lazy" src="/posts/39d160ca/8.png" width="550"></center><ul><li>Paramodulation: 调节</li></ul><p><strong>example</strong></p><center><img loading="lazy" src="/posts/39d160ca/9.png" width="550"></center><ul><li>Idea: Only replace “bigger” terms by “smaller” terms</li><li>注意第七步不是 $f(b)&#x3D;f(b)$ ，不要马虎</li></ul><h3 id="Uninterpreted-function">5.2. Uninterpreted function</h3><ul><li>In mathematical logic, an uninterpreted function or function symbol is one that has no other property than its name and n-ary form. Function symbols are used, together with constants and variables, to form terms.<ul><li>相当于单纯0-ary符号$f$</li></ul></li><li>The theory of uninterpreted functions is also sometimes called the free theory, because it is freely generated, and thus a free object<ul><li>不被量词约束的</li></ul></li></ul><center><img loading="lazy" src="/posts/39d160ca/10.png" width="550"></center><h2 id="Theory-of-Arrays">6. Theory of Arrays</h2><ul><li>Array signature $Σarray &#x3D;&lt; { select&#x2F;2, store&#x2F;3 } , { \simeq{}} &gt;$</li></ul><h3 id="Axioms公理">6.1. Axioms公理</h3><ul><li>$∀A, I , E [select(store(A, I , E ), I ) \simeq{} E ]$<ul><li>if we store an element in an array and read from the same position then we should obtain the same element</li><li>注意store的返回值是一个新的Array</li></ul></li><li>$∀A, I , J, E [I \not\simeq{} J → select(store(A, I , E ), J) \simeq{} select(A, J)]$<ul><li>if we store an element at position i then at all other positions elements are unchanged</li></ul></li></ul><h2 id="Theory-of-Linear-Arithmetic-（QF-LRA）">7. Theory of Linear Arithmetic （QF_LRA）</h2><h3 id="linear-constraints-线性约束">7.1. linear constraints 线性约束</h3><center><img loading="lazy" src="/posts/39d160ca/11.png" width="550"></center><hr><center><img loading="lazy" src="/posts/39d160ca/12.png" width="550"></center><center><img loading="lazy" src="/posts/39d160ca/15.png" width="550"></center><h3 id="Inference-rules-1">7.2. Inference rules</h3><center><img loading="lazy" src="/posts/39d160ca/14.png" width="550"></center><p><strong>example</strong></p><center><img loading="lazy" src="/posts/39d160ca/16.png" width="550"></center><h2 id="SMT-solver">8. SMT solver</h2><center><img loading="lazy" src="/posts/39d160ca/13.png" width="550"></center><ul><li>也就是若theory solver最终结果不是 $\bot$ ,那么就是model中的一个值，即为sat</li></ul><h3 id="Abstract-DPLL">8.1. Abstract DPLL</h3><center><img loading="lazy" src="/posts/39d160ca/17.jpg" width="550"></center><center><img loading="lazy" src="/posts/39d160ca/18.jpg" width="550"></center><p><strong>example</strong></p><center><img loading="lazy" src="/posts/39d160ca/19.jpg" width="550"></center><ul><li>可以看到theory unsat的原因是1，2所以可以直接回退</li><li>注意最后一步不是decide所以没有back jump</li></ul><h3 id="minimal-steps">8.2. minimal steps</h3><center><img loading="lazy" src="/posts/39d160ca/21.png" width="550"></center><ul><li>简而言之就是只考虑产生影响的那几步，并写为negation加回Prop</li></ul><center><img loading="lazy" src="/posts/39d160ca/20.jpg" width="550"></center><h2 id="参考">9. 参考</h2><ul><li><a href="https://stackoverflow.com/questions/43908872/smt-sat-solver-vs-model-checker">SMT&#x2F;SAT Solver vs Model Checker - Stack Overflow</a></li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/39d160ca/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>计算机数理逻辑-一阶逻辑-归结</title>
+      <link>https://hejueyun.github.io/posts/e24b211f/</link>
+      <guid>https://hejueyun.github.io/posts/e24b211f/</guid>
+      <pubDate>Sun, 06 Mar 2022 21:08:15 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;atom-vs-literal-vs-term&quot;&gt;1. atom vs literal  vs term&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;a: $p$&lt;ul&gt;
+&lt;li&gt;在一阶逻辑下得到扩展&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;l: $p$  $\lnot{p}$  &lt;ul&gt;
+&lt;li&gt;注意扩展到命题逻辑中时，$P$就可以带上函数和谓词&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;In propositional calculus a literal is simply a propositional variable or its negation.&lt;/li&gt;
+&lt;li&gt;In predicate calculus a literal is an atomic formula or its negation, where an atomic formula is a predicate symbol applied to some terms, ${\displaystyle P(t_{1},\ldots ,t_{n})}$ with the terms recursively defined starting from constant symbols, variable symbols, and function symbols. For example,  ${\displaystyle \neg Q(f(g(x),y,2),x)}$ is a negative literal with the &lt;strong&gt;constant symbol&lt;/strong&gt; 2, the &lt;strong&gt;variable symbols&lt;/strong&gt; x, y, the &lt;strong&gt;function symbol&lt;/strong&gt;s f, g, and the &lt;strong&gt;predicate symbol&lt;/strong&gt; Q.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;t: $v$  $f^{n}$  $a$&lt;ul&gt;
+&lt;li&gt;注意term是变量而非字面量，如x+y，而不是p+q&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;合一-Unification&quot;&gt;2. 合一 Unification&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Let s and t be two terms (or atoms), A &lt;strong&gt;unifier&lt;/strong&gt; of s and t is a substitition &lt;strong&gt;σ&lt;/strong&gt; that makes the two identical, formally&lt;ul&gt;
+&lt;li&gt;sσ &amp;#x3D; tσ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/e24b211f/1.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;最一般的合一-Most-general-unifier&quot;&gt;2.1. 最一般的合一 Most general unifier&lt;/h3&gt;&lt;p&gt;σ is a most general unifier of s and t, denoted mgu(s, t),&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if σ is a unifier of s and t and for any other unifier θ of s and t,&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;there is&lt;/strong&gt; a substitution ρ such that&lt;ul&gt;
+&lt;li&gt;σρ &amp;#x3D; θ&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Unifiers-and-most-general-unifiers-in-general&quot;&gt;2.2. Unifiers and most general unifiers, in general&lt;/h3&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/e24b211f/2.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="atom-vs-literal-vs-term">1. atom vs literal  vs term</h2><ul><li>a: $p$<ul><li>在一阶逻辑下得到扩展</li></ul></li><li>l: $p$  $\lnot{p}$  <ul><li>注意扩展到命题逻辑中时，$P$就可以带上函数和谓词<blockquote><ul><li>In propositional calculus a literal is simply a propositional variable or its negation.</li><li>In predicate calculus a literal is an atomic formula or its negation, where an atomic formula is a predicate symbol applied to some terms, ${\displaystyle P(t_{1},\ldots ,t_{n})}$ with the terms recursively defined starting from constant symbols, variable symbols, and function symbols. For example,  ${\displaystyle \neg Q(f(g(x),y,2),x)}$ is a negative literal with the <strong>constant symbol</strong> 2, the <strong>variable symbols</strong> x, y, the <strong>function symbol</strong>s f, g, and the <strong>predicate symbol</strong> Q.</li></ul></blockquote></li></ul></li><li>t: $v$  $f^{n}$  $a$<ul><li>注意term是变量而非字面量，如x+y，而不是p+q</li></ul></li></ul><h2 id="合一-Unification">2. 合一 Unification</h2><ul><li>Let s and t be two terms (or atoms), A <strong>unifier</strong> of s and t is a substitition <strong>σ</strong> that makes the two identical, formally<ul><li>sσ &#x3D; tσ</li></ul></li></ul><center><img loading="lazy" src="/posts/e24b211f/1.png" width="550"></center><h3 id="最一般的合一-Most-general-unifier">2.1. 最一般的合一 Most general unifier</h3><p>σ is a most general unifier of s and t, denoted mgu(s, t),</p><ul><li>if σ is a unifier of s and t and for any other unifier θ of s and t,</li><li><strong>there is</strong> a substitution ρ such that<ul><li>σρ &#x3D; θ</li></ul></li></ul><h3 id="Unifiers-and-most-general-unifiers-in-general">2.2. Unifiers and most general unifiers, in general</h3><center><img loading="lazy" src="/posts/e24b211f/2.png" width="550"></center><ul><li>simultaneous&#x2F;ˌsaɪ.məlˈteɪ.ni.əs&#x2F; 同时的</li></ul><h2 id="unification-algorithm-合一算法求解mgu">3. unification algorithm 合一算法求解mgu</h2><ul><li>Input: An equational system E</li><li>Goal: Determine if E is unifiable, and <strong>if it is, to read off mgu</strong></li><li>Output: Equational system E’ in <strong>solved form</strong>, or ⊥ (for not unifiable)</li><li>Perform the following transformations on the set of equations <strong>as long as any one of them is applicable</strong>:<ul><li>注意一定要用到不能用为止，一般结果会是左式由带有同一变量的右式表达，例如：<ul><li>$x&#x3D;y$</li><li>$z&#x3D;f(y)$</li></ul></li></ul></li></ul><ol><li>Transform t&#x3D;x, where t is not a variable, to x&#x3D;t. 变量换到左侧，非变量换到右边</li><li>Erase the equation x&#x3D;x. 消除相等式</li><li>Let t′&#x3D;t″ be an equation where t′, t″ are not variables. “非变量&#x3D;非变量”的情况<ol><li>If the outermost function symbols of t′ and t″ are not identical, terminate the algorithm and report not unifiable. 如果t′和t″的最外层函数符号不一致，则终止算法，并报告<strong>不可合一</strong></li><li>Otherwise, replace the equation $f(t_1^{‘},…t_k^{‘})&#x3D;f(t_1^{‘’},…t_k^{‘’})$ by the k equations $t_1^{‘}&#x3D;t_1^{‘’},…t_k^{‘}&#x3D;t_k^{‘’}$ . 否则替换</li></ol></li><li>Let x&#x3D;t be an equation such that x has another occurrence in the set. 同一变量多次出现<ol><li>If x occurs in t and x differs from t, terminate the algorithm and report not unifiable</li><li>Otherwise, transform the set by replacing all occurrences of x in other equations by t. 否则，通过将其他方程中所有出现的x替换为t来转换这个集合</li><li>rule 4 also called the <strong>occurs-check</strong></li></ol></li></ol><p><strong>example</strong></p><center><img loading="lazy" src="/posts/e24b211f/3.png" width="650"></center><ul><li>得到mgu</li></ul><h3 id="⇒-U-unification-rules">3.1. $⇒_{U^-}$unification rules</h3><center><img loading="lazy" src="/posts/e24b211f/4.png" width="550"></center><ul><li>Orientation: 方向</li><li>Trivial: 琐碎（可理解为无价值）</li><li>Disagreement&#x2F;Clash：分歧&#x2F;冲突</li><li>Decomposition：分解</li><li>Occur-check：出现检查（可理解为存在检查）</li><li>Substitution：替换</li></ul><p><strong>example</strong></p><center><img loading="lazy" src="/posts/e24b211f/5.png" width="550"></center><ul><li>也就是变量换成term</li></ul><h3 id="term-equation">3.2. term equation</h3><ul><li>The unifiability of ${ p(f(x)),g(y),p(f(f(a))),g(z) }$ is expressed by the set of term equations<ul><li>${ f(x)&#x3D;f(f(a)), g(y)&#x3D;g(z) }$</li></ul></li></ul><h3 id="solved-form">3.3. solved form</h3><ul><li>A set of term equations is in solved form iff:<ul><li>All equations are of the form $x_i &#x3D;t_i$ where x i is a variable.</li><li>Each variable $x_i$ that appears on the left-hand side of an equation does not appear elsewhere in the set.</li></ul></li><li>A set of equations in solved form defines a substitution:<ul><li>${ x_1\leftarrow{t_1},…,x_n\leftarrow{t_n} }$</li></ul></li></ul><p>也就是说必须是用term来替代变量，而不是单纯的用其他变量来rename</p><h2 id="Ordered-resolution-with-selection">4. Ordered resolution with selection</h2><h3 id="Selection-functions">4.1. Selection functions</h3><ul><li>A selection function is a mapping<ul><li>$S : C\rightarrowtail{}$ (multi-)set of occurrences of <strong>negative</strong> literals in C</li></ul></li></ul><center><img loading="lazy" src="/posts/e24b211f/7.png" width="550"></center><h3 id="Maximal-and-strictly-maximal-literals">4.2. Maximal and strictly maximal literals</h3><center><img loading="lazy" src="/posts/e24b211f/6.png" width="550"></center><ul><li>特别注意第三个，要求的是there exist就可，因此类似 $P(f (x)) ∨ P (g(y))$中找最大，就得分情况讨论<ul><li>是否可能相等？</li></ul></li></ul><p><strong>example</strong></p><center><img loading="lazy" src="/posts/e24b211f/8.png" width="550"></center><ul><li>A literal L is (strictly) maximal wrt. a general clause C<ul><li>iff ∃ gr. σ s.t. Lσ and $C_σ$ are ground and for all L’ in $C_σ$: $L_σ\geq{L’}$ ($L_σ&gt;{L’}$)</li></ul></li></ul><h2 id="General-resolution-system">5. General resolution system</h2><p>Ordered resolution with selection is parameterised参数化 with:</p><ul><li>a fixed total, well-founded ordering $&gt;$ on ground atoms</li><li>a fixed selection function S</li></ul><h3 id="Resolution-rule">5.1. Resolution rule</h3><center><img loading="lazy" src="/posts/e24b211f/9.png" width="550"></center><ul><li>Note: <strong>Renaming variables apart</strong> needs to be applied to the premises before applying resolution</li></ul><h3 id="Factoring-rule">5.2. Factoring rule</h3><center><img loading="lazy" src="/posts/e24b211f/10.png" width="550"></center><ul><li>Factors即为: $C∨A$</li></ul><p><strong>example</strong></p><center><img loading="lazy" src="/posts/e24b211f/11.png" width="550"></center><ul><li>第四行：not P &gt; not R</li></ul><center><img loading="lazy" src="/posts/e24b211f/16.png" width="550"></center><ul><li>注意此处是基于以上的order，否则无法进行</li><li>也就是：<strong>一个CNF既可以通过herbrand theorem求解sat&#x2F;unsat，也可以general resolution求解sat&#x2F;unsat</strong></li></ul><p><strong>注意</strong></p><center><img loading="lazy" src="/posts/e24b211f/17.png" width="550"></center><h3 id="for-propositional-x2F-ground-clauses-回退到命题逻辑">5.3. for propositional&#x2F;ground clauses 回退到命题逻辑</h3><center><img loading="lazy" src="/posts/e24b211f/12.png" width="550"></center><h3 id="Search-spaces-become-smaller">5.4. Search spaces become smaller</h3><center><img loading="lazy" src="/posts/e24b211f/13.png" width="550"></center><h3 id="Properties-of-ordered-resolution-with-selection">5.5. Properties of ordered resolution with selection</h3><center><img loading="lazy" src="/posts/e24b211f/15.png" width="550"></center><p><strong>example</strong></p><center><img loading="lazy" src="/posts/e24b211f/14.png" width="550"></center><h3 id="一个特例的讨论">5.6. 一个特例的讨论</h3><ul><li>首先，mgu是不能rename的</li><li>但在res前，要rename<ul><li>mgu是res中的一个步骤 rename -&gt; res(mgu)</li></ul></li><li>按可以res的方向进行：</li></ul><center><img loading="lazy" src="/posts/e24b211f/18.png" width="550"></center><blockquote><p>you need to work out if there is a ground substitution that makes one of the literals maximsl or strictly maximal</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/e24b211f/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>计算机数理逻辑-程序验证-协议安全分析</title>
+      <link>https://hejueyun.github.io/posts/fa02fe64/</link>
+      <guid>https://hejueyun.github.io/posts/fa02fe64/</guid>
+      <pubDate>Thu, 03 Mar 2022 12:53:42 GMT</pubDate>
+      
+      <description>&lt;h2 id=&quot;The-Neuman-Stubblebine-key-exchange-protocol&quot;&gt;1. The Neuman-Stubblebine key exchange protocol&lt;/h2&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/1.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/2.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;breaking&quot;&gt;1.1. breaking&lt;/h3&gt;&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/5.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The intruder now sends a message to B, and the message will make B believe it’s actually from A. Thus B will start to use the wrong key, i.e. an insecure key. &lt;ul&gt;
+&lt;li&gt;入侵者现在向B发送一个信息，这个信息将使B相信它实际上来自A，因此B将开始使用错误的密钥，即一个不安全的密钥。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Verification-of-security-protocols-using-resolution&quot;&gt;2. Verification of security protocols using resolution&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;The idea is that the security property says an unsafe state is possible&lt;/li&gt;
+&lt;li&gt;Since first-order logic is not &lt;strong&gt;decidable&lt;/strong&gt;, there is however no guarantee that the saturation will terminate when the security property does not hold. Non-termination can therefore indicate the existence of a potential attack on the protocol.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;img loading=&quot;lazy&quot; src=&quot;/posts/fa02fe64/3.png&quot; width=&quot;550&quot;&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;Assumptions-in-security-protocol-analysis&quot;&gt;3. Assumptions in security protocol analysis&lt;/h2&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h2 id="The-Neuman-Stubblebine-key-exchange-protocol">1. The Neuman-Stubblebine key exchange protocol</h2><center><img loading="lazy" src="/posts/fa02fe64/1.png" width="550"></center><center><img loading="lazy" src="/posts/fa02fe64/2.png" width="550"></center><h3 id="breaking">1.1. breaking</h3><center><img loading="lazy" src="/posts/fa02fe64/5.png" width="550"></center><ul><li>The intruder now sends a message to B, and the message will make B believe it’s actually from A. Thus B will start to use the wrong key, i.e. an insecure key. <ul><li>入侵者现在向B发送一个信息，这个信息将使B相信它实际上来自A，因此B将开始使用错误的密钥，即一个不安全的密钥。</li></ul></li></ul><h2 id="Verification-of-security-protocols-using-resolution">2. Verification of security protocols using resolution</h2><ul><li>The idea is that the security property says an unsafe state is possible</li><li>Since first-order logic is not <strong>decidable</strong>, there is however no guarantee that the saturation will terminate when the security property does not hold. Non-termination can therefore indicate the existence of a potential attack on the protocol.</li></ul><center><img loading="lazy" src="/posts/fa02fe64/3.png" width="550"></center><h2 id="Assumptions-in-security-protocol-analysis">3. Assumptions in security protocol analysis</h2><p>What can an intruder do?</p><ul><li>The intruder can capture all messages sent by one participant to another</li><li>It can send a message it has constructed to any other participant</li><li>It can generate new keys, new nonces, timestamps . . .</li><li>It can construct new messages from the ones it has, using legal constructors</li><li>The intruder can decompose分解 tuples from which messages are formed</li><li>It can decrypt encrypted parts, but only if it knows the key I.e. we assume perfect cryptography: an intruder cannot break any keys nor does it know any of the initial keys $K_{at}$ at or $K_{bt}$</li></ul><h2 id="Encoding">4. Encoding</h2><center><img loading="lazy" src="/posts/fa02fe64/4.png" width="550"></center><h3 id="The-capabilities-of-the-intruder入侵者">4.1. The capabilities of the intruder入侵者</h3><center><img loading="lazy" src="/posts/fa02fe64/6.png" width="550"></center><center><img loading="lazy" src="/posts/fa02fe64/7.png" width="550"></center><h2 id="SPASS">5. SPASS</h2><blockquote><p>SPASS is an automated theorem prover for first-order logic with equality. So the input for the prover is a first-order formula in our syntax. </p><ul><li>Running SPASS on such a formula results in the final output SPASS beiseite: <code>Proof found.</code> if the formula is valid, </li><li>SPASS beiseite: <code>Completion found.</code> if the formula is not valid </li><li>and because validity in first-order logic is undecidable, <strong>SPASS may run forever without producing any final result.</strong></li></ul></blockquote><hr><blockquote><p>An SPASS input file consists of three parts, a description part started with list_of_descriptions., a part where the signature is declared starting with list_of_symbols., a part where all axioms are given, starting with list_of_formulae(axioms). and a final part where all conjectures are presented, starting with list_of_formulae(conjectures)</p><p>Then SPASS tries to prove that the conjunction of all axiom formulae implies the disjunction of all conjectures</p></blockquote><h2 id="Saturation">6. Saturation</h2><blockquote><p>Aclause C is a <strong>condensation</strong> of a clause D,if C is a proper (unordered) factor of D that subsumes D</p><p>A set of clauses N is called <strong>saturated</strong> if it is closed under condensation, the deletion of subsumed clauses and any clause generated by an ordered resolution inference from clauses from N is subsumed by some clause in N</p></blockquote>]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/Security/">Security</category>
+      
+      <category domain="https://hejueyun.github.io/categories/Security/Automated-Reasoning/">Automated Reasoning</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/sec/">sec</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/fa02fe64/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>西行漫记-其六</title>
+      <link>https://hejueyun.github.io/posts/2ba8f82c/</link>
+      <guid>https://hejueyun.github.io/posts/2ba8f82c/</guid>
+      <pubDate>Sat, 26 Feb 2022 22:26:20 GMT</pubDate>
+      
+      <description>&lt;div class=&quot;hbe hbe-container&quot; id=&quot;hexo-blog-encrypt&quot; data-wpm=&quot;Authenticaiton Failed.&quot; data-whm=&quot;Authentication Error.&quot;&gt;
+  &lt;script id=&quot;hbeData&quot; type=&quot;hbeData&quot; data-hmacdigest=&quot;a3bc817c3908ae67f704dabface47ef124dac94f6605c34ea7c8fd49515ab6c8&quot;&gt;63a8672ddbb5b9158eb55097173249fad22b496a8876cf71b079381ad234cb95f094e21606daf1717aa32ac9bb46c3ec99a387f812d0a9e5a45bfd529c7b8ed5f86a0a6f45900b64a15b4130bd6ed52d8ef450f58e114d4fe18874ddcc125aa94adc7a4a8723b962b279a3d4fb7200835168fbe214ea68576e259f43343e2c7a777ab0f877cfb6fb4968bbe09478ebb4c8d82d533ea85f08a5195375f39c020dcf3cc513e539010453d4dc45f2948ba6de705108a00df9f7fc634cf34cf86bc985f7ae3ca2e1587e4469e2a695bfe5527047967d1184b513411930c48dbd3b183dbfe7eee873eff520957b049943bd7990c9027c77c010cf1c251f76064497d73aea9ab2a92c884d7e6a130b44100c9333493c6642eb39253827e8e7ee7be21ffa64373cba57238a83b953034350313408910b4f2679f2f08874a410bd240537e5df887e00d303bf15e0484321af3906101f651a5df62e1da0c56825bc53493bbacbdf596d137e27fd97b6c628bac1d18116316522c0f356832bdd769f420308aa8da425e501748296d0620ffcd2d204a6dc5558914c11fd7a1524e4a74f9b204bbd20c161cc1478f443c050f4ba0a2a920b98de1a54ffce1c44fc2f468058f0bb1e886e03126f45b33810e77bf6f346451c74bd304ed8bab57935484589bc2b1a746cb687de37762f1e3b10d6cfd7444ea4341b5bbaa363926e42f063f44b8f46d6605499ae1f341a8c790ae5bd18455a40510f81640659cedde4b9a1fc6db20b8923908bfcf4ae5c13fc518f33bc48541a2a7d3d6fa89d14d5b18660c04253e8df7a62ce6fc0f4ad77bacf3ed63e1debcc332519106136f1b2641e6b830db62a33b2814ade061b05c363610e54b4c33600d8f2a0b2cf0b5403307e91398cbbbb0ce1f3b35c40cf626f9a795e2c058a9888a016c8c300275a53050c70428dc6d716a592ca1dce1d3197c52f6b275d568a2743e0a76310126832d79fdcfc43732d3899a62320175ad5adfe51baf995eab391023ce63c80e7455f778279bae1b6cfa16a1f3fd6064e80b6edb960c9308f82803b28c9816effd3c9f18b7513a3462ff3283e482b374f639c4d371942db68469fbb882df4fba4cb46057f569b75b81dd528d80365daf13cf487e52bc0d872243dbcfa67e2662311be95169f4e3457537866e44a36183036a169aacb02f0364d0d8cd0e140707d5209b2a1af7333465fb987f7b541f65c6cc0fbd606bfe4f0c894625694563e1066468c3eb3621726bd64d23457ecfd39f2a80d573eaaf792330c5f431e88122d3cfa94437d24ab67b6275def89af510353f2a7489517b3c411db28635f7153403306aad70c5e9df7334a7fd589a6a3f75a51a7d6b6f787483545bfa8792edc7b2e4dcfc0fe43266617f408469c97bec089db0698d88bb025bfbd78f55264612f849e271cccf941010f831a58402c52173aa717e8b37950c2a3b460296672b585a2ae788b6f3b7c8090b5607688c4cafd8127c8e4ee6cd27a674759cae2d3491fa85850f8b7a2a6e4bcafe4b7130eb79a9520098f2fb0b47a58bc5befda2d0dff0985f0a5cc7b772d813bba5ef07576a87164e367fc73f2a0bf6835de598f88ecd078a36b94b34b8a357e603cded2557ec4f70929061db31af874a1464d0e0dd987fc578a673d0a337ae4e741be8864ab69bbc3bdebd6cc40f6ca541d2da832b73a9e0a784ec4a2a9881589cf5f1eca7ced187f2d61810e0605850bb28a2e0ddfd6d5fda5f6daf84446297a9ed808180db8985a74dc9bda783c8404a40816f5aa2e46472bfb0910fcbbf951ef6c00918ad218dd9ab2987f761d0925d0ef773c46fe4b7a161cedfc9b45c3ffdeb1de189b73be8fb6b988d56f7a0995999f0142f5cff66e3f48f8ff9aa4fa5d55cae1b3b28982f24b60eb6b2a013d1dbfe24a8ae7d060303846c826d30750266845c421f1cfb6284aaacfb809aa1f8cb2569943fa79b0a62156ce334515f7c49b2b3d7e15e7119bb61de88efddfcdddef82aa1c03a6a406a5558f5a19366ac18a0592f71ca072505313fb73a1170cdf6a366ab5af2c52234c20f20d5aa161384bc13a4181564db10d98fe6cd0df70f7d0b656d4cf22a4452ac33ed23ab0850e97ec391945ea2d35aa57102d3f7c9a52caa07c69252cc294b2917a61a22745bba81d0ab2cf3ab8fe96f5f8b88743444dea132dbb071087860a659b2f898c983e26249acf4e28b490b33a068809d43ee74895d7151833327cf9292c66c06fc66cc9e95586aba56fae820ff58101e2f3e7ccd5822b040cfc1c056b6ef68f8969d3c99f5a30d315b6a034bc88297af5601d1871e16caf265742b3c6a642b19e9f6f6794db94031bf90772091158922f53eec44078767c2b91d0a3209f32579c1a614ee5ecd41649d5e2914539a1b5099d13ea62045953d898e3c3299aa755f8a7d7f66d786f96a0678ba89744e1c1dd8eaed3853524794b50e94d5e42ec7d0c081151729648645308b00e9c95cc05ec5d649abf41b0a3ee729dc47aaffba089a3a7e228db9872879a8ce2750c66da4ab6c4e7062ab5ba7d323a2a07152a76f579c7cde3de94b9ac3a40049a6657917455fb6aeb02b75a7624e0f9bd302f852f98cc5949dbc91698a64c9cc57ad6a9c381ed372f0c3a390c9fe743e3855f7ee27289155bad0ef53c288fee088346517abc31e122e4897ff8fa5ce878ef35d93a1ba0e1a4ce39959c887525c1c1b8067f157686a8f7ac89d55078ec7230c4f62dfe01f6ae148cf3c62e428bc058a2121b8ea479aee258882493a4d5a91b633c6ec15f907ca53b06a3f0d0e05ec37e3a1db600461ce81b5b93ed5f894aa7f2feb1ed509912cdb3efd473444055d0fb07e0b456c6e1ad1bd4abd6ac38b2d01087f8baeffcb7594332834ea8295fa7d4668f0abb95f0242cfcd5953fd3b11b643a4e25b9c5ec13387e99faf24235dfdb215433217508d107c4393a84ca6bc4bd49bb562b77298220918e52e2d88f2a3c5177795aae347a4177f6d4937cacbd5e5c4ecbcc7081181b4bd65e862d818047d7e16712db3b8ec117d6230e832c8c9f590223188ca37d7f49620c3cf0fd771bb277bb4d1ccbbaa4c604248234fcbe3ed2a3cfb01c6ff72184ebaca088ccdb479e3bc41f475386277fbef50af51554d77d319aee4583a3a914df0fcf1461522c583cc55feac3e639133f196a8dc98a2c3d0fb746fe35ff6c87415712b49f144b33dc595c82daef511a693bf77f20537d7856befc651a7fb168cd3712c1bd8fe7018d8bdb296acfbdbac10427ab9b04b9aff10661fb759f66015099dab02de9ea25d9e6899a4ee5f2521f7e2093571ee1228005f4ca42af51d8cac3d507aecc9683a7105e89f467c7d451255b92fc2fe5822b3c3b31ec1d8caa8efdcd124545938a1751f30e3f7307f946ddf0d57c2cc8b4506663fd1f4b86beb3d82364c1ad1c63f22610b425d698806564308e162117445c0cf4f5fdc901ec86268162e776d60b7625189fdbdf9dc92e5655c8ccf2a7370d6bdbf69292964890d64be44c88f7b630e96bbfcd852eb083fd79ca55c7f12a4d378a54b9bfb074d3e916112d5a58cf8d749b5cd74d4007f1aaf349dfe63a400b06a507852c241b1aa296162365e0ad043a47209ae80845e6e4fced64b7f52dd8a9163d896f4bf443d5b199766366013d062a794181fde28ac9331795bc2cc77a5e0b52de3c3c00c099e9d3cb373ef771c69c20aed9255385280c3e42eec53920469ab690c8c6d49158146388b401b3186fd462ac2abd820b57e5e9325d859030d70616b14d2bb991ba7b20883a93425828fc70ae6f8171160be59150b2491816f49d6e832bb6c66f5f513ddbfb0d59f6a045dc88288ca21bba554a7a134fa3&lt;/script&gt;
+  &lt;div class=&quot;hbe hbe-content&quot;&gt;
+    &lt;div class=&quot;hbe hbe-input hbe-input-default&quot;&gt;
+      &lt;input class=&quot;hbe hbe-input-field hbe-input-field-default&quot; type=&quot;password&quot; id=&quot;hbePass&quot;&gt;
+      &lt;label class=&quot;hbe hbe-input-label hbe-input-label-default&quot; for=&quot;hbePass&quot;&gt;
+        &lt;span class=&quot;hbe hbe-input-label-content hbe-input-label-content-default&quot;&gt;Password Required.&lt;/span&gt;
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script data-pjax src=&quot;/lib/hbe.js&quot;&gt;&lt;/script&gt;&lt;link href=&quot;/css/hbe.style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Authenticaiton Failed." data-whm="Authentication Error.">  <script id="hbeData" type="hbeData" data-hmacdigest="a3bc817c3908ae67f704dabface47ef124dac94f6605c34ea7c8fd49515ab6c8">63a8672ddbb5b9158eb55097173249fad22b496a8876cf71b079381ad234cb95f094e21606daf1717aa32ac9bb46c3ec99a387f812d0a9e5a45bfd529c7b8ed5f86a0a6f45900b64a15b4130bd6ed52d8ef450f58e114d4fe18874ddcc125aa94adc7a4a8723b962b279a3d4fb7200835168fbe214ea68576e259f43343e2c7a777ab0f877cfb6fb4968bbe09478ebb4c8d82d533ea85f08a5195375f39c020dcf3cc513e539010453d4dc45f2948ba6de705108a00df9f7fc634cf34cf86bc985f7ae3ca2e1587e4469e2a695bfe5527047967d1184b513411930c48dbd3b183dbfe7eee873eff520957b049943bd7990c9027c77c010cf1c251f76064497d73aea9ab2a92c884d7e6a130b44100c9333493c6642eb39253827e8e7ee7be21ffa64373cba57238a83b953034350313408910b4f2679f2f08874a410bd240537e5df887e00d303bf15e0484321af3906101f651a5df62e1da0c56825bc53493bbacbdf596d137e27fd97b6c628bac1d18116316522c0f356832bdd769f420308aa8da425e501748296d0620ffcd2d204a6dc5558914c11fd7a1524e4a74f9b204bbd20c161cc1478f443c050f4ba0a2a920b98de1a54ffce1c44fc2f468058f0bb1e886e03126f45b33810e77bf6f346451c74bd304ed8bab57935484589bc2b1a746cb687de37762f1e3b10d6cfd7444ea4341b5bbaa363926e42f063f44b8f46d6605499ae1f341a8c790ae5bd18455a40510f81640659cedde4b9a1fc6db20b8923908bfcf4ae5c13fc518f33bc48541a2a7d3d6fa89d14d5b18660c04253e8df7a62ce6fc0f4ad77bacf3ed63e1debcc332519106136f1b2641e6b830db62a33b2814ade061b05c363610e54b4c33600d8f2a0b2cf0b5403307e91398cbbbb0ce1f3b35c40cf626f9a795e2c058a9888a016c8c300275a53050c70428dc6d716a592ca1dce1d3197c52f6b275d568a2743e0a76310126832d79fdcfc43732d3899a62320175ad5adfe51baf995eab391023ce63c80e7455f778279bae1b6cfa16a1f3fd6064e80b6edb960c9308f82803b28c9816effd3c9f18b7513a3462ff3283e482b374f639c4d371942db68469fbb882df4fba4cb46057f569b75b81dd528d80365daf13cf487e52bc0d872243dbcfa67e2662311be95169f4e3457537866e44a36183036a169aacb02f0364d0d8cd0e140707d5209b2a1af7333465fb987f7b541f65c6cc0fbd606bfe4f0c894625694563e1066468c3eb3621726bd64d23457ecfd39f2a80d573eaaf792330c5f431e88122d3cfa94437d24ab67b6275def89af510353f2a7489517b3c411db28635f7153403306aad70c5e9df7334a7fd589a6a3f75a51a7d6b6f787483545bfa8792edc7b2e4dcfc0fe43266617f408469c97bec089db0698d88bb025bfbd78f55264612f849e271cccf941010f831a58402c52173aa717e8b37950c2a3b460296672b585a2ae788b6f3b7c8090b5607688c4cafd8127c8e4ee6cd27a674759cae2d3491fa85850f8b7a2a6e4bcafe4b7130eb79a9520098f2fb0b47a58bc5befda2d0dff0985f0a5cc7b772d813bba5ef07576a87164e367fc73f2a0bf6835de598f88ecd078a36b94b34b8a357e603cded2557ec4f70929061db31af874a1464d0e0dd987fc578a673d0a337ae4e741be8864ab69bbc3bdebd6cc40f6ca541d2da832b73a9e0a784ec4a2a9881589cf5f1eca7ced187f2d61810e0605850bb28a2e0ddfd6d5fda5f6daf84446297a9ed808180db8985a74dc9bda783c8404a40816f5aa2e46472bfb0910fcbbf951ef6c00918ad218dd9ab2987f761d0925d0ef773c46fe4b7a161cedfc9b45c3ffdeb1de189b73be8fb6b988d56f7a0995999f0142f5cff66e3f48f8ff9aa4fa5d55cae1b3b28982f24b60eb6b2a013d1dbfe24a8ae7d060303846c826d30750266845c421f1cfb6284aaacfb809aa1f8cb2569943fa79b0a62156ce334515f7c49b2b3d7e15e7119bb61de88efddfcdddef82aa1c03a6a406a5558f5a19366ac18a0592f71ca072505313fb73a1170cdf6a366ab5af2c52234c20f20d5aa161384bc13a4181564db10d98fe6cd0df70f7d0b656d4cf22a4452ac33ed23ab0850e97ec391945ea2d35aa57102d3f7c9a52caa07c69252cc294b2917a61a22745bba81d0ab2cf3ab8fe96f5f8b88743444dea132dbb071087860a659b2f898c983e26249acf4e28b490b33a068809d43ee74895d7151833327cf9292c66c06fc66cc9e95586aba56fae820ff58101e2f3e7ccd5822b040cfc1c056b6ef68f8969d3c99f5a30d315b6a034bc88297af5601d1871e16caf265742b3c6a642b19e9f6f6794db94031bf90772091158922f53eec44078767c2b91d0a3209f32579c1a614ee5ecd41649d5e2914539a1b5099d13ea62045953d898e3c3299aa755f8a7d7f66d786f96a0678ba89744e1c1dd8eaed3853524794b50e94d5e42ec7d0c081151729648645308b00e9c95cc05ec5d649abf41b0a3ee729dc47aaffba089a3a7e228db9872879a8ce2750c66da4ab6c4e7062ab5ba7d323a2a07152a76f579c7cde3de94b9ac3a40049a6657917455fb6aeb02b75a7624e0f9bd302f852f98cc5949dbc91698a64c9cc57ad6a9c381ed372f0c3a390c9fe743e3855f7ee27289155bad0ef53c288fee088346517abc31e122e4897ff8fa5ce878ef35d93a1ba0e1a4ce39959c887525c1c1b8067f157686a8f7ac89d55078ec7230c4f62dfe01f6ae148cf3c62e428bc058a2121b8ea479aee258882493a4d5a91b633c6ec15f907ca53b06a3f0d0e05ec37e3a1db600461ce81b5b93ed5f894aa7f2feb1ed509912cdb3efd473444055d0fb07e0b456c6e1ad1bd4abd6ac38b2d01087f8baeffcb7594332834ea8295fa7d4668f0abb95f0242cfcd5953fd3b11b643a4e25b9c5ec13387e99faf24235dfdb215433217508d107c4393a84ca6bc4bd49bb562b77298220918e52e2d88f2a3c5177795aae347a4177f6d4937cacbd5e5c4ecbcc7081181b4bd65e862d818047d7e16712db3b8ec117d6230e832c8c9f590223188ca37d7f49620c3cf0fd771bb277bb4d1ccbbaa4c604248234fcbe3ed2a3cfb01c6ff72184ebaca088ccdb479e3bc41f475386277fbef50af51554d77d319aee4583a3a914df0fcf1461522c583cc55feac3e639133f196a8dc98a2c3d0fb746fe35ff6c87415712b49f144b33dc595c82daef511a693bf77f20537d7856befc651a7fb168cd3712c1bd8fe7018d8bdb296acfbdbac10427ab9b04b9aff10661fb759f66015099dab02de9ea25d9e6899a4ee5f2521f7e2093571ee1228005f4ca42af51d8cac3d507aecc9683a7105e89f467c7d451255b92fc2fe5822b3c3b31ec1d8caa8efdcd124545938a1751f30e3f7307f946ddf0d57c2cc8b4506663fd1f4b86beb3d82364c1ad1c63f22610b425d698806564308e162117445c0cf4f5fdc901ec86268162e776d60b7625189fdbdf9dc92e5655c8ccf2a7370d6bdbf69292964890d64be44c88f7b630e96bbfcd852eb083fd79ca55c7f12a4d378a54b9bfb074d3e916112d5a58cf8d749b5cd74d4007f1aaf349dfe63a400b06a507852c241b1aa296162365e0ad043a47209ae80845e6e4fced64b7f52dd8a9163d896f4bf443d5b199766366013d062a794181fde28ac9331795bc2cc77a5e0b52de3c3c00c099e9d3cb373ef771c69c20aed9255385280c3e42eec53920469ab690c8c6d49158146388b401b3186fd462ac2abd820b57e5e9325d859030d70616b14d2bb991ba7b20883a93425828fc70ae6f8171160be59150b2491816f49d6e832bb6c66f5f513ddbfb0d59f6a045dc88288ca21bba554a7a134fa3</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Password Required.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content:encoded>
+      
+      
+      <category domain="https://hejueyun.github.io/categories/essay/">随笔</category>
+      
+      
+      <category domain="https://hejueyun.github.io/tags/essay/">essay</category>
+      
+      
+      <comments>https://hejueyun.github.io/posts/2ba8f82c/#disqus_thread</comments>
       
     </item>
     
