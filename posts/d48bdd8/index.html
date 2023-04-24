@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="dns-prefetch" href="https://hejueyun.github.io"><title>GOTO Language Syntax Grammar | 烏巢</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="1. Goto Languagemore like a descriptive document for ESBMC’s GOTO program 1.1. Background what is goto program 定义 结构  goto program拥有如下特性：  他是语言独立的，任何ESBMC的前端所支持的源程序都可以被转化为GOTO program。   why we need i"><meta property="og:type" content="article"><meta property="og:title" content="GOTO Language Syntax Grammar"><meta property="og:url" content="https://hejueyun.github.io/posts/d48bdd8/index.html"><meta property="og:site_name" content="烏巢"><meta property="og:description" content="1. Goto Languagemore like a descriptive document for ESBMC’s GOTO program 1.1. Background what is goto program 定义 结构  goto program拥有如下特性：  他是语言独立的，任何ESBMC的前端所支持的源程序都可以被转化为GOTO program。   why we need i"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://hejueyun.github.io/posts/d48bdd8/1.svg"><meta property="og:image" content="https://hejueyun.github.io/posts/d48bdd8/2.svg"><meta property="article:published_time" content="2022-04-22T20:05:04.000Z"><meta property="article:modified_time" content="2022-09-30T18:18:28.370Z"><meta property="article:author" content="何决云"><meta property="article:tag" content="sec"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://hejueyun.github.io/posts/d48bdd8/1.svg"><link rel="alternative" href="/atom.xml" title="烏巢" type="application/atom+xml"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png"><link rel="manifest" href="/assets/img/site.webmanifest"><link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="/assets/img/favicon.ico"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="stylesheet" type="text/css" href="/./main.0cf68a.css"><link rel="stylesheet" type="text/css" href="/./txbh.css"><style type="text/css">#container.show {
           background: repeating-linear-gradient(200deg,#592c3a,#592c3a 30px,#3f4e61 0,#3f4e61 60px);
-        }</style><meta name="generator" content="Hexo 6.0.0"></head></html><html><body><div id="container" q-class="show:isCtnShow"><canvas id="anm-canvas" class="anm-canvas"></canvas><div class="left-col" q-class="show:isShow"><div class="overlay"></div><div class="intrude-less"><header id="header" class="inner"><a href class="profilepic"><img src="/assets/img/portrait.webp" class="js-avatar"></a><hgroup><h1 class="header-author"><a href></a></h1></hgroup><nav class="header-menu"><ul><li><a href="/">主页</a></li><li><a href="/photos">相册</a></li><li><a href="/tags/essay">随笔</a></li><li><a href="/categories">目录</a></li><li><a href="/archives/index.html">存档</a></li></ul></nav><nav>Total 242</nav><nav class="header-smart-menu"><a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">Search </a><a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">AboutMe</a></nav><nav class="header-nav"><div class="social"><a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a></div></nav></header></div></div><div class="mid-col" q-class="show:isShow,hide:isShow|isFalse"><nav id="mobile-nav"><div class="overlay js-overlay"></div><div class="btnctn js-mobile-btnctn"><div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div></div><div class="intrude-less"><header id="header" class="inner"><div class="profilepic"><img src="/assets/img/portrait.webp" class="js-avatar"></div><hgroup><h1 class="header-author js-header-author"></h1></hgroup><nav class="header-nav"><div class="social"><a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a></div></nav><nav class="header-menu js-header-menu"><ul style="width: 70%"><li style="width: 20%"><a href="/">主页</a></li><li style="width: 20%"><a href="/photos">相册</a></li><li style="width: 20%"><a href="/tags/essay">随笔</a></li><li style="width: 20%"><a href="/categories">目录</a></li><li style="width: 20%"><a href="/archives/index.html">存档</a></li></ul></nav></header></div><div class="mobile-mask" style="display:none" q-show="isShow"></div></nav><div id="wrapper" class="body-wrap"><div class="menu-l"><div class="canvas-wrap"><canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas></div><div id="js-content" class="content-ll"><article id="post-GOTO-Language-Syntax-Grammar" class="article article-type-post" itemscope itemprop="blogPost"><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">GOTO Language Syntax Grammar</h1><a href="/posts/d48bdd8/" class="archive-article-date"><time datetime="2022-04-22T20:05:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-22</time></a></header><div class="article-entry" itemprop="articleBody"><h2 id="Goto-Language">1. Goto Language</h2><p>more like a descriptive document for ESBMC’s GOTO program</p><h3 id="Background">1.1. Background</h3><ul><li>what is goto program</li><li>定义</li><li>结构</li></ul><p>goto program拥有如下特性：</p><ul><li><p>他是语言独立的，任何ESBMC的前端所支持的源程序都可以被转化为GOTO program。</p></li><li></li><li><p>why we need it</p><ul><li>main goal: replacement of swithc and for while to if goto</li><li>add checing Verificiation Condition</li></ul></li></ul><p>Generally speaking, it’s a simplified from original source program, with the replacement of some expression.</p><ul><li><p>why</p></li><li><p>生成方式</p><ul><li>c2goto. goto-binary 二进制文件</li><li>while verifying d</li></ul></li></ul><p>It compiles programs given in a C and C++ into GOTO-programs and serialises into a binary file. This goto-binary can be later deserialised and read in with the option “–binary”.</p><p>In ESBMC, the options associated with the goto program can be listed in Table .</p><p>Note that this representation makes it very easy to interpret the program, keeping just two pieces of state: the current position (which basic block and which line), and the values of all variables (in real software, this would also include parts of the heap and the call stack). Execution proceeds as follows: as long as there are still instructions to execute in the current basic block, run the next instruction and move the current position to right after that instruction. At the end of a basic block, take one of the available outgoing edges to another basic block.</p><p>generate the symbol table. Then the GOTO converter will use this symbol table to produce the GOTO program. Note that GOTO programs are the language-independent and context-free IR in ESBMC.</p><h2 id="post-processing">2. post-processing</h2><h3 id="goto-checking">2.1. goto checking</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">goto_checkt::div_by_zero_check</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">const</span> expr2tc &amp;expr,</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">const</span> guardt &amp;guard,</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">const</span> locationt &amp;loc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(disable_div_by_zero_check)</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">assert</span>(<span class="built_in">is_div2t</span>(expr) || <span class="built_in">is_modulus2t</span>(expr));</span><br><span class="line"></span><br><span class="line">  <span class="comment">// add divison by zero subgoal</span></span><br><span class="line">  expr2tc side_2;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">is_div2t</span>(expr))</span><br><span class="line">    side_2 = <span class="built_in">to_div2t</span>(expr).side_2;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    side_2 = <span class="built_in">to_modulus2t</span>(expr).side_2;</span><br><span class="line"></span><br><span class="line">  expr2tc zero = <span class="built_in">gen_zero</span>(side_2-&gt;type);</span><br><span class="line">  <span class="built_in">assert</span>(!<span class="built_in">is_nil_expr</span>(zero));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">add_guarded_claim</span>(</span><br><span class="line">    <span class="built_in">notequal2tc</span>(side_2, zero),</span><br><span class="line">    <span class="string">&quot;division by zero&quot;</span>,</span><br><span class="line">    <span class="string">&quot;division-by-zero&quot;</span>,</span><br><span class="line">    loc,</span><br><span class="line">    guard);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Division by zero.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  signed int x;</span><br><span class="line">  x=1;</span><br><span class="line">  IF !(x == 1) THEN GOTO 1</span><br><span class="line">  ASSERT 0 // division by zero</span><br><span class="line">  x=x % 0;</span><br><span class="line">  GOTO 2</span><br><span class="line">1: ASSERT 0 // division by zero</span><br><span class="line">  x=x / 0;</span><br><span class="line">2: dead x;</span><br><span class="line">  RETURN: NONDET(signed int)</span><br><span class="line">  END_FUNCTION // main</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  signed int x;</span><br><span class="line">  x=1;</span><br><span class="line">  IF !(x == 1) THEN GOTO 1</span><br><span class="line">  x=x % 0;</span><br><span class="line">  GOTO 2</span><br><span class="line">1: x=x / 0;</span><br><span class="line">2: dead x;</span><br><span class="line">  RETURN: NONDET(signed int)</span><br><span class="line">  END_FUNCTION // main</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">--no-bounds-check                do not do array bounds check</span><br><span class="line">--no-div-by-zero-check           do not do division by zero check</span><br><span class="line">--no-pointer-check               do not do pointer check</span><br><span class="line">--no-align-check                 do not check pointer alignment</span><br><span class="line">--no-pointer-relation-check      do not check pointer relations</span><br><span class="line">--nan-check                      check floating-point for NaN</span><br><span class="line">--memory-leak-check              enable memory leak check</span><br><span class="line">--overflow-check                 enable arithmetic over- and underflow check</span><br><span class="line">--struct-fields-check            enable over-sized read checks for struct</span><br><span class="line">                                 fields</span><br><span class="line">--deadlock-check                 enable global and local deadlock check with</span><br><span class="line">                                 mutex</span><br><span class="line">--data-races-check               enable data races check</span><br><span class="line">--lock-order-check               enable for lock acquisition ordering check</span><br><span class="line">--atomicity-check                enable atomicity check at visible</span><br><span class="line">                                 assignments</span><br><span class="line">--stack-limit bits (=-1)         check if stack limit is respected</span><br><span class="line">--error-label label              check if label is unreachable</span><br><span class="line">--force-malloc-success           do not check for malloc/new failure</span><br></pre></td></tr></table></figure><h2 id="GOTO-grammar">3. GOTO grammar</h2><h2 id="Expression">4. Expression</h2><ul><li>From the aspect of goto program, an expression (<code>expr2t</code>) is formed by <strong>two</strong> properties:<ul><li>expr_type (<code>type2t</code>): represents the type of an expression.</li><li>expr_ids (<code>expr_ids</code>): used for distinguishing different classes of expression</li></ul></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">expr  ::=   expr_type + expr_ids  </span><br><span class="line">      |     expr     </span><br></pre></td></tr></table></figure><ul><li><p><strong>expr_type</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">expr_type   ::=</span><br><span class="line">            | bool_id</span><br><span class="line">            | empty_id</span><br><span class="line">            | symbol_id</span><br><span class="line">            | struct_id</span><br><span class="line">            | union_id</span><br><span class="line">            | code_id</span><br><span class="line">            | array_id</span><br><span class="line">            | pointer_id</span><br><span class="line">            | unsignedbv_id</span><br><span class="line">            | signedbv_id</span><br><span class="line">            | fixedbv_id</span><br><span class="line">            | floatbv_id</span><br><span class="line">            | string_id</span><br><span class="line">            | cpp_name_id</span><br><span class="line">            | end_type_id</span><br></pre></td></tr></table></figure></li><li><p><strong>expr_ids</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">expr_ids     ::=</span><br><span class="line">            |   constant_int_id</span><br><span class="line">            |   constant_fixedbv_id</span><br><span class="line">            |   constant_floatbv_id</span><br><span class="line">            |   constant_bool_id</span><br><span class="line">            |   constant_string_id</span><br><span class="line">            |   constant_struct_id</span><br><span class="line">            |   constant_union_id</span><br><span class="line">            |   constant_array_id</span><br><span class="line">            |   constant_array_of_id</span><br><span class="line">            ...</span><br><span class="line">            |   code_block_id</span><br><span class="line">            |   code_assign_id</span><br><span class="line">            |   code_init_id</span><br><span class="line">            ...</span><br><span class="line">            |   end_expr_id</span><br></pre></td></tr></table></figure></li></ul><h2 id="Goto-Instruction">5. Goto Instruction</h2><p>In ESBMC, a goto instruction (<code>goto_programt::instructiont</code>) is defined by <strong>three</strong> properties– The meaning of an instruction depends on the <strong>instruction_type</strong> (<code>goto_program_instruction_typet</code>) field, while different kinds of instructions make use of the fields <strong>guard</strong> (<code>expr2tc</code>) and <strong>code</strong> (<code>expr2tc</code>) for different purposes.</p><ul><li>In other words, these are the properties that need to be considered when initialising a goto-instruction data structure, any other property could be set default or generated afterwards.</li><li><code>expr2tc</code> is basically a reference pointer container for <code>expr2t</code>. In this situation, there is no need to distinguish these two.</li></ul><p>The syntax grammar can be roughly listed as follows.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Instruction ::= </span><br><span class="line">            |   (instruction_type)</span><br><span class="line">            |   (instruction_type, guard)</span><br><span class="line">            |   (instruction_type, code)</span><br></pre></td></tr></table></figure><ul><li><p><strong>instruction_type</strong>: an enum value describing the action performed by this instruction.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">instruction_type    ::=</span><br><span class="line">                    |   NO_INSTRUCTION_TYPE </span><br><span class="line">                    |   GOTO            </span><br><span class="line">                    |   ASSUME          </span><br><span class="line">                    |   ASSERT          </span><br><span class="line">                    |   OTHER           </span><br><span class="line">                    |   SKIP            </span><br><span class="line">                    |   LOCATION        </span><br><span class="line">                    |   END_FUNCTION   </span><br><span class="line">                    |   ATOMIC_BEGIN    </span><br><span class="line">                    |   ATOMIC_END      </span><br><span class="line">                    |   RETURN         </span><br><span class="line">                    |   ASSIGN         </span><br><span class="line">                    |   DECL           </span><br><span class="line">                    |   DEAD           </span><br><span class="line">                    |   FUNCTION_CALL   </span><br><span class="line">                    |   THROW          </span><br><span class="line">                    |   CATCH          </span><br><span class="line">                    |   THROW_DECL      </span><br><span class="line">                    |   THROW_DECL_END</span><br></pre></td></tr></table></figure></li><li><p><strong>code</strong>: represents the code expression whose <code>id</code> is a subset of <code>expr_ids</code>:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">code.ids     ::=</span><br><span class="line">            |   code_block_id</span><br><span class="line">            |   code_assign_id</span><br><span class="line">            |   code_init_id</span><br><span class="line">            |   code_decl_id</span><br><span class="line">            |   code_dead_id</span><br><span class="line">            |   code_printf_id</span><br><span class="line">            |   code_expression_id</span><br><span class="line">            |   code_return_id</span><br><span class="line">            |   code_skip_id</span><br><span class="line">            |   code_free_id</span><br><span class="line">            |   code_goto_id</span><br><span class="line">            |   code_asm_id</span><br><span class="line">            |   code_function_call_id</span><br><span class="line">            |   code_comma_id</span><br><span class="line">            |   code_cpp_del_array_id</span><br><span class="line">            |   code_cpp_delete_id</span><br><span class="line">            |   code_cpp_catch_id</span><br><span class="line">            |   code_cpp_throw_id</span><br><span class="line">            |   code_cpp_throw_decl_id</span><br><span class="line">            |   code_cpp_throw_decl_end_id</span><br></pre></td></tr></table></figure></li><li><p><strong>guard</strong>: an (arbitrarily complex) expression (usually an exprt) of Boolean type, whose <code>id</code> is a subset of <code>expr_ids</code>.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">guard.id  ::=  </span><br><span class="line">          |     constant_bool_id</span><br><span class="line">          |     constant_int_id</span><br><span class="line">          |     constant_floatbv_id</span><br><span class="line">          |     constant_fixedbv_id</span><br></pre></td></tr></table></figure></li></ul><p>The detailed syntax grammar can be listed as follows. For simplification, we use the <strong>id</strong> of a expression directly to represent that expression, and <code>*</code> is denoted to represent a list of expressions&#x2F; instrucitons.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Instruction ::=</span><br><span class="line">            |   NO_INSTRUCTION_TYPE</span><br><span class="line">            |   GOTO   </span><br><span class="line">            |   GOTO + guard         </span><br><span class="line">            |   ASSUME + guard    </span><br><span class="line">            |   ASSERT + guard  </span><br><span class="line">            |   OTHER + code_expression_id</span><br><span class="line">            |   OTHER + code_free_id</span><br><span class="line">            |   OTHER + code_printf_id</span><br><span class="line">            |   OTHER + code_asm_id</span><br><span class="line">            |   OTHER + code_cpp_del_array_id</span><br><span class="line">            |   OTHER + code_cpp_delete_id</span><br><span class="line">            |   SKIP            </span><br><span class="line">            |   LOCATION        </span><br><span class="line">            |   ATOMIC_BEGIN + Instruction* + ATOMIC_END</span><br><span class="line">            |   RETURN </span><br><span class="line">            |   RETURN + code_return_id </span><br><span class="line">            |   ASSIGN + code_assign_id     </span><br><span class="line">            |   DECL + code_decl_id          </span><br><span class="line">            |   DEAD + code_dead_id         </span><br><span class="line">            |   FUNCTION_CALL + code_function_call_id</span><br><span class="line">            |   THROW  + code_cpp_throw_id*</span><br><span class="line">            |   CATCH  + code_cpp_catch_id*</span><br><span class="line">            |   THROW_DECL + code_cpp_throw_decl_id* </span><br><span class="line">            |   THROW_DECL_END + code_cpp_throw_decl_end_id*</span><br></pre></td></tr></table></figure><ul><li><code>NO_INSTRUCTION_TYPE</code>: Instruction will be set to <code>NO_INSTRUCTION_TYPE</code> if it is not explicitly defined.</li><li><code>GOTO</code>: <code>GOTO</code> targets if and only if <code>guard</code> is true. The <code>guard</code> will be set to <strong>TRUE</strong> if it is not explicitly given.</li><li><code>ASSUME</code>: This thread of execution waits for <code>guard</code> to evaluate to <strong>TRUE</strong>, which performs a non-failing guarded self loop.</li><li><code>ASSERT</code>: An assertion is <strong>TRUE</strong> &#x2F; safe if <code>guard</code> is <strong>TRUE</strong> in all possible executions, otherwise it is <strong>FALSE</strong> &#x2F; unsafe. This instructions is used to express properties to be verified</li><li><code>OTHER</code>: Represents an expression that gets evaluated, but does not have any other effect on execution, i.e. doesn’t contain a <strong>call</strong> or <strong>assignment</strong>.</li><li><code>SKIP</code>: Just advance the PC.</li><li><code>LOCATION</code>: Semantically like <code>SKIP</code>.</li><li><code>ATOMIC_BEGIN</code>, <code>ATOMIC_END</code>: Marks&#x2F; Ends a block without interleavings. When a thread executes <code>ATOMIC_BEGIN</code>, no thread other will be able to execute any Instruction until the same thread executes <code>ATOMIC_END</code>.</li><li><code>RETURN</code>: Set the value returned by <code>code</code> (which shall be either <strong>nil</strong> or an instance of <code>code_return_id</code>) and then jump to the end of the function.</li><li><code>ASSIGN</code>: Update the left-hand side of <code>code</code> (an instance of <code>code_assign_id</code>) to the value of the right-hand side.</li><li><code>DECL</code>: Introduces a symbol denoted by the field <code>code</code> (an instance of <code>code_decl_id</code>). Semantically, the life-time of which is bounded by a corresponding <code>DEAD</code> instruction.</li><li><code>DEAD</code>: Ends the life of the symbol denoted by the field <code>code</code>.</li><li><code>FUNCTION_CALL</code>: Invoke the function denoted by field <code>code</code> (an instance of <code>code_function_call_id</code>).</li><li><code>THROW</code>: Throw an exception. Throw $exception_1, …, exception_N$ where the list of exceptions is extracted from the <code>code</code> field</li><li><code>CATCH</code>: Catch an exception.</li><li><code>THROW_DECL</code>: List of throws that a function can throw.</li><li><code>THROW_DECL_END</code>: End of throw declaration.</li></ul><h2 id="Goto-Program">6. Goto Program</h2><p>An instance of goto program (<code>goto_programt</code>) is effectively a list of instructions, and must end with <code>END_FUNCTION</code>.</p><ul><li><code>END_FUNCTION</code>: Must occur as the last instruction of the list and nowhere else.</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><h2 id="GOTO-Conversion">7. GOTO Conversion</h2><center><img loading="lazy" src="/posts/d48bdd8/1.svg" width="700"></center><center>Fig 1. GOTO Conversion</center><p>Each symbol in the symbol table with function type (that is, the symbol’s type field contains a <code>code_typet</code>) will be converted to a corresponding <code>GOTO</code> program. The conversion happens in <strong>two</strong> phases:</p><ol><li><code>goto_convertt::convert</code> turns each <code>codet</code> in the symbol table into corresponding GOTO instructions</li><li><code>goto_convertt::finish_gotos</code> and others (i.e. <code>goto_convertt::optimize_guarded_gotos</code>) populate the <code>GOTO</code> and <code>CATCH</code> instructions’ targets members, pointing to their possible successors. <code>DEAD</code> instructions are also added when GOTO instructions branch out of one or more lexical blocks</li></ol><p><code>codet</code> represents statements, which is a subset of expression( inherit from <code>exprt</code>).</p><ul><li><code>exprt</code>&#x2F; <code>typet</code>:</li><li><code>Statement</code>:</li><li><code>Operands</code>:</li></ul><p>The grammar of a (By default.)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">            statment        operand(s) </span><br><span class="line">------------------------------------------------</span><br><span class="line">codet ::=</span><br><span class="line">      |     block</span><br><span class="line">      |     decl            op0</span><br><span class="line">      |     decl            op0, op1</span><br><span class="line">      |     decl-block</span><br><span class="line">      |     expression      op0</span><br><span class="line">      |     assign          op0, op1</span><br><span class="line">      |     init            op0, op1</span><br><span class="line">      |     assert          op0</span><br><span class="line">      |     assume</span><br><span class="line">      |     function_call</span><br><span class="line">      |     label           op0</span><br><span class="line">      |     switch_case     op0, op1</span><br><span class="line">      |     for             op0, op1, op2, op3</span><br><span class="line">      |     while           op0, op1</span><br><span class="line">      |     dowhile         op0, op1</span><br><span class="line">      |     switch</span><br><span class="line">      |     break</span><br><span class="line">      |     return</span><br><span class="line">      |     continue</span><br><span class="line">      |     goto</span><br><span class="line">      |     skip</span><br><span class="line">      |     non-deterministic-goto</span><br><span class="line">      |     ifthenelse</span><br><span class="line">      |     atomic_begin</span><br><span class="line">      |     atomic_end</span><br><span class="line">      |     cpp_delete</span><br><span class="line">      |     cpp_delete[]</span><br><span class="line">      |     cpp-catch</span><br><span class="line">      |     throw_decl</span><br><span class="line">      |     throw_decl_end</span><br><span class="line">      |     dead</span><br></pre></td></tr></table></figure><h3 id="Stage-1-Conversion-from-statement-to-goto-instruction">7.1. Stage 1: Conversion from statement to goto-instruction</h3><ul><li>Note that did not cover the case that <code>atomicity-check</code></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Function                  Input (codet)                 Output (codet/instructiont)</span><br><span class="line">------------------------------------------------------------------------------------</span><br><span class="line">convert_block             (block)                       (codet*)</span><br><span class="line">convert_decl              (decl, op0)                   DECL</span><br><span class="line">                          (decl, op0, op1)              DECL ASSIGN</span><br><span class="line">convert_decl_block        (decl-block)                  (codet*)</span><br><span class="line">convert_expression        (expression, op0)             (ifthenelse)</span><br><span class="line">                          (expression, op0)             OTHER</span><br><span class="line">convert_assign            (assign, op0, op1)            ASSIGN</span><br><span class="line">convert_init              (init, op0, op1)              (assign)</span><br><span class="line">convert_assert            (assert, op0)                 ASSERT</span><br><span class="line">convert_assume            (assume, op0)                 ASSUME</span><br><span class="line">convert_function_call     (function_call)               (codet)</span><br><span class="line">convert_label             (label, op0)                  (codet)</span><br><span class="line">convert_switch_case       (switch_case, op0, op1)       (codet)</span><br><span class="line">convert_for               (for, op0, op1, op2, op3)     NO_INSTRUCTION_TYPE SKIP GOTO</span><br><span class="line">                          (for, op0, op1, op2, op3)     NO_INSTRUCTION_TYPE SKIP SKIP GOTO</span><br><span class="line">convert_while             (while, op0, op1)             SKIP GOTO</span><br><span class="line">convert_dowhile           (dowhile, op0, op1)           NO_INSTRUCTION_TYPE SKIP GOTO</span><br><span class="line">convert_switch            (switch)                      NO_INSTRUCTION_TYPE SKIP GOTO*</span><br><span class="line">convert_break             (break)                       GOTO</span><br><span class="line">convert_return</span><br></pre></td></tr></table></figure><ul><li><p><code>block</code>: By <code>goto_convertt::convert_block</code>Convert each expression (<code>exprt</code>) , which is stored as operand (<code>op</code>), to <code>codet</code>. Each new <code>codet</code> then converts to goto-instruction later.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;        <span class="comment">// block begin</span></span><br><span class="line">  <span class="type">int</span> x; <span class="comment">// op[0]  =&gt;  codet(decl)   </span></span><br><span class="line">  x=<span class="number">1</span>;   <span class="comment">// op[1]  =&gt;  codet(assign)</span></span><br><span class="line">  ...   </span><br><span class="line">&#125;       <span class="comment">// block end</span></span><br></pre></td></tr></table></figure></li><li><p><code>decl</code>: takes <strong>one</strong> or <strong>two</strong> operands and always expects symbol as first operand (<code>op0</code>).</p><ul><li>if <strong>one</strong>, then generates a <code>DECL</code> instruction only.</li><li>if <strong>two</strong>, first the statement breaks up into decl and assignment, then generates a <code>DECL</code> instruction and a <code>ASSIGN</code> instruction.<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x; <span class="comment">// one operand, will be converted to DECL</span></span><br><span class="line"><span class="type">int</span> x = <span class="number">1</span>; <span class="comment">// two operand, will be spilted to two sub statement and converted to DECL and ASSIGN</span></span><br></pre></td></tr></table></figure></li></ul></li><li><p><code>decl-block</code>: Semantically like <code>block</code>.</p></li><li><p><code>expression</code>: takes <strong>one</strong> operand</p><ul><li>if</li><li>else</li></ul></li><li><p><code>assign</code>: takes <strong>two</strong> operands, denoted as <code>lhs</code>(<code>op0</code>) and <code>rhs</code>(<code>op1</code>)</p><ul><li>d</li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="built_in">func</span>()      <span class="comment">// function_call </span></span><br><span class="line">x = <span class="keyword">new</span> <span class="built_in">class</span>() <span class="comment">// cpp_new</span></span><br><span class="line">x = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>] <span class="comment">// cpp_new[]</span></span><br><span class="line">x = y           <span class="comment">// other cases</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></li></ul><h4 id="block-code-statment-to-code-blockt">7.1.1. block code statment to code_blockt</h4><p>-</p><h3 id="Stage-2-target-generation-and-optimisation">7.2. Stage 2: target generation and optimisation</h3><h3 id="Example">7.3. Example</h3><center><img loading="lazy" src="/posts/d48bdd8/2.svg" width="700"></center><center>Fig 2. C Program Being Converted Into GOTO Code</center><center>source: <a target="_blank" rel="external nofollow noopener noreferrer" href="http://cprover.diffblue.com/group__goto-programs.html">cprover: goto-conversion</a></center><h2 id="Referrence">8. Referrence</h2><p>The syntax grammar are referred to:</p><ul><li><code>goto_*.h</code>&#x2F; <code>goto_*.cpp</code></li><li><code>symex_*.h</code>&#x2F; <code>symex_*.cpp</code></li><li><code>irep2_*.h</code>&#x2F;<code>irep2_*.cpp</code></li><li><a target="_blank" rel="external nofollow noopener noreferrer" href="http://cprover.diffblue.com/group__goto-programs.html">cprover: goto-programs</a></li><li><a target="_blank" rel="external nofollow noopener noreferrer" href="http://cprover.diffblue.com/group__util.html">cprover: util</a></li></ul><p>During this process, instruction can be very similar comparing to original expression, for instance, the code expression \lstinline{assert(x&#x3D;&#x3D;1)} compares to its GOTO instrucitons form \lstinline{ASSERT x &#x3D;&#x3D; 1}.</p><p>Have breaking change.</p><ol><li>chaifen</li><li>zhuanhua</li></ol><div class="declare" hidden="hidden"></div></div><div class="article-info article-info-index"><div class="article-tag tagcloud"><i class="icon-price-tags icon"></i><ul class="article-tag-list"><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sec</a></li></ul></div><div class="article-category tagcloud"><i class="icon-book icon"></i><ul class="article-tag-list"><li class="article-tag-list-item"><a href="/categories/Security//" class="article-tag-list-link color4">Security</a></li><li class="article-tag-list-item"><a href="/categories/Security/ESBMC//" class="article-tag-list-link color1">ESBMC</a></li></ul></div><div class="clearfix"></div></div></div></article><nav id="article-nav"><a href="/posts/1ad13e77/" id="article-nav-newer" class="article-nav-link-wrap"><i class="icon-circle-left"></i><div class="article-nav-title">ESBMC Symbol Table</div></a><a href="/posts/2f42f06c/" id="article-nav-older" class="article-nav-link-wrap"><div class="article-nav-title">ESBMC-An Efficient SMT-based Software Model Checker</div><i class="icon-circle-right"></i></a></nav><aside class="wrap-side-operation"><div class="mod-side-operation"><div class="jump-container" id="js-jump-container" style="display: none"><a href="javascript:void(0)" class="mod-side-operation__jump-to-top"><i class="icon-font icon-back"></i></a><div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px"><i class="icon-font icon-plane jump-plane"></i></div></div><div class="toc-container tooltip-left"><i class="icon-font icon-category"></i><div class="tooltip tooltip-east"><span class="tooltip-item"></span> <span class="tooltip-content"><div class="toc-article"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Goto-Language"><span class="toc-number">1.</span> <span class="toc-text">1. Goto Language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Background"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. Background</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#post-processing"><span class="toc-number">2.</span> <span class="toc-text">2. post-processing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#goto-checking"><span class="toc-number">2.1.</span> <span class="toc-text">2.1. goto checking</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GOTO-grammar"><span class="toc-number">3.</span> <span class="toc-text">3. GOTO grammar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Expression"><span class="toc-number">4.</span> <span class="toc-text">4. Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Goto-Instruction"><span class="toc-number">5.</span> <span class="toc-text">5. Goto Instruction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Goto-Program"><span class="toc-number">6.</span> <span class="toc-text">6. Goto Program</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GOTO-Conversion"><span class="toc-number">7.</span> <span class="toc-text">7. GOTO Conversion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-1-Conversion-from-statement-to-goto-instruction"><span class="toc-number">7.1.</span> <span class="toc-text">7.1. Stage 1: Conversion from statement to goto-instruction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#block-code-statment-to-code-blockt"><span class="toc-number">7.1.1.</span> <span class="toc-text">7.1.1. block code statment to code_blockt</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-2-target-generation-and-optimisation"><span class="toc-number">7.2.</span> <span class="toc-text">7.2. Stage 2: target generation and optimisation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-number">7.3.</span> <span class="toc-text">7.3. Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Referrence"><span class="toc-number">8.</span> <span class="toc-text">8. Referrence</span></a></li></ol></div></span></div></div></div></aside><script>document.querySelectorAll(".toc-number").forEach(function (t) {
+        }</style><meta name="generator" content="Hexo 6.0.0"></head></html><html><body><div id="container" q-class="show:isCtnShow"><canvas id="anm-canvas" class="anm-canvas"></canvas><div class="left-col" q-class="show:isShow"><div class="overlay"></div><div class="intrude-less"><header id="header" class="inner"><a href class="profilepic"><img src="/assets/img/portrait.webp" class="js-avatar"></a><hgroup><h1 class="header-author"><a href></a></h1></hgroup><nav class="header-menu"><ul><li><a href="/">主页</a></li><li><a href="/photos">相册</a></li><li><a href="/tags/essay">随笔</a></li><li><a href="/categories">目录</a></li><li><a href="/archives/index.html">存档</a></li></ul></nav><nav>Total 243</nav><nav class="header-smart-menu"><a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">Search </a><a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">AboutMe</a></nav><nav class="header-nav"><div class="social"><a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a></div></nav></header></div></div><div class="mid-col" q-class="show:isShow,hide:isShow|isFalse"><nav id="mobile-nav"><div class="overlay js-overlay"></div><div class="btnctn js-mobile-btnctn"><div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div></div><div class="intrude-less"><header id="header" class="inner"><div class="profilepic"><img src="/assets/img/portrait.webp" class="js-avatar"></div><hgroup><h1 class="header-author js-header-author"></h1></hgroup><nav class="header-nav"><div class="social"><a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a></div></nav><nav class="header-menu js-header-menu"><ul style="width: 70%"><li style="width: 20%"><a href="/">主页</a></li><li style="width: 20%"><a href="/photos">相册</a></li><li style="width: 20%"><a href="/tags/essay">随笔</a></li><li style="width: 20%"><a href="/categories">目录</a></li><li style="width: 20%"><a href="/archives/index.html">存档</a></li></ul></nav></header></div><div class="mobile-mask" style="display:none" q-show="isShow"></div></nav><div id="wrapper" class="body-wrap"><div class="menu-l"><div class="canvas-wrap"><canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas></div><div id="js-content" class="content-ll"><article id="post-GOTO-Language-Syntax-Grammar" class="article article-type-post" itemscope itemprop="blogPost"><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">GOTO Language Syntax Grammar</h1><a href="/posts/d48bdd8/" class="archive-article-date"><time datetime="2022-04-22T20:05:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-22</time></a></header><div class="article-entry" itemprop="articleBody"><h2 id="Goto-Language">1. Goto Language</h2><p>more like a descriptive document for ESBMC’s GOTO program</p><h3 id="Background">1.1. Background</h3><ul><li>what is goto program</li><li>定义</li><li>结构</li></ul><p>goto program拥有如下特性：</p><ul><li><p>他是语言独立的，任何ESBMC的前端所支持的源程序都可以被转化为GOTO program。</p></li><li></li><li><p>why we need it</p><ul><li>main goal: replacement of swithc and for while to if goto</li><li>add checing Verificiation Condition</li></ul></li></ul><p>Generally speaking, it’s a simplified from original source program, with the replacement of some expression.</p><ul><li><p>why</p></li><li><p>生成方式</p><ul><li>c2goto. goto-binary 二进制文件</li><li>while verifying d</li></ul></li></ul><p>It compiles programs given in a C and C++ into GOTO-programs and serialises into a binary file. This goto-binary can be later deserialised and read in with the option “–binary”.</p><p>In ESBMC, the options associated with the goto program can be listed in Table .</p><p>Note that this representation makes it very easy to interpret the program, keeping just two pieces of state: the current position (which basic block and which line), and the values of all variables (in real software, this would also include parts of the heap and the call stack). Execution proceeds as follows: as long as there are still instructions to execute in the current basic block, run the next instruction and move the current position to right after that instruction. At the end of a basic block, take one of the available outgoing edges to another basic block.</p><p>generate the symbol table. Then the GOTO converter will use this symbol table to produce the GOTO program. Note that GOTO programs are the language-independent and context-free IR in ESBMC.</p><h2 id="post-processing">2. post-processing</h2><h3 id="goto-checking">2.1. goto checking</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">goto_checkt::div_by_zero_check</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">const</span> expr2tc &amp;expr,</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">const</span> guardt &amp;guard,</span></span></span><br><span class="line"><span class="params"><span class="function">  <span class="type">const</span> locationt &amp;loc)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(disable_div_by_zero_check)</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">assert</span>(<span class="built_in">is_div2t</span>(expr) || <span class="built_in">is_modulus2t</span>(expr));</span><br><span class="line"></span><br><span class="line">  <span class="comment">// add divison by zero subgoal</span></span><br><span class="line">  expr2tc side_2;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">is_div2t</span>(expr))</span><br><span class="line">    side_2 = <span class="built_in">to_div2t</span>(expr).side_2;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    side_2 = <span class="built_in">to_modulus2t</span>(expr).side_2;</span><br><span class="line"></span><br><span class="line">  expr2tc zero = <span class="built_in">gen_zero</span>(side_2-&gt;type);</span><br><span class="line">  <span class="built_in">assert</span>(!<span class="built_in">is_nil_expr</span>(zero));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">add_guarded_claim</span>(</span><br><span class="line">    <span class="built_in">notequal2tc</span>(side_2, zero),</span><br><span class="line">    <span class="string">&quot;division by zero&quot;</span>,</span><br><span class="line">    <span class="string">&quot;division-by-zero&quot;</span>,</span><br><span class="line">    loc,</span><br><span class="line">    guard);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Division by zero.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  signed int x;</span><br><span class="line">  x=1;</span><br><span class="line">  IF !(x == 1) THEN GOTO 1</span><br><span class="line">  ASSERT 0 // division by zero</span><br><span class="line">  x=x % 0;</span><br><span class="line">  GOTO 2</span><br><span class="line">1: ASSERT 0 // division by zero</span><br><span class="line">  x=x / 0;</span><br><span class="line">2: dead x;</span><br><span class="line">  RETURN: NONDET(signed int)</span><br><span class="line">  END_FUNCTION // main</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  signed int x;</span><br><span class="line">  x=1;</span><br><span class="line">  IF !(x == 1) THEN GOTO 1</span><br><span class="line">  x=x % 0;</span><br><span class="line">  GOTO 2</span><br><span class="line">1: x=x / 0;</span><br><span class="line">2: dead x;</span><br><span class="line">  RETURN: NONDET(signed int)</span><br><span class="line">  END_FUNCTION // main</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">--no-bounds-check                do not do array bounds check</span><br><span class="line">--no-div-by-zero-check           do not do division by zero check</span><br><span class="line">--no-pointer-check               do not do pointer check</span><br><span class="line">--no-align-check                 do not check pointer alignment</span><br><span class="line">--no-pointer-relation-check      do not check pointer relations</span><br><span class="line">--nan-check                      check floating-point for NaN</span><br><span class="line">--memory-leak-check              enable memory leak check</span><br><span class="line">--overflow-check                 enable arithmetic over- and underflow check</span><br><span class="line">--struct-fields-check            enable over-sized read checks for struct</span><br><span class="line">                                 fields</span><br><span class="line">--deadlock-check                 enable global and local deadlock check with</span><br><span class="line">                                 mutex</span><br><span class="line">--data-races-check               enable data races check</span><br><span class="line">--lock-order-check               enable for lock acquisition ordering check</span><br><span class="line">--atomicity-check                enable atomicity check at visible</span><br><span class="line">                                 assignments</span><br><span class="line">--stack-limit bits (=-1)         check if stack limit is respected</span><br><span class="line">--error-label label              check if label is unreachable</span><br><span class="line">--force-malloc-success           do not check for malloc/new failure</span><br></pre></td></tr></table></figure><h2 id="GOTO-grammar">3. GOTO grammar</h2><h2 id="Expression">4. Expression</h2><ul><li>From the aspect of goto program, an expression (<code>expr2t</code>) is formed by <strong>two</strong> properties:<ul><li>expr_type (<code>type2t</code>): represents the type of an expression.</li><li>expr_ids (<code>expr_ids</code>): used for distinguishing different classes of expression</li></ul></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">expr  ::=   expr_type + expr_ids  </span><br><span class="line">      |     expr     </span><br></pre></td></tr></table></figure><ul><li><p><strong>expr_type</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">expr_type   ::=</span><br><span class="line">            | bool_id</span><br><span class="line">            | empty_id</span><br><span class="line">            | symbol_id</span><br><span class="line">            | struct_id</span><br><span class="line">            | union_id</span><br><span class="line">            | code_id</span><br><span class="line">            | array_id</span><br><span class="line">            | pointer_id</span><br><span class="line">            | unsignedbv_id</span><br><span class="line">            | signedbv_id</span><br><span class="line">            | fixedbv_id</span><br><span class="line">            | floatbv_id</span><br><span class="line">            | string_id</span><br><span class="line">            | cpp_name_id</span><br><span class="line">            | end_type_id</span><br></pre></td></tr></table></figure></li><li><p><strong>expr_ids</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">expr_ids     ::=</span><br><span class="line">            |   constant_int_id</span><br><span class="line">            |   constant_fixedbv_id</span><br><span class="line">            |   constant_floatbv_id</span><br><span class="line">            |   constant_bool_id</span><br><span class="line">            |   constant_string_id</span><br><span class="line">            |   constant_struct_id</span><br><span class="line">            |   constant_union_id</span><br><span class="line">            |   constant_array_id</span><br><span class="line">            |   constant_array_of_id</span><br><span class="line">            ...</span><br><span class="line">            |   code_block_id</span><br><span class="line">            |   code_assign_id</span><br><span class="line">            |   code_init_id</span><br><span class="line">            ...</span><br><span class="line">            |   end_expr_id</span><br></pre></td></tr></table></figure></li></ul><h2 id="Goto-Instruction">5. Goto Instruction</h2><p>In ESBMC, a goto instruction (<code>goto_programt::instructiont</code>) is defined by <strong>three</strong> properties– The meaning of an instruction depends on the <strong>instruction_type</strong> (<code>goto_program_instruction_typet</code>) field, while different kinds of instructions make use of the fields <strong>guard</strong> (<code>expr2tc</code>) and <strong>code</strong> (<code>expr2tc</code>) for different purposes.</p><ul><li>In other words, these are the properties that need to be considered when initialising a goto-instruction data structure, any other property could be set default or generated afterwards.</li><li><code>expr2tc</code> is basically a reference pointer container for <code>expr2t</code>. In this situation, there is no need to distinguish these two.</li></ul><p>The syntax grammar can be roughly listed as follows.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Instruction ::= </span><br><span class="line">            |   (instruction_type)</span><br><span class="line">            |   (instruction_type, guard)</span><br><span class="line">            |   (instruction_type, code)</span><br></pre></td></tr></table></figure><ul><li><p><strong>instruction_type</strong>: an enum value describing the action performed by this instruction.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">instruction_type    ::=</span><br><span class="line">                    |   NO_INSTRUCTION_TYPE </span><br><span class="line">                    |   GOTO            </span><br><span class="line">                    |   ASSUME          </span><br><span class="line">                    |   ASSERT          </span><br><span class="line">                    |   OTHER           </span><br><span class="line">                    |   SKIP            </span><br><span class="line">                    |   LOCATION        </span><br><span class="line">                    |   END_FUNCTION   </span><br><span class="line">                    |   ATOMIC_BEGIN    </span><br><span class="line">                    |   ATOMIC_END      </span><br><span class="line">                    |   RETURN         </span><br><span class="line">                    |   ASSIGN         </span><br><span class="line">                    |   DECL           </span><br><span class="line">                    |   DEAD           </span><br><span class="line">                    |   FUNCTION_CALL   </span><br><span class="line">                    |   THROW          </span><br><span class="line">                    |   CATCH          </span><br><span class="line">                    |   THROW_DECL      </span><br><span class="line">                    |   THROW_DECL_END</span><br></pre></td></tr></table></figure></li><li><p><strong>code</strong>: represents the code expression whose <code>id</code> is a subset of <code>expr_ids</code>:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">code.ids     ::=</span><br><span class="line">            |   code_block_id</span><br><span class="line">            |   code_assign_id</span><br><span class="line">            |   code_init_id</span><br><span class="line">            |   code_decl_id</span><br><span class="line">            |   code_dead_id</span><br><span class="line">            |   code_printf_id</span><br><span class="line">            |   code_expression_id</span><br><span class="line">            |   code_return_id</span><br><span class="line">            |   code_skip_id</span><br><span class="line">            |   code_free_id</span><br><span class="line">            |   code_goto_id</span><br><span class="line">            |   code_asm_id</span><br><span class="line">            |   code_function_call_id</span><br><span class="line">            |   code_comma_id</span><br><span class="line">            |   code_cpp_del_array_id</span><br><span class="line">            |   code_cpp_delete_id</span><br><span class="line">            |   code_cpp_catch_id</span><br><span class="line">            |   code_cpp_throw_id</span><br><span class="line">            |   code_cpp_throw_decl_id</span><br><span class="line">            |   code_cpp_throw_decl_end_id</span><br></pre></td></tr></table></figure></li><li><p><strong>guard</strong>: an (arbitrarily complex) expression (usually an exprt) of Boolean type, whose <code>id</code> is a subset of <code>expr_ids</code>.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">guard.id  ::=  </span><br><span class="line">          |     constant_bool_id</span><br><span class="line">          |     constant_int_id</span><br><span class="line">          |     constant_floatbv_id</span><br><span class="line">          |     constant_fixedbv_id</span><br></pre></td></tr></table></figure></li></ul><p>The detailed syntax grammar can be listed as follows. For simplification, we use the <strong>id</strong> of a expression directly to represent that expression, and <code>*</code> is denoted to represent a list of expressions&#x2F; instrucitons.</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">Instruction ::=</span><br><span class="line">            |   NO_INSTRUCTION_TYPE</span><br><span class="line">            |   GOTO   </span><br><span class="line">            |   GOTO + guard         </span><br><span class="line">            |   ASSUME + guard    </span><br><span class="line">            |   ASSERT + guard  </span><br><span class="line">            |   OTHER + code_expression_id</span><br><span class="line">            |   OTHER + code_free_id</span><br><span class="line">            |   OTHER + code_printf_id</span><br><span class="line">            |   OTHER + code_asm_id</span><br><span class="line">            |   OTHER + code_cpp_del_array_id</span><br><span class="line">            |   OTHER + code_cpp_delete_id</span><br><span class="line">            |   SKIP            </span><br><span class="line">            |   LOCATION        </span><br><span class="line">            |   ATOMIC_BEGIN + Instruction* + ATOMIC_END</span><br><span class="line">            |   RETURN </span><br><span class="line">            |   RETURN + code_return_id </span><br><span class="line">            |   ASSIGN + code_assign_id     </span><br><span class="line">            |   DECL + code_decl_id          </span><br><span class="line">            |   DEAD + code_dead_id         </span><br><span class="line">            |   FUNCTION_CALL + code_function_call_id</span><br><span class="line">            |   THROW  + code_cpp_throw_id*</span><br><span class="line">            |   CATCH  + code_cpp_catch_id*</span><br><span class="line">            |   THROW_DECL + code_cpp_throw_decl_id* </span><br><span class="line">            |   THROW_DECL_END + code_cpp_throw_decl_end_id*</span><br></pre></td></tr></table></figure><ul><li><code>NO_INSTRUCTION_TYPE</code>: Instruction will be set to <code>NO_INSTRUCTION_TYPE</code> if it is not explicitly defined.</li><li><code>GOTO</code>: <code>GOTO</code> targets if and only if <code>guard</code> is true. The <code>guard</code> will be set to <strong>TRUE</strong> if it is not explicitly given.</li><li><code>ASSUME</code>: This thread of execution waits for <code>guard</code> to evaluate to <strong>TRUE</strong>, which performs a non-failing guarded self loop.</li><li><code>ASSERT</code>: An assertion is <strong>TRUE</strong> &#x2F; safe if <code>guard</code> is <strong>TRUE</strong> in all possible executions, otherwise it is <strong>FALSE</strong> &#x2F; unsafe. This instructions is used to express properties to be verified</li><li><code>OTHER</code>: Represents an expression that gets evaluated, but does not have any other effect on execution, i.e. doesn’t contain a <strong>call</strong> or <strong>assignment</strong>.</li><li><code>SKIP</code>: Just advance the PC.</li><li><code>LOCATION</code>: Semantically like <code>SKIP</code>.</li><li><code>ATOMIC_BEGIN</code>, <code>ATOMIC_END</code>: Marks&#x2F; Ends a block without interleavings. When a thread executes <code>ATOMIC_BEGIN</code>, no thread other will be able to execute any Instruction until the same thread executes <code>ATOMIC_END</code>.</li><li><code>RETURN</code>: Set the value returned by <code>code</code> (which shall be either <strong>nil</strong> or an instance of <code>code_return_id</code>) and then jump to the end of the function.</li><li><code>ASSIGN</code>: Update the left-hand side of <code>code</code> (an instance of <code>code_assign_id</code>) to the value of the right-hand side.</li><li><code>DECL</code>: Introduces a symbol denoted by the field <code>code</code> (an instance of <code>code_decl_id</code>). Semantically, the life-time of which is bounded by a corresponding <code>DEAD</code> instruction.</li><li><code>DEAD</code>: Ends the life of the symbol denoted by the field <code>code</code>.</li><li><code>FUNCTION_CALL</code>: Invoke the function denoted by field <code>code</code> (an instance of <code>code_function_call_id</code>).</li><li><code>THROW</code>: Throw an exception. Throw $exception_1, …, exception_N$ where the list of exceptions is extracted from the <code>code</code> field</li><li><code>CATCH</code>: Catch an exception.</li><li><code>THROW_DECL</code>: List of throws that a function can throw.</li><li><code>THROW_DECL_END</code>: End of throw declaration.</li></ul><h2 id="Goto-Program">6. Goto Program</h2><p>An instance of goto program (<code>goto_programt</code>) is effectively a list of instructions, and must end with <code>END_FUNCTION</code>.</p><ul><li><code>END_FUNCTION</code>: Must occur as the last instruction of the list and nowhere else.</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><h2 id="GOTO-Conversion">7. GOTO Conversion</h2><center><img loading="lazy" src="/posts/d48bdd8/1.svg" width="700"></center><center>Fig 1. GOTO Conversion</center><p>Each symbol in the symbol table with function type (that is, the symbol’s type field contains a <code>code_typet</code>) will be converted to a corresponding <code>GOTO</code> program. The conversion happens in <strong>two</strong> phases:</p><ol><li><code>goto_convertt::convert</code> turns each <code>codet</code> in the symbol table into corresponding GOTO instructions</li><li><code>goto_convertt::finish_gotos</code> and others (i.e. <code>goto_convertt::optimize_guarded_gotos</code>) populate the <code>GOTO</code> and <code>CATCH</code> instructions’ targets members, pointing to their possible successors. <code>DEAD</code> instructions are also added when GOTO instructions branch out of one or more lexical blocks</li></ol><p><code>codet</code> represents statements, which is a subset of expression( inherit from <code>exprt</code>).</p><ul><li><code>exprt</code>&#x2F; <code>typet</code>:</li><li><code>Statement</code>:</li><li><code>Operands</code>:</li></ul><p>The grammar of a (By default.)</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">            statment        operand(s) </span><br><span class="line">------------------------------------------------</span><br><span class="line">codet ::=</span><br><span class="line">      |     block</span><br><span class="line">      |     decl            op0</span><br><span class="line">      |     decl            op0, op1</span><br><span class="line">      |     decl-block</span><br><span class="line">      |     expression      op0</span><br><span class="line">      |     assign          op0, op1</span><br><span class="line">      |     init            op0, op1</span><br><span class="line">      |     assert          op0</span><br><span class="line">      |     assume</span><br><span class="line">      |     function_call</span><br><span class="line">      |     label           op0</span><br><span class="line">      |     switch_case     op0, op1</span><br><span class="line">      |     for             op0, op1, op2, op3</span><br><span class="line">      |     while           op0, op1</span><br><span class="line">      |     dowhile         op0, op1</span><br><span class="line">      |     switch</span><br><span class="line">      |     break</span><br><span class="line">      |     return</span><br><span class="line">      |     continue</span><br><span class="line">      |     goto</span><br><span class="line">      |     skip</span><br><span class="line">      |     non-deterministic-goto</span><br><span class="line">      |     ifthenelse</span><br><span class="line">      |     atomic_begin</span><br><span class="line">      |     atomic_end</span><br><span class="line">      |     cpp_delete</span><br><span class="line">      |     cpp_delete[]</span><br><span class="line">      |     cpp-catch</span><br><span class="line">      |     throw_decl</span><br><span class="line">      |     throw_decl_end</span><br><span class="line">      |     dead</span><br></pre></td></tr></table></figure><h3 id="Stage-1-Conversion-from-statement-to-goto-instruction">7.1. Stage 1: Conversion from statement to goto-instruction</h3><ul><li>Note that did not cover the case that <code>atomicity-check</code></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Function                  Input (codet)                 Output (codet/instructiont)</span><br><span class="line">------------------------------------------------------------------------------------</span><br><span class="line">convert_block             (block)                       (codet*)</span><br><span class="line">convert_decl              (decl, op0)                   DECL</span><br><span class="line">                          (decl, op0, op1)              DECL ASSIGN</span><br><span class="line">convert_decl_block        (decl-block)                  (codet*)</span><br><span class="line">convert_expression        (expression, op0)             (ifthenelse)</span><br><span class="line">                          (expression, op0)             OTHER</span><br><span class="line">convert_assign            (assign, op0, op1)            ASSIGN</span><br><span class="line">convert_init              (init, op0, op1)              (assign)</span><br><span class="line">convert_assert            (assert, op0)                 ASSERT</span><br><span class="line">convert_assume            (assume, op0)                 ASSUME</span><br><span class="line">convert_function_call     (function_call)               (codet)</span><br><span class="line">convert_label             (label, op0)                  (codet)</span><br><span class="line">convert_switch_case       (switch_case, op0, op1)       (codet)</span><br><span class="line">convert_for               (for, op0, op1, op2, op3)     NO_INSTRUCTION_TYPE SKIP GOTO</span><br><span class="line">                          (for, op0, op1, op2, op3)     NO_INSTRUCTION_TYPE SKIP SKIP GOTO</span><br><span class="line">convert_while             (while, op0, op1)             SKIP GOTO</span><br><span class="line">convert_dowhile           (dowhile, op0, op1)           NO_INSTRUCTION_TYPE SKIP GOTO</span><br><span class="line">convert_switch            (switch)                      NO_INSTRUCTION_TYPE SKIP GOTO*</span><br><span class="line">convert_break             (break)                       GOTO</span><br><span class="line">convert_return</span><br></pre></td></tr></table></figure><ul><li><p><code>block</code>: By <code>goto_convertt::convert_block</code>Convert each expression (<code>exprt</code>) , which is stored as operand (<code>op</code>), to <code>codet</code>. Each new <code>codet</code> then converts to goto-instruction later.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;        <span class="comment">// block begin</span></span><br><span class="line">  <span class="type">int</span> x; <span class="comment">// op[0]  =&gt;  codet(decl)   </span></span><br><span class="line">  x=<span class="number">1</span>;   <span class="comment">// op[1]  =&gt;  codet(assign)</span></span><br><span class="line">  ...   </span><br><span class="line">&#125;       <span class="comment">// block end</span></span><br></pre></td></tr></table></figure></li><li><p><code>decl</code>: takes <strong>one</strong> or <strong>two</strong> operands and always expects symbol as first operand (<code>op0</code>).</p><ul><li>if <strong>one</strong>, then generates a <code>DECL</code> instruction only.</li><li>if <strong>two</strong>, first the statement breaks up into decl and assignment, then generates a <code>DECL</code> instruction and a <code>ASSIGN</code> instruction.<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x; <span class="comment">// one operand, will be converted to DECL</span></span><br><span class="line"><span class="type">int</span> x = <span class="number">1</span>; <span class="comment">// two operand, will be spilted to two sub statement and converted to DECL and ASSIGN</span></span><br></pre></td></tr></table></figure></li></ul></li><li><p><code>decl-block</code>: Semantically like <code>block</code>.</p></li><li><p><code>expression</code>: takes <strong>one</strong> operand</p><ul><li>if</li><li>else</li></ul></li><li><p><code>assign</code>: takes <strong>two</strong> operands, denoted as <code>lhs</code>(<code>op0</code>) and <code>rhs</code>(<code>op1</code>)</p><ul><li>d</li></ul><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="built_in">func</span>()      <span class="comment">// function_call </span></span><br><span class="line">x = <span class="keyword">new</span> <span class="built_in">class</span>() <span class="comment">// cpp_new</span></span><br><span class="line">x = <span class="keyword">new</span> <span class="type">int</span>[<span class="number">10</span>] <span class="comment">// cpp_new[]</span></span><br><span class="line">x = y           <span class="comment">// other cases</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></li></ul><h4 id="block-code-statment-to-code-blockt">7.1.1. block code statment to code_blockt</h4><p>-</p><h3 id="Stage-2-target-generation-and-optimisation">7.2. Stage 2: target generation and optimisation</h3><h3 id="Example">7.3. Example</h3><center><img loading="lazy" src="/posts/d48bdd8/2.svg" width="700"></center><center>Fig 2. C Program Being Converted Into GOTO Code</center><center>source: <a target="_blank" rel="external nofollow noopener noreferrer" href="http://cprover.diffblue.com/group__goto-programs.html">cprover: goto-conversion</a></center><h2 id="Referrence">8. Referrence</h2><p>The syntax grammar are referred to:</p><ul><li><code>goto_*.h</code>&#x2F; <code>goto_*.cpp</code></li><li><code>symex_*.h</code>&#x2F; <code>symex_*.cpp</code></li><li><code>irep2_*.h</code>&#x2F;<code>irep2_*.cpp</code></li><li><a target="_blank" rel="external nofollow noopener noreferrer" href="http://cprover.diffblue.com/group__goto-programs.html">cprover: goto-programs</a></li><li><a target="_blank" rel="external nofollow noopener noreferrer" href="http://cprover.diffblue.com/group__util.html">cprover: util</a></li></ul><p>During this process, instruction can be very similar comparing to original expression, for instance, the code expression \lstinline{assert(x&#x3D;&#x3D;1)} compares to its GOTO instrucitons form \lstinline{ASSERT x &#x3D;&#x3D; 1}.</p><p>Have breaking change.</p><ol><li>chaifen</li><li>zhuanhua</li></ol><div class="declare" hidden="hidden"></div></div><div class="article-info article-info-index"><div class="article-tag tagcloud"><i class="icon-price-tags icon"></i><ul class="article-tag-list"><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sec</a></li></ul></div><div class="article-category tagcloud"><i class="icon-book icon"></i><ul class="article-tag-list"><li class="article-tag-list-item"><a href="/categories/Security//" class="article-tag-list-link color4">Security</a></li><li class="article-tag-list-item"><a href="/categories/Security/ESBMC//" class="article-tag-list-link color1">ESBMC</a></li></ul></div><div class="clearfix"></div></div></div></article><nav id="article-nav"><a href="/posts/1ad13e77/" id="article-nav-newer" class="article-nav-link-wrap"><i class="icon-circle-left"></i><div class="article-nav-title">ESBMC Symbol Table</div></a><a href="/posts/2f42f06c/" id="article-nav-older" class="article-nav-link-wrap"><div class="article-nav-title">ESBMC-An Efficient SMT-based Software Model Checker</div><i class="icon-circle-right"></i></a></nav><aside class="wrap-side-operation"><div class="mod-side-operation"><div class="jump-container" id="js-jump-container" style="display: none"><a href="javascript:void(0)" class="mod-side-operation__jump-to-top"><i class="icon-font icon-back"></i></a><div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px"><i class="icon-font icon-plane jump-plane"></i></div></div><div class="toc-container tooltip-left"><i class="icon-font icon-category"></i><div class="tooltip tooltip-east"><span class="tooltip-item"></span> <span class="tooltip-content"><div class="toc-article"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Goto-Language"><span class="toc-number">1.</span> <span class="toc-text">1. Goto Language</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Background"><span class="toc-number">1.1.</span> <span class="toc-text">1.1. Background</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#post-processing"><span class="toc-number">2.</span> <span class="toc-text">2. post-processing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#goto-checking"><span class="toc-number">2.1.</span> <span class="toc-text">2.1. goto checking</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GOTO-grammar"><span class="toc-number">3.</span> <span class="toc-text">3. GOTO grammar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Expression"><span class="toc-number">4.</span> <span class="toc-text">4. Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Goto-Instruction"><span class="toc-number">5.</span> <span class="toc-text">5. Goto Instruction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Goto-Program"><span class="toc-number">6.</span> <span class="toc-text">6. Goto Program</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GOTO-Conversion"><span class="toc-number">7.</span> <span class="toc-text">7. GOTO Conversion</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-1-Conversion-from-statement-to-goto-instruction"><span class="toc-number">7.1.</span> <span class="toc-text">7.1. Stage 1: Conversion from statement to goto-instruction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#block-code-statment-to-code-blockt"><span class="toc-number">7.1.1.</span> <span class="toc-text">7.1.1. block code statment to code_blockt</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stage-2-target-generation-and-optimisation"><span class="toc-number">7.2.</span> <span class="toc-text">7.2. Stage 2: target generation and optimisation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Example"><span class="toc-number">7.3.</span> <span class="toc-text">7.3. Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Referrence"><span class="toc-number">8.</span> <span class="toc-text">8. Referrence</span></a></li></ol></div></span></div></div></div></aside><script>document.querySelectorAll(".toc-number").forEach(function (t) {
     t.style.display = "none";
   });</script></div></div></div><footer id="footer"><div class="outer"><div id="footer-info"><div class="footer-left">&copy; 2023 何决云 <span id="timeDate">载入天数...</span><script>var now = new Date();
 				function createtime() {
@@ -5473,4 +5473,2649 @@
         y = r(151).set,
         g = r(143)(),
         b = "Promise",
-      
+        m = c.TypeError,
+        x = c.process,
+        w = c[b],
+        x = c.process,
+        S = "process" == a(x),
+        _ = function () {},
+        O = !!(function () {
+          try {
+            var t = w.resolve(1),
+              n = ((t.constructor = {})[r(7)("species")] = function (t) {
+                t(_, _);
+              });
+            return (
+              (S || "function" == typeof PromiseRejectionEvent) &&
+              t.then(_) instanceof n
+            );
+          } catch (t) {}
+        })(),
+        E = function (t, n) {
+          return t === n || (t === w && n === o);
+        },
+        P = function (t) {
+          var n;
+          return !(!l(t) || "function" != typeof (n = t.then)) && n;
+        },
+        j = function (t) {
+          return E(w, t) ? new F(t) : new i(t);
+        },
+        F = (i = function (t) {
+          var n, r;
+          (this.promise = new t(function (t, e) {
+            if (void 0 !== n || void 0 !== r)
+              throw m("Bad Promise constructor");
+            (n = t), (r = e);
+          })),
+            (this.resolve = h(n)),
+            (this.reject = h(r));
+        }),
+        M = function (t) {
+          try {
+            t();
+          } catch (t) {
+            return { error: t };
+          }
+        },
+        A = function (t, n) {
+          if (!t._n) {
+            t._n = !0;
+            var r = t._c;
+            g(function () {
+              for (var e = t._v, i = 1 == t._s, o = 0; r.length > o; )
+                !(function (n) {
+                  var r,
+                    o,
+                    u = i ? n.ok : n.fail,
+                    c = n.resolve,
+                    f = n.reject,
+                    a = n.domain;
+                  try {
+                    u
+                      ? (i || (2 == t._h && I(t), (t._h = 1)),
+                        !0 === u
+                          ? (r = e)
+                          : (a && a.enter(), (r = u(e)), a && a.exit()),
+                        r === n.promise
+                          ? f(m("Promise-chain cycle"))
+                          : (o = P(r))
+                          ? o.call(r, c, f)
+                          : c(r))
+                      : f(e);
+                  } catch (t) {
+                    f(t);
+                  }
+                })(r[o++]);
+              (t._c = []), (t._n = !1), n && !t._h && N(t);
+            });
+          }
+        },
+        N = function (t) {
+          y.call(c, function () {
+            var n,
+              r,
+              e,
+              i = t._v;
+            if (
+              (T(t) &&
+                ((n = M(function () {
+                  S
+                    ? x.emit("unhandledRejection", i, t)
+                    : (r = c.onunhandledrejection)
+                    ? r({ promise: t, reason: i })
+                    : (e = c.console) &&
+                      e.error &&
+                      e.error("Unhandled promise rejection", i);
+                })),
+                (t._h = S || T(t) ? 2 : 1)),
+              (t._a = void 0),
+              n)
+            )
+              throw n.error;
+          });
+        },
+        T = function (t) {
+          if (1 == t._h) return !1;
+          for (var n, r = t._a || t._c, e = 0; r.length > e; )
+            if (((n = r[e++]), n.fail || !T(n.promise))) return !1;
+          return !0;
+        },
+        I = function (t) {
+          y.call(c, function () {
+            var n;
+            S
+              ? x.emit("rejectionHandled", t)
+              : (n = c.onrejectionhandled) && n({ promise: t, reason: t._v });
+          });
+        },
+        k = function (t) {
+          var n = this;
+          n._d ||
+            ((n._d = !0),
+            (n = n._w || n),
+            (n._v = t),
+            (n._s = 2),
+            n._a || (n._a = n._c.slice()),
+            A(n, !0));
+        },
+        L = function (t) {
+          var n,
+            r = this;
+          if (!r._d) {
+            (r._d = !0), (r = r._w || r);
+            try {
+              if (r === t) throw m("Promise can't be resolved itself");
+              (n = P(t))
+                ? g(function () {
+                    var e = { _w: r, _d: !1 };
+                    try {
+                      n.call(t, f(L, e, 1), f(k, e, 1));
+                    } catch (t) {
+                      k.call(e, t);
+                    }
+                  })
+                : ((r._v = t), (r._s = 1), A(r, !1));
+            } catch (t) {
+              k.call({ _w: r, _d: !1 }, t);
+            }
+          }
+        };
+      O ||
+        ((w = function (t) {
+          v(this, w, b, "_h"), h(t), e.call(this);
+          try {
+            t(f(L, this, 1), f(k, this, 1));
+          } catch (t) {
+            k.call(this, t);
+          }
+        }),
+        (e = function (t) {
+          (this._c = []),
+            (this._a = void 0),
+            (this._s = 0),
+            (this._d = !1),
+            (this._v = void 0),
+            (this._h = 0),
+            (this._n = !1);
+        }),
+        (e.prototype = r(73)(w.prototype, {
+          then: function (t, n) {
+            var r = j(d(this, w));
+            return (
+              (r.ok = "function" != typeof t || t),
+              (r.fail = "function" == typeof n && n),
+              (r.domain = S ? x.domain : void 0),
+              this._c.push(r),
+              this._a && this._a.push(r),
+              this._s && A(this, !1),
+              r.promise
+            );
+          },
+          catch: function (t) {
+            return this.then(void 0, t);
+          },
+        })),
+        (F = function () {
+          var t = new e();
+          (this.promise = t),
+            (this.resolve = f(L, t, 1)),
+            (this.reject = f(k, t, 1));
+        })),
+        s(s.G + s.W + s.F * !O, { Promise: w }),
+        r(81)(w, b),
+        r(74)(b),
+        (o = r(52)[b]),
+        s(s.S + s.F * !O, b, {
+          reject: function (t) {
+            var n = j(this);
+            return (0, n.reject)(t), n.promise;
+          },
+        }),
+        s(s.S + s.F * (u || !O), b, {
+          resolve: function (t) {
+            if (t instanceof w && E(t.constructor, this)) return t;
+            var n = j(this);
+            return (0, n.resolve)(t), n.promise;
+          },
+        }),
+        s(
+          s.S +
+            s.F *
+              !(
+                O &&
+                r(123)(function (t) {
+                  w.all(t).catch(_);
+                })
+              ),
+          b,
+          {
+            all: function (t) {
+              var n = this,
+                r = j(n),
+                e = r.resolve,
+                i = r.reject,
+                o = M(function () {
+                  var r = [],
+                    o = 0,
+                    u = 1;
+                  p(t, !1, function (t) {
+                    var c = o++,
+                      f = !1;
+                    r.push(void 0),
+                      u++,
+                      n.resolve(t).then(function (t) {
+                        f || ((f = !0), (r[c] = t), --u || e(r));
+                      }, i);
+                  }),
+                    --u || e(r);
+                });
+              return o && i(o.error), r.promise;
+            },
+            race: function (t) {
+              var n = this,
+                r = j(n),
+                e = r.reject,
+                i = M(function () {
+                  p(t, !1, function (t) {
+                    n.resolve(t).then(r.resolve, e);
+                  });
+                });
+              return i && e(i.error), r.promise;
+            },
+          }
+        );
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(26),
+        o = r(2),
+        u = (r(3).Reflect || {}).apply,
+        c = Function.apply;
+      e(
+        e.S +
+          e.F *
+            !r(4)(function () {
+              u(function () {});
+            }),
+        "Reflect",
+        {
+          apply: function (t, n, r) {
+            var e = i(t),
+              f = o(r);
+            return u ? u(e, n, f) : c.call(e, n, f);
+          },
+        }
+      );
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(70),
+        o = r(26),
+        u = r(2),
+        c = r(6),
+        f = r(4),
+        a = r(163),
+        s = (r(3).Reflect || {}).construct,
+        l = f(function () {
+          function t() {}
+          return !(s(function () {}, [], t) instanceof t);
+        }),
+        h = !f(function () {
+          s(function () {});
+        });
+      e(e.S + e.F * (l || h), "Reflect", {
+        construct: function (t, n) {
+          o(t), u(n);
+          var r = arguments.length < 3 ? t : o(arguments[2]);
+          if (h && !l) return s(t, n, r);
+          if (t == r) {
+            switch (n.length) {
+              case 0:
+                return new t();
+              case 1:
+                return new t(n[0]);
+              case 2:
+                return new t(n[0], n[1]);
+              case 3:
+                return new t(n[0], n[1], n[2]);
+              case 4:
+                return new t(n[0], n[1], n[2], n[3]);
+            }
+            var e = [null];
+            return e.push.apply(e, n), new (a.apply(t, e))();
+          }
+          var f = r.prototype,
+            v = i(c(f) ? f : Object.prototype),
+            p = Function.apply.call(t, v, n);
+          return c(p) ? p : v;
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(11),
+        i = r(1),
+        o = r(2),
+        u = r(50);
+      i(
+        i.S +
+          i.F *
+            r(4)(function () {
+              Reflect.defineProperty(e.f({}, 1, { value: 1 }), 1, { value: 2 });
+            }),
+        "Reflect",
+        {
+          defineProperty: function (t, n, r) {
+            o(t), (n = u(n, !0)), o(r);
+            try {
+              return e.f(t, n, r), !0;
+            } catch (t) {
+              return !1;
+            }
+          },
+        }
+      );
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(31).f,
+        o = r(2);
+      e(e.S, "Reflect", {
+        deleteProperty: function (t, n) {
+          var r = i(o(t), n);
+          return !(r && !r.configurable) && delete t[n];
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(2),
+        o = function (t) {
+          (this._t = i(t)), (this._i = 0);
+          var n,
+            r = (this._k = []);
+          for (n in t) r.push(n);
+        };
+      r(139)(o, "Object", function () {
+        var t,
+          n = this,
+          r = n._k;
+        do {
+          if (n._i >= r.length) return { value: void 0, done: !0 };
+        } while (!((t = r[n._i++]) in n._t));
+        return { value: t, done: !1 };
+      }),
+        e(e.S, "Reflect", {
+          enumerate: function (t) {
+            return new o(t);
+          },
+        });
+    },
+    function (t, n, r) {
+      var e = r(31),
+        i = r(1),
+        o = r(2);
+      i(i.S, "Reflect", {
+        getOwnPropertyDescriptor: function (t, n) {
+          return e.f(o(t), n);
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(32),
+        o = r(2);
+      e(e.S, "Reflect", {
+        getPrototypeOf: function (t) {
+          return i(o(t));
+        },
+      });
+    },
+    function (t, n, r) {
+      function e(t, n) {
+        var r,
+          c,
+          s = arguments.length < 3 ? t : arguments[2];
+        return a(t) === s
+          ? t[n]
+          : (r = i.f(t, n))
+          ? u(r, "value")
+            ? r.value
+            : void 0 !== r.get
+            ? r.get.call(s)
+            : void 0
+          : f((c = o(t)))
+          ? e(c, n, s)
+          : void 0;
+      }
+      var i = r(31),
+        o = r(32),
+        u = r(24),
+        c = r(1),
+        f = r(6),
+        a = r(2);
+      c(c.S, "Reflect", { get: e });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.S, "Reflect", {
+        has: function (t, n) {
+          return n in t;
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(2),
+        o = Object.isExtensible;
+      e(e.S, "Reflect", {
+        isExtensible: function (t) {
+          return i(t), !o || o(t);
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.S, "Reflect", { ownKeys: r(177) });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(2),
+        o = Object.preventExtensions;
+      e(e.S, "Reflect", {
+        preventExtensions: function (t) {
+          i(t);
+          try {
+            return o && o(t), !0;
+          } catch (t) {
+            return !1;
+          }
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(144);
+      i &&
+        e(e.S, "Reflect", {
+          setPrototypeOf: function (t, n) {
+            i.check(t, n);
+            try {
+              return i.set(t, n), !0;
+            } catch (t) {
+              return !1;
+            }
+          },
+        });
+    },
+    function (t, n, r) {
+      function e(t, n, r) {
+        var f,
+          h,
+          v = arguments.length < 4 ? t : arguments[3],
+          p = o.f(s(t), n);
+        if (!p) {
+          if (l((h = u(t)))) return e(h, n, r, v);
+          p = a(0);
+        }
+        return c(p, "value")
+          ? !(
+              !1 === p.writable ||
+              !l(v) ||
+              ((f = o.f(v, n) || a(0)), (f.value = r), i.f(v, n, f), 0)
+            )
+          : void 0 !== p.set && (p.set.call(v, r), !0);
+      }
+      var i = r(11),
+        o = r(31),
+        u = r(32),
+        c = r(24),
+        f = r(1),
+        a = r(66),
+        s = r(2),
+        l = r(6);
+      f(f.S, "Reflect", { set: e });
+    },
+    function (t, n, r) {
+      var e = r(3),
+        i = r(136),
+        o = r(11).f,
+        u = r(71).f,
+        c = r(122),
+        f = r(120),
+        a = e.RegExp,
+        s = a,
+        l = a.prototype,
+        h = /a/g,
+        v = /a/g,
+        p = new a(h) !== h;
+      if (
+        r(10) &&
+        (!p ||
+          r(4)(function () {
+            return (
+              (v[r(7)("match")] = !1),
+              a(h) != h || a(v) == v || "/a/i" != a(h, "i")
+            );
+          }))
+      ) {
+        a = function (t, n) {
+          var r = this instanceof a,
+            e = c(t),
+            o = void 0 === n;
+          return !r && e && t.constructor === a && o
+            ? t
+            : i(
+                p
+                  ? new s(e && !o ? t.source : t, n)
+                  : s(
+                      (e = t instanceof a) ? t.source : t,
+                      e && o ? f.call(t) : n
+                    ),
+                r ? this : l,
+                a
+              );
+        };
+        for (var d = u(s), y = 0; d.length > y; )
+          !(function (t) {
+            t in a ||
+              o(a, t, {
+                configurable: !0,
+                get: function () {
+                  return s[t];
+                },
+                set: function (n) {
+                  s[t] = n;
+                },
+              });
+          })(d[y++]);
+        (l.constructor = a), (a.prototype = l), r(28)(e, "RegExp", a);
+      }
+      r(74)("RegExp");
+    },
+    function (t, n, r) {
+      r(119)("match", 1, function (t, n, r) {
+        return [
+          function (r) {
+            "use strict";
+            var e = t(this),
+              i = void 0 == r ? void 0 : r[n];
+            return void 0 !== i ? i.call(r, e) : new RegExp(r)[n](String(e));
+          },
+          r,
+        ];
+      });
+    },
+    function (t, n, r) {
+      r(119)("replace", 2, function (t, n, r) {
+        return [
+          function (e, i) {
+            "use strict";
+            var o = t(this),
+              u = void 0 == e ? void 0 : e[n];
+            return void 0 !== u ? u.call(e, o, i) : r.call(String(o), e, i);
+          },
+          r,
+        ];
+      });
+    },
+    function (t, n, r) {
+      r(119)("search", 1, function (t, n, r) {
+        return [
+          function (r) {
+            "use strict";
+            var e = t(this),
+              i = void 0 == r ? void 0 : r[n];
+            return void 0 !== i ? i.call(r, e) : new RegExp(r)[n](String(e));
+          },
+          r,
+        ];
+      });
+    },
+    function (t, n, r) {
+      r(119)("split", 2, function (t, n, e) {
+        "use strict";
+        var i = r(122),
+          o = e,
+          u = [].push,
+          c = "split",
+          f = "length",
+          a = "lastIndex";
+        if (
+          "c" == "abbc"[c](/(b)*/)[1] ||
+          4 != "test"[c](/(?:)/, -1)[f] ||
+          2 != "ab"[c](/(?:ab)*/)[f] ||
+          4 != "."[c](/(.?)(.?)/)[f] ||
+          "."[c](/()()/)[f] > 1 ||
+          ""[c](/.?/)[f]
+        ) {
+          var s = void 0 === /()??/.exec("")[1];
+          e = function (t, n) {
+            var r = String(this);
+            if (void 0 === t && 0 === n) return [];
+            if (!i(t)) return o.call(r, t, n);
+            var e,
+              c,
+              l,
+              h,
+              v,
+              p = [],
+              d =
+                (t.ignoreCase ? "i" : "") +
+                (t.multiline ? "m" : "") +
+                (t.unicode ? "u" : "") +
+                (t.sticky ? "y" : ""),
+              y = 0,
+              g = void 0 === n ? 4294967295 : n >>> 0,
+              b = new RegExp(t.source, d + "g");
+            for (
+              s || (e = new RegExp("^" + b.source + "$(?!\\s)", d));
+              (c = b.exec(r)) &&
+              !(
+                (l = c.index + c[0][f]) > y &&
+                (p.push(r.slice(y, c.index)),
+                !s &&
+                  c[f] > 1 &&
+                  c[0].replace(e, function () {
+                    for (v = 1; v < arguments[f] - 2; v++)
+                      void 0 === arguments[v] && (c[v] = void 0);
+                  }),
+                c[f] > 1 && c.index < r[f] && u.apply(p, c.slice(1)),
+                (h = c[0][f]),
+                (y = l),
+                p[f] >= g)
+              );
+
+            )
+              b[a] === c.index && b[a]++;
+            return (
+              y === r[f]
+                ? (!h && b.test("")) || p.push("")
+                : p.push(r.slice(y)),
+              p[f] > g ? p.slice(0, g) : p
+            );
+          };
+        } else
+          "0"[c](void 0, 0)[f] &&
+            (e = function (t, n) {
+              return void 0 === t && 0 === n ? [] : o.call(this, t, n);
+            });
+        return [
+          function (r, i) {
+            var o = t(this),
+              u = void 0 == r ? void 0 : r[n];
+            return void 0 !== u ? u.call(r, o, i) : e.call(String(o), r, i);
+          },
+          e,
+        ];
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(184);
+      var e = r(2),
+        i = r(120),
+        o = r(10),
+        u = "toString",
+        c = /./[u],
+        f = function (t) {
+          r(28)(RegExp.prototype, u, t, !0);
+        };
+      r(4)(function () {
+        return "/a/b" != c.call({ source: "a", flags: "b" });
+      })
+        ? f(function () {
+            var t = e(this);
+            return "/".concat(
+              t.source,
+              "/",
+              "flags" in t
+                ? t.flags
+                : !o && t instanceof RegExp
+                ? i.call(t)
+                : void 0
+            );
+          })
+        : c.name != u &&
+          f(function () {
+            return c.call(this);
+          });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("anchor", function (t) {
+        return function (n) {
+          return t(this, "a", "name", n);
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("big", function (t) {
+        return function () {
+          return t(this, "big", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("blink", function (t) {
+        return function () {
+          return t(this, "blink", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("bold", function (t) {
+        return function () {
+          return t(this, "b", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(147)(!1);
+      e(e.P, "String", {
+        codePointAt: function (t) {
+          return i(this, t);
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(16),
+        o = r(148),
+        u = "endsWith",
+        c = ""[u];
+      e(e.P + e.F * r(134)(u), "String", {
+        endsWith: function (t) {
+          var n = o(this, t, u),
+            r = arguments.length > 1 ? arguments[1] : void 0,
+            e = i(n.length),
+            f = void 0 === r ? e : Math.min(i(r), e),
+            a = String(t);
+          return c ? c.call(n, a, f) : n.slice(f - a.length, f) === a;
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("fixed", function (t) {
+        return function () {
+          return t(this, "tt", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("fontcolor", function (t) {
+        return function (n) {
+          return t(this, "font", "color", n);
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("fontsize", function (t) {
+        return function (n) {
+          return t(this, "font", "size", n);
+        };
+      });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(75),
+        o = String.fromCharCode,
+        u = String.fromCodePoint;
+      e(e.S + e.F * (!!u && 1 != u.length), "String", {
+        fromCodePoint: function (t) {
+          for (var n, r = [], e = arguments.length, u = 0; e > u; ) {
+            if (((n = +arguments[u++]), i(n, 1114111) !== n))
+              throw RangeError(n + " is not a valid code point");
+            r.push(
+              n < 65536
+                ? o(n)
+                : o(55296 + ((n -= 65536) >> 10), (n % 1024) + 56320)
+            );
+          }
+          return r.join("");
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(148),
+        o = "includes";
+      e(e.P + e.F * r(134)(o), "String", {
+        includes: function (t) {
+          return !!~i(this, t, o).indexOf(
+            t,
+            arguments.length > 1 ? arguments[1] : void 0
+          );
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("italics", function (t) {
+        return function () {
+          return t(this, "i", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(147)(!0);
+      r(140)(
+        String,
+        "String",
+        function (t) {
+          (this._t = String(t)), (this._i = 0);
+        },
+        function () {
+          var t,
+            n = this._t,
+            r = this._i;
+          return r >= n.length
+            ? { value: void 0, done: !0 }
+            : ((t = e(n, r)), (this._i += t.length), { value: t, done: !1 });
+        }
+      );
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("link", function (t) {
+        return function (n) {
+          return t(this, "a", "href", n);
+        };
+      });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(30),
+        o = r(16);
+      e(e.S, "String", {
+        raw: function (t) {
+          for (
+            var n = i(t.raw),
+              r = o(n.length),
+              e = arguments.length,
+              u = [],
+              c = 0;
+            r > c;
+
+          )
+            u.push(String(n[c++])), c < e && u.push(String(arguments[c]));
+          return u.join("");
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.P, "String", { repeat: r(149) });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("small", function (t) {
+        return function () {
+          return t(this, "small", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(16),
+        o = r(148),
+        u = "startsWith",
+        c = ""[u];
+      e(e.P + e.F * r(134)(u), "String", {
+        startsWith: function (t) {
+          var n = o(this, t, u),
+            r = i(
+              Math.min(arguments.length > 1 ? arguments[1] : void 0, n.length)
+            ),
+            e = String(t);
+          return c ? c.call(n, e, r) : n.slice(r, r + e.length) === e;
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("strike", function (t) {
+        return function () {
+          return t(this, "strike", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("sub", function (t) {
+        return function () {
+          return t(this, "sub", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(29)("sup", function (t) {
+        return function () {
+          return t(this, "sup", "", "");
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(82)("trim", function (t) {
+        return function () {
+          return t(this, 3);
+        };
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(3),
+        i = r(24),
+        o = r(10),
+        u = r(1),
+        c = r(28),
+        f = r(65).KEY,
+        a = r(4),
+        s = r(126),
+        l = r(81),
+        h = r(76),
+        v = r(7),
+        p = r(182),
+        d = r(153),
+        y = r(206),
+        g = r(205),
+        b = r(138),
+        m = r(2),
+        x = r(30),
+        w = r(50),
+        S = r(66),
+        _ = r(70),
+        O = r(174),
+        E = r(31),
+        P = r(11),
+        j = r(72),
+        F = E.f,
+        M = P.f,
+        A = O.f,
+        N = e.Symbol,
+        T = e.JSON,
+        I = T && T.stringify,
+        k = "prototype",
+        L = v("_hidden"),
+        R = v("toPrimitive"),
+        C = {}.propertyIsEnumerable,
+        D = s("symbol-registry"),
+        U = s("symbols"),
+        W = s("op-symbols"),
+        G = Object[k],
+        B = "function" == typeof N,
+        V = e.QObject,
+        z = !V || !V[k] || !V[k].findChild,
+        q =
+          o &&
+          a(function () {
+            return (
+              7 !=
+              _(
+                M({}, "a", {
+                  get: function () {
+                    return M(this, "a", { value: 7 }).a;
+                  },
+                })
+              ).a
+            );
+          })
+            ? function (t, n, r) {
+                var e = F(G, n);
+                e && delete G[n], M(t, n, r), e && t !== G && M(G, n, e);
+              }
+            : M,
+        K = function (t) {
+          var n = (U[t] = _(N[k]));
+          return (n._k = t), n;
+        },
+        J =
+          B && "symbol" == typeof N.iterator
+            ? function (t) {
+                return "symbol" == typeof t;
+              }
+            : function (t) {
+                return t instanceof N;
+              },
+        Y = function (t, n, r) {
+          return (
+            t === G && Y(W, n, r),
+            m(t),
+            (n = w(n, !0)),
+            m(r),
+            i(U, n)
+              ? (r.enumerable
+                  ? (i(t, L) && t[L][n] && (t[L][n] = !1),
+                    (r = _(r, { enumerable: S(0, !1) })))
+                  : (i(t, L) || M(t, L, S(1, {})), (t[L][n] = !0)),
+                q(t, n, r))
+              : M(t, n, r)
+          );
+        },
+        H = function (t, n) {
+          m(t);
+          for (var r, e = g((n = x(n))), i = 0, o = e.length; o > i; )
+            Y(t, (r = e[i++]), n[r]);
+          return t;
+        },
+        $ = function (t, n) {
+          return void 0 === n ? _(t) : H(_(t), n);
+        },
+        X = function (t) {
+          var n = C.call(this, (t = w(t, !0)));
+          return (
+            !(this === G && i(U, t) && !i(W, t)) &&
+            (!(n || !i(this, t) || !i(U, t) || (i(this, L) && this[L][t])) || n)
+          );
+        },
+        Q = function (t, n) {
+          if (((t = x(t)), (n = w(n, !0)), t !== G || !i(U, n) || i(W, n))) {
+            var r = F(t, n);
+            return (
+              !r || !i(U, n) || (i(t, L) && t[L][n]) || (r.enumerable = !0), r
+            );
+          }
+        },
+        Z = function (t) {
+          for (var n, r = A(x(t)), e = [], o = 0; r.length > o; )
+            i(U, (n = r[o++])) || n == L || n == f || e.push(n);
+          return e;
+        },
+        tt = function (t) {
+          for (
+            var n, r = t === G, e = A(r ? W : x(t)), o = [], u = 0;
+            e.length > u;
+
+          )
+            !i(U, (n = e[u++])) || (r && !i(G, n)) || o.push(U[n]);
+          return o;
+        };
+      B ||
+        ((N = function () {
+          if (this instanceof N)
+            throw TypeError("Symbol is not a constructor!");
+          var t = h(arguments.length > 0 ? arguments[0] : void 0),
+            n = function (r) {
+              this === G && n.call(W, r),
+                i(this, L) && i(this[L], t) && (this[L][t] = !1),
+                q(this, t, S(1, r));
+            };
+          return o && z && q(G, t, { configurable: !0, set: n }), K(t);
+        }),
+        c(N[k], "toString", function () {
+          return this._k;
+        }),
+        (E.f = Q),
+        (P.f = Y),
+        (r(71).f = O.f = Z),
+        (r(116).f = X),
+        (r(125).f = tt),
+        o && !r(69) && c(G, "propertyIsEnumerable", X, !0),
+        (p.f = function (t) {
+          return K(v(t));
+        })),
+        u(u.G + u.W + u.F * !B, { Symbol: N });
+      for (
+        var nt =
+            "hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(
+              ","
+            ),
+          rt = 0;
+        nt.length > rt;
+
+      )
+        v(nt[rt++]);
+      for (var nt = j(v.store), rt = 0; nt.length > rt; ) d(nt[rt++]);
+      u(u.S + u.F * !B, "Symbol", {
+        for: function (t) {
+          return i(D, (t += "")) ? D[t] : (D[t] = N(t));
+        },
+        keyFor: function (t) {
+          if (J(t)) return y(D, t);
+          throw TypeError(t + " is not a symbol!");
+        },
+        useSetter: function () {
+          z = !0;
+        },
+        useSimple: function () {
+          z = !1;
+        },
+      }),
+        u(u.S + u.F * !B, "Object", {
+          create: $,
+          defineProperty: Y,
+          defineProperties: H,
+          getOwnPropertyDescriptor: Q,
+          getOwnPropertyNames: Z,
+          getOwnPropertySymbols: tt,
+        }),
+        T &&
+          u(
+            u.S +
+              u.F *
+                (!B ||
+                  a(function () {
+                    var t = N();
+                    return (
+                      "[null]" != I([t]) ||
+                      "{}" != I({ a: t }) ||
+                      "{}" != I(Object(t))
+                    );
+                  })),
+            "JSON",
+            {
+              stringify: function (t) {
+                if (void 0 !== t && !J(t)) {
+                  for (var n, r, e = [t], i = 1; arguments.length > i; )
+                    e.push(arguments[i++]);
+                  return (
+                    (n = e[1]),
+                    "function" == typeof n && (r = n),
+                    (!r && b(n)) ||
+                      (n = function (t, n) {
+                        if ((r && (n = r.call(this, t, n)), !J(n))) return n;
+                      }),
+                    (e[1] = n),
+                    I.apply(T, e)
+                  );
+                }
+              },
+            }
+          ),
+        N[k][R] || r(27)(N[k], R, N[k].valueOf),
+        l(N, "Symbol"),
+        l(Math, "Math", !0),
+        l(e.JSON, "JSON", !0);
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(127),
+        o = r(152),
+        u = r(2),
+        c = r(75),
+        f = r(16),
+        a = r(6),
+        s = r(3).ArrayBuffer,
+        l = r(146),
+        h = o.ArrayBuffer,
+        v = o.DataView,
+        p = i.ABV && s.isView,
+        d = h.prototype.slice,
+        y = i.VIEW,
+        g = "ArrayBuffer";
+      e(e.G + e.W + e.F * (s !== h), { ArrayBuffer: h }),
+        e(e.S + e.F * !i.CONSTR, g, {
+          isView: function (t) {
+            return (p && p(t)) || (a(t) && y in t);
+          },
+        }),
+        e(
+          e.P +
+            e.U +
+            e.F *
+              r(4)(function () {
+                return !new h(2).slice(1, void 0).byteLength;
+              }),
+          g,
+          {
+            slice: function (t, n) {
+              if (void 0 !== d && void 0 === n) return d.call(u(this), t);
+              for (
+                var r = u(this).byteLength,
+                  e = c(t, r),
+                  i = c(void 0 === n ? r : n, r),
+                  o = new (l(this, h))(f(i - e)),
+                  a = new v(this),
+                  s = new v(o),
+                  p = 0;
+                e < i;
+
+              )
+                s.setUint8(p++, a.getUint8(e++));
+              return o;
+            },
+          }
+        ),
+        r(74)(g);
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.G + e.W + e.F * !r(127).ABV, { DataView: r(152).DataView });
+    },
+    function (t, n, r) {
+      r(55)("Float32", 4, function (t) {
+        return function (n, r, e) {
+          return t(this, n, r, e);
+        };
+      });
+    },
+    function (t, n, r) {
+      r(55)("Float64", 8, function (t) {
+        return function (n, r, e) {
+          return t(this, n, r, e);
+        };
+      });
+    },
+    function (t, n, r) {
+      r(55)("Int16", 2, function (t) {
+        return function (n, r, e) {
+          return t(this, n, r, e);
+        };
+      });
+    },
+    function (t, n, r) {
+      r(55)("Int32", 4, function (t) {
+        return function (n, r, e) {
+          return t(this, n, r, e);
+        };
+      });
+    },
+    function (t, n, r) {
+      r(55)("Int8", 1, function (t) {
+        return function (n, r, e) {
+          return t(this, n, r, e);
+        };
+      });
+    },
+    function (t, n, r) {
+      r(55)("Uint16", 2, function (t) {
+        return function (n, r, e) {
+          return t(this, n, r, e);
+        };
+      });
+    },
+    function (t, n, r) {
+      r(55)("Uint32", 4, function (t) {
+        return function (n, r, e) {
+          return t(this, n, r, e);
+        };
+      });
+    },
+    function (t, n, r) {
+      r(55)("Uint8", 1, function (t) {
+        return function (n, r, e) {
+          return t(this, n, r, e);
+        };
+      });
+    },
+    function (t, n, r) {
+      r(55)(
+        "Uint8",
+        1,
+        function (t) {
+          return function (n, r, e) {
+            return t(this, n, r, e);
+          };
+        },
+        !0
+      );
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(166);
+      r(118)(
+        "WeakSet",
+        function (t) {
+          return function () {
+            return t(this, arguments.length > 0 ? arguments[0] : void 0);
+          };
+        },
+        {
+          add: function (t) {
+            return e.def(this, t, !0);
+          },
+        },
+        e,
+        !1,
+        !0
+      );
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(117)(!0);
+      e(e.P, "Array", {
+        includes: function (t) {
+          return i(this, t, arguments.length > 1 ? arguments[1] : void 0);
+        },
+      }),
+        r(78)("includes");
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(143)(),
+        o = r(3).process,
+        u = "process" == r(45)(o);
+      e(e.G, {
+        asap: function (t) {
+          var n = u && o.domain;
+          i(n ? n.bind(t) : t);
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(45);
+      e(e.S, "Error", {
+        isError: function (t) {
+          return "Error" === i(t);
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.P + e.R, "Map", { toJSON: r(165)("Map") });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.S, "Math", {
+        iaddh: function (t, n, r, e) {
+          var i = t >>> 0,
+            o = n >>> 0,
+            u = r >>> 0;
+          return (
+            (o +
+              (e >>> 0) +
+              (((i & u) | ((i | u) & ~((i + u) >>> 0))) >>> 31)) |
+            0
+          );
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.S, "Math", {
+        imulh: function (t, n) {
+          var r = 65535,
+            e = +t,
+            i = +n,
+            o = e & r,
+            u = i & r,
+            c = e >> 16,
+            f = i >> 16,
+            a = ((c * u) >>> 0) + ((o * u) >>> 16);
+          return c * f + (a >> 16) + ((((o * f) >>> 0) + (a & r)) >> 16);
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.S, "Math", {
+        isubh: function (t, n, r, e) {
+          var i = t >>> 0,
+            o = n >>> 0,
+            u = r >>> 0;
+          return (
+            (o -
+              (e >>> 0) -
+              (((~i & u) | (~(i ^ u) & ((i - u) >>> 0))) >>> 31)) |
+            0
+          );
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.S, "Math", {
+        umulh: function (t, n) {
+          var r = 65535,
+            e = +t,
+            i = +n,
+            o = e & r,
+            u = i & r,
+            c = e >>> 16,
+            f = i >>> 16,
+            a = ((c * u) >>> 0) + ((o * u) >>> 16);
+          return c * f + (a >>> 16) + ((((o * f) >>> 0) + (a & r)) >>> 16);
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(17),
+        o = r(26),
+        u = r(11);
+      r(10) &&
+        e(e.P + r(124), "Object", {
+          __defineGetter__: function (t, n) {
+            u.f(i(this), t, { get: o(n), enumerable: !0, configurable: !0 });
+          },
+        });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(17),
+        o = r(26),
+        u = r(11);
+      r(10) &&
+        e(e.P + r(124), "Object", {
+          __defineSetter__: function (t, n) {
+            u.f(i(this), t, { set: o(n), enumerable: !0, configurable: !0 });
+          },
+        });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(176)(!0);
+      e(e.S, "Object", {
+        entries: function (t) {
+          return i(t);
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(177),
+        o = r(30),
+        u = r(31),
+        c = r(131);
+      e(e.S, "Object", {
+        getOwnPropertyDescriptors: function (t) {
+          for (
+            var n, r = o(t), e = u.f, f = i(r), a = {}, s = 0;
+            f.length > s;
+
+          )
+            c(a, (n = f[s++]), e(r, n));
+          return a;
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(17),
+        o = r(50),
+        u = r(32),
+        c = r(31).f;
+      r(10) &&
+        e(e.P + r(124), "Object", {
+          __lookupGetter__: function (t) {
+            var n,
+              r = i(this),
+              e = o(t, !0);
+            do {
+              if ((n = c(r, e))) return n.get;
+            } while ((r = u(r)));
+          },
+        });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(17),
+        o = r(50),
+        u = r(32),
+        c = r(31).f;
+      r(10) &&
+        e(e.P + r(124), "Object", {
+          __lookupSetter__: function (t) {
+            var n,
+              r = i(this),
+              e = o(t, !0);
+            do {
+              if ((n = c(r, e))) return n.set;
+            } while ((r = u(r)));
+          },
+        });
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(176)(!1);
+      e(e.S, "Object", {
+        values: function (t) {
+          return i(t);
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(3),
+        o = r(52),
+        u = r(143)(),
+        c = r(7)("observable"),
+        f = r(26),
+        a = r(2),
+        s = r(68),
+        l = r(73),
+        h = r(27),
+        v = r(79),
+        p = v.RETURN,
+        d = function (t) {
+          return null == t ? void 0 : f(t);
+        },
+        y = function (t) {
+          var n = t._c;
+          n && ((t._c = void 0), n());
+        },
+        g = function (t) {
+          return void 0 === t._o;
+        },
+        b = function (t) {
+          g(t) || ((t._o = void 0), y(t));
+        },
+        m = function (t, n) {
+          a(t), (this._c = void 0), (this._o = t), (t = new x(this));
+          try {
+            var r = n(t),
+              e = r;
+            null != r &&
+              ("function" == typeof r.unsubscribe
+                ? (r = function () {
+                    e.unsubscribe();
+                  })
+                : f(r),
+              (this._c = r));
+          } catch (n) {
+            return void t.error(n);
+          }
+          g(this) && y(this);
+        };
+      m.prototype = l(
+        {},
+        {
+          unsubscribe: function () {
+            b(this);
+          },
+        }
+      );
+      var x = function (t) {
+        this._s = t;
+      };
+      x.prototype = l(
+        {},
+        {
+          next: function (t) {
+            var n = this._s;
+            if (!g(n)) {
+              var r = n._o;
+              try {
+                var e = d(r.next);
+                if (e) return e.call(r, t);
+              } catch (t) {
+                try {
+                  b(n);
+                } finally {
+                  throw t;
+                }
+              }
+            }
+          },
+          error: function (t) {
+            var n = this._s;
+            if (g(n)) throw t;
+            var r = n._o;
+            n._o = void 0;
+            try {
+              var e = d(r.error);
+              if (!e) throw t;
+              t = e.call(r, t);
+            } catch (t) {
+              try {
+                y(n);
+              } finally {
+                throw t;
+              }
+            }
+            return y(n), t;
+          },
+          complete: function (t) {
+            var n = this._s;
+            if (!g(n)) {
+              var r = n._o;
+              n._o = void 0;
+              try {
+                var e = d(r.complete);
+                t = e ? e.call(r, t) : void 0;
+              } catch (t) {
+                try {
+                  y(n);
+                } finally {
+                  throw t;
+                }
+              }
+              return y(n), t;
+            }
+          },
+        }
+      );
+      var w = function (t) {
+        s(this, w, "Observable", "_f")._f = f(t);
+      };
+      l(w.prototype, {
+        subscribe: function (t) {
+          return new m(t, this._f);
+        },
+        forEach: function (t) {
+          var n = this;
+          return new (o.Promise || i.Promise)(function (r, e) {
+            f(t);
+            var i = n.subscribe({
+              next: function (n) {
+                try {
+                  return t(n);
+                } catch (t) {
+                  e(t), i.unsubscribe();
+                }
+              },
+              error: e,
+              complete: r,
+            });
+          });
+        },
+      }),
+        l(w, {
+          from: function (t) {
+            var n = "function" == typeof this ? this : w,
+              r = d(a(t)[c]);
+            if (r) {
+              var e = a(r.call(t));
+              return e.constructor === n
+                ? e
+                : new n(function (t) {
+                    return e.subscribe(t);
+                  });
+            }
+            return new n(function (n) {
+              var r = !1;
+              return (
+                u(function () {
+                  if (!r) {
+                    try {
+                      if (
+                        v(t, !1, function (t) {
+                          if ((n.next(t), r)) return p;
+                        }) === p
+                      )
+                        return;
+                    } catch (t) {
+                      if (r) throw t;
+                      return void n.error(t);
+                    }
+                    n.complete();
+                  }
+                }),
+                function () {
+                  r = !0;
+                }
+              );
+            });
+          },
+          of: function () {
+            for (var t = 0, n = arguments.length, r = Array(n); t < n; )
+              r[t] = arguments[t++];
+            return new ("function" == typeof this ? this : w)(function (t) {
+              var n = !1;
+              return (
+                u(function () {
+                  if (!n) {
+                    for (var e = 0; e < r.length; ++e)
+                      if ((t.next(r[e]), n)) return;
+                    t.complete();
+                  }
+                }),
+                function () {
+                  n = !0;
+                }
+              );
+            });
+          },
+        }),
+        h(w.prototype, c, function () {
+          return this;
+        }),
+        e(e.G, { Observable: w }),
+        r(74)("Observable");
+    },
+    function (t, n, r) {
+      var e = r(54),
+        i = r(2),
+        o = e.key,
+        u = e.set;
+      e.exp({
+        defineMetadata: function (t, n, r, e) {
+          u(t, n, i(r), o(e));
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(54),
+        i = r(2),
+        o = e.key,
+        u = e.map,
+        c = e.store;
+      e.exp({
+        deleteMetadata: function (t, n) {
+          var r = arguments.length < 3 ? void 0 : o(arguments[2]),
+            e = u(i(n), r, !1);
+          if (void 0 === e || !e.delete(t)) return !1;
+          if (e.size) return !0;
+          var f = c.get(n);
+          return f.delete(r), !!f.size || c.delete(n);
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(185),
+        i = r(161),
+        o = r(54),
+        u = r(2),
+        c = r(32),
+        f = o.keys,
+        a = o.key,
+        s = function (t, n) {
+          var r = f(t, n),
+            o = c(t);
+          if (null === o) return r;
+          var u = s(o, n);
+          return u.length ? (r.length ? i(new e(r.concat(u))) : u) : r;
+        };
+      o.exp({
+        getMetadataKeys: function (t) {
+          return s(u(t), arguments.length < 2 ? void 0 : a(arguments[1]));
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(54),
+        i = r(2),
+        o = r(32),
+        u = e.has,
+        c = e.get,
+        f = e.key,
+        a = function (t, n, r) {
+          if (u(t, n, r)) return c(t, n, r);
+          var e = o(n);
+          return null !== e ? a(t, e, r) : void 0;
+        };
+      e.exp({
+        getMetadata: function (t, n) {
+          return a(t, i(n), arguments.length < 3 ? void 0 : f(arguments[2]));
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(54),
+        i = r(2),
+        o = e.keys,
+        u = e.key;
+      e.exp({
+        getOwnMetadataKeys: function (t) {
+          return o(i(t), arguments.length < 2 ? void 0 : u(arguments[1]));
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(54),
+        i = r(2),
+        o = e.get,
+        u = e.key;
+      e.exp({
+        getOwnMetadata: function (t, n) {
+          return o(t, i(n), arguments.length < 3 ? void 0 : u(arguments[2]));
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(54),
+        i = r(2),
+        o = r(32),
+        u = e.has,
+        c = e.key,
+        f = function (t, n, r) {
+          if (u(t, n, r)) return !0;
+          var e = o(n);
+          return null !== e && f(t, e, r);
+        };
+      e.exp({
+        hasMetadata: function (t, n) {
+          return f(t, i(n), arguments.length < 3 ? void 0 : c(arguments[2]));
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(54),
+        i = r(2),
+        o = e.has,
+        u = e.key;
+      e.exp({
+        hasOwnMetadata: function (t, n) {
+          return o(t, i(n), arguments.length < 3 ? void 0 : u(arguments[2]));
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(54),
+        i = r(2),
+        o = r(26),
+        u = e.key,
+        c = e.set;
+      e.exp({
+        metadata: function (t, n) {
+          return function (r, e) {
+            c(t, n, (void 0 !== e ? i : o)(r), u(e));
+          };
+        },
+      });
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.P + e.R, "Set", { toJSON: r(165)("Set") });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(147)(!0);
+      e(e.P, "String", {
+        at: function (t) {
+          return i(this, t);
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(46),
+        o = r(16),
+        u = r(122),
+        c = r(120),
+        f = RegExp.prototype,
+        a = function (t, n) {
+          (this._r = t), (this._s = n);
+        };
+      r(139)(a, "RegExp String", function () {
+        var t = this._r.exec(this._s);
+        return { value: t, done: null === t };
+      }),
+        e(e.P, "String", {
+          matchAll: function (t) {
+            if ((i(this), !u(t))) throw TypeError(t + " is not a regexp!");
+            var n = String(this),
+              r = "flags" in f ? String(t.flags) : c.call(t),
+              e = new RegExp(t.source, ~r.indexOf("g") ? r : "g" + r);
+            return (e.lastIndex = o(t.lastIndex)), new a(e, n);
+          },
+        });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(181);
+      e(e.P, "String", {
+        padEnd: function (t) {
+          return i(this, t, arguments.length > 1 ? arguments[1] : void 0, !1);
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      var e = r(1),
+        i = r(181);
+      e(e.P, "String", {
+        padStart: function (t) {
+          return i(this, t, arguments.length > 1 ? arguments[1] : void 0, !0);
+        },
+      });
+    },
+    function (t, n, r) {
+      "use strict";
+      r(82)(
+        "trimLeft",
+        function (t) {
+          return function () {
+            return t(this, 1);
+          };
+        },
+        "trimStart"
+      );
+    },
+    function (t, n, r) {
+      "use strict";
+      r(82)(
+        "trimRight",
+        function (t) {
+          return function () {
+            return t(this, 2);
+          };
+        },
+        "trimEnd"
+      );
+    },
+    function (t, n, r) {
+      r(153)("asyncIterator");
+    },
+    function (t, n, r) {
+      r(153)("observable");
+    },
+    function (t, n, r) {
+      var e = r(1);
+      e(e.S, "System", { global: r(3) });
+    },
+    function (t, n, r) {
+      for (
+        var e = r(155),
+          i = r(28),
+          o = r(3),
+          u = r(27),
+          c = r(80),
+          f = r(7),
+          a = f("iterator"),
+          s = f("toStringTag"),
+          l = c.Array,
+          h = [
+            "NodeList",
+            "DOMTokenList",
+            "MediaList",
+            "StyleSheetList",
+            "CSSRuleList",
+          ],
+          v = 0;
+        v < 5;
+        v++
+      ) {
+        var p,
+          d = h[v],
+          y = o[d],
+          g = y && y.prototype;
+        if (g) {
+          g[a] || u(g, a, l), g[s] || u(g, s, d), (c[d] = l);
+          for (p in e) g[p] || i(g, p, e[p], !0);
+        }
+      }
+    },
+    function (t, n, r) {
+      var e = r(1),
+        i = r(151);
+      e(e.G + e.B, { setImmediate: i.set, clearImmediate: i.clear });
+    },
+    function (t, n, r) {
+      var e = r(3),
+        i = r(1),
+        o = r(121),
+        u = r(207),
+        c = e.navigator,
+        f = !!c && /MSIE .\./.test(c.userAgent),
+        a = function (t) {
+          return f
+            ? function (n, r) {
+                return t(
+                  o(
+                    u,
+                    [].slice.call(arguments, 2),
+                    "function" == typeof n ? n : Function(n)
+                  ),
+                  r
+                );
+              }
+            : t;
+        };
+      i(i.G + i.B + i.F * f, {
+        setTimeout: a(e.setTimeout),
+        setInterval: a(e.setInterval),
+      });
+    },
+    function (t, n, r) {
+      r(330),
+        r(269),
+        r(271),
+        r(270),
+        r(273),
+        r(275),
+        r(280),
+        r(274),
+        r(272),
+        r(282),
+        r(281),
+        r(277),
+        r(278),
+        r(276),
+        r(268),
+        r(279),
+        r(283),
+        r(284),
+        r(236),
+        r(238),
+        r(237),
+        r(286),
+        r(285),
+        r(256),
+        r(266),
+        r(267),
+        r(257),
+        r(258),
+        r(259),
+        r(260),
+        r(261),
+        r(262),
+        r(263),
+        r(264),
+        r(265),
+        r(239),
+        r(240),
+        r(241),
+        r(242),
+        r(243),
+        r(244),
+        r(245),
+        r(246),
+        r(247),
+        r(248),
+        r(249),
+        r(250),
+        r(251),
+        r(252),
+        r(253),
+        r(254),
+        r(255),
+        r(317),
+        r(322),
+        r(329),
+        r(320),
+        r(312),
+        r(313),
+        r(318),
+        r(323),
+        r(325),
+        r(308),
+        r(309),
+        r(310),
+        r(311),
+        r(314),
+        r(315),
+        r(316),
+        r(319),
+        r(321),
+        r(324),
+        r(326),
+        r(327),
+        r(328),
+        r(231),
+        r(233),
+        r(232),
+        r(235),
+        r(234),
+        r(220),
+        r(218),
+        r(224),
+        r(221),
+        r(227),
+        r(229),
+        r(217),
+        r(223),
+        r(214),
+        r(228),
+        r(212),
+        r(226),
+        r(225),
+        r(219),
+        r(222),
+        r(211),
+        r(213),
+        r(216),
+        r(215),
+        r(230),
+        r(155),
+        r(302),
+        r(307),
+        r(184),
+        r(303),
+        r(304),
+        r(305),
+        r(306),
+        r(287),
+        r(183),
+        r(185),
+        r(186),
+        r(342),
+        r(331),
+        r(332),
+        r(337),
+        r(340),
+        r(341),
+        r(335),
+        r(338),
+        r(336),
+        r(339),
+        r(333),
+        r(334),
+        r(288),
+        r(289),
+        r(290),
+        r(291),
+        r(292),
+        r(295),
+        r(293),
+        r(294),
+        r(296),
+        r(297),
+        r(298),
+        r(299),
+        r(301),
+        r(300),
+        r(343),
+        r(369),
+        r(372),
+        r(371),
+        r(373),
+        r(374),
+        r(370),
+        r(375),
+        r(376),
+        r(354),
+        r(357),
+        r(353),
+        r(351),
+        r(352),
+        r(355),
+        r(356),
+        r(346),
+        r(368),
+        r(377),
+        r(345),
+        r(347),
+        r(349),
+        r(348),
+        r(350),
+        r(359),
+        r(360),
+        r(362),
+        r(361),
+        r(364),
+        r(363),
+        r(365),
+        r(366),
+        r(367),
+        r(344),
+        r(358),
+        r(380),
+        r(379),
+        r(378),
+        (t.exports = r(52));
+    },
+    function (t, n) {
+      function r(t, n) {
+        if ("string" == typeof n) return t.insertAdjacentHTML("afterend", n);
+        var r = t.nextSibling;
+        return r
+          ? t.parentNode.insertBefore(n, r)
+          : t.parentNode.appendChild(n);
+      }
+      t.exports = r;
+    },
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    ,
+    function (t, n, r) {
+      (function (n, r) {
+        !(function (n) {
+          "use strict";
+          function e(t, n, r, e) {
+            var i = n && n.prototype instanceof o ? n : o,
+              u = Object.create(i.prototype),
+              c = new p(e || []);
+            return (u._invoke = s(t, r, c)), u;
+          }
+          function i(t, n, r) {
+            try {
+              return { type: "normal", arg: t.call(n, r) };
+            } catch (t) {
+              return { type: "throw", arg: t };
+            }
+          }
+          function o() {}
+          function u() {}
+          function c() {}
+          function f(t) {
+            ["next", "throw", "return"].forEach(function (n) {
+              t[n] = function (t) {
+                return this._invoke(n, t);
+              };
+            });
+          }
+          function a(t) {
+            function n(r, e, o, u) {
+              var c = i(t[r], t, e);
+              if ("throw" !== c.type) {
+                var f = c.arg,
+                  a = f.value;
+                return a && "object" == typeof a && m.call(a, "__await")
+                  ? Promise.resolve(a.__await).then(
+                      function (t) {
+                        n("next", t, o, u);
+                      },
+                      function (t) {
+                        n("throw", t, o, u);
+                      }
+                    )
+                  : Promise.resolve(a).then(function (t) {
+                      (f.value = t), o(f);
+                    }, u);
+              }
+              u(c.arg);
+            }
+            function e(t, r) {
+              function e() {
+                return new Promise(function (e, i) {
+                  n(t, r, e, i);
+                });
+              }
+              return (o = o ? o.then(e, e) : e());
+            }
+            "object" == typeof r && r.domain && (n = r.domain.bind(n));
+            var o;
+            this._invoke = e;
+          }
+          function s(t, n, r) {
+            var e = P;
+            return function (o, u) {
+              if (e === F) throw new Error("Generator is already running");
+              if (e === M) {
+                if ("throw" === o) throw u;
+                return y();
+              }
+              for (r.method = o, r.arg = u; ; ) {
+                var c = r.delegate;
+                if (c) {
+                  var f = l(c, r);
+                  if (f) {
+                    if (f === A) continue;
+                    return f;
+                  }
+                }
+                if ("next" === r.method) r.sent = r._sent = r.arg;
+                else if ("throw" === r.method) {
+                  if (e === P) throw ((e = M), r.arg);
+                  r.dispatchException(r.arg);
+                } else "return" === r.method && r.abrupt("return", r.arg);
+                e = F;
+                var a = i(t, n, r);
+                if ("normal" === a.type) {
+                  if (((e = r.done ? M : j), a.arg === A)) continue;
+                  return { value: a.arg, done: r.done };
+                }
+                "throw" === a.type &&
+                  ((e = M), (r.method = "throw"), (r.arg = a.arg));
+              }
+            };
+          }
+          function l(t, n) {
+            var r = t.iterator[n.method];
+            if (r === g) {
+              if (((n.delegate = null), "throw" === n.method)) {
+                if (
+                  t.iterator.return &&
+                  ((n.method = "return"),
+                  (n.arg = g),
+                  l(t, n),
+                  "throw" === n.method)
+                )
+                  return A;
+                (n.method = "throw"),
+                  (n.arg = new TypeError(
+                    "The iterator does not provide a 'throw' method"
+                  ));
+              }
+              return A;
+            }
+            var e = i(r, t.iterator, n.arg);
+            if ("throw" === e.type)
+              return (
+                (n.method = "throw"), (n.arg = e.arg), (n.delegate = null), A
+              );
+            var o = e.arg;
+            return o
+              ? o.done
+                ? ((n[t.resultName] = o.value),
+                  (n.next = t.nextLoc),
+                  "return" !== n.method && ((n.method = "next"), (n.arg = g)),
+                  (n.delegate = null),
+                  A)
+                : o
+              : ((n.method = "throw"),
+                (n.arg = new TypeError("iterator result is not an object")),
+                (n.delegate = null),
+                A);
+          }
+          function h(t) {
+            var n = { tryLoc: t[0] };
+            1 in t && (n.catchLoc = t[1]),
+              2 in t && ((n.finallyLoc = t[2]), (n.afterLoc = t[3])),
+              this.tryEntries.push(n);
+          }
+          function v(t) {
+            var n = t.completion || {};
+            (n.type = "normal"), delete n.arg, (t.completion = n);
+          }
+          function p(t) {
+            (this.tryEntries = [{ tryLoc: "root" }]),
+              t.forEach(h, this),
+              this.reset(!0);
+          }
+          function d(t) {
+            if (t) {
+              var n = t[w];
+              if (n) return n.call(t);
+              if ("function" == typeof t.next) return t;
+              if (!isNaN(t.length)) {
+                var r = -1,
+                  e = function n() {
+                    for (; ++r < t.length; )
+                      if (m.call(t, r))
+                        return (n.value = t[r]), (n.done = !1), n;
+                    return (n.value = g), (n.done = !0), n;
+                  };
+                return (e.next = e);
+              }
+            }
+            return { next: y };
+          }
+          function y() {
+            return { value: g, done: !0 };
+          }
+          var g,
+            b = Object.prototype,
+            m = b.hasOwnProperty,
+            x = "function" == typeof Symbol ? Symbol : {},
+            w = x.iterator || "@@iterator",
+            S = x.asyncIterator || "@@asyncIterator",
+            _ = x.toStringTag || "@@toStringTag",
+            O = "object" == typeof t,
+            E = n.regeneratorRuntime;
+          if (E) return void (O && (t.exports = E));
+          (E = n.regeneratorRuntime = O ? t.exports : {}), (E.wrap = e);
+          var P = "suspendedStart",
+            j = "suspendedYield",
+            F = "executing",
+            M = "completed",
+            A = {},
+            N = {};
+          N[w] = function () {
+            return this;
+          };
+          var T = Object.getPrototypeOf,
+            I = T && T(T(d([])));
+          I && I !== b && m.call(I, w) && (N = I);
+          var k = (c.prototype = o.prototype = Object.create(N));
+          (u.prototype = k.constructor = c),
+            (c.constructor = u),
+            (c[_] = u.displayName = "GeneratorFunction"),
+            (E.isGeneratorFunction = function (t) {
+              var n = "function" == typeof t && t.constructor;
+              return (
+                !!n &&
+                (n === u || "GeneratorFunction" === (n.displayName || n.name))
+              );
+            }),
+            (E.mark = function (t) {
+              return (
+                Object.setPrototypeOf
+                  ? Object.setPrototypeOf(t, c)
+                  : ((t.__proto__ = c), _ in t || (t[_] = "GeneratorFunction")),
+                (t.prototype = Object.create(k)),
+                t
+              );
+            }),
+            (E.awrap = function (t) {
+              return { __await: t };
+            }),
+            f(a.prototype),
+            (a.prototype[S] = function () {
+              return this;
+            }),
+            (E.AsyncIterator = a),
+            (E.async = function (t, n, r, i) {
+              var o = new a(e(t, n, r, i));
+              return E.isGeneratorFunction(n)
+                ? o
+                : o.next().then(function (t) {
+                    return t.done ? t.value : o.next();
+                  });
+            }),
+            f(k),
+            (k[_] = "Generator"),
+            (k.toString = function () {
+              return "[object Generator]";
+            }),
+            (E.keys = function (t) {
+              var n = [];
+              for (var r in t) n.push(r);
+              return (
+                n.reverse(),
+                function r() {
+                  for (; n.length; ) {
+                    var e = n.pop();
+                    if (e in t) return (r.value = e), (r.done = !1), r;
+                  }
+                  return (r.done = !0), r;
+                }
+              );
+            }),
+            (E.values = d),
+            (p.prototype = {
+              constructor: p,
+              reset: function (t) {
+                if (
+                  ((this.prev = 0),
+                  (this.next = 0),
+                  (this.sent = this._sent = g),
+                  (this.done = !1),
+                  (this.delegate = null),
+                  (this.method = "next"),
+                  (this.arg = g),
+                  this.tryEntries.forEach(v),
+                  !t)
+                )
+                  for (var n in this)
+                    "t" === n.charAt(0) &&
+                      m.call(this, n) &&
+                      !isNaN(+n.slice(1)) &&
+                      (this[n] = g);
+              },
+              stop: function () {
+                this.done = !0;
+                var t = this.tryEntries[0],
+                  n = t.completion;
+                if ("throw" === n.type) throw n.arg;
+                return this.rval;
+              },
+              dispatchException: function (t) {
+                function n(n, e) {
+                  return (
+                    (o.type = "throw"),
+                    (o.arg = t),
+                    (r.next = n),
+                    e && ((r.method = "next"), (r.arg = g)),
+                    !!e
+                  );
+                }
+                if (this.done) throw t;
+                for (
+                  var r = this, e = this.tryEntries.length - 1;
+                  e >= 0;
+                  --e
+                ) {
+                  var i = this.tryEntries[e],
+                    o = i.completion;
+                  if ("root" === i.tryLoc) return n("end");
+                  if (i.tryLoc <= this.prev) {
+                    var u = m.call(i, "catchLoc"),
+                      c = m.call(i, "finallyLoc");
+                    if (u && c) {
+                      if (this.prev < i.catchLoc) return n(i.catchLoc, !0);
+                      if (this.prev < i.finallyLoc) return n(i.finallyLoc);
+                    } else if (u) {
+                      if (this.prev < i.catchLoc) return n(i.catchLoc, !0);
+                    } else {
+                      if (!c)
+                        throw new Error(
+                          "try statement without catch or finally"
+                        );
+                      if (this.prev < i.finallyLoc) return n(i.finallyLoc);
+                    }
+                  }
+                }
+              },
+              abrupt: function (t, n) {
+                for (var r = this.tryEntries.length - 1; r >= 0; --r) {
+                  var e = this.tryEntries[r];
+                  if (
+                    e.tryLoc <= this.prev &&
+                    m.call(e, "finallyLoc") &&
+                    this.prev < e.finallyLoc
+                  ) {
+                    var i = e;
+                    break;
+                  }
+                }
+                i &&
+                  ("break" === t || "continue" === t) &&
+                  i.tryLoc <= n &&
+                  n <= i.finallyLoc &&
+                  (i = null);
+                var o = i ? i.completion : {};
+                return (
+                  (o.type = t),
+                  (o.arg = n),
+                  i
+                    ? ((this.method = "next"), (this.next = i.finallyLoc), A)
+                    : this.complete(o)
+                );
+              },
+              complete: function (t, n) {
+                if ("throw" === t.type) throw t.arg;
+                return (
+                  "break" === t.type || "continue" === t.type
+                    ? (this.next = t.arg)
+                    : "return" === t.type
+                    ? ((this.rval = this.arg = t.arg),
+                      (this.method = "return"),
+                      (this.next = "end"))
+                    : "normal" === t.type && n && (this.next = n),
+                  A
+                );
+              },
+              finish: function (t) {
+                for (var n = this.tryEntries.length - 1; n >= 0; --n) {
+                  var r = this.tryEntries[n];
+                  if (r.finallyLoc === t)
+                    return this.complete(r.completion, r.afterLoc), v(r), A;
+                }
+              },
+              catch: function (t) {
+                for (var n = this.tryEntries.length - 1; n >= 0; --n) {
+                  var r = this.tryEntries[n];
+                  if (r.tryLoc === t) {
+                    var e = r.completion;
+                    if ("throw" === e.type) {
+                      var i = e.arg;
+                      v(r);
+                    }
+                    return i;
+                  }
+                }
+                throw new Error("illegal catch attempt");
+              },
+              delegateYield: function (t, n, r) {
+                return (
+                  (this.delegate = {
+                    iterator: d(t),
+                    resultName: n,
+                    nextLoc: r,
+                  }),
+                  "next" === this.method && (this.arg = g),
+                  A
+                );
+              },
+            });
+        })(
+          "object" == typeof n
+            ? n
+            : "object" == typeof window
+            ? window
+            : "object" == typeof self
+            ? self
+            : this
+        );
+      }.call(
+        n,
+        (function () {
+          return this;
+        })(),
+        r(158)
+      ));
+    },
+  ]);</script><script src="/./main.0cf68a.js"></script><script>!(function () {
+    !(function (e) {
+      var t = document.createElement("script");
+      document.getElementsByTagName("body")[0].appendChild(t),
+        t.setAttribute("src", e);
+    })("/slider.e37972.js");
+  })();</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});</script><script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)"><div class="tools-nav header-menu"><ul style="width: 70%"><li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">Search</a></li><li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">AboutMe</a></li></ul></div><div class="tools-wrap"><section class="tools-section tools-section-all" q-show="innerArchive"><div class="search-wrap"><input class="search-ipt" q-model="search" type="text" placeholder="find something…"> <i class="icon-search icon" q-show="search|isEmptyStr"></i> <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i></div><div class="widget tagcloud search-tag"><p class="search-tag-wording">tag:</p><label class="search-switch"><input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags"></label><ul class="article-tag-list" q-show="showTags"><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color4">sec</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color1">Flask</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color4">Lab</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color1">essay</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color5">Note</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color1">Shell</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color1">notes</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color1">Notes</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color4">Cookbook</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color1">Sourcecode</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color4">shortcut</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color3">ph</a></li><li class="article-tag-list-item"><a href="javascript:void(0)" class="js-tag color4">git</a></li><div class="clearfix"></div></ul></div><ul class="search-ul"><p q-show="jsonFail" style="padding: 20px; font-size: 12px;">缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br>npm i hexo-generator-json-content --save<br><br>3、在根目录_config.yml里添加配置：<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre></p><li class="search-li" q-repeat="items" q-show="isShow"><a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a><p class="search-time"><i class="icon-calendar icon"></i> <span q-text="date|dateformat"></span></p><p class="search-tag"><i class="icon-price-tags icon"></i> <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span></p></li></ul></section><section class="tools-section tools-section-me" q-show="aboutme"><div class="aboutme-wrap" id="js-aboutme">📧: hejueyun@gmail.com</div></section></div></div><div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></div><script src="/Live2dDiana-main/js/oh-my-diana.user.js"></script><script>
+    if(!('loading' in HTMLImageElement.prototype)) {
+        const srp = document.createElement('script');
+        srp.src = 'https://cdn.jsdelivr.net/npm/lazysizes@5.1.1/lazysizes.min.js';
+        document.body.append(srp);
+        const imgs = document.querySelectorAll('img');
+        imgs.forEach(el => {
+            el.setAttribute('data-src', el.getAttribute('src'));
+            el.removeAttribute('src');
+            el.classList.add('lazyload');
+    })
+}
+</script></body></html>
