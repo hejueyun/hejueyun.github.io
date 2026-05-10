@@ -116,8 +116,8 @@
           var data = res.list[j].arr;
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
-            var minSrc = './minins/' + data.link[i] + '.min.jpg';
-            var src = './ins/' + data.link[i];
+            var minSrc = '/photos/minins/' + data.link[i] + '.min.jpg';
+            var src = '/photos/ins/' + data.link[i];
             var type = 'images';
             var sizes = data.sizes[i];
             src += '.jpg';
