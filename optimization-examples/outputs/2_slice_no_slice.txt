@@ -1,0 +1,39 @@
+ESBMC version 8.2.0 64-bit x86_64 linux
+Target: 64-bit little-endian x86_64-unknown-linux with esbmclibc
+Parsing /home/samson/workspace/esbmc/notes/optimization-examples/example2_slice.c
+Converting
+Generating GOTO Program
+GOTO program creation time: 0.060s
+GOTO program processing time: 0.000s
+Starting Bounded Model Checking
+Symex completed in: 0.000s (21 assignments)
+Caching time: 0.000s (removed 0 assertions)
+Slicing time: 0.000s (removed 1 assignments)
+Generated 1 VCC(s), 1 remaining after simplification (20 assignments)
+
+VERIFICATION CONDITIONS:
+
+file /home/samson/workspace/esbmc/notes/optimization-examples/example2_slice.c line 14 column 3 function main
+increment is monotone
+{-1} alloc&0#1 == ARRAY_OF(0)
+{-2} is_dynamic&0#1 == ARRAY_OF(0)
+{-3} alloc_size&0#1 == { 0 }
+{-4} rounding_mode&0#1 == 0
+{-5} return_value&0#1 == 0
+{-6} atexit_count&0#1 == 0
+{-7} stdlib_atexit_key&0#1 == { { .atexit_func = 0 } }
+{-8} num_threads_running&0#1 == 0
+{-9} num_total_threads&0#1 == 0
+{-10} num_total_threads&0#2 == 1
+{-11} num_threads_running&0#2 == 1
+{-12} main::$tmp::return_value$_nondet_int$1?1!0&0#1 == nondet_symbol(symex::nondet0)
+{-13} x?1!0&0#1 == main::$tmp::return_value$_nondet_int$1?1!0&0#1
+{-14} main::$tmp::return_value$_nondet_int$2?1!0&0#1 == nondet_symbol(symex::nondet1)
+{-15} y?1!0&0#1 == main::$tmp::return_value$_nondet_int$2?1!0&0#1
+{-16} unused1?1!0&0#1 == x?1!0&0#1 * 100 + y?1!0&0#1
+{-17} unused2?1!0&0#1 == unused1?1!0&0#1 * 5 + 7
+{-18} unused3?1!0&0#1 == unused2?1!0&0#1 - 13
+{-19} needed?1!0&0#1 == x?1!0&0#1 + 1
+|--------------------------
+{1} execution_statet::\guard_exec?0!0 => needed?1!0&0#1 > x?1!0&0#1
+

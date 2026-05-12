@@ -1,0 +1,136 @@
+ESBMC version 8.2.0 64-bit x86_64 linux
+Target: 64-bit little-endian x86_64-unknown-linux with esbmclibc
+Parsing /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c
+Converting
+Generating GOTO Program
+GOTO program creation time: 0.057s
+GOTO program processing time: 0.001s
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+__ESBMC_pthread_start_main_hook (c:@F@__ESBMC_pthread_start_main_hook):
+        // 0 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 138 column 3 function __ESBMC_pthread_start_main_hook
+        // Labels: __ESBMC_HIDE
+        FUNCTION_CALL:  yield()
+        // 1 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 138 column 3 function __ESBMC_pthread_start_main_hook
+        ATOMIC_BEGIN
+        // 2 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 139 column 3 function __ESBMC_pthread_start_main_hook
+        ASSIGN num_total_threads=num_total_threads + 1;
+        // 3 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 140 column 3 function __ESBMC_pthread_start_main_hook
+        ASSIGN num_threads_running=num_threads_running + 1;
+        // 4 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 141 column 3 function __ESBMC_pthread_start_main_hook
+        ATOMIC_END
+        // 5 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 142 column 1 function __ESBMC_pthread_start_main_hook
+        END_FUNCTION // __ESBMC_pthread_start_main_hook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+__ESBMC_pthread_end_main_hook (c:@F@__ESBMC_pthread_end_main_hook):
+        // 6 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 151 column 3 function __ESBMC_pthread_end_main_hook
+        // Labels: __ESBMC_HIDE
+        FUNCTION_CALL:  yield()
+        // 7 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 151 column 3 function __ESBMC_pthread_end_main_hook
+        ATOMIC_BEGIN
+        // 8 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 152 column 3 function __ESBMC_pthread_end_main_hook
+        ASSIGN num_threads_running=num_threads_running - 1;
+        // 9 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 153 column 1 function __ESBMC_pthread_end_main_hook
+        END_FUNCTION // __ESBMC_pthread_end_main_hook
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+__ESBMC_atexit_handler (c:@F@__ESBMC_atexit_handler):
+        // 10 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 38 column 3 function __ESBMC_atexit_handler
+        // Labels: __ESBMC_HIDE
+     1: IF !(atexit_count > 0) THEN GOTO 2
+        // 11 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 40 column 5 function __ESBMC_atexit_handler
+        ASSIGN atexit_count=atexit_count - 1;
+        // 12 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 41 column 5 function __ESBMC_atexit_handler
+        FUNCTION_CALL:  *stdlib_atexit_key[(signed long int)atexit_count].atexit_func()
+        // 13 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 38 column 3 function __ESBMC_atexit_handler
+        GOTO 1
+        // 14 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 43 column 1 function __ESBMC_atexit_handler
+     2: END_FUNCTION // __ESBMC_atexit_handler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+__VERIFIER_nondet_memory (c:@F@__VERIFIER_nondet_memory):
+        // 15 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 4 column 3 function __VERIFIER_nondet_memory
+        // Labels: __ESBMC_HIDE
+        DECL unsigned char * p;
+        // 16 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 4 column 3 function __VERIFIER_nondet_memory
+        ASSIGN p=(unsigned char *)mem;
+        // 17 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 8 function __VERIFIER_nondet_memory
+        DECL unsigned long int i;
+        // 18 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 8 function __VERIFIER_nondet_memory
+        ASSIGN i=0;
+        // 19 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 3 function __VERIFIER_nondet_memory
+     1: IF !(i < size) THEN GOTO 2
+        // 20 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 6 column 12 function __VERIFIER_nondet_memory
+        ASSIGN p[(signed long int)i]=NONDET(unsigned char);
+        // 21 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 39 function __VERIFIER_nondet_memory
+        ASSIGN i=i + 1;
+        // 22 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 3 function __VERIFIER_nondet_memory
+        GOTO 1
+        // 23 no location
+     2: DEAD c:verifier.c@128@F@__VERIFIER_nondet_memory@i
+        // 24 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 7 column 1 function __VERIFIER_nondet_memory
+        DEAD c:verifier.c@80@F@__VERIFIER_nondet_memory@p
+        // 25 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 7 column 1 function __VERIFIER_nondet_memory
+        END_FUNCTION // __VERIFIER_nondet_memory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+main (c:@F@main):
+        // 26 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 5 column 3 function main
+        DECL signed int x;
+        // 27 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 5 column 11 function main
+        DECL signed int return_value$_nondet_int$1;
+        // 28 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 5 column 11 function main
+        ASSIGN return_value$_nondet_int$1=NONDET(signed int);
+        // 29 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 5 column 3 function main
+        ASSIGN x=return_value$_nondet_int$1;
+        // 30 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 7 column 3 function main
+        IF !0 THEN GOTO 1
+        // 31 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 8 column 5 function main
+        ASSIGN x=999;
+        // 32 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 13 column 3 function main
+     1: IF !1 THEN GOTO 2
+        // 33 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 14 column 5 function main
+        ASSIGN x=x + 1;
+        // 34 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 14 column 5 function main
+        GOTO 3
+        // 35 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 16 column 5 function main
+     2: ASSIGN x=666;
+        // 36 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 19 column 3 function main
+     3: ASSERT x != 666 // x never reaches the unreachable else branch
+        // 37 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 20 column 3 function main
+        RETURN: 0
+        // 38 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 21 column 1 function main
+        END_FUNCTION // main
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+__ESBMC_main (__ESBMC_main):
+        // 39 file esbmc_intrinsics.h line 17 column 1
+        ASSIGN alloc=ARRAY_OF(0);
+        // 40 file esbmc_intrinsics.h line 20 column 1
+        ASSIGN is_dynamic=ARRAY_OF(0);
+        // 41 file esbmc_intrinsics.h line 23 column 1
+        ASSIGN alloc_size={ 0 };
+        // 42 file esbmc_intrinsics.h line 39 column 1
+        ASSIGN rounding_mode=0;
+        // 43 file esbmc_intrinsics.h line 173 column 1
+        ASSIGN return_value=0;
+        // 44 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 31 column 1
+        ASSIGN atexit_count=0;
+        // 45 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 29 column 1
+        ASSIGN stdlib_atexit_key={ { .atexit_func = 0 } };
+        // 46 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 50 column 1
+        ASSIGN num_total_threads=0;
+        // 47 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 51 column 1
+        ASSIGN num_threads_running=0;
+        // 48 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 3 column 1
+        FUNCTION_CALL:  pthread_start_main_hook()
+        // 49 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 3 column 1
+        FUNCTION_CALL:  main()
+        // 50 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 3 column 1
+        FUNCTION_CALL:  atexit_handler()
+        // 51 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 3 column 1
+        FUNCTION_CALL:  pthread_end_main_hook()
+        // 52 file /home/samson/workspace/esbmc/notes/optimization-examples/example1_dead.c line 21 column 1 function main
+        END_FUNCTION // main
+

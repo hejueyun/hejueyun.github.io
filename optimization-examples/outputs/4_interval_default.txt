@@ -1,0 +1,25 @@
+ESBMC version 8.2.0 64-bit x86_64 linux
+Target: 64-bit little-endian x86_64-unknown-linux with esbmclibc
+Parsing /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c
+Converting
+Generating GOTO Program
+GOTO program creation time: 0.054s
+GOTO program processing time: 0.000s
+Starting Bounded Model Checking
+Unwinding loop 3 iteration 1   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 2   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 3   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 4   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 5   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 6   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 7   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 8   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 9   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 3 iteration 10   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Symex completed in: 0.001s (34 assignments)
+Caching time: 0.000s (removed 0 assertions)
+Slicing time: 0.000s (removed 33 assignments)
+Generated 1 VCC(s), 0 remaining after simplification (1 assignments)
+BMC program time: 0.001s
+
+VERIFICATION SUCCESSFUL
