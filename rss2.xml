@@ -22,7 +22,23 @@
 <p>本文是「ESBMC k-path 覆盖率」系列的第 2 篇（共 2 篇）。</p>
 <ol>
 <li>上篇·从分支覆盖到 BMC 可达性检查</li>
-<li><strong>下篇·插桩、spanning set]]>
+<li><strong>下篇·插桩、spanning set 评分与验证器语义（当前）</strong></li>
+</ol>
+</blockquote>
+<blockquote>
+<p>上篇讲清楚了 k-path 覆盖率是什么（带“路径深度”旋钮的覆盖率指标）、它在分支覆盖与完全路径覆盖之间的谱系定位，以及为什么能用 BMC 把“goal 是否被覆盖”转成一个 <code>assert(¬witness)</code> 的可满足性问题。本篇接着讲 ESBMC 怎么把它落地、怎么用 spanning set 打分、怎么实战跑一遍，以及最关键的——验证器算出的百分比到底该怎么读。</p>
+</blockquote>
+<h3 id="贯穿例子回顾（上篇-§2）">0.1. 贯穿例子回顾（上篇 §2）</h3><p>下篇会反复引用上篇那个最小例子，先把它和相关约定原样搬过来，读本篇时手边就有：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> a, b;</span><br><span class="line">  <span class="keyword">if</span> (a &gt; <span class="number">0</span>)        <span class="comment">/* b₁：guard(b₁) = “a &gt; 0” */</span></span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    a = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (b &gt; <span class="number">0</span>)        <span class="comment">/* b₂：guard(b₂) = “b &gt; 0” */</span></span><br><span class="line">    b = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    b = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>两个独立分支点 b₁（<code>a &gt; 0</code>）、b₂（<code>b &gt; 0</code>），共 4 条执行路径：<strong>TT、TF、FT、FF</strong>（第一位是 b₁ 真假，第二位是 b₂ 真假）。</li>
+<li>两组朴素测试 <code>(a=1, b=1)</code>、<code>(a=-1, b=-1)</code> 让分支覆盖到 100%，但只走了 TT 与 FF——TF &#x2F; FT 没被覆盖。这正是上篇要量化的“分支覆盖盲点”。</li>
+<li>上篇 §3.2 已推出：N&#x3D;2 下这段程序共有 <strong>8 个 raw goal</strong>（b₁ 处 2 个长度-1，b₂ 处 2 个长度-1 + 4 个长度-2）。下文从这 8 个 raw goal 接着往下讲。</li>
+</ul>
+<hr>
+<h2 id="第-5-章-ESBMC-是怎么落地的：插桩算法">1. 第 5 章 ESBMC 是怎么落地的：插桩算法</h2><p>ESBMC 把 k-path 覆盖率的插桩工作放在 GOTO 中间表示 (intermediate representation) 上完成。GOTO 是 ESBMC 的所有前端（C、C++、Python、Solidity……）共同的中间语言，把高级语法都已经降到了 <em>标号 + 跳转</em> 的层次：所有的 <code>if</code>、<code>for</code>、<code>while</code> 都被翻译成 <code>IF cond GOTO L</code> 形式的条件跳转。这意味着插桩算法可以语言无关。</p>
+<h3 id="5-1-算法">1.1. 5.1 算法</h3>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -42,7 +58,53 @@
 <p>本文是「ESBMC k-path 覆盖率」系列的第 1 篇（共 2 篇）。</p>
 <ol>
 <li><strong>上篇·从分支覆盖到 BMC 可达性检查（当前）</strong></li>
-<li>下篇·插桩、spanning set]]>
+<li>下篇·插桩、spanning set 评分与验证器语义</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>本系列是一份关于 <em>k-path 覆盖率 (k-path coverage)</em> 的入门讲义。上篇先把这个概念是什么、为什么需要它讲清楚，并说明为什么能用 BMC 自动检查它；下篇再用 ESBMC 作为一个具体的落地实现走一遍完整的插桩算法、评分、运行示例。读者不需要事先了解模型检测、SMT 求解、或者覆盖率分析。</p>
+</blockquote>
+<hr>
+<h2 id="第-1-章-引言：什么叫-“测够了”？">1. 第 1 章 引言：什么叫 “测够了”？</h2><p>软件测试有一个根本困境：<strong>写好的测试用例集，到底要多大才算够？</strong></p>
+<p>直觉上，我们都同意 “跑过一次代码” 不算测够了。比如下面这段 5 行的 C 代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">abs</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt; <span class="number">0</span>) <span class="keyword">return</span> -n;</span><br><span class="line">  <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果只跑一组输入 <code>abs(3)</code>，那 <code>if (n &lt; 0)</code> 后面的那段代码根本就没被触发。一个稍微聪明的工具就会告诉你：“你只覆盖了一半的分支。”</p>
+<p>为了把这种感觉量化，工业界发明了一系列 <strong>覆盖率指标 (coverage criteria)</strong>。它们各自定义“什么叫覆盖了一段代码”，然后给一个 0%–100% 的数字作为反馈。常见指标按 <em>探测能力由弱到强</em> 排成下面这个谱：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>定义</th>
+<th>在 <code>abs</code> 这个例子上要求</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>语句覆盖 (statement)</td>
+<td>每行可执行语句至少跑过一次</td>
+<td>至少 1 个 <code>n&lt;0</code> 的输入 + 1 个 <code>n≥0</code> 的输入</td>
+</tr>
+<tr>
+<td>分支覆盖 (branch)</td>
+<td>每个 <code>if</code> 的真&#x2F;假分支都跑过</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>条件覆盖 (condition)</td>
+<td>每个 boolean 子表达式取过 true 和 false</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>判定&#x2F;条件覆盖 (MC&#x2F;DC)</td>
+<td>每个子表达式独立影响过整体结果</td>
+<td>多变量复合条件下要求显著更多</td>
+</tr>
+<tr>
+<td>路径覆盖 (path)</td>
+<td>每条可能的执行路径都跑过</td>
+<td>在循环面前指数爆炸，几乎不可执行</td>
+</tr>
+</tbody></table>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -59,7 +121,17 @@
       <link>https://hejueyun.github.io/posts/a9ca4526/</link>
       <description>
         <![CDATA[<blockquote>
-<p>起因：在 Windows Terminal 里跑 ESBMC 验证一个稍大的 C 工程时，WSL2（Ubuntu 24.04）整个 VM 莫名挂掉，Windows]]>
+<p>起因：在 Windows Terminal 里跑 ESBMC 验证一个稍大的 C 工程时，WSL2（Ubuntu 24.04）整个 VM 莫名挂掉，Windows 侧没有任何有用的报错。这里把诊断思路与缓解配置整理一下。</p>
+</blockquote>
+<h2 id="现象">1. 现象</h2><p>Windows Terminal 里的 WSL 标签页突然关闭，再次新建 Ubuntu 标签页时弹出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fatal Error</span><br><span class="line">Error code: Wsl/Service/E_UNEXPECTED</span><br></pre></td></tr></table></figure>
+
+<p>或者 wt 状态栏 &#x2F; 标签页上只剩这样的退出码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4294967295 (0xffffffff)</span><br><span class="line">已退出进程，代码为 1 (0x00000001)</span><br></pre></td></tr></table></figure>
+
+<p>这些消息几乎给不出任何方向 —— <code>E_UNEXPECTED</code>、<code>0xffffffff</code> 都是兜底错误码，告诉你「出事了」，但不告诉你「因为什么」。</p>
+<h2 id="前置：先把-WSL-整个重启">2. 前置：先把 WSL 整个重启</h2><p>崩溃之后第一件事不是急着新开 Ubuntu 标签页，而是先在 PowerShell 里执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="literal">--shutdown</span></span><br></pre></td></tr></table></figure>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/Notes/">Notes</category>
@@ -74,7 +146,87 @@
       <link>https://hejueyun.github.io/posts/2458b068/</link>
       <description>
         <![CDATA[<blockquote>
-<p>调研基准：本仓库 <code>master</code> 分支，截至 2026-05-13。<br>评估对象：<code>src/</code> 下除 <code>solidity-frontend</code>]]>
+<p>调研基准：本仓库 <code>master</code> 分支，截至 2026-05-13。<br>评估对象：<code>src/</code> 下除 <code>solidity-frontend</code> 之外的全部前端。<br>评估维度：① 语法&#x2F;语言特性覆盖 ② 标准库&#x2F;运行时模型 ③ ESBMC 核心验证能力 ④ 已知缺陷与未来计划 ⑤ Scale（能验多大&#x2F;多复杂） ⑥ Soundness&#x2F;Completeness 备注。</p>
+<p>注意：文档可能滞后于代码，本文以 <code>regression/</code> 测试首行类别（CORE &#x2F; THOROUGH &#x2F; KNOWNBUG &#x2F; FUTURE）、源码 TODO&#x2F;FIXME 数、近 6 个月 commit 数为主要”硬证据”，文档作为辅助参考。</p>
+</blockquote>
+<hr>
+<h2 id="总览：六前端坐标">1. 总览：六前端坐标</h2><table>
+<thead>
+<tr>
+<th>前端</th>
+<th align="right">源码 SLOC</th>
+<th align="right">regression 测试数</th>
+<th align="right">KNOWNBUG&#x2F;FUTURE</th>
+<th align="right">最大测试 SLOC</th>
+<th align="right">近 6 月 commit</th>
+<th>定位</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>C</strong>（clang-c）</td>
+<td align="right">12.5 K</td>
+<td align="right">1 256</td>
+<td align="right">19 + 1</td>
+<td align="right"><strong>8 822</strong>（Linux 光驱）</td>
+<td align="right">61</td>
+<td><strong>Industrial（偏成熟）</strong></td>
+</tr>
+<tr>
+<td><strong>CHERI-C</strong>（clang-c 扩展）</td>
+<td align="right">—</td>
+<td align="right">33（c+128+cpp）</td>
+<td align="right">2 + 0</td>
+<td align="right">46</td>
+<td align="right">与 C 共用</td>
+<td><strong>Research prototype</strong></td>
+</tr>
+<tr>
+<td><strong>CUDA</strong>（clang-c 扩展）</td>
+<td align="right">—</td>
+<td align="right">132</td>
+<td align="right">1 + 0（123 THOROUGH）</td>
+<td align="right">113</td>
+<td align="right">与 C 共用</td>
+<td><strong>Research prototype</strong></td>
+</tr>
+<tr>
+<td><strong>C++</strong>（clang-cpp）</td>
+<td align="right">5.9 K</td>
+<td align="right">2 286（cpp+11&#x2F;14&#x2F;17&#x2F;20）</td>
+<td align="right">56 + 0</td>
+<td align="right">454（异常路径）</td>
+<td align="right">32</td>
+<td><strong>Industrial（C++17&#x2F;20 已就绪）</strong></td>
+</tr>
+<tr>
+<td><strong>Python</strong></td>
+<td align="right"><strong>64.9 K</strong></td>
+<td align="right">3 305</td>
+<td align="right">10 + 0</td>
+<td align="right">457</td>
+<td align="right"><strong>463</strong></td>
+<td><strong>接近 Industrial（最活跃）</strong></td>
+</tr>
+<tr>
+<td><strong>Java &#x2F; Kotlin</strong>（jimple）</td>
+<td align="right">3.3 K</td>
+<td align="right">13</td>
+<td align="right">0 + 0</td>
+<td align="right">663 行 Jimple IR</td>
+<td align="right">1</td>
+<td><strong>Toy &#x2F; 学术原型</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>一句话总览：<strong>C ≳ C++ ≳ Python ≫ CUDA ≈ CHERI-C ≫ Java&#x2F;Kotlin</strong>。C 与 C++ 是 ESBMC 真正的”工业前端”；Python 体量最大、最活跃，正在快速向工业级靠拢；CUDA 与 CHERI-C 是有完整 operational model 的研究原型；Jimple 是一篇 ISSTA’22 论文后基本停滞的概念验证。</p>
+</blockquote>
+<hr>
+<h2 id="1-C-前端（src-clang-c-frontend，12-5-K-SLOC）">2. 1. C 前端（src/clang-c-frontend，12.5 K SLOC）</h2><h3 id="原理">2.1. 原理</h3><ul>
+<li>走 Clang AST，<code>clang_c_convert.cpp</code>&#x2F;<code>clang_c_adjust_*.cpp</code> 把 ClangAST → ESBMC IRep2 → GOTO。</li>
+<li>入口 <code>clang_c_language.cpp:286+</code> 注册支持的标准：<code>-std=c89 / c99 / c11 / c17 / c23 / c26</code>。</li>
+<li>libc&#x2F;POSIX 通过 <code>src/c2goto/library/</code> 的操作模型注入（19 个顶层文件，覆盖 stdlib&#x2F;string&#x2F;io&#x2F;pthread&#x2F;setjmp&#x2F;locale&#x2F;fenv&#x2F;time&#x2F;inet&#x2F;getopt&#x2F;complex 等），编译成 GOTO 二进制后链接。</li>
+</ul>
+<h3 id="语法-语言特性覆盖">2.2. 语法&#x2F;语言特性覆盖</h3>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -95,7 +247,19 @@
 <ol>
 <li>序章·SSA、SMT 与 BMC 背景速成</li>
 <li>IR 篇·GOTO 程序、Pass 流水线与区间分析</li>
-<li>Symex]]>
+<li>Symex 篇·主循环、Renaming 与 Value-set</li>
+<li>后端篇·SMT 编码与 BMC 驱动</li>
+<li><strong>终章·贯穿案例、调试旗标与源码地图（当前）</strong></li>
+</ol>
+</blockquote>
+<h1 id="附录-A-贯穿案例-——-指针赋值与别名">1. 附录 A　贯穿案例 —— 指针赋值与别名</h1><p>让我们用一个最小化的例子把 IR 篇 &#x2F; Symex 篇 &#x2F; 后端篇 的所有抽象串起来：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// alias_demo.c</span></span><br><span class="line"><span class="keyword">extern</span> <span class="type">int</span> <span class="title function_">nondet_int</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> x = <span class="number">0</span>, y = <span class="number">0</span>;</span><br><span class="line">  <span class="type">int</span> *p;</span><br><span class="line">  <span class="keyword">if</span> (nondet_int())</span><br><span class="line">    p = &amp;x;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    p = &amp;y;</span><br><span class="line">  *p = <span class="number">1</span>;</span><br><span class="line">  assert(x == <span class="number">1</span> || y == <span class="number">1</span>);   <span class="comment">// 应当成立</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>直觉上：无论 <code>nondet_int()</code> 选哪条路径，<code>*p = 1</code> 都会把 <code>x</code> 或 <code>y</code> 之一改成 1，断言因此成立。<br>现在跟随 ESBMC 看它如何在内部”亲眼证明”这件事。</p>
+<h3 id="A-1-AST-阶段">1.1. A.1 AST 阶段</h3><p>clang frontend 把上述代码解析成函数级 AST，主要节点：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function_decl  main</span><br><span class="line">  └ compound_stmt</span><br><span class="line">      ├ decl    x = 0</span><br><span class="line">      ├ decl    y = 0</span><br><span class="line">      ├ decl    p  (no init)</span><br><span class="line">      ├ if      (call nondet_int)</span><br><span class="line">      │   then  assign p = address_of(x)</span><br><span class="line">      │   else  assign p = address_of(y)</span><br><span class="line">      ├ assign  dereference(p) = 1</span><br><span class="line">      ├ call    __ESBMC_assert((x==1 || y==1), &quot;...&quot;)</span><br><span class="line">      └ return  0</span><br></pre></td></tr></table></figure>
+
+<h3 id="A-2-GOTO-IR-阶段">1.2. A.2 GOTO IR 阶段</h3><p>经 <code>goto_convert</code> + <code>goto_check</code> 后，转化为一段 GOTO 指令序列。<br>关键节选：</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -116,7 +280,20 @@
 <ol>
 <li>序章·SSA、SMT 与 BMC 背景速成</li>
 <li>IR 篇·GOTO 程序、Pass 流水线与区间分析</li>
-<li>Symex]]>
+<li>Symex 篇·主循环、Renaming 与 Value-set</li>
+<li><strong>后端篇·SMT 编码与 BMC 驱动（当前）</strong></li>
+<li>终章·贯穿案例、调试旗标与源码地图</li>
+</ol>
+</blockquote>
+<h2 id="第-6-章-SMT-后端-——-把-SSA-方程编码为可判定公式">1. 第 6 章　SMT 后端 —— 把 SSA 方程编码为可判定公式</h2><p>到这一步我们手里有一个 <code>symex_target_equationt</code>，里面是几千条形如<br>“<code>x@1#3 := ite(cond, x@1#2, x@1#1)</code>“或”<code>ASSERT cond@1#7</code>“的 SSA 步骤。<br>要让 SMT 求解器吃下去，必须把这些 <code>expr2tc</code> 树<strong>翻译成 SMT 求解器能理解的 AST</strong>。</p>
+<p>本章把这道翻译流水拆成十节：从总入口、连接方式，到具体 theory 的实现，再到求解、模型读回与反例。<br>读完本章可以回答两个看似简单却经常被低估的问题：</p>
+<ul>
+<li>“无界数组、嵌套结构体、字节级访问这些 C 习语，在 SMT 层是怎么变成可判定公式的？”</li>
+<li>“ESBMC 究竟是怎么<em>接</em>上 solver 的？是 fork 出一个进程喂 SMT-LIB2 文本，还是直接调 solver 的 C&#x2F;C++ API？两种都有，本章会回答 <em>哪一种、在什么时机、为什么</em>。”</li>
+</ul>
+<h3 id="6-1-章前知识：SMT-求解器、SMT-LIB-标准与库-二进制双形态">1.1. 6.1 章前知识：SMT 求解器、SMT-LIB 标准与库&#x2F;二进制双形态</h3><p>第 2 章已经粗略介绍过 SMT 的概念（”带量词的一阶逻辑里挑出来的可判定片段”）。<br>但要看懂本章下面 lowering 的细节，还有几个<strong>工程层面</strong>的基础事实绕不开。<br>这一节就是把这些”业内默认知识”集中讲一次。</p>
+<h4 id="6-1-1-SMT-求解器是什么样一个东西？">1.1.1. 6.1.1 SMT 求解器是什么样一个东西？</h4><p>把 SMT 求解器（如 Z3、Bitwuzla、CVC5）想成一个**”会做位向量 &#x2F; 数组 &#x2F; 浮点判定的代数引擎”**：<br>你扔给它一份”变量 + 公式”的描述，它告诉你这份描述是否有解（<code>sat</code> &#x2F; <code>unsat</code>），<br>有解时还能告诉你每个变量取什么值（<code>model</code>）。</p>
+<p>从工程角度看，每个主流 SMT 求解器都是一个 <em>中等规模的 C&#x2F;C++ 项目</em>——比如 Z3 大概几十万行 C++，<br>内部包含：</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -136,7 +313,19 @@
 <p>本文是「ESBMC 深度解构」系列的第 3 篇（共 5 篇）。</p>
 <ol>
 <li>序章·SSA、SMT 与 BMC 背景速成</li>
-<li>IR 篇·GOTO 程序、Pass]]>
+<li>IR 篇·GOTO 程序、Pass 流水线与区间分析</li>
+<li><strong>Symex 篇·主循环、Renaming 与 Value-set（当前）</strong></li>
+<li>后端篇·SMT 编码与 BMC 驱动</li>
+<li>终章·贯穿案例、调试旗标与源码地图</li>
+</ol>
+</blockquote>
+<h2 id="第-5-章-Symex-引擎-——-把程序”展开”成-SSA-方程">1. 第 5 章　Symex 引擎 —— 把程序”展开”成 SSA 方程</h2><p>第 4 章结束时，我们有一个干净的 GOTO 程序。现在要把它”执行”一遍——但<strong>不是用真值</strong>，而是用符号。</p>
+<p>如果你听过”符号执行”但没用过它，或者只用过 KLEE 这种工具，那么 ESBMC 的 symex 看起来既像又不像。<br>本章前两节专门解释”为什么这是符号执行”、”它属于哪一种符号执行”、”为什么需要 value-set &#x2F; reachability_treet 这些看似奇怪的结构”，<br>扫清概念上的迷雾；后续 9 节再深入实现。</p>
+<h3 id="5-1-为什么是符号执行？这又是哪一种符号执行？">1.1. 5.1 为什么是符号执行？这又是哪一种符号执行？</h3><h4 id="5-1-1-从具体执行到符号执行——一个直觉">1.1.1. 5.1.1 从具体执行到符号执行——一个直觉</h4><p>先看一个再朴素不过的小程序：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">  <span class="type">int</span> y = x + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (y &gt; <span class="number">10</span>)</span><br><span class="line">    assert(x &gt; <span class="number">9</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>一台 CPU “正常” 执行这个程序时，<code>x</code> 必须是一个<strong>具体的数</strong>（比如 <code>7</code>）：算 <code>y = 8</code>，<br>判断 <code>y &gt; 10</code> 为假，绕过 assert。这就是 <em>具体执行（concrete execution）</em>。<br>要想用具体执行验证 assert，你得遍历所有 <code>int</code> 取值——<code>2³²</code> 次——显然不可能。</p>
+<p><em>符号执行（symbolic execution）</em> 把 <code>x</code> 当成一个<strong>符号变量</strong>，不假设它是某个具体值。<br>按 GOTO 程序一步步推进时，每个赋值的右手边都是用符号表达式构造出来的：</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -156,7 +345,18 @@
 <p>本文是「ESBMC 深度解构」系列的第 2 篇（共 5 篇）。</p>
 <ol>
 <li>序章·SSA、SMT 与 BMC 背景速成</li>
-<li><strong>IR 篇·GOTO 程序、Pass]]>
+<li><strong>IR 篇·GOTO 程序、Pass 流水线与区间分析（当前）</strong></li>
+<li>Symex 篇·主循环、Renaming 与 Value-set</li>
+<li>后端篇·SMT 编码与 BMC 驱动</li>
+<li>终章·贯穿案例、调试旗标与源码地图</li>
+</ol>
+</blockquote>
+<h1 id="第二部分-ESBMC-的中间件与后端">1. 第二部分　ESBMC 的中间件与后端</h1><h2 id="第-4-章-通用-IR：从-expr2tc-到-GOTO-程序">2. 第 4 章　通用 IR：从 expr2tc 到 GOTO 程序</h2><h3 id="4-1-IR-的基础：irep2-与-expr2tc">2.1. 4.1 IR 的基础：irep2 与 expr2tc</h3><p>在揭开 GOTO 程序的盒子之前，我们必须先聊一聊<strong>所有 IR 的最小公分母</strong>——<br>表达式（expression）和类型（type）。<br>ESBMC 的 GOTO 指令、symex 的 SSA 步骤、SMT lowering 的输入，<br>统统是用同一套对象表示的：<code>expr2tc</code> 和 <code>type2tc</code>。<br>读懂它们，就掌握了 ESBMC 的”通用货币”。</p>
+<h4 id="4-1-1-两份遗产：CBMC-的-irept-与-ESBMC-的-irep2">2.1.1. 4.1.1 两份遗产：CBMC 的 irept 与 ESBMC 的 irep2</h4><p>ESBMC 最初 fork 自 CBMC，因此继承了 CBMC 那套<strong>字符串式的 irep</strong>（<code>src/util/irep.h</code>）。<br>打开它你会看到：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> dstring irep_idt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">irept</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="keyword">typedef</span> std::vector&lt;irept&gt; subt;                          <span class="comment">// 位置参数子节点</span></span><br><span class="line">  <span class="keyword">typedef</span> std::map&lt;irep_namet, irept&gt; named_subt;           <span class="comment">// 命名子节点</span></span><br><span class="line">  <span class="comment">// ... 引用计数 / COW 的样板代码 ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><code>irept</code> 是个<strong>极度通用的树节点</strong>。它通过一个字符串 <code>id</code>（如 <code>&quot;+&quot;</code>、<code>&quot;if&quot;</code>、<code>&quot;symbol&quot;</code>）标识自己的种类，<br>通过 <code>subt</code>（一个 <code>vector&lt;irept&gt;</code>）保存位置型操作数，<br>通过 <code>named_subt</code>（一个 <code>map&lt;string, irept&gt;</code>）保存命名属性（比如 <code>&quot;type&quot;</code>、<code>&quot;identifier&quot;</code>、<code>&quot;value&quot;</code>）。</p>
+<p>这套设计的优点是惊人地通用：<strong>新增一种表达式不需要改类层次结构</strong>，<br>只要约定好它的字符串 id 和它需要哪些子节点 &#x2F; 命名属性就够了。<br>缺点也同样明显：</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -176,7 +376,24 @@
 <p>本文是「ESBMC 深度解构」系列的第 1 篇（共 5 篇）。</p>
 <ol>
 <li><strong>序章·SSA、SMT 与 BMC 背景速成（当前）</strong></li>
-<li>IR 篇·GOTO 程序、Pass]]>
+<li>IR 篇·GOTO 程序、Pass 流水线与区间分析</li>
+<li>Symex 篇·主循环、Renaming 与 Value-set</li>
+<li>后端篇·SMT 编码与 BMC 驱动</li>
+<li>终章·贯穿案例、调试旗标与源码地图</li>
+</ol>
+</blockquote>
+<h1 id="ESBMC-中间件与后端深度导读">1. ESBMC 中间件与后端深度导读</h1><blockquote>
+<p>一本”AST 之后”的旅行指南：从控制流图、符号执行、SSA 方程，到 SMT 公式与反例还原。</p>
+</blockquote>
+<hr>
+<h2 id="前言-——-阅读地图">2. 前言 —— 阅读地图</h2><p>很多人第一次接触 ESBMC 的源码时，会被它的”工艺感”震到：<br>一个看上去再普通不过的 <code>assert(x &gt; 0)</code>，要穿过六七层抽象，<br>才能变成一段交给 Z3 或 Bitwuzla 去判定的位向量公式。</p>
+<p>这段旅程的中间状态——GOTO 程序、SSA 方程、value-set、smt_ast——并不神秘，<br>但它们彼此环环相扣：理解任何一层都需要知道上一层”喂”了什么、下一层”期待”什么。<br>本书的目的，就是把这些层之间的”协议”讲清楚。</p>
+<p><strong>本系列分两部分</strong>：</p>
+<ul>
+<li><strong>第一部分（即本篇 §1-§3）</strong> 是背景速成。如果你对 SSA、SMT、BMC 已经有完整理解，可以直接跳过；<br>但即使是熟手，第 1.3 节”SSA 与符号执行 renaming 的关系”也值得看一眼，<br>因为它澄清了一个常见误区：ESBMC 的 <code>level2</code> 并不是教科书 SSA 的简单复刻。</li>
+<li><strong>第二部分（IR 篇 + Symex 篇 + 后端篇）</strong> 是 ESBMC 的中间件与后端：<br>GOTO IR、symex 引擎、SMT 后端、BMC&#x2F;k-induction 主驱动。每一章都遵循同一节奏：<br><em>为什么需要它 → 它做什么 → 关键数据结构 → 一段真实代码 → 与下一章的连接</em>。</li>
+</ul>
+<p><strong>终章的附录 A</strong> 是一个贯穿案例：用一个最小的”指针赋值 + 别名”程序，<br>从 C 源码一路追到 SMT 公式与反例，把前面所有抽象串成一条直线。<br>强烈建议读完正文后回头再看一遍——许多细节只有在见过具体的例子之后才会”咔哒”一声落到位。</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -195,7 +412,24 @@
         <![CDATA[<blockquote>
 <p>本文是「BMC 建模优化笔记」系列的第 6 篇（共 6 篇）。</p>
 <ol>
-<li>序章·SSA 成本模型与 BMC]]>
+<li>序章·SSA 成本模型与 BMC 工作流</li>
+<li>前端篇·类型表示与常量折叠</li>
+<li>中间件(上)·死代码、切片、简化、传播、区间</li>
+<li>中间件(下)·循环、SSA 版本、Value-set、并发、跨 k 缓存</li>
+<li>后端篇·SMT 求解器、编码与 online&#x2F;offline 策略</li>
+<li><strong>终章·取舍、设计原则、替代策略、诊断与附录（当前）</strong></li>
+</ol>
+<p>配套示例集（最小可复现 C 程序 + ESBMC dump）：<a href="/optimization-examples/"><code>/optimization-examples/</code></a>。</p>
+</blockquote>
+<h2 id="5-取舍-Trade-offs">1. 5. 取舍 (Trade-offs)</h2><p>工程上的”完美 sound + complete + 高效”往往是不可达三角。明智的取舍能让工具在实际使用中可用。</p>
+<h3 id="5-1-Precise-modeling-—-假设上限">1.1. 5.1 Precise modeling — 假设上限</h3><p><strong>问题</strong>：动态数组、链表、合约实例数等没有静态上界。理论上要建模到无穷。实践中绝大部分 bug 在很小的状态空间就能找到。</p>
+<p><strong>模式</strong>：暴露一个 <code>--precise-modeling</code> 之类的开关，假设某些维度的上限（如”合约实例数 ≤ 16”）。低于上限的所有行为都精确建模；超出上限时给出警告或 unsound 标记。</p>
+<p><strong>适用标准</strong>（实战经验）：</p>
+<blockquote>
+<p>只有”<strong>truly extreme cap</strong>“（真正极端的上限）才适合做开关。如果一个小型现实测试就能命中这个上限并暴露 bug，那它<strong>不是</strong>合理的上限——应该把上限调高甚至取消，或重新设计建模。</p>
+</blockquote>
+<p>例：合约实例数 16。一个真实的 DeFi 协议很少在一次交易里创建 17 个合约实例；如果某个测试<strong>故意</strong>创建 17 个来 stress 工具，那个测试不代表真实场景。<strong>让一个真实场景永不命中的上限</strong>承担”精确建模”的代价是合理的。</p>
+<p><strong>反例</strong>：动态数组上限 5。常见的列表长度在 10-100，5 太小，会被现实测试命中。这种上限不应该做成 trade-off 选项。</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -214,7 +448,54 @@
         <![CDATA[<blockquote>
 <p>本文是「BMC 建模优化笔记」系列的第 5 篇（共 6 篇）。</p>
 <ol>
-<li>序章·SSA 成本模型与 BMC]]>
+<li>序章·SSA 成本模型与 BMC 工作流</li>
+<li>前端篇·类型表示与常量折叠</li>
+<li>中间件(上)·死代码、切片、简化、传播、区间</li>
+<li>中间件(下)·循环、SSA 版本、Value-set、并发、跨 k 缓存</li>
+<li><strong>后端篇·SMT 求解器、编码与 online&#x2F;offline 策略（当前）</strong></li>
+<li>终章·取舍、设计原则、替代策略、诊断与附录</li>
+</ol>
+<p>配套示例集（最小可复现 C 程序 + ESBMC dump）：<a href="/optimization-examples/"><code>/optimization-examples/</code></a>。</p>
+</blockquote>
+<h2 id="4-后端-—-SMT-求解器与编码">1. 4. 后端 — SMT 求解器与编码</h2><h3 id="4-1-求解器各有所长">1.1. 4.1 求解器各有所长</h3><p>主流的 SMT 求解器在不同问题类型上性能差距巨大：</p>
+<table>
+<thead>
+<tr>
+<th>求解器</th>
+<th>强项</th>
+<th>弱项</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Z3</strong></td>
+<td>通用、整数&#x2F;实数算术（LIA&#x2F;LRA）成熟、量词支持好</td>
+<td>bitvector 算术中等，256-bit 慢</td>
+</tr>
+<tr>
+<td><strong>Bitwuzla</strong></td>
+<td>bitvector 之王，特别 256+ 位算术</td>
+<td>量词、复杂数据类型支持有限</td>
+</tr>
+<tr>
+<td><strong>CVC5</strong></td>
+<td>QF_ABV (quantifier-free arrays + bitvectors) 强、native datatype tuples</td>
+<td>bitvector 极简模式略慢于 Bitwuzla</td>
+</tr>
+<tr>
+<td><strong>Boolector</strong></td>
+<td>历史上的 bitvector 标杆，现在被 Bitwuzla 接棒</td>
+<td>量词、新理论支持少</td>
+</tr>
+</tbody></table>
+<p><strong>工程经验</strong>：以太坊智能合约里 256 位算术非常常见，Bitwuzla 比 Z3 通常<strong>快 5-10 倍</strong>。某些涉及多维 array of bitvector 的问题，CVC5 又比 Bitwuzla 快——它的 QF_ABV decision procedure 处理 array nesting 更好。</p>
+<p><strong>自动选择策略</strong>：成熟的 BMC 工具应该根据问题特征自动 hint 求解器。例如：</p>
+<ul>
+<li>检测到 256-bit bitvector 操作占主导 → Bitwuzla</li>
+<li>检测到 ≥3 维嵌套 array → CVC5（开启 native tuples）</li>
+<li>检测到大量量词 → Z3</li>
+<li>默认 → Z3（兼容性最好）</li>
+</ul>
+<h3 id="4-2-编码格式：SMT-LIB-vs-求解器原生-API">1.2. 4.2 编码格式：SMT-LIB vs 求解器原生 API</h3><p>绝大部分求解器接受 SMT-LIB 文本格式作为输入。但许多求解器还有 <strong>native C++ API</strong>，可以构造内部数据结构、跳过 SMT-LIB 解析、利用某些只在原生 API 暴露的特性。</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -233,7 +514,28 @@
         <![CDATA[<blockquote>
 <p>本文是「BMC 建模优化笔记」系列的第 4 篇（共 6 篇）。</p>
 <ol>
-<li>序章·SSA 成本模型与 BMC]]>
+<li>序章·SSA 成本模型与 BMC 工作流</li>
+<li>前端篇·类型表示与常量折叠</li>
+<li>中间件(上)·死代码、切片、简化、传播、区间</li>
+<li><strong>中间件(下)·循环、SSA 版本、Value-set、并发、跨 k 缓存（当前）</strong></li>
+<li>后端篇·SMT 求解器、编码与 online&#x2F;offline 策略</li>
+<li>终章·取舍、设计原则、替代策略、诊断与附录</li>
+</ol>
+<p>配套示例集（最小可复现 C 程序 + ESBMC dump）：<a href="/optimization-examples/"><code>/optimization-examples/</code></a>。</p>
+</blockquote>
+<h3 id="3-6-循环展开：常量边界-vs-符号边界">0.1. 3.6 循环展开：常量边界 vs 符号边界</h3><p>BMC 处理循环靠<strong>展开</strong>：把 <code>for (i=0; i&lt;N; i++)</code> 展开成 N 次内联拷贝。</p>
+<ul>
+<li><strong>常量边界</strong>：<code>for (i=0; i&lt;32; i++)</code> —— 完全展开，零运行时损耗，每次迭代独立切片。</li>
+<li><strong>符号边界</strong>：<code>for (i=0; i&lt;n; i++)</code> 当 <code>n</code> 是符号 —— 必须靠 <code>--unwind K</code> 配置硬上限，展开 K 次后插入 <code>assert(i==K → never_reach)</code>（unwind 假设）。<ul>
+<li>如果 K &lt; 真实最大值：要么 sound 但不完整（assertion 触发），要么用 <code>--no-unwinding-assertions</code> 静默截断（unsound）。</li>
+</ul>
+</li>
+</ul>
+<p><strong>反模式：符号边界循环中做大批量字节级操作</strong>。源码层 <code>for (i=0; i&lt;size; i++) arr_dst[i] = arr_src[i];</code> 看似干净；但若元素是 32 字节 <code>bytes32</code> 且 IR 把它降级成字节级 memcpy，单次拷贝就是 32 条 byte stores × unwind 上限——把 1 次拷贝爆炸成 1000 条 SSA。</p>
+<p><strong>优化</strong>：让 IR 用 typed-element store（<code>new_arr[i] = element</code>）直接对应 SMT 的 array store，1 SSA 完成 32 字节传输。实测：<code>bytes32[]</code> 的 push 从 ~64 SSA（realloc 内 32 + 写元素 32）降到 1，<strong>32× 缩减</strong>。这个倍率来自字节级 vs 元素级的本质差异：求解器对 bitvector 的 native 操作单位是元素而非字节。让 IR 与求解器的 unit-of-work 对齐。</p>
+<h4 id="示例：-unwind-N-的边界敏感性">0.1.1. 示例：--unwind N 的边界敏感性</h4><p>来源：<code>/optimization-examples/example5_unwind.c</code></p>
+<p>最小程序（4 次迭代的循环）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">  <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">    sum += i;</span><br><span class="line">  __ESBMC_assert(sum == <span class="number">6</span>, <span class="string">&quot;sum of 0..3 is 6&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -252,7 +554,27 @@
         <![CDATA[<blockquote>
 <p>本文是「BMC 建模优化笔记」系列的第 3 篇（共 6 篇）。</p>
 <ol>
-<li>序章·SSA 成本模型与 BMC]]>
+<li>序章·SSA 成本模型与 BMC 工作流</li>
+<li>前端篇·类型表示与常量折叠</li>
+<li><strong>中间件(上)·死代码、切片、简化、传播、区间（当前）</strong></li>
+<li>中间件(下)·循环、SSA 版本、Value-set、并发、跨 k 缓存</li>
+<li>后端篇·SMT 求解器、编码与 online&#x2F;offline 策略</li>
+<li>终章·取舍、设计原则、替代策略、诊断与附录</li>
+</ol>
+<p>配套示例集（最小可复现 C 程序 + ESBMC dump）：<a href="/optimization-examples/"><code>/optimization-examples/</code></a>。</p>
+</blockquote>
+<h2 id="3-中间件-—-符号执行与-SSA">1. 3. 中间件 — 符号执行与 SSA</h2><p>前端给出一份”完整但啰嗦”的 IR，中间件的任务是<strong>在保持语义的前提下让它变小</strong>。</p>
+<h3 id="3-1-死代码先删：no-op-与不可达消除">1.1. 3.1 死代码先删：no-op 与不可达消除</h3><p><strong>问题</strong>：源码经前端降级后，IR 里几乎总有两类”语法上等价于不存在”的指令：</p>
+<ol>
+<li><strong>No-op（空操作）</strong>：<code>SKIP</code>、守卫为 false 的跳转、跳到紧邻下一条的跳转、<code>(void)0</code>、孤立的常量表达式语句。它们多半是降级器为简化代码生成而留下的占位。</li>
+<li><strong>不可达代码</strong>：<code>return</code> 之后、<code>assume(false)</code> 之后、被永远不命中的分支守卫遮蔽的整段 basic block。</li>
+</ol>
+<p>这些垃圾<strong>必须在喂给切片器之前删掉</strong>。原因：</p>
+<ul>
+<li>切片器从断言反向追踪依赖（见 §3.2），判定的是”这条赋值是否影响某个 ASSERT”，而<strong>不是</strong>“这条赋值能否被执行到”。一段静态不可达但写全局变量的代码，切片器会把它当成 live。</li>
+<li>No-op 看似无害，但它们携带的 <code>label:</code> 让符号执行器多走一个 PC 转移；标签让控制流的静态可计算性下降，下游 pass（k-induction 的循环识别、覆盖率工具）都得绕开这些噪音节点。</li>
+</ul>
+<h4 id="A-语法-no-op-消除">1.1.1. A. 语法 no-op 消除</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">repeat until no change:</span><br><span class="line">  scan instructions in order</span><br><span class="line">  if it is a no-op AND not the unique landing point of any control transfer:</span><br><span class="line">    splice its labels onto the next live instruction</span><br><span class="line">    record (it → next) in target-rewrite map</span><br><span class="line">  rewrite every GOTO/CATCH target through the map</span><br><span class="line">  erase the no-ops</span><br></pre></td></tr></table></figure>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -271,7 +593,31 @@
         <![CDATA[<blockquote>
 <p>本文是「BMC 建模优化笔记」系列的第 2 篇（共 6 篇）。</p>
 <ol>
-<li>序章·SSA 成本模型与 BMC]]>
+<li>序章·SSA 成本模型与 BMC 工作流</li>
+<li><strong>前端篇·类型表示与常量折叠（当前）</strong></li>
+<li>中间件(上)·死代码、切片、简化、传播、区间</li>
+<li>中间件(下)·循环、SSA 版本、Value-set、并发、跨 k 缓存</li>
+<li>后端篇·SMT 求解器、编码与 online&#x2F;offline 策略</li>
+<li>终章·取舍、设计原则、替代策略、诊断与附录</li>
+</ol>
+<p>配套示例集（最小可复现 C 程序 + ESBMC dump）：<a href="/optimization-examples/"><code>/optimization-examples/</code></a>。</p>
+</blockquote>
+<h2 id="2-前端建模-—-类型表示与降级">1. 2. 前端建模 — 类型表示与降级</h2><p>前端把源语言的高层概念翻译为 IR。这一步的选择决定了后续所有阶段的成本上限。</p>
+<h3 id="2-1-选对类型：让-SMT-看到-native-theory">1.1. 2.1 选对类型：让 SMT 看到 native theory</h3><p>现代 SMT 求解器内置高度优化的”理论”（theories）：</p>
+<ul>
+<li><strong>bitvector</strong>：定长二进制串，支持位运算、算术、比较。</li>
+<li><strong>array</strong>：从一种类型到另一种类型的全函数（select&#x2F;store）。</li>
+<li><strong>datatype</strong> (代数数据类型)：tuple、enum、递归 ADT。</li>
+<li><strong>uninterpreted function</strong> (未解释函数)：仅有一致性公理 <code>x = y → f(x) = f(y)</code>。</li>
+</ul>
+<p><strong>原则</strong>：<strong>让源语言的类型尽量直接落到求解器的 native theory 上</strong>。</p>
+<p>举例：以太坊的 <code>bytes32</code> 是 32 字节的固定长度二进制串。三种建模方式：</p>
+<ol>
+<li><strong>结构体</strong> <code>struct { uint8 data[32]; size_t length; }</code></li>
+<li><strong>未解释类型 + uninterpreted function</strong></li>
+<li><strong>256-bit bitvector</strong> —— 直接落到 SMT bitvector 理论</li>
+</ol>
+<p>方案 3 最优。求解器对 bitvector 有 BV-decision-procedure，可以用电路风格的位级推理高速判定。方案 1 把每个字节都当作独立的 8-bit bitvector，求解器看到的是 32 个独立约束加 1 个 length 字段——每次”复制” <code>bytes32</code> 都变成 32 条赋值。方案 2 完全交给求解器穷举，是最慢的。</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
@@ -290,7 +636,27 @@
         <![CDATA[<blockquote>
 <p>本文是「BMC 建模优化笔记」系列的第 1 篇（共 6 篇）。</p>
 <ol>
-<li><strong>序章·SSA 成本模型与 BMC]]>
+<li><strong>序章·SSA 成本模型与 BMC 工作流（当前）</strong></li>
+<li>前端篇·类型表示与常量折叠</li>
+<li>中间件(上)·死代码、切片、简化、传播、区间</li>
+<li>中间件(下)·循环、SSA 版本、Value-set、并发、跨 k 缓存</li>
+<li>后端篇·SMT 求解器、编码与 online&#x2F;offline 策略</li>
+<li>终章·取舍、设计原则、替代策略、诊断与附录</li>
+</ol>
+<p>配套示例集（最小可复现 C 程序 + ESBMC dump）：<a href="/optimization-examples/"><code>/optimization-examples/</code></a>。</p>
+</blockquote>
+<h1 id="形式化验证建模优化指南">1. 形式化验证建模优化指南</h1><p><strong>——从 BMC 工具实战经验中提取可迁移的设计原则</strong></p>
+<hr>
+<h2 id="0-前言：为什么写这份文档">2. 0. 前言：为什么写这份文档</h2><p>形式化验证（formal verification）的工程师容易陷入一个误区：<strong>只关注 soundness（可靠性）和 completeness（完备性），而忽略效率</strong>。然而在工业界，一个语义正确但耗时数小时的验证器，价值远低于一个速度快十倍但偶尔需要重新检查的验证器——前者根本不会被使用。</p>
+<p>本文从一个实际的 BMC（Bounded Model Checker，有界模型检查器）工具的优化经验中抽取<strong>可迁移的、与具体工具无关的</strong>设计原则。读者应当能在阅读后回答：</p>
+<ol>
+<li>为什么语义等价的两个程序，在同一个 BMC 工具下成本可以相差数百倍？</li>
+<li>在前端、中间件、后端三个层级，各有哪些常见的优化模式？</li>
+<li>为什么”空间换时间”在形式化验证中往往是反模式？</li>
+<li>如何在 soundness&#x2F;completeness 与效率之间做精明的取舍？</li>
+</ol>
+<p>本文<strong>不</strong>讲：某个具体工具的命令行参数、某次具体 bug 的修法。这些是工程性的、易过时的。</p>
+<p>本文<strong>讲</strong>：建模选择如何影响 SMT 公式的规模与求解器的工作量；为什么某些直觉上”应该更快”的设计实际上更慢；以及一个抽象意义上”高效”的形式化验证模型应该长什么样。</p>]]>
       </description>
       <author>何决云</author>
       <category domain="https://hejueyun.github.io/categories/fv/">形式化验证</category>
