@@ -1,0 +1,23 @@
+ESBMC version 8.2.0 64-bit x86_64 linux
+Target: 64-bit little-endian x86_64-unknown-linux with esbmclibc
+Parsing /home/samson/workspace/esbmc/notes/optimization-examples/example3_simplify.c
+Converting
+Generating GOTO Program
+GOTO program creation time: 0.058s
+GOTO program processing time: 0.000s
+Starting Bounded Model Checking
+Symex completed in: 0.000s (16 assignments)
+Caching time: 0.000s (removed 0 assertions)
+Slicing time: 0.000s (removed 11 assignments)
+Generated 1 VCC(s), 1 remaining after simplification (5 assignments)
+
+VERIFICATION CONDITIONS:
+
+file /home/samson/workspace/esbmc/notes/optimization-examples/example3_simplify.c line 9 column 3 function main
+z folds to 100
+{-1} x?1!0&0#1 == (1 + 2) * 3 - 4 + 5
+{-2} y?1!0&0#1 == x?1!0&0#1 * 0
+{-3} z?1!0&0#1 == (y?1!0&0#1 == 0 ? 100 : 200)
+|--------------------------
+{1} execution_statet::\guard_exec?0!0 => z?1!0&0#1 == 100
+

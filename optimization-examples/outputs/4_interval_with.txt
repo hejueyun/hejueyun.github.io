@@ -1,0 +1,454 @@
+ESBMC version 8.2.0 64-bit x86_64 linux
+Target: 64-bit little-endian x86_64-unknown-linux with esbmclibc
+Parsing /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c
+Converting
+Generating GOTO Program
+GOTO program creation time: 0.055s
+////
+//// Function: c:@F@__ESBMC_pthread_start_main_hook
+////
+
+0 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 138 column 3 function __ESBMC_pthread_start_main_hook
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_num_threads_running <= 0
+0 <= c:@__ESBMC_num_total_threads <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 0 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 138 column 3 function __ESBMC_pthread_start_main_hook
+        // Labels: __ESBMC_HIDE
+        FUNCTION_CALL:  yield()
+
+1 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 138 column 3 function __ESBMC_pthread_start_main_hook
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_num_threads_running <= 0
+0 <= c:@__ESBMC_num_total_threads <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 1 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 138 column 3 function __ESBMC_pthread_start_main_hook
+        ATOMIC_BEGIN
+
+2 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 139 column 3 function __ESBMC_pthread_start_main_hook
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_num_threads_running <= 0
+0 <= c:@__ESBMC_num_total_threads <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 2 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 139 column 3 function __ESBMC_pthread_start_main_hook
+        ASSIGN num_total_threads=num_total_threads + 1;
+
+3 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 140 column 3 function __ESBMC_pthread_start_main_hook
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_num_threads_running <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 3 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 140 column 3 function __ESBMC_pthread_start_main_hook
+        ASSIGN num_threads_running=num_threads_running + 1;
+
+4 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 141 column 3 function __ESBMC_pthread_start_main_hook
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 4 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 141 column 3 function __ESBMC_pthread_start_main_hook
+        ATOMIC_END
+
+5 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 142 column 1 function __ESBMC_pthread_start_main_hook
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 5 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 142 column 1 function __ESBMC_pthread_start_main_hook
+        END_FUNCTION // __ESBMC_pthread_start_main_hook
+
+////
+//// Function: c:@F@__ESBMC_pthread_end_main_hook
+////
+
+0 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 151 column 3 function __ESBMC_pthread_end_main_hook
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 0 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 151 column 3 function __ESBMC_pthread_end_main_hook
+        // Labels: __ESBMC_HIDE
+        FUNCTION_CALL:  yield()
+
+1 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 151 column 3 function __ESBMC_pthread_end_main_hook
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 1 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 151 column 3 function __ESBMC_pthread_end_main_hook
+        ATOMIC_BEGIN
+
+2 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 152 column 3 function __ESBMC_pthread_end_main_hook
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 2 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 152 column 3 function __ESBMC_pthread_end_main_hook
+        ASSIGN num_threads_running=num_threads_running - 1;
+
+3 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 153 column 1 function __ESBMC_pthread_end_main_hook
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 3 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 153 column 1 function __ESBMC_pthread_end_main_hook
+        END_FUNCTION // __ESBMC_pthread_end_main_hook
+
+////
+//// Function: c:@F@__ESBMC_atexit_handler
+////
+
+10 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 38 column 3 function __ESBMC_atexit_handler
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 10 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 38 column 3 function __ESBMC_atexit_handler
+        // Labels: __ESBMC_HIDE
+     1: IF !(atexit_count > 0) THEN GOTO 2
+
+11 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 40 column 5 function __ESBMC_atexit_handler
+BOTTOM
+
+        // 11 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 40 column 5 function __ESBMC_atexit_handler
+        ASSIGN atexit_count=atexit_count - 1;
+
+12 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 41 column 5 function __ESBMC_atexit_handler
+BOTTOM
+
+        // 12 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 41 column 5 function __ESBMC_atexit_handler
+        FUNCTION_CALL:  *stdlib_atexit_key[(signed long int)atexit_count].atexit_func()
+
+13 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 38 column 3 function __ESBMC_atexit_handler
+BOTTOM
+
+        // 13 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 38 column 3 function __ESBMC_atexit_handler
+        GOTO 1
+
+14 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 43 column 1 function __ESBMC_atexit_handler
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 14 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 43 column 1 function __ESBMC_atexit_handler
+     2: END_FUNCTION // __ESBMC_atexit_handler
+
+////
+//// Function: c:@F@__VERIFIER_nondet_memory
+////
+
+15 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 4 column 3 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 15 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 4 column 3 function __VERIFIER_nondet_memory
+        // Labels: __ESBMC_HIDE
+        DECL unsigned char * p;
+
+16 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 4 column 3 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 16 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 4 column 3 function __VERIFIER_nondet_memory
+        ASSIGN p=(unsigned char *)mem;
+
+17 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 8 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 17 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 8 function __VERIFIER_nondet_memory
+        DECL unsigned long int i;
+
+18 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 8 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 18 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 8 function __VERIFIER_nondet_memory
+        ASSIGN i=0;
+
+19 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 3 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 19 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 3 function __VERIFIER_nondet_memory
+     1: IF !(i < size) THEN GOTO 2
+
+20 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 6 column 12 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 20 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 6 column 12 function __VERIFIER_nondet_memory
+        ASSIGN p[(signed long int)i]=NONDET(unsigned char);
+
+21 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 39 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 21 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 39 function __VERIFIER_nondet_memory
+        ASSIGN i=i + 1;
+
+22 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 3 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 22 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 5 column 3 function __VERIFIER_nondet_memory
+        GOTO 1
+
+23 
+BOTTOM
+
+        // 23 no location
+     2: DEAD c:verifier.c@128@F@__VERIFIER_nondet_memory@i
+
+24 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 7 column 1 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 24 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 7 column 1 function __VERIFIER_nondet_memory
+        DEAD c:verifier.c@80@F@__VERIFIER_nondet_memory@p
+
+25 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 7 column 1 function __VERIFIER_nondet_memory
+BOTTOM
+
+        // 25 file /home/samson/workspace/esbmc/src/c2goto/library/verifier.c line 7 column 1 function __VERIFIER_nondet_memory
+        END_FUNCTION // __VERIFIER_nondet_memory
+
+////
+//// Function: c:@F@main
+////
+
+26 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 3 column 3 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 26 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 3 column 3 function main
+        DECL signed int x;
+
+27 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 3 column 3 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 27 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 3 column 3 function main
+        ASSIGN x=0;
+
+28 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 8 function main
+0 <= c:example4_interval.c@19@F@main@x <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 28 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 8 function main
+        DECL signed int i;
+
+29 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 8 function main
+0 <= c:example4_interval.c@19@F@main@x <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 29 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 8 function main
+        ASSIGN i=0;
+
+30 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 30 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+     1: IF !(i < 10) THEN GOTO 2
+
+31 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 5 column 5 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+c:example4_interval.c@37@F@main@i <= 9
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 31 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 5 column 5 function main
+        ASSIGN x=x + 1;
+
+32 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 27 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+c:example4_interval.c@37@F@main@i <= 9
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 32 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 27 function main
+        ASSIGN i=i + 1;
+
+33 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 33 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+        GOTO 1
+
+34 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 6 column 3 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 34 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 6 column 3 function main
+     2: DEAD c:example4_interval.c@37@F@main@i
+
+35 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 7 column 3 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 35 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 7 column 3 function main
+        ASSERT x >= 0 // x stays non-negative
+
+36 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 8 column 3 function main
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 36 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 8 column 3 function main
+        RETURN: 0
+
+37 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 9 column 1 function main
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 37 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 9 column 1 function main
+        END_FUNCTION // main
+
+////
+//// Function: __ESBMC_main
+////
+
+0 file esbmc_intrinsics.h line 17 column 1
+
+        // 0 file esbmc_intrinsics.h line 17 column 1
+        ASSIGN alloc=ARRAY_OF(0);
+
+1 file esbmc_intrinsics.h line 20 column 1
+
+        // 1 file esbmc_intrinsics.h line 20 column 1
+        ASSIGN is_dynamic=ARRAY_OF(0);
+
+2 file esbmc_intrinsics.h line 23 column 1
+
+        // 2 file esbmc_intrinsics.h line 23 column 1
+        ASSIGN alloc_size={ 0 };
+
+3 file esbmc_intrinsics.h line 39 column 1
+
+        // 3 file esbmc_intrinsics.h line 39 column 1
+        ASSIGN rounding_mode=0;
+
+4 file esbmc_intrinsics.h line 173 column 1
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 4 file esbmc_intrinsics.h line 173 column 1
+        ASSIGN return_value=0;
+
+5 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 50 column 1
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 5 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 50 column 1
+        ASSIGN num_total_threads=0;
+
+6 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 51 column 1
+0 <= c:@__ESBMC_num_total_threads <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 6 file /home/samson/workspace/esbmc/src/c2goto/library/pthread_lib.c line 51 column 1
+        ASSIGN num_threads_running=0;
+
+7 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 31 column 1
+0 <= c:@__ESBMC_num_threads_running <= 0
+0 <= c:@__ESBMC_num_total_threads <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 7 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 31 column 1
+        ASSIGN atexit_count=0;
+
+8 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 29 column 1
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_num_threads_running <= 0
+0 <= c:@__ESBMC_num_total_threads <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 8 file /home/samson/workspace/esbmc/src/c2goto/library/stdlib.c line 29 column 1
+        ASSIGN stdlib_atexit_key={ { .atexit_func = 0 } };
+
+9 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 1 column 1
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_num_threads_running <= 0
+0 <= c:@__ESBMC_num_total_threads <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 9 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 1 column 1
+        FUNCTION_CALL:  pthread_start_main_hook()
+
+10 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 1 column 1
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 10 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 1 column 1
+        FUNCTION_CALL:  main()
+
+11 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 1 column 1
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 11 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 1 column 1
+        FUNCTION_CALL:  atexit_handler()
+
+12 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 1 column 1
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 12 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 1 column 1
+        FUNCTION_CALL:  pthread_end_main_hook()
+
+13 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 9 column 1 function main
+0 <= c:c:@F@main:ret <= 0
+0 <= c:stdlib.c@__ESBMC_atexit_count <= 0
+0 <= c:@__ESBMC_return_value <= 0
+10 <= c:example4_interval.c@37@F@main@i0 <= c:@__ESBMC_rounding_mode <= 0
+
+        // 13 file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 9 column 1 function main
+        END_FUNCTION // main
+
+
+Interval Analysis time: 0.000s
+GOTO program processing time: 0.000s
+Starting Bounded Model Checking
+Unwinding loop 2 iteration 1   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 2   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 3   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 4   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 5   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 6   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 7   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 8   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 9   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Unwinding loop 2 iteration 10   file /home/samson/workspace/esbmc/notes/optimization-examples/example4_interval.c line 4 column 3 function main
+Symex completed in: 0.001s (34 assignments)
+Caching time: 0.000s (removed 0 assertions)
+Slicing time: 0.000s (removed 33 assignments)
+Generated 1 VCC(s), 0 remaining after simplification (1 assignments)
+BMC program time: 0.001s
+
+VERIFICATION SUCCESSFUL
