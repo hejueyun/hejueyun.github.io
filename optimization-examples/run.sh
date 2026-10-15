@@ -1,10 +1,10 @@
 #!/bin/bash
-# Regenerate captured ESBMC dump outputs for Optimization.md inline examples.
-# Run from notes/optimization-examples/ or any cwd (paths are absolute).
+# Regenerate captured ESBMC dump outputs for the BMC optimisation notes.
+# Run from any cwd (paths are resolved relative to this script).
 
 set -e
 
-ESBMC="${ESBMC:-/home/samson/workspace/esbmc/build/src/esbmc/esbmc}"
+ESBMC="${ESBMC:-esbmc}"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 OUT="$HERE/outputs"
 mkdir -p "$OUT"

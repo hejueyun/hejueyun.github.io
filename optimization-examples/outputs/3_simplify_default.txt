@@ -1,6 +1,6 @@
 ESBMC version 8.2.0 64-bit x86_64 linux
 Target: 64-bit little-endian x86_64-unknown-linux with esbmclibc
-Parsing /home/samson/workspace/esbmc/notes/optimization-examples/example3_simplify.c
+Parsing example3_simplify.c
 Converting
 Generating GOTO Program
 GOTO program creation time: 0.056s

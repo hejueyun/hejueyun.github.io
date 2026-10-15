@@ -1,6 +1,6 @@
 ESBMC version 8.2.0 64-bit x86_64 linux
 Target: 64-bit little-endian x86_64-unknown-linux with esbmclibc
-Parsing /home/samson/workspace/esbmc/notes/optimization-examples/example2_slice.c
+Parsing example2_slice.c
 Converting
 Generating GOTO Program
 GOTO program creation time: 0.060s
@@ -13,7 +13,7 @@ Generated 1 VCC(s), 1 remaining after simplification (20 assignments)
 
 VERIFICATION CONDITIONS:
 
-file /home/samson/workspace/esbmc/notes/optimization-examples/example2_slice.c line 14 column 3 function main
+file example2_slice.c line 14 column 3 function main
 increment is monotone
 {-1} alloc&0#1 == ARRAY_OF(0)
 {-2} is_dynamic&0#1 == ARRAY_OF(0)
