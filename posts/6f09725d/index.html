@@ -8182,6 +8182,10 @@ MathJax.Hub.Queue(function() {
       #pio-container.pio-ready {
         opacity: 1;
         transition: opacity 0.4s ease, transform 0.3s;
+      }
+      /* 点图片放大时（PhotoSwipe 打开会给 .pswp 加 pswp--open）先藏起看板娘，免得挡住图片 */
+      body:has(.pswp--open) #pio-container {
+        visibility: hidden;
       }</style><script src="/Live2dDiana-main/js/oh-my-diana.user.js"></script><script src="/pjax.js" defer="defer"></script><script>
     if(!('loading' in HTMLImageElement.prototype)) {
         const srp = document.createElement('script');
