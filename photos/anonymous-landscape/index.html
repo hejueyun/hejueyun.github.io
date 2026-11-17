@@ -16,6 +16,9 @@
       }
       /* yilia 编译后的 main.css 把 .archives-wrap 背景改成了 rgba(255,255,255,0.5)，叠在容器上看起来发暗，覆盖回纯白对齐首页/目录卡片底色 */
       .archives-wrap { background: #fff; }
+      /* 手写文章里用 blogfig.py 生成的图（.hbfig）：白底卡片，和手册导出的图一致，放在灰色正文背景上不发灰 */
+      .article-entry .hbfig { background: #fff; border: 1px solid #d9e6ea; border-radius: 12px; padding: 10px 12px 4px; margin: 22px 0; overflow-x: auto; }
+      .article-entry .hbfig svg { max-width: 100% !important; height: auto !important; }
       /* 正文标题：只有二级标题保留底部分割线，三级及以下去掉 */
       .article-entry h3, .article-entry h4, .article-entry h5, .article-entry h6 {
         border-bottom: none;
