@@ -21,6 +21,10 @@
       .article-entry .hbfig svg { max-width: 100% !important; height: auto !important; }
       .article-entry .hbfig, .article-entry .hbfig .svgwrap { text-align: center; }
       .article-entry .hbfig svg { display: inline-block; vertical-align: middle; }
+      /* 编号列表里嵌圆点列表时，圆点子项不参与编号（主题原来的 ol li:before 会把子项也算进计数，第 3 条显示成 5.） */
+      .article-entry ol ul > li:before { counter-increment: none; content: ""; }
+      /* 圆点列表里嵌编号列表时，编号项不要再套圆点的外框 */
+      .article-entry ul ol > li:before { width: auto; height: auto; border: none; border-radius: 0; background: none; float: none; margin-top: 0; }
       /* 正文标题：只有二级标题保留底部分割线，三级及以下去掉 */
       .article-entry h3, .article-entry h4, .article-entry h5, .article-entry h6 {
         border-bottom: none;
