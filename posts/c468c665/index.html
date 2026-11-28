@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="dns-prefetch" href="https://hejueyun.github.io"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://cubism.live2d.com" crossorigin><title>算法导论·第18章（五）·经典题的变形：LRU/LFU、循环队列与约瑟夫环、拓扑排序的九种改法 | 烏巢</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="第 18 章共分 7 篇，这是第 5 篇，包含 18.10 拓扑排序回顾，以及字典序最小的拓扑序、18.11 并行课程、18.12 带耗时的并行课程。"><meta property="og:type" content="article"><meta property="og:title" content="算法导论·第18章（五）·经典题的变形：LRU&#x2F;LFU、循环队列与约瑟夫环、拓扑排序的九种改法"><meta property="og:url" content="https://hejueyun.github.io/posts/c468c665/index.html"><meta property="og:site_name" content="烏巢"><meta property="og:description" content="第 18 章共分 7 篇，这是第 5 篇，包含 18.10 拓扑排序回顾，以及字典序最小的拓扑序、18.11 并行课程、18.12 带耗时的并行课程。"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2026-10-22T00:13:00.000Z"><meta property="article:modified_time" content="2026-11-27T07:49:07.830Z"><meta property="article:author" content="何决云"><meta property="article:tag" content="学习手册"><meta property="article:tag" content="算法导论"><meta name="twitter:card" content="summary"><link rel="alternative" href="/atom.xml" title="烏巢" type="application/atom+xml"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png"><link rel="manifest" href="/assets/img/site.webmanifest"><link rel="stylesheet" href="/katex/katex.min.css"><link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="/assets/img/favicon.ico"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="stylesheet" type="text/css" href="/./main.0cf68a.css"><link rel="stylesheet" type="text/css" href="/./txbh.css"><style type="text/css">#container.show {
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="dns-prefetch" href="https://hejueyun.github.io"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="preconnect" href="https://cubism.live2d.com" crossorigin><title>算法导论·第18章（五）·经典题的变形：LRU/LFU、循环队列与约瑟夫环、拓扑排序的九种改法 | 烏巢</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="第 18 章共分 7 篇，这是第 5 篇，包含 18.10 拓扑排序回顾，以及字典序最小的拓扑序、18.11 并行课程、18.12 带耗时的并行课程。"><meta property="og:type" content="article"><meta property="og:title" content="算法导论·第18章（五）·经典题的变形：LRU&#x2F;LFU、循环队列与约瑟夫环、拓扑排序的九种改法"><meta property="og:url" content="https://hejueyun.github.io/posts/c468c665/index.html"><meta property="og:site_name" content="烏巢"><meta property="og:description" content="第 18 章共分 7 篇，这是第 5 篇，包含 18.10 拓扑排序回顾，以及字典序最小的拓扑序、18.11 并行课程、18.12 带耗时的并行课程。"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2026-10-22T00:13:00.000Z"><meta property="article:modified_time" content="2026-11-28T10:40:49.047Z"><meta property="article:author" content="何决云"><meta property="article:tag" content="学习手册"><meta property="article:tag" content="算法导论"><meta name="twitter:card" content="summary"><link rel="alternative" href="/atom.xml" title="烏巢" type="application/atom+xml"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png"><link rel="manifest" href="/assets/img/site.webmanifest"><link rel="stylesheet" href="/katex/katex.min.css"><link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#5bbad5"><link rel="shortcut icon" href="/assets/img/favicon.ico"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="stylesheet" type="text/css" href="/./main.0cf68a.css"><link rel="stylesheet" type="text/css" href="/./txbh.css"><style type="text/css">#container.show {
           background: repeating-linear-gradient(200deg,#592c3a,#592c3a 30px,#3f4e61 0,#3f4e61 60px);
         }
       @view-transition { navigation: auto; }
@@ -207,12 +207,43 @@
       .article-entry .ckdiff .why { color: #9aa3b5; font-size: 12.5px; white-space: nowrap; }
       /* 前后对照（一行摘要） */
       .article-entry .b2a { padding: 8px 16px; }
-      .article-entry .b2a .r { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; gap: 12px; padding: 5px 0; }
+      .article-entry .b2a .r { display: grid; grid-template-columns: 5.6em minmax(0, 1fr); align-items: center; gap: 12px; padding: 5px 0; }
       .article-entry .b2a .r + .r { border-top: 1px dashed #e3e6ee; }
       .article-entry .b2a .l { font-size: 12px; font-weight: 700; text-align: center; border-radius: 4px; line-height: 22px; }
       .article-entry .b2a .old .l { background: #eef0f4; color: #6b7280; }
       .article-entry .b2a .new .l { background: #e6f4f2; color: #0e8a86; }
       .article-entry .b2a .old .c { color: #6b7280; }
+      /* 聊天模板拼出来的整段文字（.tplv）：每条消息一段，左边色条标角色，特殊 token 和标签着色 */
+      .article-entry .tplv {
+        margin: 1.6em 0; background: #fff; border: 1px solid #e3e6ee; border-radius: 10px; overflow: hidden;
+        box-shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 6px 18px rgba(16, 24, 40, .06);
+      }
+      .article-entry .tplv .th { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; padding: 10px 16px; background: #f6f7fb; border-bottom: 1px solid #e3e6ee; font-size: 14px; line-height: 1.6; }
+      .article-entry .tplv .tag { display: inline-block; font-size: 12px; font-weight: 600; color: #fff; background: #3f4e6b; border-radius: 999px; padding: 0 10px; line-height: 22px; }
+      .article-entry .tplv .tn { font-weight: 600; color: #1f2937; }
+      .article-entry .tplv .tm { margin-left: auto; color: #6b7280; font-size: 12.5px; }
+      .article-entry .tplv .seg {
+        padding: 9px 16px 9px 14px; border-left: 4px solid #9aa3b5; color: #374151; overflow-wrap: anywhere;
+        font: 12.5px/1.75 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      .article-entry .tplv .seg + .seg { border-top: 1px solid #eef0f5; }
+      .article-entry .tplv .s-system { border-left-color: #9aa3b5; background: #fafbfc; }
+      .article-entry .tplv .s-user { border-left-color: #2f6fdb; background: #f7faff; }
+      .article-entry .tplv .s-assistant { border-left-color: #6d5bd0; background: #faf9ff; }
+      .article-entry .tplv .s-tool { border-left-color: #0e8a86; background: #f4fbfa; }
+      .article-entry .tplv .s-gen { border-left-color: #6d5bd0; background: #fff; }
+      .article-entry .tplv .who {
+        float: right; margin: 0 0 4px 12px; padding: 0 9px; border: 1px solid #e3e6ee; border-radius: 999px; background: #fff;
+        font: 600 11.5px/20px system-ui, -apple-system, "Segoe UI", sans-serif; color: #6b7280;
+      }
+      .article-entry .tplv .who b { color: #6d5bd0; margin-right: 4px; }
+      .article-entry .tplv .sp { color: #6d5bd0; background: #efecfb; border-radius: 4px; padding: 0 3px; font-weight: 600; }
+      .article-entry .tplv .tg { color: #0e8a86; font-weight: 600; }
+      .article-entry .tplv .el { color: #9aa3b5; font-style: italic; }
+      .article-entry .tplv .cur { display: inline-block; width: 8px; height: 15px; margin-left: 2px; background: #6d5bd0; vertical-align: -3px; animation: tplv-blink 1.1s steps(1) infinite; }
+      @keyframes tplv-blink { 50% { opacity: 0; } }
+      .article-entry .b2a code { white-space: nowrap; }
+      .article-entry .b2a .c { overflow-x: auto; }
       @media (max-width: 640px) {
         .article-entry .chatlog .cr { grid-template-columns: 30px 72px minmax(0, 1fr) 58px; }
         .article-entry .chatlog .tk i { display: none; }
